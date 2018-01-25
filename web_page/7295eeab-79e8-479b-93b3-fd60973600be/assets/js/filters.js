@@ -1,7 +1,7 @@
 angular.module('bonitasoft.ui.extensions',['ngSanitize'])
  .filter('labelized', [function () {
    return function toType(input) {
-     return "<span class=\"label label-"+severity(input)+"\">"+input+"</span>";
+     return "<span class=\"label label-"+severity(input.name)+"\">"+input.name+"</span>";
    };
 }]).filter('fromNow', [function (format) {
    return function fromNow(input) {

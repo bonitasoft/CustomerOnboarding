@@ -57,15 +57,13 @@ class CaseActivity implements RestApiController {
 			differentFrom(ActivityInstanceSearchDescriptor.NAME, CREATE_ACTIVITY)
 			done()
 		}).getResult().collect{
-		   println "found in active: $it"
 			def state = getState(it,processAPI)
 			def url = forge(pDef.name,pDef.version,it)
-			if(state != "N/A" && url != null ) {
+			if(state.name != "N/A" && state.name != "completed") {
 				result << [name:it.displayName,state:state,url:url,description:it.description,target:linkTarget(it)]
 			}else {
 				result << [name:it.displayName,state:state,description:it.description]
 			}
-			
 		}
 		//Retrieve finished activities
 		processAPI.searchArchivedHumanTasks(new SearchOptionsBuilder(0, Integer.MAX_VALUE).with {
@@ -76,8 +74,7 @@ class CaseActivity implements RestApiController {
 			done()
 		}).getResult().collect{
 			if(!loopTasks.contains(it.name)) {
-				println "found in archive: $it"
-				result << [name:it.displayName,state:it.state,description:it.description]
+				result << [name:it.displayName,state:[name:it.state,id:idOfState(it.state)],description:it.description]
 			}
 		}
 		
@@ -85,19 +82,31 @@ class CaseActivity implements RestApiController {
 		designProcessDefinition.getFlowElementContainer().getActivities().findAll{
 			it instanceof HumanTaskDefinition && !result.name.contains(it.name) && !ACTIVITY_CONTAINER.equals(it.name) && !CREATE_ACTIVITY.equals(it.name)
 		}.collect{
-			println "found in def: $it"
-			result << [name:it.name,state:"N/A",description:it.description]
+			result << [name:it.name,state:[name:"N/A",id:idOfState("N/A")],description:it.description]
 		}
 		
-        return buildResponse(responseBuilder, HttpServletResponse.SC_OK, new JsonBuilder(result).toString())
+        return buildResponse(responseBuilder, HttpServletResponse.SC_OK, new JsonBuilder(result.sort {a1,a2 ->
+			 a1.state.id <=> a2.state.id
+		}).toString())
     }
 	
 	def getState(ActivityInstance activityInstance, ProcessAPI processAPI) {
 		try {
 			def instance = processAPI.getActivityDataInstance("activityState", activityInstance.id);
-			return instance.value
+			return [name:instance.value,id:idOfState(instance.value)]
 		}catch(DataNotFoundException e) {
-			return "Optional"
+			return [name:"Optional",id:idOfState("Optional")]
+		}
+	}
+	
+	def idOfState(state) {
+		switch(state) {
+			case "Required": return 1
+			case "Optional": return 2
+			case "Discretionary" : return 3
+			case "N/A": return 4
+			case "completed" : return 5
+			default: return 6
 		}
 	}
 	
