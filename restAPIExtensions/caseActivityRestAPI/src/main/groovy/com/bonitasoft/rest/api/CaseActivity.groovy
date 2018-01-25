@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletRequest
 import javax.servlet.http.HttpServletResponse
 
 import org.apache.http.HttpHeaders
+import org.bonitasoft.engine.bpm.data.DataNotFoundException
 import org.bonitasoft.engine.bpm.flownode.ActivityInstance
 import org.bonitasoft.engine.bpm.flownode.ActivityInstanceSearchDescriptor
 import org.bonitasoft.engine.bpm.flownode.ArchivedActivityInstanceSearchDescriptor
@@ -21,6 +22,7 @@ import org.bonitasoft.web.extension.rest.RestApiResponseBuilder
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 
+import com.bonitasoft.engine.api.ProcessAPI
 import com.bonitasoft.web.extension.rest.RestAPIContext
 import com.bonitasoft.web.extension.rest.RestApiController
 
@@ -55,7 +57,15 @@ class CaseActivity implements RestApiController {
 			differentFrom(ActivityInstanceSearchDescriptor.NAME, CREATE_ACTIVITY)
 			done()
 		}).getResult().collect{
-			result << [name:it.displayName,state:it.state,url:forge(pDef.name,pDef.version,it),description:it.description,target:linkTarget(it)]
+		   println "found in active: $it"
+			def state = getState(it,processAPI)
+			def url = forge(pDef.name,pDef.version,it)
+			if(state != "N/A" && url != null ) {
+				result << [name:it.displayName,state:state,url:url,description:it.description,target:linkTarget(it)]
+			}else {
+				result << [name:it.displayName,state:state,description:it.description]
+			}
+			
 		}
 		//Retrieve finished activities
 		processAPI.searchArchivedHumanTasks(new SearchOptionsBuilder(0, Integer.MAX_VALUE).with {
@@ -66,6 +76,7 @@ class CaseActivity implements RestApiController {
 			done()
 		}).getResult().collect{
 			if(!loopTasks.contains(it.name)) {
+				println "found in archive: $it"
 				result << [name:it.displayName,state:it.state,description:it.description]
 			}
 		}
@@ -74,11 +85,21 @@ class CaseActivity implements RestApiController {
 		designProcessDefinition.getFlowElementContainer().getActivities().findAll{
 			it instanceof HumanTaskDefinition && !result.name.contains(it.name) && !ACTIVITY_CONTAINER.equals(it.name) && !CREATE_ACTIVITY.equals(it.name)
 		}.collect{
+			println "found in def: $it"
 			result << [name:it.name,state:"N/A",description:it.description]
 		}
 		
         return buildResponse(responseBuilder, HttpServletResponse.SC_OK, new JsonBuilder(result).toString())
     }
+	
+	def getState(ActivityInstance activityInstance, ProcessAPI processAPI) {
+		try {
+			def instance = processAPI.getActivityDataInstance("activityState", activityInstance.id);
+			return instance.value
+		}catch(DataNotFoundException e) {
+			return "Optional"
+		}
+	}
 	
 	def String forge(String processName,String processVersion,ActivityInstance instance) {
 		if(instance instanceof UserTaskInstance) {
