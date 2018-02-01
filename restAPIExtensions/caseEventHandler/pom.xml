@@ -234,7 +234,7 @@
 									<goal>exec</goal>
 								</goals>
 								<configuration>
-									<workingDirectory>${project.build.dir}/../../../../tomcat/setup</workingDirectory>
+									<workingDirectory>${project.build.dir}/../../../../tomcat/setup/</workingDirectory>
 									<executable>setup.sh</executable>
 									<arguments>pull</arguments>
 								</configuration>
@@ -246,7 +246,7 @@
 									<goal>exec</goal>
 								</goals>
 								<configuration>
-									<workingDirectory>${project.build.dir}/../../../../tomcat/setup</workingDirectory>
+									<workingDirectory>${project.build.dir}/../../../../tomcat/setup/</workingDirectory>
 									<executable>setup.sh</executable>
 									<arguments>push</arguments>
 								</configuration>
