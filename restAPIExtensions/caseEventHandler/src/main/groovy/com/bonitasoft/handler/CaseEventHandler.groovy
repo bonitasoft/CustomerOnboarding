@@ -5,6 +5,7 @@ import java.io.Serializable
 import org.bonitasoft.engine.api.ProcessAPI
 import org.bonitasoft.engine.api.impl.APIUtils
 import org.bonitasoft.engine.api.impl.ProcessAPIImpl
+import org.bonitasoft.engine.bpm.connector.ConnectorDefinition
 import org.bonitasoft.engine.bpm.data.DataDefinition
 import org.bonitasoft.engine.bpm.data.DataInstance
 import org.bonitasoft.engine.bpm.data.DataNotFoundException
@@ -12,6 +13,7 @@ import org.bonitasoft.engine.bpm.data.impl.ShortTextDataInstanceImpl
 import org.bonitasoft.engine.bpm.flownode.ActivityInstanceSearchDescriptor
 import org.bonitasoft.engine.bpm.flownode.HumanTaskInstance
 import org.bonitasoft.engine.bpm.flownode.UserTaskInstance
+import org.bonitasoft.engine.bpm.process.DesignProcessDefinition
 import org.bonitasoft.engine.core.process.instance.api.states.FlowNodeState
 import org.bonitasoft.engine.core.process.instance.model.SUserTaskInstance
 import org.bonitasoft.engine.data.instance.api.DataInstanceContainer
@@ -56,25 +58,41 @@ class CaseEventHandler implements SHandler<SEvent> {
 			done()
 		}).getResult()
 		.collect{ HumanTaskInstance task -> 
+			def DesignProcessDefinition design = processAPI.getDesignProcessDefinition(taskInstance.processDefinitionId)
+			def connectorDef = design.getFlowElementContainer().getConnectors().find{ it -> it.name == "updateState" }
 			try{
 				[
 			    definition:processAPI.getActivityDataDefinitions(taskInstance.processDefinitionId, task.name, 0, Integer.MAX_VALUE).find {it.name == "activityState"},
 				instance:processAPI.getActivityDataInstance("activityState", task.id),
-				taskId:task.id
+				taskId:task.id,
+				connectorDef:connectorDef,
+				processDefId:taskInstance.processDefinitionId
 				]
 			} catch( DataNotFoundException e) {
 				println "No 'activityState' data defined in $task.displayName"
 			}
 		}.findAll { it.definition != null }
 		.each { 
+			def ConnectorDefinition connectorDef = it.connectorDef
 		    def DataDefinition dataDefinition = it.definition
 			def DataInstance dataInstance = it.instance
-			dataDefinition.defaultValueExpression
-			def deps = [:]
-			def expressions = [:]
-			expressions.put(dataDefinition.defaultValueExpression, deps)
-			def result = processAPI.evaluateExpressionsOnActivityInstance(it.taskId, expressions)
-			def newValue =result.values()[0]
+			def newValue ;
+			if(connectorDef) {
+				println "refreshing state using connector"
+				def result = processAPI.executeConnectorOnProcessDefinition(connectorDef.connectorId, 
+					connectorDef.version, 
+					[:], 
+					[:],
+					it.processDefId)
+				newValue = result["state"]
+			}else {
+				println "refreshing state using data default value expression"
+				def deps = [:]
+				def expressions = [:]
+				expressions.put(dataDefinition.defaultValueExpression, deps)
+				def result = processAPI.evaluateExpressionsOnActivityInstance(it.taskId, expressions)
+				 newValue =result.values()[0]
+			}
 			processAPI.updateActivityDataInstance("activityState", it.taskId, newValue)
 			println "'activityState' value of $it.taskId has been updated to $newValue"
 		}
