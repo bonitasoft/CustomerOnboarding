@@ -1,9 +1,9 @@
 {
-  "designerVersion" : "1.7.11",
+  "designerVersion" : "1.7.25",
+  "previousDesignerVersion" : "1.7.11",
   "id" : "09d58625-c247-4277-b304-77b681ad8d2e",
   "name" : "CaseActivities",
-  "type" : "fragment",
-  "lastUpdate" : 1516892289677,
+  "lastUpdate" : 1520435115139,
   "rows" : [ [ {
     "type" : "component",
     "dimension" : {
@@ -111,5 +111,6 @@
       "value" : "return [function(input){\n    if(input.row.url){\n        if(input.row.target){\n            return \"<a href=\\\"\"+input.row.url+\"\\\" target=\\\"\"+input.row.target+\"\\\">\"+input.row.name+\"</a>\";\n        }\n        return \"<a href=\\\"\"+input.row.url+\"\\\">\"+input.row.name+\"</a>\";\n    }\n   return input.row.name;\n}, \nfunction(input){\n     if(input.row.description){\n        return \"<em>\"+input.row.description+\"</em>\" ;\n     }\n    return \"\" ;\n},\n\"state|labelized\"];",
       "exposed" : false
     }
-  }
+  },
+  "type" : "fragment"
 }

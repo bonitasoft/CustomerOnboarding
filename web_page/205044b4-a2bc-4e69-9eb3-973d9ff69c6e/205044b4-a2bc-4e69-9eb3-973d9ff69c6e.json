@@ -1,9 +1,9 @@
 {
-  "designerVersion" : "1.7.16",
+  "designerVersion" : "1.7.25",
+  "previousDesignerVersion" : "1.7.16",
   "id" : "205044b4-a2bc-4e69-9eb3-973d9ff69c6e",
   "name" : "newForm",
-  "type" : "form",
-  "lastUpdate" : 1517488436038,
+  "lastUpdate" : 1520435114669,
   "rows" : [ [ {
     "type" : "component",
     "dimension" : {
@@ -229,5 +229,7 @@
       "value" : "../API/bdm/businessData/com.company.model.Customer?q=find&p=0&c=10",
       "exposed" : false
     }
-  }
+  },
+  "uuid" : "205044b4-a2bc-4e69-9eb3-973d9ff69c6e",
+  "type" : "form"
 }

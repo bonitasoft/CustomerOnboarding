@@ -10,9 +10,11 @@
 	<description>Case event handler</description>
 
 	<properties>
-		<bonita.version>7.6.0</bonita.version>
+		<bonita.version>7.7.0-SNAPSHOT</bonita.version>
 		<groovy.version>2.4.3-01</groovy.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<platform.setup.dir>${project.build.directory}/setup</platform.setup.dir>
+		<target.db.path>/home/romain/Téléchargements/BonitaStudioSubscription-7.7.0-SNAPSHOT/workspace/case-management-poc/h2_database</target.db.path>
 	</properties>
 
 	<dependencies>
@@ -34,6 +36,7 @@
 			<version>1.6.1</version>
 			<scope>provided</scope>
 		</dependency>
+
 
 		<!-- test -->
 		<dependency>
@@ -103,6 +106,27 @@
 				<version>2.10</version>
 				<executions>
 					<execution>
+						<id>copy-platform-setup-tool</id>
+						<phase>generate-resources</phase>
+						<goals>
+							<goal>unpack</goal>
+						</goals>
+						<configuration>
+							<artifactItems>
+								<artifactItem>
+									<groupId>com.bonitasoft.platform</groupId>
+									<artifactId>platform-setup-sp</artifactId>
+									<version>${bonita.version}</version>
+									<type>zip</type>
+								</artifactItem>
+							</artifactItems>
+							<overWriteIfNewer>true</overWriteIfNewer>
+							<overWriteReleases>true</overWriteReleases>
+							<overWriteSnapshots>true</overWriteSnapshots>
+							<outputDirectory>${platform.setup.dir}</outputDirectory>
+						</configuration>
+					</execution>
+					<execution>
 						<id>copy-handler-to-studio-tomcat</id>
 						<phase>package</phase>
 						<goals>
@@ -131,23 +155,6 @@
 				<version>3.0.2</version>
 				<executions>
 					<execution>
-						<id>copy-database-conf-to-studio-tomcat</id>
-						<phase>package</phase>
-						<goals>
-							<goal>copy-resources</goal>
-						</goals>
-						<configuration>
-							<resources>
-								<resource>
-									<directory>src/main/resources</directory>
-									<include>database.properties</include>
-								</resource>
-							</resources>
-							<overwrite>true</overwrite>
-							<outputDirectory>${project.build.dir}/../../../../tomcat/setup/</outputDirectory>
-						</configuration>
-					</execution>
-					<execution>
 						<id>copy-spring-conf-to-studio-tomcat</id>
 						<phase>package</phase>
 						<goals>
@@ -161,7 +168,7 @@
 								</resource>
 							</resources>
 							<overwrite>true</overwrite>
-							<outputDirectory>${project.build.dir}/../../../../tomcat/setup/platform_conf/current/tenants/1/tenant_engine</outputDirectory>
+							<outputDirectory>${platform.setup.dir}/platform_conf/current/tenants/1/tenant_engine</outputDirectory>
 						</configuration>
 					</execution>
 				</executions>
@@ -186,14 +193,18 @@
 						<executions>
 							<execution>
 								<id>Pull engine conf (Windows)</id>
-								<phase>package</phase>
+								<phase>prepare-package</phase>
 								<goals>
 									<goal>exec</goal>
 								</goals>
 								<configuration>
-									<workingDirectory>${project.build.dir}/../../../../tomcat/setup</workingDirectory>
+									<workingDirectory>${platform.setup.dir}</workingDirectory>
 									<executable>setup.bat</executable>
-									<arguments>pull</arguments>
+									<arguments>
+										<argument>pull</argument>
+										<argument>-Dh2.database.dir=${target.db.path}</argument>
+										<argument>-Dbonita.client=${target.db.path}</argument>
+									</arguments>
 								</configuration>
 							</execution>
 							<execution>
@@ -203,9 +214,12 @@
 									<goal>exec</goal>
 								</goals>
 								<configuration>
-									<workingDirectory>${project.build.dir}/../../../../tomcat/setup</workingDirectory>
+									<workingDirectory>${platform.setup.dir}</workingDirectory>
 									<executable>setup.bat</executable>
-									<arguments>push</arguments>
+									<arguments>
+										<argument>push</argument>
+										<argument>-Dh2.database.dir=${target.db.path}</argument>
+									</arguments>
 								</configuration>
 							</execution>
 						</executions>
@@ -229,14 +243,17 @@
 						<executions>
 							<execution>
 								<id>Pull engine conf (linux)</id>
-								<phase>package</phase>
+								<phase>prepare-package</phase>
 								<goals>
 									<goal>exec</goal>
 								</goals>
 								<configuration>
-									<workingDirectory>${project.build.dir}/../../../../tomcat/setup/</workingDirectory>
-									<executable>setup.sh</executable>
-									<arguments>pull</arguments>
+									<workingDirectory>${platform.setup.dir}</workingDirectory>
+									<executable>${platform.setup.dir}/setup.sh</executable>
+									<arguments>
+										<argument>pull</argument>
+										<argument>-Dh2.database.dir=${target.db.path}</argument>
+									</arguments>
 								</configuration>
 							</execution>
 							<execution>
@@ -246,9 +263,12 @@
 									<goal>exec</goal>
 								</goals>
 								<configuration>
-									<workingDirectory>${project.build.dir}/../../../../tomcat/setup/</workingDirectory>
-									<executable>setup.sh</executable>
-									<arguments>push</arguments>
+									<workingDirectory>${platform.setup.dir}</workingDirectory>
+									<executable>${platform.setup.dir}/setup.sh</executable>
+									<arguments>
+										<argument>push</argument>
+										<argument>-Dh2.database.dir=${target.db.path}</argument>
+									</arguments>
 								</configuration>
 							</execution>
 						</executions>

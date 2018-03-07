@@ -109,8 +109,8 @@
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_1BImQvUfEeeREboOt7l4UQ" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_1BImQfUfEeeREboOt7l4UQ" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_1BImQ_UfEeeREboOt7l4UQ" name="" content="" returnTypeFixed="true"/>
-          <data xmi:type="process:Data" xmi:id="_2av1YAHUEeiNfNN2BDEehQ" name="activitySate" dataType="_x5qCOfSMEeeYpYD60oU_zA">
-            <defaultValue xmi:type="expression:Expression" xmi:id="_0OaxoAHdEeiNfNN2BDEehQ" name="Optional" content="Optional"/>
+          <data xmi:type="process:Data" xmi:id="_2av1YAHUEeiNfNN2BDEehQ" name="activityState" dataType="_x5qCOfSMEeeYpYD60oU_zA">
+            <defaultValue xmi:type="expression:Expression" xmi:id="_QSuvgCIgEeiJcZ9JqtUjSA" name="Optional" content="Optional"/>
           </data>
           <loopCondition xmi:type="expression:Expression" xmi:id="_1BJNUPUfEeeREboOt7l4UQ" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <loopMaximum xmi:type="expression:Expression" xmi:id="_1BJNUfUfEeeREboOt7l4UQ" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>

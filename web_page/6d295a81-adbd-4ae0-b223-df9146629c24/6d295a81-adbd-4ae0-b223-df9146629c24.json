@@ -1,9 +1,9 @@
 {
-  "designerVersion" : "1.7.11",
+  "designerVersion" : "1.7.25",
+  "previousDesignerVersion" : "1.7.11",
   "id" : "6d295a81-adbd-4ae0-b223-df9146629c24",
   "name" : "ExecuteManualTask",
-  "type" : "page",
-  "lastUpdate" : 1515659071856,
+  "lastUpdate" : 1520435114949,
   "rows" : [ [ {
     "type" : "formContainer",
     "dimension" : {
@@ -272,5 +272,7 @@
       "type" : "constant",
       "exposed" : false
     }
-  }
+  },
+  "uuid" : "6d295a81-adbd-4ae0-b223-df9146629c24",
+  "type" : "page"
 }

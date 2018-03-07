@@ -1,9 +1,9 @@
 {
-  "designerVersion" : "1.7.11",
+  "designerVersion" : "1.7.25",
+  "previousDesignerVersion" : "1.7.11",
   "id" : "7295eeab-79e8-479b-93b3-fd60973600be",
   "name" : "CaseManagement",
-  "type" : "page",
-  "lastUpdate" : 1516893398722,
+  "lastUpdate" : 1520435114930,
   "rows" : [ [ {
     "type" : "component",
     "dimension" : {
@@ -303,5 +303,7 @@
       "value" : "return {\n    \"name\": \"hello\",\n    \"description\" : \"\",\n    \"caseId\" : $data.caseId\n}",
       "exposed" : false
     }
-  }
+  },
+  "uuid" : "7295eeab-79e8-479b-93b3-fd60973600be",
+  "type" : "page"
 }

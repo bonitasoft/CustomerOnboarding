@@ -1,9 +1,9 @@
 {
-  "designerVersion" : "1.7.11",
+  "designerVersion" : "1.7.25",
+  "previousDesignerVersion" : "1.7.11",
   "id" : "f6298197-360b-4e2c-87f0-1252b0e31adc",
   "name" : "AddCommentForm",
-  "type" : "form",
-  "lastUpdate" : 1515667104322,
+  "lastUpdate" : 1520435114969,
   "rows" : [ [ {
     "type" : "formContainer",
     "dimension" : {
@@ -352,5 +352,7 @@
       "value" : "id",
       "exposed" : false
     }
-  }
+  },
+  "uuid" : "f6298197-360b-4e2c-87f0-1252b0e31adc",
+  "type" : "form"
 }

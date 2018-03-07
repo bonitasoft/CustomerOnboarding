@@ -1,9 +1,9 @@
 {
-  "designerVersion" : "1.7.4",
+  "designerVersion" : "1.7.25",
+  "previousDesignerVersion" : "1.7.4",
   "id" : "layout-page",
   "name" : "LivingApplicationLayoutPageV3",
-  "type" : "layout",
-  "lastUpdate" : 1516873081721,
+  "lastUpdate" : 1520435114912,
   "rows" : [ [ {
     "type" : "container",
     "dimension" : {
@@ -143,5 +143,7 @@
       "value" : "",
       "exposed" : false
     }
-  }
+  },
+  "uuid" : "09b1203b-f0da-4f50-bc98-724ea33a5439",
+  "type" : "layout"
 }
