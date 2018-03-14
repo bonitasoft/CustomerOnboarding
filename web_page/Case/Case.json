@@ -1,16 +1,16 @@
 {
   "designerVersion" : "1.7.25",
   "previousDesignerVersion" : "1.7.11",
-  "id" : "7295eeab-79e8-479b-93b3-fd60973600be",
-  "name" : "CaseManagement",
-  "lastUpdate" : 1520435114930,
+  "id" : "Case",
+  "name" : "Case",
+  "lastUpdate" : 1521039619380,
   "rows" : [ [ {
-    "type" : "component",
+    "type" : "container",
     "dimension" : {
       "xs" : 12,
       "sm" : 12,
-      "md" : 12,
-      "lg" : 12
+      "md" : 8,
+      "lg" : 8
     },
     "propertyValues" : {
       "cssClasses" : {
@@ -21,83 +21,117 @@
         "type" : "constant",
         "value" : false
       },
-      "disabled" : {
-        "type" : "constant",
-        "value" : false
-      },
-      "required" : {
-        "type" : "constant",
-        "value" : false
-      },
-      "labelHidden" : {
-        "type" : "constant",
-        "value" : false
-      },
-      "label" : {
-        "type" : "interpolation",
-        "value" : "Select a case"
-      },
-      "labelPosition" : {
-        "type" : "constant",
-        "value" : "top"
-      },
-      "labelWidth" : {
-        "type" : "constant",
-        "value" : 4
-      },
-      "placeholder" : {
-        "type" : "interpolation",
-        "value" : ""
-      },
-      "availableValues" : {
-        "type" : "expression",
-        "value" : "cases"
-      },
-      "displayedKey" : {
-        "type" : "expression",
-        "value" : "caseLabel"
-      },
-      "returnedKey" : {
-        "type" : "constant",
-        "value" : "id"
-      },
-      "value" : {
+      "repeatedCollection" : {
         "type" : "variable",
-        "value" : "caseId"
-      }
-    },
-    "reference" : "952781c3-a97b-4467-8adc-92fcc5165464",
-    "id" : "pbSelect"
-  } ], [ {
-    "type" : "fragment",
-    "dimension" : {
-      "xs" : 12,
-      "sm" : 12,
-      "md" : 7,
-      "lg" : 7
-    },
-    "propertyValues" : {
-      "cssClasses" : {
-        "type" : "constant",
         "value" : ""
-      },
-      "hidden" : {
-        "type" : "constant",
-        "value" : false
       }
     },
-    "reference" : "7da35c6c-ac2d-4d07-a48d-bdd107b14236",
-    "id" : "09d58625-c247-4277-b304-77b681ad8d2e",
-    "binding" : {
-      "caseId" : "caseId"
-    }
+    "reference" : "3589445e-f9a3-40de-bb8d-82428d9dcf4c",
+    "id" : "pbContainer",
+    "rows" : [ [ {
+      "type" : "fragment",
+      "dimension" : {
+        "xs" : 12,
+        "sm" : 12,
+        "md" : 12,
+        "lg" : 12
+      },
+      "propertyValues" : {
+        "cssClasses" : {
+          "type" : "constant",
+          "value" : ""
+        },
+        "hidden" : {
+          "type" : "constant",
+          "value" : false
+        }
+      },
+      "reference" : "7da35c6c-ac2d-4d07-a48d-bdd107b14236",
+      "id" : "09d58625-c247-4277-b304-77b681ad8d2e",
+      "binding" : {
+        "caseId" : "caseId"
+      }
+    } ], [ {
+      "type" : "component",
+      "dimension" : {
+        "xs" : 12,
+        "sm" : 12,
+        "md" : 12,
+        "lg" : 12
+      },
+      "propertyValues" : {
+        "cssClasses" : {
+          "type" : "constant",
+          "value" : ""
+        },
+        "hidden" : {
+          "type" : "constant",
+          "value" : false
+        },
+        "disabled" : {
+          "type" : "constant",
+          "value" : false
+        },
+        "label" : {
+          "type" : "interpolation",
+          "value" : "<span class=\"glyphicon glyphicon-remove-sign\" aria-hidden=\"true\"></span> Close"
+        },
+        "alignment" : {
+          "type" : "constant",
+          "value" : "right"
+        },
+        "buttonStyle" : {
+          "type" : "constant",
+          "value" : "warning"
+        },
+        "action" : {
+          "type" : "constant",
+          "value" : "PUT"
+        },
+        "url" : {
+          "type" : "interpolation",
+          "value" : "../API/extension/case"
+        },
+        "dataToSend" : {
+          "type" : "expression",
+          "value" : "caseIdPayload"
+        },
+        "dataFromSuccess" : {
+          "type" : "variable",
+          "value" : "caseId"
+        },
+        "dataFromError" : {
+          "type" : "variable",
+          "value" : ""
+        },
+        "targetUrlOnSuccess" : {
+          "type" : "interpolation",
+          "value" : ".."
+        },
+        "collectionToModify" : {
+          "type" : "variable"
+        },
+        "collectionPosition" : {
+          "type" : "constant",
+          "value" : "Last"
+        },
+        "valueToAdd" : {
+          "type" : "constant"
+        },
+        "removeItem" : {
+          "type" : "variable"
+        }
+      },
+      "reference" : "0ec3723a-79d8-4811-9689-9e6a3d109f5e",
+      "id" : "pbButton"
+    } ] ]
   }, {
     "type" : "fragment",
     "dimension" : {
       "xs" : 12,
       "sm" : 12,
-      "md" : 5,
-      "lg" : 5
+      "md" : 4,
+      "lg" : 4
     },
     "propertyValues" : {
       "cssClasses" : {
@@ -268,19 +302,9 @@
   } ],
   "inactiveAssets" : [ ],
   "data" : {
-    "cases" : {
-      "type" : "url",
-      "value" : "../API/bpm/case?c=999&p=0&d=processDefinitionId",
-      "exposed" : false
-    },
     "caseLabel" : {
       "type" : "expression",
       "value" : "return function(input){\n    return input.id + \" - \" + input.processDefinitionId.name ;\n}",
-      "exposed" : false
-    },
-    "caseId" : {
-      "type" : "expression",
-      "value" : "if($data.cases && $data.cases.length > 0){\n    return  $data.cases[0].id;\n}\nreturn \"\";\n",
       "exposed" : false
     },
     "caseHistory" : {
@@ -298,9 +322,19 @@
       "value" : "../API/extension/caseComment?caseId={{caseId}}",
       "exposed" : false
     },
-    "newCase" : {
+    "caseIdPayload" : {
       "type" : "expression",
-      "value" : "return {\n    \"name\": \"hello\",\n    \"description\" : \"\",\n    \"caseId\" : $data.caseId\n}",
+      "value" : "return {\n    'caseId' : $data.caseId\n};",
+      "exposed" : false
+    },
+    "caseId" : {
+      "type" : "urlparameter",
+      "value" : "id",
+      "exposed" : false
+    },
+    "archived" : {
+      "type" : "url",
+      "value" : "../API/bpm/archivedCase/{{caseId}}",
       "exposed" : false
     }
   },

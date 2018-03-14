@@ -3,7 +3,7 @@
   "previousDesignerVersion" : "1.7.11",
   "id" : "f6298197-360b-4e2c-87f0-1252b0e31adc",
   "name" : "AddCommentForm",
-  "lastUpdate" : 1520435114969,
+  "lastUpdate" : 1521043213485,
   "rows" : [ [ {
     "type" : "formContainer",
     "dimension" : {
@@ -265,10 +265,11 @@
           },
           "action" : {
             "type" : "constant",
-            "value" : "Submit task"
+            "value" : "POST"
           },
           "url" : {
-            "type" : "interpolation"
+            "type" : "interpolation",
+            "value" : "../API/extension/userTask"
           },
           "dataToSend" : {
             "type" : "expression",
@@ -297,18 +298,10 @@
           },
           "removeItem" : {
             "type" : "variable"
-          },
-          "comment" : {
-            "type" : "expression",
-            "value" : "formInput.comment"
-          },
-          "caseId" : {
-            "type" : "expression",
-            "value" : "task.caseId"
           }
         },
-        "reference" : "ca630461-abaf-403f-a9df-d30ada541fea",
-        "id" : "customAddCommentButton"
+        "reference" : "a07936fe-f762-4990-a9e5-98686f606747",
+        "id" : "pbButton"
       } ] ]
     }
   } ] ],
@@ -327,11 +320,6 @@
   } ],
   "inactiveAssets" : [ ],
   "data" : {
-    "task" : {
-      "type" : "url",
-      "value" : "../API/bpm/userTask/{{taskId}}",
-      "exposed" : false
-    },
     "formInput" : {
       "type" : "json",
       "value" : "{\n  \"comment\" : \"\"\n}",
@@ -339,7 +327,7 @@
     },
     "formOutput" : {
       "type" : "expression",
-      "value" : "return {\n\t'content': $data.formInput.comment,\n\t'processInstanceId' : $data.task.caseId\n};",
+      "value" : "return {\n\t'content': $data.formInput.comment,\n\t'processInstanceId' : $data.task.caseId,\n\t'taskId': $data.taskId\n}",
       "exposed" : false
     },
     "context" : {
@@ -350,6 +338,11 @@
     "taskId" : {
       "type" : "urlparameter",
       "value" : "id",
+      "exposed" : false
+    },
+    "task" : {
+      "type" : "url",
+      "value" : "../API/bpm/humanTask/{{taskId}}",
       "exposed" : false
     }
   },

@@ -9,12 +9,14 @@ import org.apache.http.HttpHeaders
 import org.bonitasoft.engine.bpm.data.DataNotFoundException
 import org.bonitasoft.engine.bpm.flownode.ActivityInstance
 import org.bonitasoft.engine.bpm.flownode.ActivityInstanceSearchDescriptor
+import org.bonitasoft.engine.bpm.flownode.ActivityStates
 import org.bonitasoft.engine.bpm.flownode.ArchivedActivityInstanceSearchDescriptor
 import org.bonitasoft.engine.bpm.flownode.FlowNodeType
 import org.bonitasoft.engine.bpm.flownode.HumanTaskDefinition
 import org.bonitasoft.engine.bpm.flownode.ManualTaskInstance
 import org.bonitasoft.engine.bpm.flownode.StandardLoopCharacteristics
 import org.bonitasoft.engine.bpm.flownode.UserTaskInstance
+import org.bonitasoft.engine.bpm.process.ProcessDefinitionNotFoundException
 import org.bonitasoft.engine.search.SearchOptionsBuilder
 import org.bonitasoft.web.extension.ResourceProvider
 import org.bonitasoft.web.extension.rest.RestApiResponse
@@ -35,19 +37,24 @@ class CaseActivity implements RestApiController {
     @Override
     RestApiResponse doHandle(HttpServletRequest request, RestApiResponseBuilder responseBuilder, RestAPIContext context) {
         def caseId = request.getParameter "caseId"
-        if (caseId == null) {
+        if (!caseId) {
             return buildResponse(responseBuilder, HttpServletResponse.SC_BAD_REQUEST,"""{"error" : "the parameter caseId is missing"}""")
         }
 
 		def processAPI = context.apiClient.getProcessAPI()
-		def pDef = processAPI.getProcessDefinition(processAPI.getProcessDefinitionIdFromProcessInstanceId(caseId.toLong()))
+		def pDef = -1;
+		try {
+			 pDef = processAPI.getProcessDefinition(processAPI.getProcessDefinitionIdFromProcessInstanceId(caseId.toLong()))
+		}catch(ProcessDefinitionNotFoundException e) {
+			return buildResponse(responseBuilder, HttpServletResponse.SC_NOT_FOUND,"""{"error" : "no process definition found for instance $caseId" }""")
+		}
+	
 		def designProcessDefinition = processAPI.getDesignProcessDefinition(pDef.id)
 		def loopTasks = designProcessDefinition.getFlowElementContainer().getActivities().findAll{
 			it instanceof HumanTaskDefinition && it.getLoopCharacteristics() instanceof StandardLoopCharacteristics
 		}.collect{
 			it.name
 		}
-		
 		def result = []
 		//Retrieve pending activities
 		processAPI.searchHumanTaskInstances(new SearchOptionsBuilder(0, Integer.MAX_VALUE).with {
@@ -58,9 +65,9 @@ class CaseActivity implements RestApiController {
 			done()
 		}).getResult().collect{
 			def state = getState(it,processAPI)
-			def url = forge(pDef.name,pDef.version,it)
-			if(state.name != "N/A" && state.name != "completed") {
-				result << [name:it.displayName,state:state,url:url,description:it.description,target:linkTarget(it)]
+		
+			if(canExecute(state)) {
+				result << [name:it.displayName,state:state,url:forge(pDef.name,pDef.version,it),description:it.description,target:linkTarget(it)]
 			}else {
 				result << [name:it.displayName,state:state,description:it.description]
 			}
@@ -90,9 +97,20 @@ class CaseActivity implements RestApiController {
 		}).toString())
     }
 	
+	def canExecute(state) {
+		return state.name != "N/A"&& 
+			   state.name != ActivityStates.COMPLETED_STATE &&
+			   state.name != ActivityStates.FAILED_STATE &&
+			   state.name != ActivityStates.ABORTED_STATE
+	}
+	
 	def getState(ActivityInstance activityInstance, ProcessAPI processAPI) {
 		try {
+			def defaultState = activityInstance.getState()
 			def instance = processAPI.getActivityDataInstance("activityState", activityInstance.id);
+			if(defaultState == ActivityStates.ABORTED_STATE || defaultState == ActivityStates.FAILED_STATE ) {
+				return [name:defaultState,id:idOfState(instance.value)]
+			}
 			return [name:instance.value,id:idOfState(instance.value)]
 		}catch(DataNotFoundException e) {
 			return [name:"Optional",id:idOfState("Optional")]

@@ -10,7 +10,9 @@ import org.bonitasoft.engine.bpm.data.DataDefinition
 import org.bonitasoft.engine.bpm.data.DataInstance
 import org.bonitasoft.engine.bpm.data.DataNotFoundException
 import org.bonitasoft.engine.bpm.data.impl.ShortTextDataInstanceImpl
+import org.bonitasoft.engine.bpm.flownode.ActivityDefinitionNotFoundException
 import org.bonitasoft.engine.bpm.flownode.ActivityInstanceSearchDescriptor
+import org.bonitasoft.engine.bpm.flownode.ActivityStates
 import org.bonitasoft.engine.bpm.flownode.HumanTaskInstance
 import org.bonitasoft.engine.bpm.flownode.UserTaskInstance
 import org.bonitasoft.engine.bpm.process.DesignProcessDefinition
@@ -31,6 +33,8 @@ import org.bonitasoft.engine.recorder.model.EntityUpdateDescriptor
 import org.bonitasoft.engine.search.SearchOptionsBuilder
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
+
+import javassist.bytecode.stackmap.BasicBlock.Catch
 
 
 class CaseEventHandler implements SHandler<SEvent> {
@@ -54,7 +58,7 @@ class CaseEventHandler implements SHandler<SEvent> {
 			and()
 			differentFrom(ActivityInstanceSearchDescriptor.NAME, CREATE_ACTIVITY)
 			and()
-			filter(ActivityInstanceSearchDescriptor.STATE_NAME, "ready")
+			filter(ActivityInstanceSearchDescriptor.STATE_NAME, ActivityStates.READY_STATE)
 			done()
 		}).getResult()
 		.collect{ HumanTaskInstance task -> 
@@ -70,8 +74,10 @@ class CaseEventHandler implements SHandler<SEvent> {
 				]
 			} catch( DataNotFoundException e) {
 				println "No 'activityState' data defined in $task.displayName"
+			}catch( ActivityDefinitionNotFoundException e1) {
+				println "No 'activityState' data defined in $task.name"
 			}
-		}.findAll { it.definition != null }
+		}.findAll { it != null && it.definition != null }
 		.each { 
 			def ConnectorDefinition connectorDef = it.connectorDef
 		    def DataDefinition dataDefinition = it.definition
@@ -103,7 +109,7 @@ class CaseEventHandler implements SHandler<SEvent> {
 		return event.getType() == "ACTIVITYINSTANCE_STATE_UPDATED" &&
 		  event.asType(SUpdateEvent) &&
 		  event.getObject() instanceof SUserTaskInstance &&
-		  ((SUserTaskInstance)event.getObject()).stateName == "completed" &&
+		  ((SUserTaskInstance)event.getObject()).stateName == ActivityStates.COMPLETED_STATE &&
 		  ((SUserTaskInstance)event.getObject()).name != "Dymanic Activity Container"
 	}
 

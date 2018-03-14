@@ -3,7 +3,7 @@
   "previousDesignerVersion" : "1.7.4",
   "id" : "layout-page",
   "name" : "LivingApplicationLayoutPageV3",
-  "lastUpdate" : 1520435114912,
+  "lastUpdate" : 1521021588911,
   "rows" : [ [ {
     "type" : "container",
     "dimension" : {
@@ -22,7 +22,8 @@
         "value" : false
       },
       "repeatedCollection" : {
-        "type" : "variable"
+        "type" : "variable",
+        "value" : ""
       }
     },
     "reference" : "0f313748-345b-4708-a802-b6ef2bf5afe1",

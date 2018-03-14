@@ -3,7 +3,7 @@
   "previousDesignerVersion" : "1.7.11",
   "id" : "6d295a81-adbd-4ae0-b223-df9146629c24",
   "name" : "ExecuteManualTask",
-  "lastUpdate" : 1520435114949,
+  "lastUpdate" : 1521044580457,
   "rows" : [ [ {
     "type" : "formContainer",
     "dimension" : {
@@ -170,12 +170,12 @@
             "value" : false
           },
           "disabled" : {
-            "type" : "constant",
-            "value" : false
+            "type" : "expression",
+            "value" : "!comment || comment .length === 0"
           },
           "label" : {
             "type" : "interpolation",
-            "value" : "Submit"
+            "value" : "Save"
           },
           "alignment" : {
             "type" : "constant",
@@ -187,10 +187,11 @@
           },
           "action" : {
             "type" : "constant",
-            "value" : "Submit task"
+            "value" : "POST"
           },
           "url" : {
-            "type" : "interpolation"
+            "type" : "interpolation",
+            "value" : "../API/extension/userTask"
           },
           "dataToSend" : {
             "type" : "expression",
@@ -206,7 +207,7 @@
           },
           "targetUrlOnSuccess" : {
             "type" : "interpolation",
-            "value" : ".."
+            "value" : "../case/?id={{task.caseId}}"
           },
           "collectionToModify" : {
             "type" : "variable"
@@ -220,16 +221,10 @@
           },
           "removeItem" : {
             "type" : "variable"
-          },
-          "comment" : {
-            "type" : "constant"
-          },
-          "caseId" : {
-            "type" : "constant"
           }
         },
-        "reference" : "6b030dd9-dff2-4a78-8eef-bbcf5fed3bb7",
-        "id" : "customExecuteManualTaskButton"
+        "reference" : "47e01b95-aab7-4c15-a3ba-be99d5112db2",
+        "id" : "pbButton"
       } ] ]
     }
   } ] ],
@@ -255,17 +250,12 @@
     },
     "task" : {
       "type" : "url",
-      "value" : "../API/bpm/flowNode/{{taskId}}",
+      "value" : "../API/bpm/humanTask/{{taskId}}",
       "exposed" : false
     },
     "input" : {
       "type" : "expression",
-      "value" : "if($data.task){\nreturn {\n     \"state\":\"completed\", \n     \"executedBy\": $data.session.user_id,\n\t \"processInstanceId\" : $data.task.caseId,\n\t \"content\":$data.comment\n};\n}",
-      "exposed" : false
-    },
-    "session" : {
-      "type" : "url",
-      "value" : "../API/system/session/unusedid",
+      "value" : "if($data.task){\nreturn {\n    \"taskId\" : $data.taskId,\n\t \"processInstanceId\" : $data.task.caseId,\n\t \"content\": $data.comment\n};\n}",
       "exposed" : false
     },
     "comment" : {

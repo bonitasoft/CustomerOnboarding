@@ -3,7 +3,7 @@
   "previousDesignerVersion" : "1.7.11",
   "id" : "2903e26b-316f-4069-95ab-4752903d59ca",
   "name" : "CreateActivity",
-  "lastUpdate" : 1520435115105,
+  "lastUpdate" : 1521044757271,
   "rows" : [ [ {
     "type" : "component",
     "dimension" : {
@@ -200,10 +200,11 @@
       },
       "action" : {
         "type" : "constant",
-        "value" : "Submit task"
+        "value" : "POST"
       },
       "url" : {
-        "type" : "interpolation"
+        "type" : "interpolation",
+        "value" : "../API/extension/caseActivity"
       },
       "dataToSend" : {
         "type" : "expression",
@@ -232,14 +233,10 @@
       },
       "removeItem" : {
         "type" : "variable"
-      },
-      "taskId" : {
-        "type" : "expression",
-        "value" : "taskId[0].id"
       }
     },
-    "reference" : "1136503c-3e43-42f7-bdaf-6660358ceb41",
-    "id" : "customCreateActivityButton"
+    "reference" : "1c9c0b8e-e1cc-4448-ab4c-fed9e90fbb12",
+    "id" : "pbButton"
   } ] ],
   "assets" : [ ],
   "inactiveAssets" : [ ],
@@ -252,11 +249,6 @@
     "caseId" : {
       "type" : "constant",
       "exposed" : true
-    },
-    "taskId" : {
-      "type" : "url",
-      "value" : "../API/bpm/activity?c=1&p=0&f=name=Create Activity&f=type=USER_TASK",
-      "exposed" : false
     }
   },
   "type" : "fragment"

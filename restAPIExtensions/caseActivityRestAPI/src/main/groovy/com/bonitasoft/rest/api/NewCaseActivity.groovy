@@ -26,7 +26,8 @@ class NewCaseActivity implements RestApiController {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(NewCaseActivity.class)
 	private static final String ACTIVITY_CONTAINER = "Dymanic Activity Container"
-
+	private static final String CREATE_ACTIVITY = "Create Activity"
+	
 	@Override
 	RestApiResponse doHandle(HttpServletRequest request, RestApiResponseBuilder responseBuilder, RestAPIContext context) {
 		def jsonBody = new JsonSlurper().parse(request.getReader())
@@ -37,7 +38,7 @@ class NewCaseActivity implements RestApiController {
 			filter(ActivityInstanceSearchDescriptor.NAME, ACTIVITY_CONTAINER)
 			done()
 		}).getResult()
-		
+	
 		if(res.isEmpty()) {
 			return responseBuilder.with {
 				withResponseStatus(HttpServletResponse.SC_NOT_FOUND)
@@ -55,6 +56,23 @@ class NewCaseActivity implements RestApiController {
 					setDueDate(null)
 				})
 		
+				
+	    res = processAPI.searchActivities(new SearchOptionsBuilder(0, 1).with {
+					filter(ActivityInstanceSearchDescriptor.PROCESS_INSTANCE_ID, jsonBody.caseId)
+					filter(ActivityInstanceSearchDescriptor.NAME, CREATE_ACTIVITY)
+					filter(ActivityInstanceSearchDescriptor.ACTIVITY_TYPE, FlowNodeType.USER_TASK)
+					done()
+				}).getResult()
+		if(res.isEmpty()) {
+			return responseBuilder.with {
+				withResponseStatus(HttpServletResponse.SC_NOT_FOUND)
+				withResponse("No Create Activity found")
+				build()
+			}
+		}
+		def createActivityTaskId = res[0].id;
+		processAPI.assignUserTask(createActivityTaskId, context.apiSession.userId)
+		processAPI.executeUserTask(createActivityTaskId, [name:jsonBody.name])
 
 		return responseBuilder.with {
 			withResponseStatus(HttpServletResponse.SC_CREATED)

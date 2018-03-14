@@ -4,8 +4,9 @@
         <displayName>Case Managenement</displayName>
         <description></description>
         <applicationPages>
-            <applicationPage customPage="custompage_CaseManagement" token="home"/>
+            <applicationPage customPage="custompage_Case" token="case"/>
             <applicationPage customPage="custompage_ExecuteManualTask" token="do"/>
+            <applicationPage customPage="custompage_CaseList" token="home"/>
         </applicationPages>
         <applicationMenus/>
     </application>

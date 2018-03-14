@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actormapping="http://www.bonitasoft.org/ns/actormapping/6.0" xmlns:configuration="http://www.bonitasoft.org/ns/studio/configuration" xmlns:connectorconfiguration="http://wwww.bonitasoft.org/model/connector/configuration" xmlns:decision="http://www.bonitasoft.org/ns/studio/process/decision" xmlns:definition="http://www.bonitasoft.org/ns/connector/definition/6.1" xmlns:expression="http://www.bonitasoft.org/ns/studio/expression" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:process="http://www.bonitasoft.org/ns/studio/process" xsi:schemaLocation="http://www.bonitasoft.org/ns/studio/process/decision http://www.bonitasoft.org/ns/studio/process#//decision">
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actormapping="http://www.bonitasoft.org/ns/actormapping/6.0" xmlns:configuration="http://www.bonitasoft.org/ns/studio/configuration" xmlns:decision="http://www.bonitasoft.org/ns/studio/process/decision" xmlns:expression="http://www.bonitasoft.org/ns/studio/expression" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:process="http://www.bonitasoft.org/ns/studio/process" xsi:schemaLocation="http://www.bonitasoft.org/ns/studio/process/decision http://www.bonitasoft.org/ns/studio/process#//decision">
   <process:MainProcess xmi:id="_x5qBwPSMEeeYpYD60oU_zA" name="LitigeCB" author="romain" bonitaVersion="7.7.0" bonitaModelVersion="7.6.0-002" configId="ACED00057400184C69746967654342372E362E302D303032372E372E307370">
     <elements xmi:type="process:Pool" xmi:id="_x5qBwfSMEeeYpYD60oU_zA" name="Litige CB" welcomePageInternal="false" basedOnLookAndFeel="Default Application">
       <elements xmi:type="process:Lane" xmi:id="_x5qByPSMEeeYpYD60oU_zA" name="Bank" actor="_x5qCI_SMEeeYpYD60oU_zA">
@@ -43,8 +43,8 @@
           <completionCondition xmi:type="expression:Expression" xmi:id="_x5qCAvSMEeeYpYD60oU_zA" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <entryRedirectionURL xmi:type="expression:Expression" xmi:id="_x5qCA_SMEeeYpYD60oU_zA" name="" content="" returnTypeFixed="true"/>
           <confirmationMessage xmi:type="expression:Expression" xmi:id="_x5qCBPSMEeeYpYD60oU_zA" name="" content="" returnTypeFixed="true"/>
-          <formMapping xmi:type="process:FormMapping" xmi:id="_x5qCBfSMEeeYpYD60oU_zA" type="NONE">
-            <targetForm xmi:type="expression:Expression" xmi:id="_FoCMICdqEeida-blYETd7g" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+          <formMapping xmi:type="process:FormMapping" xmi:id="_x5qCBfSMEeeYpYD60oU_zA">
+            <targetForm xmi:type="expression:Expression" xmi:id="_wdvCsCeXEei7d4O1CuuFSg" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
           </formMapping>
           <contract xmi:type="process:Contract" xmi:id="_x5qCB_SMEeeYpYD60oU_zA">
             <inputs xmi:type="process:ContractInput" xmi:id="_0zvXsPYVEeesarEo_Te_Dg" name="name">
@@ -182,7 +182,7 @@
           <entryRedirectionURL xmi:type="expression:Expression" xmi:id="_AKBJxPUhEeeREboOt7l4UQ" name="" content="" returnTypeFixed="true"/>
           <confirmationMessage xmi:type="expression:Expression" xmi:id="_AKBJxfUhEeeREboOt7l4UQ" name="" content="" returnTypeFixed="true"/>
           <formMapping xmi:type="process:FormMapping" xmi:id="_AKBJzPUhEeeREboOt7l4UQ">
-            <targetForm xmi:type="expression:Expression" xmi:id="_FoCMISdqEeida-blYETd7g" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+            <targetForm xmi:type="expression:Expression" xmi:id="_wdvCsSeXEei7d4O1CuuFSg" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
           </formMapping>
           <contract xmi:type="process:Contract" xmi:id="_AKBJy_UhEeeREboOt7l4UQ">
             <inputs xmi:type="process:ContractInput" xmi:id="_nAK7APUhEeeREboOt7l4UQ" name="documents" type="FILE" multiple="true"/>
@@ -239,13 +239,6 @@
         <elements xmi:type="process:TextAnnotation" xmi:id="_6YmbsAdeEeiGn-a9BKu52g" text="Could be replaced by an API call in the App&#xA;But would not be visible in the case history"/>
         <elements xmi:type="process:TextAnnotation" xmi:id="_DHihwAdfEeiGn-a9BKu52g" text="Could be replaced by an API call in the App&#xA;But would not be visible in the case history"/>
         <elements xmi:type="process:TextAnnotation" xmi:id="_EA-EIAdfEeiGn-a9BKu52g" text="Could be replaced by an API call in the App&#xA;But would not be visible in the case history"/>
-        <filters xmi:type="process:ActorFilter" xmi:id="_YGTKoPVLEeely9zNRFQjOA" name="autoAssignToCaseInitiator" definitionId="initiator" definitionVersion="1.0.0">
-          <configuration xmi:type="connectorconfiguration:ConnectorConfiguration" xmi:id="_YGTKofVLEeely9zNRFQjOA" definitionId="initiator" version="1.0.0">
-            <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_YGTKovVLEeely9zNRFQjOA" key="autoAssign">
-              <expression xmi:type="expression:Expression" xmi:id="_YGTKo_VLEeely9zNRFQjOA" name="true" content="true" returnType="java.lang.Boolean" returnTypeFixed="true"/>
-            </parameters>
-          </configuration>
-        </filters>
       </elements>
       <resourceFolders xmi:type="process:ResourceFolder" xmi:id="_x6Ii4PSMEeeYpYD60oU_zA" path="_x5qBwfSMEeeYpYD60oU_zA/application/application"/>
       <mandatorySymbol xmi:type="expression:Expression" xmi:id="_x5qCCvSMEeeYpYD60oU_zA" name="" content="" returnTypeFixed="true"/>
@@ -257,21 +250,11 @@
       <data xmi:type="process:BusinessObjectData" xmi:id="_mRGqAPUrEeeJbuCjYn0Nqw" name="customer" dataType="_x5qCPPSMEeeYpYD60oU_zA" className="com.company.model.Customer">
         <defaultValue xmi:type="expression:Expression" xmi:id="_mRGqAfUrEeeJbuCjYn0Nqw" name="" content="" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object"/>
       </data>
-      <connectors xmi:type="process:Connector" xmi:id="_nfYfgCIkEeiJcZ9JqtUjSA" name="updateState" definitionId="case-management-state" event="ON_ENTER" definitionVersion="1.0.0">
-        <configuration xmi:type="connectorconfiguration:ConnectorConfiguration" xmi:id="_nfYfgSIkEeiJcZ9JqtUjSA" definitionId="case-management-state" version="1.0.0" modelVersion="7.6.0-002"/>
-        <outputs xmi:type="expression:Operation" xmi:id="_nfYfgiIkEeiJcZ9JqtUjSA">
-          <leftOperand xmi:type="expression:Expression" xmi:id="_nfYfgyIkEeiJcZ9JqtUjSA" content=""/>
-          <rightOperand xmi:type="expression:Expression" xmi:id="_nfYfhCIkEeiJcZ9JqtUjSA" name="state" content="state" type="CONNECTOR_OUTPUT_TYPE">
-            <referencedElements xmi:type="definition:Output" xmi:id="_nfZGkCIkEeiJcZ9JqtUjSA" name="state" type="java.lang.String"/>
-          </rightOperand>
-          <operator xmi:type="expression:Operator" xmi:id="_nfZGkSIkEeiJcZ9JqtUjSA" type="ASSIGNMENT"/>
-        </outputs>
-      </connectors>
       <confirmationTemplate xmi:type="process:AssociatedFile" xmi:id="_x5qCEPSMEeeYpYD60oU_zA" path="_x5qBwfSMEeeYpYD60oU_zA/html/_x5qBwfSMEeeYpYD60oU_zAconfirmation.html"/>
       <entryRedirectionURL xmi:type="expression:Expression" xmi:id="_x5qCEfSMEeeYpYD60oU_zA" name="" content="" returnTypeFixed="true"/>
       <confirmationMessage xmi:type="expression:Expression" xmi:id="_x5qCEvSMEeeYpYD60oU_zA" name="" content="" returnTypeFixed="true"/>
       <formMapping xmi:type="process:FormMapping" xmi:id="_x5qCE_SMEeeYpYD60oU_zA">
-        <targetForm xmi:type="expression:Expression" xmi:id="_FoCMIydqEeida-blYETd7g" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+        <targetForm xmi:type="expression:Expression" xmi:id="_wdvCsieXEei7d4O1CuuFSg" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
       </formMapping>
       <recapPageFlowRedirectionURL xmi:type="expression:Expression" xmi:id="_x5qCFfSMEeeYpYD60oU_zA" name="" content="" returnTypeFixed="true"/>
       <overviewFormMapping xmi:type="process:FormMapping" xmi:id="_x5qCFvSMEeeYpYD60oU_zA">
@@ -280,7 +263,7 @@
       <viewPageFlowRedirectionURL xmi:type="expression:Expression" xmi:id="_x5qCGPSMEeeYpYD60oU_zA" name="" content="" returnTypeFixed="true"/>
       <connections xmi:type="process:SequenceFlow" xmi:id="_DWOHYPUeEeeREboOt7l4UQ" target="_Rc8KcPUeEeeREboOt7l4UQ" source="_x5qB2fSMEeeYpYD60oU_zA">
         <decisionTable xmi:type="decision:DecisionTable" xmi:id="_DWOHYfUeEeeREboOt7l4UQ"/>
-        <condition xmi:type="expression:Expression" xmi:id="_DWOHYvUeEeeREboOt7l4UQ" name="" type="TYPE_CONDITION" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+        <condition xmi:type="expression:Expression" xmi:id="_DWOHYvUeEeeREboOt7l4UQ" name="" content="" type="TYPE_CONDITION" returnType="java.lang.Boolean" returnTypeFixed="true"/>
       </connections>
       <connections xmi:type="process:SequenceFlow" xmi:id="_FdDRAPUeEeeREboOt7l4UQ" name="Bankrupt reseller" target="_h4S_EPUdEeeREboOt7l4UQ" source="_Rc8KcPUeEeeREboOt7l4UQ">
         <decisionTable xmi:type="decision:DecisionTable" xmi:id="_FdD4EPUeEeeREboOt7l4UQ"/>
@@ -330,44 +313,34 @@
         <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_At-e2QdeEeiGn-a9BKu52g" id="VALIDATOR"/>
         <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_At-e2gdeEeiGn-a9BKu52g" id="OTHER"/>
       </configurations>
-      <configurations xmi:type="configuration:Configuration" xmi:id="_BpLw8CdqEeida-blYETd7g" name="Demo" version="7.6.0-002" username="walter.bates" password="bpm">
-        <actorMappings xmi:type="actormapping:ActorMappingsType" xmi:id="_BpLw8SdqEeida-blYETd7g">
-          <actorMapping xmi:type="actormapping:ActorMapping" xmi:id="_BpLw8idqEeida-blYETd7g" name="Customer">
-            <groups xmi:type="actormapping:Groups" xmi:id="_BpLw8ydqEeida-blYETd7g">
+      <configurations xmi:type="configuration:Configuration" xmi:id="_ZbqSYCeQEei7d4O1CuuFSg" name="Demo" version="7.6.0-002" username="walter.bates" password="bpm">
+        <actorMappings xmi:type="actormapping:ActorMappingsType" xmi:id="_ZbqSYSeQEei7d4O1CuuFSg">
+          <actorMapping xmi:type="actormapping:ActorMapping" xmi:id="_ZbqSYieQEei7d4O1CuuFSg" name="Customer">
+            <groups xmi:type="actormapping:Groups" xmi:id="_ZbqSYyeQEei7d4O1CuuFSg">
               <group>/acme</group>
             </groups>
-            <memberships xmi:type="actormapping:Membership" xmi:id="_BpLw9CdqEeida-blYETd7g"/>
-            <roles xmi:type="actormapping:Roles" xmi:id="_BpLw9SdqEeida-blYETd7g"/>
-            <users xmi:type="actormapping:Users" xmi:id="_BpLw9idqEeida-blYETd7g"/>
+            <memberships xmi:type="actormapping:Membership" xmi:id="_ZbqSZCeQEei7d4O1CuuFSg"/>
+            <roles xmi:type="actormapping:Roles" xmi:id="_ZbqSZSeQEei7d4O1CuuFSg"/>
+            <users xmi:type="actormapping:Users" xmi:id="_ZbqSZieQEei7d4O1CuuFSg"/>
           </actorMapping>
-          <actorMapping xmi:type="actormapping:ActorMapping" xmi:id="_BpLw9ydqEeida-blYETd7g" name="Bank">
-            <groups xmi:type="actormapping:Groups" xmi:id="_BpLw-CdqEeida-blYETd7g">
+          <actorMapping xmi:type="actormapping:ActorMapping" xmi:id="_ZbqSZyeQEei7d4O1CuuFSg" name="Bank">
+            <groups xmi:type="actormapping:Groups" xmi:id="_ZbqSaCeQEei7d4O1CuuFSg">
               <group>/acme</group>
             </groups>
-            <memberships xmi:type="actormapping:Membership" xmi:id="_BpLw-SdqEeida-blYETd7g"/>
-            <roles xmi:type="actormapping:Roles" xmi:id="_BpLw-idqEeida-blYETd7g"/>
-            <users xmi:type="actormapping:Users" xmi:id="_BpLw-ydqEeida-blYETd7g"/>
+            <memberships xmi:type="actormapping:Membership" xmi:id="_ZbqSaSeQEei7d4O1CuuFSg"/>
+            <roles xmi:type="actormapping:Roles" xmi:id="_ZbqSaieQEei7d4O1CuuFSg"/>
+            <users xmi:type="actormapping:Users" xmi:id="_ZbqSayeQEei7d4O1CuuFSg"/>
           </actorMapping>
         </actorMappings>
-        <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_BpLw_CdqEeida-blYETd7g" type="ACTOR_FILTER" definitionId="initiator" definitionVersion="1.0.0" implementationId="initiator-impl" implementationVersion="1.0.0"/>
-        <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_BpLw_SdqEeida-blYETd7g" type="CONNECTOR" definitionId="case-management-state" definitionVersion="1.0.0" implementationId="case-management-state-impl" implementationVersion="1.0.0"/>
-        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_BpLw_idqEeida-blYETd7g" id="ACTOR_FILTER">
-          <children xmi:type="configuration:FragmentContainer" xmi:id="_BpLw_ydqEeida-blYETd7g" id="initiator-impl-1.0.0">
-            <fragments xmi:type="configuration:Fragment" xmi:id="_BpLxACdqEeida-blYETd7g" key="initiator-impl -- 1.0.0" value="bonita-userfilter-initiator-impl-1.0.0-SNAPSHOT.jar" type="ACTOR_FILTER"/>
-          </children>
-        </processDependencies>
-        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_BpLxASdqEeida-blYETd7g" id="CONNECTOR">
-          <children xmi:type="configuration:FragmentContainer" xmi:id="_BpLxAidqEeida-blYETd7g" id="case-management-state-impl-1.0.0">
-            <fragments xmi:type="configuration:Fragment" xmi:id="_BpLxAydqEeida-blYETd7g" key="case-management-state-impl -- 1.0.0" value="case-management-state-impl-1.0.0.jar" type="CONNECTOR"/>
-          </children>
-        </processDependencies>
-        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_BpLxBCdqEeida-blYETd7g" id="DATA_TYPES"/>
-        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_BpLxBSdqEeida-blYETd7g" id="GROOVY_SCRIPT"/>
-        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_BpLxBidqEeida-blYETd7g" id="OTHER"/>
-        <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_BpLxBydqEeida-blYETd7g" id="DATA_TYPES"/>
-        <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_BpLxCCdqEeida-blYETd7g" id="GROOVY_SCRIPT"/>
-        <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_BpLxCSdqEeida-blYETd7g" id="VALIDATOR"/>
-        <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_BpLxCidqEeida-blYETd7g" id="OTHER"/>
+        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_ZbqSbCeQEei7d4O1CuuFSg" id="ACTOR_FILTER"/>
+        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_ZbqSbSeQEei7d4O1CuuFSg" id="CONNECTOR"/>
+        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_ZbqSbieQEei7d4O1CuuFSg" id="DATA_TYPES"/>
+        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_ZbqSbyeQEei7d4O1CuuFSg" id="GROOVY_SCRIPT"/>
+        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_ZbqScCeQEei7d4O1CuuFSg" id="OTHER"/>
+        <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_ZbqScSeQEei7d4O1CuuFSg" id="DATA_TYPES"/>
+        <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_ZbqScieQEei7d4O1CuuFSg" id="GROOVY_SCRIPT"/>
+        <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_ZbqScyeQEei7d4O1CuuFSg" id="VALIDATOR"/>
+        <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_ZbqSdCeQEei7d4O1CuuFSg" id="OTHER"/>
       </configurations>
       <contract xmi:type="process:Contract" xmi:id="_x5qCJPSMEeeYpYD60oU_zA"/>
       <documents xmi:type="process:Document" xmi:id="_iF-48PUhEeeREboOt7l4UQ" name="caseDocuments" multiple="true">
