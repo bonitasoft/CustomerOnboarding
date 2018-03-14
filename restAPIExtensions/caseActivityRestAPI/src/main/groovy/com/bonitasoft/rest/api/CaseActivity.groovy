@@ -65,7 +65,6 @@ class CaseActivity implements RestApiController {
 			done()
 		}).getResult().collect{
 			def state = getState(it,processAPI)
-		
 			if(canExecute(state)) {
 				result << [name:it.displayName,state:state,url:forge(pDef.name,pDef.version,it),description:it.description,target:linkTarget(it)]
 			}else {

@@ -3,7 +3,7 @@
   "previousDesignerVersion" : "1.7.11",
   "id" : "c91a652b-61f9-4551-b385-d86639d0f674",
   "name" : "CaseHistory",
-  "lastUpdate" : 1521023047021,
+  "lastUpdate" : 1521046994941,
   "rows" : [ [ {
     "type" : "component",
     "dimension" : {
@@ -70,7 +70,7 @@
     },
     "events" : {
       "type" : "expression",
-      "value" : "if($data.caseHistory){\n    return $data.caseHistory.map(function(task){\n        return {\n            \"title\": task.displayName,\n            \"body\" : \"<p><p>\"+task.displayDescription+\"</p><span class=\\\"glyphicon glyphicon-user\\\" aria-hidden=\\\"true\\\"></span> \"+task.executedBy.firstname+\" \"+task.executedBy.lastname+\"</p><p><span class=\\\"glyphicon glyphicon-time\\\" aria-hidden=\\\"true\\\"></span> \"+ moment(task.reached_state_date).fromNow() +\"</p>\"\n        };\n    });\n}\nreturn [];",
+      "value" : "if($data.caseHistory){\n    return $data.caseHistory.map(function(task){\n        return {\n            \"title\": task.displayName,\n            \"body\" : \"<p><p>\"+task.displayDescription+\"</p><span class=\\\"glyphicon glyphicon-user\\\" aria-hidden=\\\"true\\\"></span> \"+task.executedBy.firstName+\" \"+task.executedBy.lastName+\"</p><p><span class=\\\"glyphicon glyphicon-time\\\" aria-hidden=\\\"true\\\"></span> \"+ moment(task.reached_state_date).fromNow() +\"</p>\"\n        };\n    });\n}\nreturn [];",
       "exposed" : false
     }
   },

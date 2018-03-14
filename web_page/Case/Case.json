@@ -3,7 +3,7 @@
   "previousDesignerVersion" : "1.7.11",
   "id" : "Case",
   "name" : "Case",
-  "lastUpdate" : 1521039619380,
+  "lastUpdate" : 1521046957317,
   "rows" : [ [ {
     "type" : "container",
     "dimension" : {
@@ -309,7 +309,7 @@
     },
     "caseHistory" : {
       "type" : "url",
-      "value" : "../API/bpm/archivedHumanTask?c=999&p=0&d=executedBy",
+      "value" : "../API/extension/caseHistory?caseId={{caseId}}",
       "exposed" : false
     },
     "caseContext" : {
