@@ -1,26 +1,17 @@
 package com.bonitasoft.rest.api;
 
-import groovy.json.JsonBuilder
-import groovy.json.JsonSlurper
-
-import java.util.stream.Collectors
-
 import javax.servlet.http.HttpServletRequest
 import javax.servlet.http.HttpServletResponse
 
-import org.apache.http.HttpHeaders
-import org.bonitasoft.engine.bpm.flownode.ActivityInstanceSearchDescriptor
-import org.bonitasoft.engine.bpm.flownode.FlowNodeType
-import org.bonitasoft.engine.search.SearchOptionsBuilder
-import org.bonitasoft.web.extension.ResourceProvider
 import org.bonitasoft.web.extension.rest.RestApiResponse
 import org.bonitasoft.web.extension.rest.RestApiResponseBuilder
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 
-import com.bonitasoft.engine.bpm.flownode.ManualTaskCreator
 import com.bonitasoft.web.extension.rest.RestAPIContext
 import com.bonitasoft.web.extension.rest.RestApiController
+
+import groovy.json.JsonSlurper
 
 class UserTask implements RestApiController {
 

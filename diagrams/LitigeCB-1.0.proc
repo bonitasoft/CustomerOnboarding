@@ -16,7 +16,9 @@
           <cardinalityExpression xmi:type="expression:Expression" xmi:id="_x5qB4PSMEeeYpYD60oU_zA" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
           <iteratorExpression xmi:type="expression:Expression" xmi:id="_x5qB4fSMEeeYpYD60oU_zA" name="multiInstanceIterator" content="multiInstanceIterator" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Object" returnTypeFixed="true"/>
           <completionCondition xmi:type="expression:Expression" xmi:id="_x5qB4vSMEeeYpYD60oU_zA" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
-          <BoundaryIntermediateEvents xmi:type="process:BoundaryMessageEvent" xmi:id="_cZ_G0PUeEeeREboOt7l4UQ" name="Manager approval" outgoing="_eRieUPUeEeeREboOt7l4UQ" event="refund"/>
+          <BoundaryIntermediateEvents xmi:type="process:BoundaryMessageEvent" xmi:id="_cZ_G0PUeEeeREboOt7l4UQ" name="Manager approval" outgoing="_eRieUPUeEeeREboOt7l4UQ" event="refund">
+            <correlation xmi:type="expression:TableExpression" xmi:id="_XTcSUCg4Eei6AqIc1Yjorw"/>
+          </BoundaryIntermediateEvents>
           <entryRedirectionURL xmi:type="expression:Expression" xmi:id="_x5qB4_SMEeeYpYD60oU_zA" name="" content="" returnTypeFixed="true"/>
           <confirmationMessage xmi:type="expression:Expression" xmi:id="_x5qB5PSMEeeYpYD60oU_zA" name="" content="" returnTypeFixed="true"/>
           <formMapping xmi:type="process:FormMapping" xmi:id="_x5qB5fSMEeeYpYD60oU_zA">
@@ -43,8 +45,8 @@
           <completionCondition xmi:type="expression:Expression" xmi:id="_x5qCAvSMEeeYpYD60oU_zA" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <entryRedirectionURL xmi:type="expression:Expression" xmi:id="_x5qCA_SMEeeYpYD60oU_zA" name="" content="" returnTypeFixed="true"/>
           <confirmationMessage xmi:type="expression:Expression" xmi:id="_x5qCBPSMEeeYpYD60oU_zA" name="" content="" returnTypeFixed="true"/>
-          <formMapping xmi:type="process:FormMapping" xmi:id="_x5qCBfSMEeeYpYD60oU_zA">
-            <targetForm xmi:type="expression:Expression" xmi:id="_6Z3hYCenEei7d4O1CuuFSg" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+          <formMapping xmi:type="process:FormMapping" xmi:id="_x5qCBfSMEeeYpYD60oU_zA" type="NONE">
+            <targetForm xmi:type="expression:Expression" xmi:id="_6Z3hYCenEei7d4O1CuuFSg" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
           </formMapping>
           <contract xmi:type="process:Contract" xmi:id="_x5qCB_SMEeeYpYD60oU_zA">
             <inputs xmi:type="process:ContractInput" xmi:id="_0zvXsPYVEeesarEo_Te_Dg" name="name">
@@ -182,7 +184,7 @@
           <entryRedirectionURL xmi:type="expression:Expression" xmi:id="_AKBJxPUhEeeREboOt7l4UQ" name="" content="" returnTypeFixed="true"/>
           <confirmationMessage xmi:type="expression:Expression" xmi:id="_AKBJxfUhEeeREboOt7l4UQ" name="" content="" returnTypeFixed="true"/>
           <formMapping xmi:type="process:FormMapping" xmi:id="_AKBJzPUhEeeREboOt7l4UQ">
-            <targetForm xmi:type="expression:Expression" xmi:id="_6Z3hYSenEei7d4O1CuuFSg" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+            <targetForm xmi:type="expression:Expression" xmi:id="_Fb07ECg5Eei6AqIc1Yjorw" name="AddDocumentForm" content="0c213a2f-42f6-44b0-b515-f063ae5ffc48" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
           </formMapping>
           <contract xmi:type="process:Contract" xmi:id="_AKBJy_UhEeeREboOt7l4UQ">
             <inputs xmi:type="process:ContractInput" xmi:id="_nAK7APUhEeeREboOt7l4UQ" name="documents" type="FILE" multiple="true"/>
@@ -254,7 +256,7 @@
       <entryRedirectionURL xmi:type="expression:Expression" xmi:id="_x5qCEfSMEeeYpYD60oU_zA" name="" content="" returnTypeFixed="true"/>
       <confirmationMessage xmi:type="expression:Expression" xmi:id="_x5qCEvSMEeeYpYD60oU_zA" name="" content="" returnTypeFixed="true"/>
       <formMapping xmi:type="process:FormMapping" xmi:id="_x5qCE_SMEeeYpYD60oU_zA">
-        <targetForm xmi:type="expression:Expression" xmi:id="_6Z3hYienEei7d4O1CuuFSg" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+        <targetForm xmi:type="expression:Expression" xmi:id="_KicPkCg5Eei6AqIc1Yjorw" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
       </formMapping>
       <recapPageFlowRedirectionURL xmi:type="expression:Expression" xmi:id="_x5qCFfSMEeeYpYD60oU_zA" name="" content="" returnTypeFixed="true"/>
       <overviewFormMapping xmi:type="process:FormMapping" xmi:id="_x5qCFvSMEeeYpYD60oU_zA">
