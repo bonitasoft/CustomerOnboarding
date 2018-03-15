@@ -33,12 +33,13 @@ class CaseActivity implements RestApiController {
 
     @Override
     RestApiResponse doHandle(HttpServletRequest request, RestApiResponseBuilder responseBuilder, RestAPIContext context) {
+		def contextPath = "http://$request.localName:$request.localPort$request.contextPath"
         def caseId = request.getParameter "caseId"
         if (!caseId) {
             return buildResponse(responseBuilder, HttpServletResponse.SC_BAD_REQUEST,"""{"error" : "the parameter caseId is missing"}""")
         }
 
-		def processAPI = context.apiClient.getProcessAPI()
+		def ProcessAPI processAPI = context.apiClient.getProcessAPI()
 		def pDef = -1;
 		try {
 			 pDef = processAPI.getProcessDefinition(processAPI.getProcessDefinitionIdFromProcessInstanceId(caseId.toLong()))
@@ -54,16 +55,10 @@ class CaseActivity implements RestApiController {
 		}
 		def result = []
 		//Retrieve pending activities
-		processAPI.searchHumanTaskInstances(new SearchOptionsBuilder(0, Integer.MAX_VALUE).with {
-			filter(ActivityInstanceSearchDescriptor.PROCESS_INSTANCE_ID, caseId)
-			differentFrom(ActivityInstanceSearchDescriptor.NAME, ACTIVITY_CONTAINER)
-			and()
-			differentFrom(ActivityInstanceSearchDescriptor.NAME, CREATE_ACTIVITY)
-			done()
-		}).getResult().collect{
-			def state = getState(it,processAPI)
-			if(canExecute(state)) {
-				result << [name:it.displayName,state:state,url:forge(pDef.name,pDef.version,it),description:it.description,target:linkTarget(it)]
+		CaseActivityHelper.searchOpenedTasks(caseId, processAPI).getResult().collect{
+			def state = CaseActivityHelper.getState(it,processAPI)
+			if(CaseActivityHelper.canExecute(state)) {
+				result << [name:it.displayName,state:state,url:forge(pDef.name,pDef.version,it,contextPath),description:it.description,target:linkTarget(it)]
 			}else {
 				result << [name:it.displayName,state:state,description:it.description]
 			}
@@ -77,7 +72,7 @@ class CaseActivity implements RestApiController {
 			done()
 		}).getResult().collect{
 			if(!loopTasks.contains(it.name)) {
-				result << [name:it.displayName,state:[name:it.state,id:idOfState(it.state)],description:it.description]
+				result << [name:it.displayName,state:[name:it.state,id:CaseActivityHelper.idOfState(it.state)],description:it.description]
 			}
 		}
 		
@@ -85,7 +80,7 @@ class CaseActivity implements RestApiController {
 		designProcessDefinition.getFlowElementContainer().getActivities().findAll{
 			it instanceof HumanTaskDefinition && !result.name.contains(it.name) && !ACTIVITY_CONTAINER.equals(it.name) && !CREATE_ACTIVITY.equals(it.name)
 		}.collect{
-			result << [name:it.name,state:[name:"N/A",id:idOfState("N/A")],description:it.description]
+			result << [name:it.name,state:[name:"N/A",id:CaseActivityHelper.idOfState("N/A")],description:it.description]
 		}
 		
         return buildResponse(responseBuilder, HttpServletResponse.SC_OK, new JsonBuilder(result.sort {a1,a2 ->
@@ -93,42 +88,12 @@ class CaseActivity implements RestApiController {
 		}).toString())
     }
 	
-	def canExecute(state) {
-		return state.name != "N/A"&& 
-			   state.name != ActivityStates.COMPLETED_STATE &&
-			   state.name != ActivityStates.FAILED_STATE &&
-			   state.name != ActivityStates.ABORTED_STATE
-	}
 	
-	def getState(ActivityInstance activityInstance, ProcessAPI processAPI) {
-		try {
-			def defaultState = activityInstance.getState()
-			def instance = processAPI.getActivityDataInstance("activityState", activityInstance.id);
-			if(defaultState == ActivityStates.ABORTED_STATE || defaultState == ActivityStates.FAILED_STATE ) {
-				return [name:defaultState,id:idOfState(instance.value)]
-			}
-			return [name:instance.value,id:idOfState(instance.value)]
-		}catch(DataNotFoundException e) {
-			return [name:"Optional",id:idOfState("Optional")]
-		}
-	}
-	
-	def idOfState(state) {
-		switch(state) {
-			case "Required": return 1
-			case "Optional": return 2
-			case "Discretionary" : return 3
-			case "N/A": return 4
-			case "completed" : return 5
-			default: return 6
-		}
-	}
-	
-	def String forge(String processName,String processVersion,ActivityInstance instance) {
+	def String forge(String processName,String processVersion,ActivityInstance instance,contextPath) {
 		if(instance instanceof UserTaskInstance) {
-			"http://localhost:8080/bonita/portal/resource/taskInstance/$processName/$processVersion/$instance.name/content/?id=$instance.id&displayConfirmation=false"
+			"$contextPath/portal/resource/taskInstance/$processName/$processVersion/$instance.name/content/?id=$instance.id&displayConfirmation=false"
 		}else if(instance instanceof ManualTaskInstance) {
-			"http://localhost:8080/bonita/apps/cases/do?id=$instance.id"
+			"$contextPath/apps/cases/do?id=$instance.id"
 		}
 	}
 	
