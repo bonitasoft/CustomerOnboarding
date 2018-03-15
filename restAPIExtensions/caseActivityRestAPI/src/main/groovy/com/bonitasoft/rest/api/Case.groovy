@@ -31,14 +31,14 @@ class Case implements RestApiController {
 			done()
 		}).getResult()
 		.collect{
-			[id:it.id,name:processName(it.processDefinitionId,processAPI),state:it.state,viewAction:viewActionLink(it.id,processAPI,contextPath)]
+			[id:it.id,name:processName(it.processDefinitionId,processAPI),state:asLabel(it.state.toUpperCase(),"info"),viewAction:viewActionLink(it.id,processAPI,contextPath)]
 		}
 	
 		processAPI.searchArchivedProcessInstances(new SearchOptionsBuilder(0, 9999).with {
 			done()
 		}).getResult()
 		.collect{
-			result << [id:it.sourceObjectId,name:processName(it.processDefinitionId,processAPI),state:it.state,viewAction:viewActionLink(it.sourceObjectId,processAPI,contextPath)]
+			result << [id:it.sourceObjectId,name:processName(it.processDefinitionId,processAPI),state:asLabel(it.state.toUpperCase(),"default"),viewAction:viewActionLink(it.sourceObjectId,processAPI,contextPath)]
 		}
 		
 		return responseBuilder.with {
@@ -46,6 +46,9 @@ class Case implements RestApiController {
 			withResponse(new JsonBuilder(result).toString())
 			build()
 		}
+	}
+	def asLabel(state,style) {
+		"""<span class="label label-$style">$state</span>"""
 	}
 	
 	def String processName(long processDefId,ProcessAPI processAPI) {
@@ -57,7 +60,7 @@ class Case implements RestApiController {
 		def openTasks = CaseActivityHelper.searchOpenedTasks(caseId,processAPI).result
 		.findAll{CaseActivityHelper.canExecute(CaseActivityHelper.getState(it,processAPI))}
 		if(openTasks.size() > 0) {
-			return """<a class="btn btn-primary btn-sm" href="$contextPath/apps/cases/case?id=$caseId" target="_target">View case <span class="badge"> $openTasks.size</span></a>"""
+			return """<a class="btn btn-primary btn-sm" href="$contextPath/apps/cases/case?id=$caseId" target="_target">Open <span class="badge"> $openTasks.size</span></a>"""
 		}else {
 			return ""
 		}
