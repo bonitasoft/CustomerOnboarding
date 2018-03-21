@@ -25,7 +25,7 @@ class Case implements RestApiController {
 
 	@Override
 	RestApiResponse doHandle(HttpServletRequest request, RestApiResponseBuilder responseBuilder, RestAPIContext context) {
-		def contextPath = "http://$request.localName:$request.localPort$request.contextPath"
+		def contextPath = "http://localhost:$request.localPort$request.contextPath"
 		def processAPI = context.apiClient.getProcessAPI()
 		def result = processAPI.searchProcessInstances(new SearchOptionsBuilder(0, 9999).with {
 			done()

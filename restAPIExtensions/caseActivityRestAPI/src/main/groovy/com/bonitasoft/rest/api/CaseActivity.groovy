@@ -33,7 +33,7 @@ class CaseActivity implements RestApiController {
 
     @Override
     RestApiResponse doHandle(HttpServletRequest request, RestApiResponseBuilder responseBuilder, RestAPIContext context) {
-		def contextPath = "http://$request.localName:$request.localPort$request.contextPath"
+		def contextPath = "http://localhost:$request.localPort$request.contextPath"
         def caseId = request.getParameter "caseId"
         if (!caseId) {
             return buildResponse(responseBuilder, HttpServletResponse.SC_BAD_REQUEST,"""{"error" : "the parameter caseId is missing"}""")
