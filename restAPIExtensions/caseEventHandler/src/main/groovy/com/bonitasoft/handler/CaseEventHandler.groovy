@@ -39,20 +39,19 @@ import javassist.bytecode.stackmap.BasicBlock.Catch
 
 class CaseEventHandler implements SHandler<SEvent> {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(CaseEventHandler.class)
+	private static final Logger LOGGER = LoggerFactory.getLogger(CaseEventHandler.class)
 	private static final String ACTIVITY_CONTAINER = "Dymanic Activity Container"
 	private static final String CREATE_ACTIVITY = "Create Activity"
-	
-	public CaseEventHandler(){
 
+	public CaseEventHandler(){
 	}
-	
+
 	@Override
 	public void execute(SEvent event) throws SHandlerExecutionException {
 		def SUserTaskInstance taskInstance =  event.getObject()
 		def processInstanceId = taskInstance.parentProcessInstanceId
 		ProcessAPI processAPI = new ProcessAPIImpl()
-	    def allDataToUpdate = processAPI.searchHumanTaskInstances(new SearchOptionsBuilder(0, Integer.MAX_VALUE).with {
+		def allDataToUpdate = processAPI.searchHumanTaskInstances(new SearchOptionsBuilder(0, Integer.MAX_VALUE).with {
 			filter(ActivityInstanceSearchDescriptor.PROCESS_INSTANCE_ID, processInstanceId)
 			differentFrom(ActivityInstanceSearchDescriptor.NAME, ACTIVITY_CONTAINER)
 			and()
@@ -61,16 +60,14 @@ class CaseEventHandler implements SHandler<SEvent> {
 			filter(ActivityInstanceSearchDescriptor.STATE_NAME, ActivityStates.READY_STATE)
 			done()
 		}).getResult()
-		.collect{ HumanTaskInstance task -> 
+		.collect{ HumanTaskInstance task ->
 			def DesignProcessDefinition design = processAPI.getDesignProcessDefinition(taskInstance.processDefinitionId)
-			def connectorDef = design.getFlowElementContainer().getConnectors().find{ it -> it.name == "updateState" }
 			try{
 				[
-			    definition:processAPI.getActivityDataDefinitions(taskInstance.processDefinitionId, task.name, 0, Integer.MAX_VALUE).find {it.name == "activityState"},
-				instance:processAPI.getActivityDataInstance("activityState", task.id),
-				taskId:task.id,
-				connectorDef:connectorDef,
-				processDefId:taskInstance.processDefinitionId
+					definition:processAPI.getActivityDataDefinitions(taskInstance.processDefinitionId, task.name, 0, Integer.MAX_VALUE).find {it.name == "activityState"},
+					instance:processAPI.getActivityDataInstance("activityState", task.id),
+					taskId:task.id,
+					processDefId:taskInstance.processDefinitionId
 				]
 			} catch( DataNotFoundException e) {
 				println "No 'activityState' data defined in $task.displayName"
@@ -78,27 +75,16 @@ class CaseEventHandler implements SHandler<SEvent> {
 				println "No 'activityState' data defined in $task.name"
 			}
 		}.findAll { it != null && it.definition != null }
-		.each { 
-			def ConnectorDefinition connectorDef = it.connectorDef
-		    def DataDefinition dataDefinition = it.definition
+		.each {
+			def DataDefinition dataDefinition = it.definition
 			def DataInstance dataInstance = it.instance
-			def newValue ;
-			if(connectorDef) {
-				println "refreshing state using connector"
-				def result = processAPI.executeConnectorOnProcessDefinition(connectorDef.connectorId, 
-					connectorDef.version, 
-					[:], 
-					[:],
-					it.processDefId)
-				newValue = result["state"]
-			}else {
-				println "refreshing state using data default value expression"
-				def deps = [:]
-				def expressions = [:]
-				expressions.put(dataDefinition.defaultValueExpression, deps)
-				def result = processAPI.evaluateExpressionsOnActivityInstance(it.taskId, expressions)
-				 newValue =result.values()[0]
-			}
+			println "refreshing state using data default value expression"
+			def deps = [:]
+			def expressions = [:]
+			expressions.put(dataDefinition.defaultValueExpression, deps)
+			def result = processAPI.evaluateExpressionsOnActivityInstance(it.taskId, expressions)
+			def newValue =result.values()[0]
+
 			processAPI.updateActivityDataInstance("activityState", it.taskId, newValue)
 			println "'activityState' value of $it.taskId has been updated to $newValue"
 		}
@@ -107,18 +93,14 @@ class CaseEventHandler implements SHandler<SEvent> {
 	@Override
 	public boolean isInterested(SEvent event) {
 		return event.getType() == "ACTIVITYINSTANCE_STATE_UPDATED" &&
-		  event.asType(SUpdateEvent) &&
-		  event.getObject() instanceof SUserTaskInstance &&
-		  ((SUserTaskInstance)event.getObject()).stateName == ActivityStates.COMPLETED_STATE &&
-		  ((SUserTaskInstance)event.getObject()).name != "Dymanic Activity Container"
+				event.asType(SUpdateEvent) &&
+				event.getObject() instanceof SUserTaskInstance &&
+				((SUserTaskInstance)event.getObject()).stateName == ActivityStates.COMPLETED_STATE &&
+				((SUserTaskInstance)event.getObject()).name != "Dymanic Activity Container"
 	}
 
 	@Override
 	public String getIdentifier() {
 		return UUID.randomUUID().toString();
 	}
-
-
-
-
 }

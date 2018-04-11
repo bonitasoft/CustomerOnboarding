@@ -14,8 +14,11 @@ target/
 
 #web component preferenes
 /web_widgets/.metadata
+/web_widgets/*/*.js
 /web_fragments/.metadata
+/web_fragments/*/*.js
 /web_page/.metadata
+/web_page/*/js
 
 #bdm jar dependency is regenerate from bom.xml file
 /lib/bdm-client-pojo.jar

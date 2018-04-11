@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<definition:ConnectorDefinition xmlns:definition="http://www.bonitasoft.org/ns/connector/definition/6.1">
-  <id>case-management-state</id>
-  <version>1.0.0</version>
-  <output name="state" type="java.lang.String"/>
-</definition:ConnectorDefinition>
