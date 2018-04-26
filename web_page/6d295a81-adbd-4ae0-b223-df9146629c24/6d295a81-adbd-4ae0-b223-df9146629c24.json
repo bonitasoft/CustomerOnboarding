@@ -3,7 +3,7 @@
   "previousDesignerVersion" : "1.7.11",
   "id" : "6d295a81-adbd-4ae0-b223-df9146629c24",
   "name" : "ExecuteManualTask",
-  "lastUpdate" : 1524743720973,
+  "lastUpdate" : 1524751347527,
   "rows" : [ [ {
     "type" : "formContainer",
     "dimension" : {
@@ -49,21 +49,21 @@
             "type" : "constant",
             "value" : false
           },
+          "allowHTML" : {
+            "type" : "constant",
+            "value" : true
+          },
           "text" : {
             "type" : "interpolation",
-            "value" : "{{ task.displayName }}"
-          },
-          "level" : {
-            "type" : "constant",
-            "value" : "Level 2"
+            "value" : "<h2>{{ task.displayName }}</h2>"
           },
           "alignment" : {
             "type" : "constant",
             "value" : "center"
           }
         },
-        "reference" : "13d76310-17d0-40bd-be9d-124f47ed39a7",
-        "id" : "pbTitle"
+        "reference" : "3cbbbdd7-1dd2-4fa3-a420-3ee58eca96d9",
+        "id" : "pbText"
       } ], [ {
         "type" : "component",
         "dimension" : {

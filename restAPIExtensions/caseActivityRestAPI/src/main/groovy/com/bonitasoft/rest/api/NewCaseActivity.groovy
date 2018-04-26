@@ -45,7 +45,7 @@ class NewCaseActivity implements RestApiController {
 		processAPI.assignUserTask(containerId, context.apiSession.userId)
 		def task = processAPI
 				.addManualUserTask(new ManualTaskCreator(containerId, jsonBody.name).with{
-					setDisplayName( jsonBody.name )
+					setDisplayName( "&#x2795 $jsonBody.name" )
 					setDescription(jsonBody.description)
 					setAssignTo(context.apiSession.userId)
 					setDueDate(null)
