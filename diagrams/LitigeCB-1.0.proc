@@ -194,7 +194,7 @@
         <elements xmi:type="process:Task" xmi:id="_H41PkPUhEeeREboOt7l4UQ" name="Add Comment" type="STANDARD" overrideActorsOfTheLane="false">
           <textAnnotationAttachment xmi:type="process:TextAnnotationAttachment" xmi:id="_6Yr7QAdeEeiGn-a9BKu52g" source="_6YmbsAdeEeiGn-a9BKu52g"/>
           <viewPageFlowRedirectionURL xmi:type="expression:Expression" xmi:id="_H42ds_UhEeeREboOt7l4UQ" name="" content="" returnTypeFixed="true"/>
-          <dynamicLabel xmi:type="expression:Expression" xmi:id="_H42dsfUhEeeREboOt7l4UQ" name="&amp;#128493; Add Comment" content="&amp;#128493; Add Comment" returnTypeFixed="true"/>
+          <dynamicLabel xmi:type="expression:Expression" xmi:id="_H42dsfUhEeeREboOt7l4UQ" name="&amp;#128172;  Add Comment" content="&amp;#128172;  Add Comment" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_H42dsPUhEeeREboOt7l4UQ" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_H42dsvUhEeeREboOt7l4UQ" name="" content="" returnTypeFixed="true"/>
           <data xmi:type="process:Data" xmi:id="_KP5WUPVdEeely9zNRFQjOA" name="activityState" dataType="_x5qCOfSMEeeYpYD60oU_zA">
