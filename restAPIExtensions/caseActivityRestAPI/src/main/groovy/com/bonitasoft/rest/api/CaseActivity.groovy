@@ -33,7 +33,7 @@ class CaseActivity implements RestApiController {
 
     @Override
     RestApiResponse doHandle(HttpServletRequest request, RestApiResponseBuilder responseBuilder, RestAPIContext context) {
-		def contextPath = "http://localhost:$request.localPort$request.contextPath"
+		def contextPath = "http://$request.serverName:$request.localPort$request.contextPath"
         def caseId = request.getParameter "caseId"
         if (!caseId) {
             return buildResponse(responseBuilder, HttpServletResponse.SC_BAD_REQUEST,"""{"error" : "the parameter caseId is missing"}""")
@@ -58,9 +58,9 @@ class CaseActivity implements RestApiController {
 		CaseActivityHelper.searchOpenedTasks(caseId, processAPI).getResult().collect{
 			def state = CaseActivityHelper.getState(it,processAPI)
 			if(CaseActivityHelper.canExecute(state)) {
-				result << [name:it.displayName,state:state,url:forge(pDef.name,pDef.version,it,contextPath),description:it.description,target:linkTarget(it)]
+				result << [id:it.name,name:it.displayName,state:state,url:forge(pDef.name,pDef.version,it,contextPath),description:it.description,target:linkTarget(it)]
 			}else {
-				result << [name:it.displayName,state:state,description:it.description]
+				result << [id:it.name,name:it.displayName,state:state,description:it.description]
 			}
 		}
 		//Retrieve finished activities
@@ -72,15 +72,15 @@ class CaseActivity implements RestApiController {
 			done()
 		}).getResult().collect{
 			if(!loopTasks.contains(it.name)) {
-				result << [name:it.displayName,state:[name:it.state,id:CaseActivityHelper.idOfState(it.state)],description:it.description]
+				result << [id:it.name,name:it.displayName,state:[name:it.state,id:CaseActivityHelper.idOfState(it.state)],description:it.description]
 			}
 		}
 		
 		//Retrieve N/A activities
 		designProcessDefinition.getFlowElementContainer().getActivities().findAll{
-			it instanceof HumanTaskDefinition && !result.name.contains(it.name) && !ACTIVITY_CONTAINER.equals(it.name) && !CREATE_ACTIVITY.equals(it.name)
+			it instanceof HumanTaskDefinition && !result.id.contains(it.name) && !ACTIVITY_CONTAINER.equals(it.name) && !CREATE_ACTIVITY.equals(it.name)
 		}.collect{
-			result << [name:it.name,state:[name:"N/A",id:CaseActivityHelper.idOfState("N/A")],description:it.description]
+			result << [id:it.name,name:it.name,state:[name:"N/A",id:CaseActivityHelper.idOfState("N/A")],description:it.description]
 		}
 		
         return buildResponse(responseBuilder, HttpServletResponse.SC_OK, new JsonBuilder(result.sort {a1,a2 ->

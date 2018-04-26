@@ -3,9 +3,9 @@
   <process:MainProcess xmi:id="_x5qBwPSMEeeYpYD60oU_zA" name="LitigeCB" author="romain" bonitaVersion="7.7.0" bonitaModelVersion="7.6.0-002" configId="ACED00057400184C69746967654342372E362E302D303032372E372E307370">
     <elements xmi:type="process:Pool" xmi:id="_x5qBwfSMEeeYpYD60oU_zA" name="Litige CB" welcomePageInternal="false" basedOnLookAndFeel="Default Application">
       <elements xmi:type="process:Lane" xmi:id="_x5qByPSMEeeYpYD60oU_zA" name="Bank" actor="_x5qCI_SMEeeYpYD60oU_zA">
-        <elements xmi:type="process:Task" xmi:id="_x5qB2fSMEeeYpYD60oU_zA" name="🔍 Investigate transaction" outgoing="_DWOHYPUeEeeREboOt7l4UQ" overrideActorsOfTheLane="false">
+        <elements xmi:type="process:Task" xmi:id="_x5qB2fSMEeeYpYD60oU_zA" name="Investigate transaction" outgoing="_DWOHYPUeEeeREboOt7l4UQ" overrideActorsOfTheLane="false">
           <viewPageFlowRedirectionURL xmi:type="expression:Expression" xmi:id="_x5qB2vSMEeeYpYD60oU_zA" name="" content="" returnTypeFixed="true"/>
-          <dynamicLabel xmi:type="expression:Expression" xmi:id="_x5qB2_SMEeeYpYD60oU_zA" name="" content="" returnTypeFixed="true"/>
+          <dynamicLabel xmi:type="expression:Expression" xmi:id="_x5qB2_SMEeeYpYD60oU_zA" name="&amp;#128269;  Investigate transaction" content="&amp;#128269;  Investigate transaction" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_x5qB3PSMEeeYpYD60oU_zA" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_x5qB3fSMEeeYpYD60oU_zA" name="" content="" returnTypeFixed="true"/>
           <data xmi:type="process:Data" xmi:id="_vBZpQAHUEeiNfNN2BDEehQ" name="activityState" dataType="_x5qCOfSMEeeYpYD60oU_zA">
@@ -55,9 +55,9 @@
           </contract>
           <expectedDuration xmi:type="expression:Expression" xmi:id="_x5qCCPSMEeeYpYD60oU_zA" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
         </elements>
-        <elements xmi:type="process:Task" xmi:id="_HGQf8PUdEeeREboOt7l4UQ" name="📱 Call customer" type="STANDARD" testBefore="true" overrideActorsOfTheLane="false">
+        <elements xmi:type="process:Task" xmi:id="_HGQf8PUdEeeREboOt7l4UQ" name="Call customer" type="STANDARD" testBefore="true" overrideActorsOfTheLane="false">
           <viewPageFlowRedirectionURL xmi:type="expression:Expression" xmi:id="_HGUxY_UdEeeREboOt7l4UQ" name="" content="" returnTypeFixed="true"/>
-          <dynamicLabel xmi:type="expression:Expression" xmi:id="_HGUxYfUdEeeREboOt7l4UQ" name="" content="" returnTypeFixed="true"/>
+          <dynamicLabel xmi:type="expression:Expression" xmi:id="_HGUxYfUdEeeREboOt7l4UQ" name="&amp;#128241; Call customer" content="&amp;#128241; Call customer" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_HGUxYPUdEeeREboOt7l4UQ" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_HGUxYvUdEeeREboOt7l4UQ" name="" content="" returnTypeFixed="true"/>
           <data xmi:type="process:Data" xmi:id="_fjNc8AHUEeiNfNN2BDEehQ" name="activityState" dataType="_x5qCOfSMEeeYpYD60oU_zA">
@@ -79,9 +79,9 @@
           <contract xmi:type="process:Contract" xmi:id="_HGVYcvUdEeeREboOt7l4UQ"/>
           <expectedDuration xmi:type="expression:Expression" xmi:id="_HGVYdfUdEeeREboOt7l4UQ" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
         </elements>
-        <elements xmi:type="process:Task" xmi:id="_h4S_EPUdEeeREboOt7l4UQ" name="💳 Refund Customer" outgoing="_T0AoQPYKEeesarEo_Te_Dg" incoming="_FdDRAPUeEeeREboOt7l4UQ _eRieUPUeEeeREboOt7l4UQ" overrideActorsOfTheLane="false">
+        <elements xmi:type="process:Task" xmi:id="_h4S_EPUdEeeREboOt7l4UQ" name="Refund Customer" outgoing="_T0AoQPYKEeesarEo_Te_Dg" incoming="_FdDRAPUeEeeREboOt7l4UQ _eRieUPUeEeeREboOt7l4UQ" overrideActorsOfTheLane="false">
           <viewPageFlowRedirectionURL xmi:type="expression:Expression" xmi:id="_hp26c_UdEeeREboOt7l4UQ" name="" content="" returnTypeFixed="true"/>
-          <dynamicLabel xmi:type="expression:Expression" xmi:id="_hp26cfUdEeeREboOt7l4UQ" name="" content="" returnTypeFixed="true"/>
+          <dynamicLabel xmi:type="expression:Expression" xmi:id="_hp26cfUdEeeREboOt7l4UQ" name="&amp;#128179; Refund Customer" content="&amp;#128179; Refund Customer" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_hp26cPUdEeeREboOt7l4UQ" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_hp26cvUdEeeREboOt7l4UQ" name="" content="" returnTypeFixed="true"/>
           <data xmi:type="process:Data" xmi:id="_8F-54AHUEeiNfNN2BDEehQ" name="activityState" dataType="_x5qCOfSMEeeYpYD60oU_zA">
@@ -106,9 +106,9 @@
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_DWB6IPUeEeeREboOt7l4UQ" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_DWB6IvUeEeeREboOt7l4UQ" name="" content="" returnTypeFixed="true"/>
         </elements>
-        <elements xmi:type="process:Task" xmi:id="_3BX_sPUfEeeREboOt7l4UQ" name="✓ Resolve" incoming="_1BP7APUfEeeREboOt7l4UQ _T0AoQPYKEeesarEo_Te_Dg" overrideActorsOfTheLane="false">
+        <elements xmi:type="process:Task" xmi:id="_3BX_sPUfEeeREboOt7l4UQ" name="Resolve" incoming="_1BP7APUfEeeREboOt7l4UQ _T0AoQPYKEeesarEo_Te_Dg" overrideActorsOfTheLane="false">
           <viewPageFlowRedirectionURL xmi:type="expression:Expression" xmi:id="_1BImRPUfEeeREboOt7l4UQ" name="" content="" returnTypeFixed="true"/>
-          <dynamicLabel xmi:type="expression:Expression" xmi:id="_1BImQvUfEeeREboOt7l4UQ" name="" content="" returnTypeFixed="true"/>
+          <dynamicLabel xmi:type="expression:Expression" xmi:id="_1BImQvUfEeeREboOt7l4UQ" name="&amp;#10003; Resolve" content="&amp;#10003; Resolve" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_1BImQfUfEeeREboOt7l4UQ" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_1BImQ_UfEeeREboOt7l4UQ" name="" content="" returnTypeFixed="true"/>
           <data xmi:type="process:Data" xmi:id="_2av1YAHUEeiNfNN2BDEehQ" name="activityState" dataType="_x5qCOfSMEeeYpYD60oU_zA">
@@ -127,10 +127,10 @@
           <contract xmi:type="process:Contract" xmi:id="_3BYmy_UfEeeREboOt7l4UQ"/>
           <expectedDuration xmi:type="expression:Expression" xmi:id="_3BZN0fUfEeeREboOt7l4UQ" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
         </elements>
-        <elements xmi:type="process:Task" xmi:id="_-LI3sPUfEeeREboOt7l4UQ" name="↺ Spread Solution" overrideActorsOfTheLane="false">
+        <elements xmi:type="process:Task" xmi:id="_-LI3sPUfEeeREboOt7l4UQ" name="Spread Solution" overrideActorsOfTheLane="false">
           <textAnnotationAttachment xmi:type="process:TextAnnotationAttachment" xmi:id="_q1iWcAdeEeiGn-a9BKu52g" source="_q1JU4AdeEeiGn-a9BKu52g"/>
           <viewPageFlowRedirectionURL xmi:type="expression:Expression" xmi:id="_99p1U_UfEeeREboOt7l4UQ" name="" content="" returnTypeFixed="true"/>
-          <dynamicLabel xmi:type="expression:Expression" xmi:id="_99p1UfUfEeeREboOt7l4UQ" name="" content="" returnTypeFixed="true"/>
+          <dynamicLabel xmi:type="expression:Expression" xmi:id="_99p1UfUfEeeREboOt7l4UQ" name="&amp;#8634;  Spread Solution" content="&amp;#8634;  Spread Solution" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_99p1UPUfEeeREboOt7l4UQ" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_99p1UvUfEeeREboOt7l4UQ" name="" content="" returnTypeFixed="true"/>
           <data xmi:type="process:Data" xmi:id="_Fzyb8AHVEeiNfNN2BDEehQ" name="activityState" dataType="_x5qCOfSMEeeYpYD60oU_zA">
@@ -152,10 +152,10 @@
           <contract xmi:type="process:Contract" xmi:id="_-LI3vPUfEeeREboOt7l4UQ"/>
           <expectedDuration xmi:type="expression:Expression" xmi:id="_-LJewPUfEeeREboOt7l4UQ" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
         </elements>
-        <elements xmi:type="process:Task" xmi:id="_AJ_7oPUhEeeREboOt7l4UQ" name=" 📎 Add Document" type="STANDARD" testBefore="true" overrideActorsOfTheLane="false">
+        <elements xmi:type="process:Task" xmi:id="_AJ_7oPUhEeeREboOt7l4UQ" name="Add Document" type="STANDARD" testBefore="true" overrideActorsOfTheLane="false">
           <textAnnotationAttachment xmi:type="process:TextAnnotationAttachment" xmi:id="_DHmzMAdfEeiGn-a9BKu52g" source="_DHihwAdfEeiGn-a9BKu52g"/>
           <viewPageFlowRedirectionURL xmi:type="expression:Expression" xmi:id="_AKBJw_UhEeeREboOt7l4UQ" name="" content="" returnTypeFixed="true"/>
-          <dynamicLabel xmi:type="expression:Expression" xmi:id="_AKBJwfUhEeeREboOt7l4UQ" name="" content="" returnTypeFixed="true"/>
+          <dynamicLabel xmi:type="expression:Expression" xmi:id="_AKBJwfUhEeeREboOt7l4UQ" name="&amp;#128206; Add Document" content="&amp;#128206; Add Document" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_AKBJwPUhEeeREboOt7l4UQ" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_AKBJwvUhEeeREboOt7l4UQ" name="descriptionAfterCompletion()" content="&quot;&lt;ul>&quot;+documents.collect{ &quot;&lt;li>&lt;span class=\&quot;glyphicon glyphicon-file\&quot; aria-hidden=\&quot;true\&quot;>&lt;/span> &quot;+it.fileName+&quot;&lt;/li>&quot;}.join(&quot;&quot;)+&quot;&lt;/ul>&quot;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true">
             <referencedElements xmi:type="process:ContractInput" xmi:id="_NlFGMPYdEeesarEo_Te_Dg" name="documents" type="FILE" multiple="true"/>
@@ -191,10 +191,10 @@
           </contract>
           <expectedDuration xmi:type="expression:Expression" xmi:id="_AKBJzvUhEeeREboOt7l4UQ" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
         </elements>
-        <elements xmi:type="process:Task" xmi:id="_H41PkPUhEeeREboOt7l4UQ" name="🗭 Add Comment" type="STANDARD" overrideActorsOfTheLane="false">
+        <elements xmi:type="process:Task" xmi:id="_H41PkPUhEeeREboOt7l4UQ" name="Add Comment" type="STANDARD" overrideActorsOfTheLane="false">
           <textAnnotationAttachment xmi:type="process:TextAnnotationAttachment" xmi:id="_6Yr7QAdeEeiGn-a9BKu52g" source="_6YmbsAdeEeiGn-a9BKu52g"/>
           <viewPageFlowRedirectionURL xmi:type="expression:Expression" xmi:id="_H42ds_UhEeeREboOt7l4UQ" name="" content="" returnTypeFixed="true"/>
-          <dynamicLabel xmi:type="expression:Expression" xmi:id="_H42dsfUhEeeREboOt7l4UQ" name="" content="" returnTypeFixed="true"/>
+          <dynamicLabel xmi:type="expression:Expression" xmi:id="_H42dsfUhEeeREboOt7l4UQ" name="&amp;#128493; Add Comment" content="&amp;#128493; Add Comment" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_H42dsPUhEeeREboOt7l4UQ" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_H42dsvUhEeeREboOt7l4UQ" name="" content="" returnTypeFixed="true"/>
           <data xmi:type="process:Data" xmi:id="_KP5WUPVdEeely9zNRFQjOA" name="activityState" dataType="_x5qCOfSMEeeYpYD60oU_zA">
@@ -256,7 +256,7 @@
       <entryRedirectionURL xmi:type="expression:Expression" xmi:id="_x5qCEfSMEeeYpYD60oU_zA" name="" content="" returnTypeFixed="true"/>
       <confirmationMessage xmi:type="expression:Expression" xmi:id="_x5qCEvSMEeeYpYD60oU_zA" name="" content="" returnTypeFixed="true"/>
       <formMapping xmi:type="process:FormMapping" xmi:id="_x5qCE_SMEeeYpYD60oU_zA">
-        <targetForm xmi:type="expression:Expression" xmi:id="_KicPkCg5Eei6AqIc1Yjorw" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+        <targetForm xmi:type="expression:Expression" xmi:id="_w57UEElEEeiWIK2PzqMh-Q" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
       </formMapping>
       <recapPageFlowRedirectionURL xmi:type="expression:Expression" xmi:id="_x5qCFfSMEeeYpYD60oU_zA" name="" content="" returnTypeFixed="true"/>
       <overviewFormMapping xmi:type="process:FormMapping" xmi:id="_x5qCFvSMEeeYpYD60oU_zA">

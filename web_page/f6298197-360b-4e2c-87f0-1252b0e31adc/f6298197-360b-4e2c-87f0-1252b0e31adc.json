@@ -3,7 +3,7 @@
   "previousDesignerVersion" : "1.7.11",
   "id" : "f6298197-360b-4e2c-87f0-1252b0e31adc",
   "name" : "AddCommentForm",
-  "lastUpdate" : 1521043213485,
+  "lastUpdate" : 1524743702801,
   "rows" : [ [ {
     "type" : "formContainer",
     "dimension" : {
@@ -58,62 +58,35 @@
         "rows" : [ [ {
           "type" : "component",
           "dimension" : {
-            "md" : 12,
-            "sm" : 12,
             "xs" : 12,
+            "sm" : 12,
+            "md" : 12,
             "lg" : 12
           },
           "propertyValues" : {
-            "labelHidden" : {
-              "type" : "constant",
-              "value" : false
-            },
-            "readonly" : {
-              "type" : "constant",
-              "value" : false
-            },
-            "level" : {
-              "type" : "constant",
-              "value" : "Level 1"
-            },
             "cssClasses" : {
               "type" : "constant",
               "value" : ""
             },
-            "widgetId" : {
+            "hidden" : {
               "type" : "constant",
-              "value" : "pbTitle"
+              "value" : false
             },
-            "isDisplayed" : {
+            "allowHTML" : {
               "type" : "constant",
               "value" : true
             },
-            "label" : {
-              "type" : "interpolation"
-            },
             "text" : {
               "type" : "interpolation",
-              "value" : "{{ task.displayName }}"
+              "value" : "<h1>{{ task.displayName }}</h1>"
             },
             "alignment" : {
               "type" : "constant",
               "value" : "center"
-            },
-            "class" : {
-              "type" : "constant",
-              "value" : "org.bonitasoft.web.designer.experimental.parametrizedWidget.TitleWidget"
-            },
-            "dimension" : {
-              "type" : "constant",
-              "value" : 12
-            },
-            "hidden" : {
-              "type" : "constant",
-              "value" : false
             }
           },
-          "reference" : "14cd6dbc-e888-4d9b-851b-a636eb608ad2",
-          "id" : "pbTitle"
+          "reference" : "852c4884-5aa2-40b9-b5b1-3c4a380dd394",
+          "id" : "pbText"
         } ], [ {
           "type" : "component",
           "dimension" : {
