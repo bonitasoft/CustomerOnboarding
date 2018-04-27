@@ -14,7 +14,8 @@
 		<groovy.version>2.4.3-01</groovy.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<platform.setup.dir>${project.build.directory}/setup</platform.setup.dir>
-		<target.db.path>/home/romain/Téléchargements/BonitaStudioSubscription-7.7.0-SNAPSHOT/workspace/case-management-poc/h2_database</target.db.path>
+		<!-- WARNING for Windows users: keep forward slashes like below (instead of backslashes) -->
+		<target.db.path>C:/BonitaStudioSubscription-7.7.0-SNAPSHOT/workspace/bonita-case-management/h2_database</target.db.path>
 	</properties>
 
 	<dependencies>
