@@ -1,9 +1,9 @@
 {
   "designerVersion" : "1.7.25",
   "previousDesignerVersion" : "1.7.11",
-  "id" : "0f4acbfa-0b0f-4616-9d1d-155fd9c04a4c",
+  "id" : "CaseDocuments",
   "name" : "CaseDocuments",
-  "lastUpdate" : 1520435115175,
+  "lastUpdate" : 1541424633067,
   "rows" : [ [ {
     "type" : "component",
     "dimension" : {

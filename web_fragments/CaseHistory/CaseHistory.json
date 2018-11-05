@@ -1,9 +1,9 @@
 {
   "designerVersion" : "1.7.25",
   "previousDesignerVersion" : "1.7.11",
-  "id" : "c91a652b-61f9-4551-b385-d86639d0f674",
+  "id" : "CaseHistory",
   "name" : "CaseHistory",
-  "lastUpdate" : 1521046994941,
+  "lastUpdate" : 1541424607544,
   "rows" : [ [ {
     "type" : "component",
     "dimension" : {

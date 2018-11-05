@@ -1,9 +1,9 @@
 {
   "designerVersion" : "1.7.25",
   "previousDesignerVersion" : "1.7.11",
-  "id" : "c4547271-ff13-498d-be4b-6c47e9d4495c",
+  "id" : "CaseComments",
   "name" : "CaseComments",
-  "lastUpdate" : 1520435115196,
+  "lastUpdate" : 1541424625863,
   "rows" : [ [ {
     "type" : "component",
     "dimension" : {
