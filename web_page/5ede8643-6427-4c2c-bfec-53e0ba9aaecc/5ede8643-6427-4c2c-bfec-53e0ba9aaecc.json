@@ -1,9 +1,9 @@
 {
   "designerVersion" : "1.7.25",
-  "previousDesignerVersion" : "1.7.4",
-  "id" : "01ad4bbc-cb13-42d3-bd19-ebf3a98fb477",
-  "name" : "CaseManagementLayout",
-  "lastUpdate" : 1525288494696,
+  "previousDesignerVersion" : "1.5.7",
+  "id" : "5ede8643-6427-4c2c-bfec-53e0ba9aaecc",
+  "name" : "AppLayoutPageV75Langues3V1",
+  "lastUpdate" : 1525286541870,
   "rows" : [ [ {
     "type" : "container",
     "dimension" : {
@@ -25,7 +25,7 @@
         "type" : "variable"
       }
     },
-    "reference" : "7319a256-1993-4c83-865f-59f8e3768dcf",
+    "reference" : "39ee85ce-6407-4a48-b62b-117b814bbfdb",
     "id" : "pbContainer",
     "rows" : [ [ {
       "type" : "component",
@@ -59,7 +59,7 @@
           "type" : "interpolation"
         }
       },
-      "reference" : "e8a12fdf-16bf-4245-8ace-3a177b2ef171",
+      "reference" : "f8399f30-4595-4f23-89b2-9eaf7c02765e",
       "id" : "pbImage"
     }, {
       "type" : "component",
@@ -91,7 +91,7 @@
           "value" : "danger"
         }
       },
-      "reference" : "2302d73d-f409-4e5a-8a0d-d2c1ce20fb31",
+      "reference" : "e63eac61-1a39-4423-b647-8664ab0b069d",
       "id" : "customSessionWidget"
     } ], [ {
       "type" : "component",
@@ -120,7 +120,7 @@
         },
         "sticky" : {
           "type" : "constant",
-          "value" : true
+          "value" : false
         },
         "imgTitle" : {
           "type" : "constant",
@@ -150,7 +150,7 @@
           "value" : "sf.png"
         }
       },
-      "reference" : "5bf2b0ef-d602-4e8c-b8b2-d6f1ca033164",
+      "reference" : "43a759f6-2fbd-49e3-9f96-760ad4e0b4ef",
       "id" : "customLivingApplicationMenuV2"
     } ] ]
   } ], [ {
@@ -171,16 +171,18 @@
         "value" : false
       },
       "repeatedCollection" : {
-        "type" : "variable",
-        "value" : ""
+        "type" : "variable"
       }
     },
-    "reference" : "b22cdebf-0ecb-4456-855d-4654647ff4b2",
+    "reference" : "8ef160dd-2941-4b03-8dfc-d50960d8be57",
     "id" : "pbContainer",
     "rows" : [ [ {
       "type" : "component",
       "dimension" : {
-        "xs" : 12
+        "xs" : 12,
+        "sm" : 12,
+        "md" : 12,
+        "lg" : 12
       },
       "propertyValues" : {
         "cssClasses" : {
@@ -192,12 +194,16 @@
           "value" : false
         },
         "src" : {
-          "type" : "variable",
+          "type" : "expression",
           "value" : "targetedPageUrl"
+        },
+        "resizeToContent" : {
+          "type" : "constant",
+          "value" : false
         }
       },
-      "reference" : "938ae9e5-7f6f-46a5-8ce2-9e54ef504c1f",
-      "id" : "customLivingApplicationIFrameV3"
+      "reference" : "f4f05bd2-88bc-4abd-988f-6b8fb95db201",
+      "id" : "customLivingApplicationIFrameV2"
     } ] ]
   } ], [ {
     "type" : "container",
@@ -217,59 +223,69 @@
         "value" : false
       },
       "repeatedCollection" : {
-        "type" : "variable",
-        "value" : ""
+        "type" : "variable"
       }
     },
-    "reference" : "4e0f14a2-def5-4af2-af9c-138e94a1e14f",
+    "reference" : "dec5f1ce-20f0-481e-aa57-e1c01e345ad1",
     "id" : "pbContainer",
     "rows" : [ [ ] ]
   } ] ],
   "assets" : [ {
-    "id" : "cf85b8f1-b098-4dac-a84d-596609a6a5c5",
-    "name" : "calendar.png",
-    "type" : "img",
+    "id" : "bc41a1d6-83af-449c-9e80-7f3aed7e90b5",
+    "name" : "layout.js",
+    "type" : "js",
     "order" : 4,
     "external" : false
   }, {
-    "id" : "2007621b-afa8-48ec-846f-f4d78ce90b8a",
-    "name" : "layout.css",
-    "type" : "css",
-    "order" : 1,
-    "external" : false
-  }, {
-    "id" : "5444a8a6-3361-4ac3-8754-541077ccbd81",
+    "id" : "80d9a19f-4d3f-4287-a66c-45de76d2440e",
     "name" : "portal.png",
     "type" : "img",
-    "order" : 3,
+    "order" : 2,
     "external" : false
   }, {
-    "id" : "80937bfd-9b85-47f0-90d2-0a5c3fced9f9",
-    "name" : "logo.png",
+    "id" : "c3d731a2-2483-4904-ab94-85e5d500721c",
+    "name" : "sf.png",
     "type" : "img",
+    "order" : 6,
+    "external" : false
+  }, {
+    "id" : "0de7b431-64c6-404c-ab56-d0603b37af74",
+    "name" : "calendar.png",
+    "type" : "img",
+    "order" : 7,
+    "external" : false
+  }, {
+    "id" : "aaf8408a-1534-4ab8-a0c9-3c1fd693a8c7",
+    "name" : "localization.json",
+    "type" : "json",
     "order" : 5,
     "external" : false
   }, {
-    "id" : "27b2007f-d336-4f20-b640-5810f7a8af54",
-    "name" : "layout.js",
-    "type" : "js",
-    "order" : 0,
+    "id" : "135fce24-9bad-4eda-bd89-2ff81a503471",
+    "name" : "logo.png",
+    "type" : "img",
+    "order" : 1,
     "external" : false
   }, {
-    "id" : "7b3d9193-407a-447f-ac45-ef6e81c88eea",
-    "name" : "sf.png",
-    "type" : "img",
-    "order" : 2,
+    "id" : "6b1c711c-99b8-4186-be9a-61996a2ca15e",
+    "name" : "style.css",
+    "type" : "css",
+    "order" : 8,
+    "external" : false
+  }, {
+    "id" : "6f30b307-92a2-4bbf-ad43-182bcf59ec40",
+    "name" : "layout.css",
+    "type" : "css",
+    "order" : 9,
     "external" : false
   } ],
   "inactiveAssets" : [ ],
   "data" : {
     "targetedPageUrl" : {
       "type" : "constant",
-      "value" : "",
       "exposed" : false
     }
   },
-  "uuid" : "01ad4bbc-cb13-42d3-bd19-ebf3a98fb477",
+  "uuid" : "5ede8643-6427-4c2c-bfec-53e0ba9aaecc",
   "type" : "layout"
 }

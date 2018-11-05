@@ -9,7 +9,7 @@
     <description>REST API for Case Activity</description>
     
     <properties>
-        <bonita.version>7.7.0-SNAPSHOT</bonita.version>
+        <bonita.version>7.8.0.beta-01</bonita.version>
         <groovy.version>2.4.3-01</groovy.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
