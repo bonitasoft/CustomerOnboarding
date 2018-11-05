@@ -3,7 +3,7 @@
   "previousDesignerVersion" : "1.7.11",
   "id" : "6d295a81-adbd-4ae0-b223-df9146629c24",
   "name" : "ExecuteManualTask",
-  "lastUpdate" : 1524751347527,
+  "lastUpdate" : 1541424391867,
   "rows" : [ [ {
     "type" : "formContainer",
     "dimension" : {
@@ -221,6 +221,14 @@
           },
           "removeItem" : {
             "type" : "variable"
+          },
+          "closeOnSuccess" : {
+            "type" : "constant",
+            "value" : false
+          },
+          "modalId" : {
+            "type" : "constant",
+            "value" : ""
           }
         },
         "reference" : "47e01b95-aab7-4c15-a3ba-be99d5112db2",
@@ -264,5 +272,7 @@
     }
   },
   "uuid" : "6d295a81-adbd-4ae0-b223-df9146629c24",
-  "type" : "page"
+  "type" : "page",
+  "description" : "Page generated with Bonita UI designer",
+  "displayName" : "ExecuteManualTask"
 }
