@@ -25,7 +25,7 @@ import com.bonitasoft.web.extension.rest.RestApiController
 
 import groovy.json.JsonBuilder
 
-class CaseActivity implements RestApiController {
+class CaseActivity implements RestApiController,CaseActivityHelper {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(CaseActivity.class)
 	private static final String ACTIVITY_CONTAINER = "Dymanic Activity Container"
@@ -55,9 +55,9 @@ class CaseActivity implements RestApiController {
 		}
 		def result = []
 		//Retrieve pending activities
-		CaseActivityHelper.searchOpenedTasks(caseId, processAPI).getResult().collect{
-			def state = CaseActivityHelper.getState(it,processAPI)
-			if(CaseActivityHelper.canExecute(state)) {
+		searchOpenedTasks(caseId.toLong(), processAPI).getResult().collect{
+			def state = getState(it,processAPI)
+			if(canExecute(state)) {
 				result << [id:it.name,name:it.displayName,state:state,url:forge(pDef.name,pDef.version,it,contextPath),description:it.description,target:linkTarget(it)]
 			}else {
 				result << [id:it.name,name:it.displayName,state:state,description:it.description]
@@ -72,7 +72,7 @@ class CaseActivity implements RestApiController {
 			done()
 		}).getResult().collect{
 			if(!loopTasks.contains(it.name)) {
-				result << [id:it.name,name:it.displayName,state:[name:it.state,id:CaseActivityHelper.idOfState(it.state)],description:it.description]
+				result << [id:it.name,name:it.displayName,state:[name:it.state,id:idOfState(it.state)],description:it.description]
 			}
 		}
 		
@@ -80,7 +80,7 @@ class CaseActivity implements RestApiController {
 		designProcessDefinition.getFlowElementContainer().getActivities().findAll{
 			it instanceof HumanTaskDefinition && !result.id.contains(it.name) && !ACTIVITY_CONTAINER.equals(it.name) && !CREATE_ACTIVITY.equals(it.name)
 		}.collect{
-			result << [id:it.name,name:it.name,state:[name:"N/A",id:CaseActivityHelper.idOfState("N/A")],description:it.description]
+			result << [id:it.name,name:it.name,state:[name:"N/A",id:idOfState("N/A")],description:it.description]
 		}
 		
         return buildResponse(responseBuilder, HttpServletResponse.SC_OK, new JsonBuilder(result.sort {a1,a2 ->
