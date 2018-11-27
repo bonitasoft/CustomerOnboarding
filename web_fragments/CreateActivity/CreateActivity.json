@@ -3,7 +3,7 @@
   "previousDesignerVersion" : "1.7.11",
   "id" : "CreateActivity",
   "name" : "CreateActivity",
-  "lastUpdate" : 1543322486916,
+  "lastUpdate" : 1543322750776,
   "rows" : [ [ {
     "type" : "component",
     "dimension" : {
@@ -56,7 +56,7 @@
       },
       "required" : {
         "type" : "constant",
-        "value" : true
+        "value" : false
       },
       "minLength" : {
         "type" : "constant",
