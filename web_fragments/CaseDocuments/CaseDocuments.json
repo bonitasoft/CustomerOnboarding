@@ -1,9 +1,9 @@
 {
   "designerVersion" : "1.7.25",
   "previousDesignerVersion" : "1.7.11",
-  "id" : "c4547271-ff13-498d-be4b-6c47e9d4495c",
-  "name" : "CaseComments",
-  "lastUpdate" : 1520435115196,
+  "id" : "CaseDocuments",
+  "name" : "CaseDocuments",
+  "lastUpdate" : 1543321984289,
   "rows" : [ [ {
     "type" : "component",
     "dimension" : {
@@ -27,14 +27,15 @@
       },
       "text" : {
         "type" : "interpolation",
-        "value" : "<h3><span class=\"glyphicon glyphicon-comment\" aria-hidden=\"true\"></span> Case comments</h3>"
+        "value" : "<h3><span class=\"glyphicon glyphicon-paperclip\" aria-hidden=\"true\"></span> Case documents</h3>"
       },
       "alignment" : {
         "type" : "constant",
         "value" : "left"
       }
     },
-    "reference" : "dba2382d-c2e4-4b02-87f6-26f4947eed08",
+    "reference" : "3b6e04cd-651b-4fc2-9e8b-846ca747ebe8",
+    "hasValidationError" : false,
     "id" : "pbText"
   } ], [ {
     "type" : "container",
@@ -55,10 +56,11 @@
       },
       "repeatedCollection" : {
         "type" : "variable",
-        "value" : "caseComments"
+        "value" : "caseDocuments"
       }
     },
-    "reference" : "d100ad7a-d937-44c2-927f-0ab30b167ca1",
+    "reference" : "1363720d-390a-454d-912b-2bbae62d1cc4",
+    "hasValidationError" : false,
     "id" : "pbContainer",
     "rows" : [ [ {
       "type" : "component",
@@ -77,30 +79,65 @@
           "type" : "constant",
           "value" : false
         },
-        "allowHTML" : {
-          "type" : "constant",
-          "value" : true
-        },
         "text" : {
           "type" : "interpolation",
-          "value" : "<h5><span class=\"glyphicon glyphicon-user\" aria-hidden=\"true\"></span>  <b>{{$item.username }}</b> added a comment <em>{{$item.postDate | fromNow:\"YYYY-MM-dd HH:mm:ss.SSS\" }}</em></h5><p>{{$item.content}}</p>"
+          "value" : "<i class=\"glyphicon glyphicon-link\"></i> {{$item.fileName}}"
+        },
+        "type" : {
+          "type" : "constant",
+          "value" : "URL"
+        },
+        "targetUrl" : {
+          "type" : "expression",
+          "value" : "\"../API/\" + $item.url"
+        },
+        "pageToken" : {
+          "type" : "constant"
+        },
+        "processName" : {
+          "type" : "constant"
+        },
+        "processVersion" : {
+          "type" : "constant"
+        },
+        "taskId" : {
+          "type" : "constant"
+        },
+        "caseId" : {
+          "type" : "constant"
+        },
+        "target" : {
+          "type" : "constant",
+          "value" : "_blank"
+        },
+        "appToken" : {
+          "type" : "constant"
+        },
+        "urlParams" : {
+          "type" : "constant"
         },
         "alignment" : {
           "type" : "constant",
           "value" : "left"
+        },
+        "buttonStyle" : {
+          "type" : "constant",
+          "value" : "link"
         }
       },
-      "reference" : "69d4e8a9-5719-4de7-bc2d-bbfd98499593",
-      "id" : "pbText"
+      "reference" : "56cb6304-7941-45dc-b70e-79e163d6b2ff",
+      "hasValidationError" : false,
+      "id" : "pbLink"
     } ] ]
   } ] ],
   "assets" : [ ],
   "inactiveAssets" : [ ],
   "data" : {
-    "caseComments" : {
+    "caseDocuments" : {
       "type" : "constant",
       "exposed" : true
     }
   },
+  "hasValidationError" : false,
   "type" : "fragment"
 }

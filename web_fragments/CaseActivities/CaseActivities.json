@@ -1,9 +1,9 @@
 {
   "designerVersion" : "1.7.25",
   "previousDesignerVersion" : "1.7.11",
-  "id" : "09d58625-c247-4277-b304-77b681ad8d2e",
+  "id" : "CaseActivities",
   "name" : "CaseActivities",
-  "lastUpdate" : 1543312212042,
+  "lastUpdate" : 1543321949917,
   "rows" : [ [ {
     "type" : "component",
     "dimension" : {

@@ -1,9 +1,9 @@
 {
   "designerVersion" : "1.7.25",
   "previousDesignerVersion" : "1.7.11",
-  "id" : "2903e26b-316f-4069-95ab-4752903d59ca",
+  "id" : "CreateActivity",
   "name" : "CreateActivity",
-  "lastUpdate" : 1543321172015,
+  "lastUpdate" : 1543321958923,
   "rows" : [ [ {
     "type" : "component",
     "dimension" : {

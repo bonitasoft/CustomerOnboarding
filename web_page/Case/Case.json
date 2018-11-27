@@ -3,7 +3,7 @@
   "previousDesignerVersion" : "1.7.11",
   "id" : "Case",
   "name" : "Case",
-  "lastUpdate" : 1543321164256,
+  "lastUpdate" : 1543321984273,
   "rows" : [ [ {
     "type" : "container",
     "dimension" : {
@@ -49,7 +49,7 @@
       },
       "reference" : "7da35c6c-ac2d-4d07-a48d-bdd107b14236",
       "hasValidationError" : false,
-      "id" : "09d58625-c247-4277-b304-77b681ad8d2e",
+      "id" : "CaseActivities",
       "binding" : {
         "caseId" : "caseId",
         "activities" : "activities"
@@ -149,7 +149,7 @@
     },
     "reference" : "32caed50-6b87-4afd-9b02-5b720c8db40b",
     "hasValidationError" : false,
-    "id" : "2903e26b-316f-4069-95ab-4752903d59ca",
+    "id" : "CreateActivity",
     "binding" : {
       "caseId" : "caseId",
       "activities" : "activities",
@@ -206,7 +206,7 @@
           },
           "reference" : "47f42ecc-c0e2-4c84-b1d0-1bbf77106505",
           "hasValidationError" : false,
-          "id" : "c91a652b-61f9-4551-b385-d86639d0f674",
+          "id" : "CaseHistory",
           "binding" : {
             "caseHistory" : "caseHistory"
           }
@@ -243,7 +243,7 @@
           },
           "reference" : "e469efa4-76df-4a8a-82b3-fa3d54bdebf1",
           "hasValidationError" : false,
-          "id" : "c4547271-ff13-498d-be4b-6c47e9d4495c",
+          "id" : "CaseComments",
           "binding" : {
             "caseComments" : "caseComments"
           }
@@ -280,7 +280,7 @@
           },
           "reference" : "3d3d8f45-fa41-454e-bae1-ad09a2313e1e",
           "hasValidationError" : false,
-          "id" : "0f4acbfa-0b0f-4616-9d1d-155fd9c04a4c",
+          "id" : "CaseDocuments",
           "binding" : {
             "caseDocuments" : "caseContext.caseDocuments_ref"
           }
