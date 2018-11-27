@@ -3,7 +3,7 @@
   "previousDesignerVersion" : "1.7.11",
   "id" : "CreateActivity",
   "name" : "CreateActivity",
-  "lastUpdate" : 1543321958923,
+  "lastUpdate" : 1543322486916,
   "rows" : [ [ {
     "type" : "component",
     "dimension" : {
@@ -91,7 +91,7 @@
       },
       "value" : {
         "type" : "variable",
-        "value" : "activity.name"
+        "value" : "formInput.name"
       },
       "type" : {
         "type" : "constant",
@@ -162,7 +162,7 @@
       },
       "value" : {
         "type" : "variable",
-        "value" : "activity.description"
+        "value" : "formInput.description"
       }
     },
     "reference" : "be136fee-7f2d-49b1-9e21-f4d526469854",
@@ -255,7 +255,7 @@
   "data" : {
     "activity" : {
       "type" : "expression",
-      "value" : "return {\n    \"caseId\" : $data.caseId\n};",
+      "value" : "return {\n    \"name\" : $data.formInput.name,\n    \"description\" : $data.formInput.description,\n    \"caseId\" : $data.caseId\n};",
       "exposed" : false
     },
     "caseId" : {
@@ -265,6 +265,16 @@
     "newActivityCreated" : {
       "type" : "constant",
       "exposed" : true
+    },
+    "formInput" : {
+      "type" : "expression",
+      "value" : "return {\n    \"name\" : \"\",\n    \"desrciption\" : \"\",\n    \"caseId\" : $data.caseId\n};",
+      "exposed" : false
+    },
+    "cleanInput" : {
+      "type" : "expression",
+      "value" : "if($data.newActivityCreated.name){\n $data.formInput.name = \"\";\n $data.formInput.description = \"\";\n $data.newActivityCreated = {}\n}\n",
+      "exposed" : false
     }
   },
   "hasValidationError" : false,

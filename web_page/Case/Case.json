@@ -3,7 +3,7 @@
   "previousDesignerVersion" : "1.7.11",
   "id" : "Case",
   "name" : "Case",
-  "lastUpdate" : 1543321984273,
+  "lastUpdate" : 1543322628076,
   "rows" : [ [ {
     "type" : "container",
     "dimension" : {
@@ -323,7 +323,7 @@
     },
     "caseHistory" : {
       "type" : "url",
-      "value" : "../API/extension/caseHistory?caseId={{caseId}}",
+      "value" : "../API/extension/caseHistory?caseId={{caseId}}&reload={{newActivityCreated.name}}",
       "exposed" : false
     },
     "caseContext" : {
