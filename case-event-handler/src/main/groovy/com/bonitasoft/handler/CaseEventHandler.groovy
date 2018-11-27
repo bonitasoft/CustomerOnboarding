@@ -110,14 +110,6 @@ class CaseEventHandler implements SHandler<SEvent> {
 
 	}
 
-	private boolean isTaskfeedProcess(SUserTaskInstance instance) {
-		ProcessAPI processAPI = new ProcessAPIImpl()
-		def long processDefId = processAPI.getProcessDefinitionIdFromActivityInstanceId(instance.id)
-		processAPI.getCategoriesOfProcessDefinition(processDefId, 0, 50, CategoryCriterion.NAME_ASC).find{ Category cat ->
-			cat.name == "Taskfeed"
-		}
-	}
-
 
 	@Override
 	public String getIdentifier() {
