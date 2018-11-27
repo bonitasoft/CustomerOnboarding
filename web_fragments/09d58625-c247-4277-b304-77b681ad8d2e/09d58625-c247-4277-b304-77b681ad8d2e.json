@@ -3,7 +3,7 @@
   "previousDesignerVersion" : "1.7.11",
   "id" : "09d58625-c247-4277-b304-77b681ad8d2e",
   "name" : "CaseActivities",
-  "lastUpdate" : 1520435115139,
+  "lastUpdate" : 1543312212042,
   "rows" : [ [ {
     "type" : "component",
     "dimension" : {
@@ -35,6 +35,7 @@
       }
     },
     "reference" : "6d1c8ddb-7b68-4f08-b50d-cef75b1ee72a",
+    "hasValidationError" : false,
     "id" : "pbText"
   } ], [ {
     "type" : "component",
@@ -92,6 +93,7 @@
       }
     },
     "reference" : "3b344fbf-dcd4-4753-a599-93f1ea338e04",
+    "hasValidationError" : false,
     "id" : "customHTMLDataTable"
   } ] ],
   "assets" : [ ],
@@ -101,16 +103,16 @@
       "type" : "constant",
       "exposed" : true
     },
-    "activities" : {
-      "type" : "url",
-      "value" : "../API/extension/caseActivity?caseId={{caseId}}",
-      "exposed" : false
-    },
     "formattedColumn" : {
       "type" : "expression",
       "value" : "return [function(input){\n    if(input.row.url){\n        if(input.row.target){\n            return \"<a href=\\\"\"+input.row.url+\"\\\" target=\\\"\"+input.row.target+\"\\\">\"+input.row.name+\"</a>\";\n        }\n        return \"<a href=\\\"\"+input.row.url+\"\\\">\"+input.row.name+\"</a>\";\n    }\n   return input.row.name;\n}, \nfunction(input){\n     if(input.row.description){\n        return \"<em>\"+input.row.description+\"</em>\" ;\n     }\n    return \"\" ;\n},\n\"state|labelized\"];",
       "exposed" : false
+    },
+    "activities" : {
+      "type" : "constant",
+      "exposed" : true
     }
   },
+  "hasValidationError" : false,
   "type" : "fragment"
 }

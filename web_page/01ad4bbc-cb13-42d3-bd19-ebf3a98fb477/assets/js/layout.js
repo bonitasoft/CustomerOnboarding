@@ -8,13 +8,10 @@ function initMessageListener() {
       try {
         var jsonEventData = JSON.parse(eventData);
         //Handle the message here (reload app)
-        if (jsonEventData.message === 'success') {
-            if(jsonEventData.targetUrlOnSuccess) {
-                 window.location.assign(jsonEventData.targetUrlOnSuccess);
-            }else{
-                window.location.reload();
-            }
-        }
+         var status = jsonEventData.status || null;
+         if (status && status >= 200 && status < 400 && jsonEventData.targetUrlOnSuccess){
+             window.location.assign(jsonEventData.targetUrlOnSuccess);
+         }
       } catch (e) {
         //The message is not json, so not for us 
       }

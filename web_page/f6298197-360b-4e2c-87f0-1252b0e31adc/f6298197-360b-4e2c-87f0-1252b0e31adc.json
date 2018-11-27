@@ -3,7 +3,7 @@
   "previousDesignerVersion" : "1.7.11",
   "id" : "f6298197-360b-4e2c-87f0-1252b0e31adc",
   "name" : "AddCommentForm",
-  "lastUpdate" : 1524751362657,
+  "lastUpdate" : 1543311885288,
   "rows" : [ [ {
     "type" : "formContainer",
     "dimension" : {
@@ -23,6 +23,7 @@
       }
     },
     "reference" : "40c57a0e-f0ef-4656-8e53-c76eca814ab8",
+    "hasValidationError" : false,
     "id" : "pbFormContainer",
     "container" : {
       "type" : "container",
@@ -31,6 +32,7 @@
       },
       "propertyValues" : { },
       "reference" : "5c3bb0e9-d1f9-44f5-9313-f2d12da247f7",
+      "hasValidationError" : false,
       "id" : "pbContainer",
       "rows" : [ [ {
         "type" : "container",
@@ -54,6 +56,7 @@
           }
         },
         "reference" : "eae0383c-f767-41ac-9467-60093b31990c",
+        "hasValidationError" : false,
         "id" : "pbContainer",
         "rows" : [ [ {
           "type" : "component",
@@ -86,6 +89,7 @@
             }
           },
           "reference" : "852c4884-5aa2-40b9-b5b1-3c4a380dd394",
+          "hasValidationError" : false,
           "id" : "pbText"
         } ], [ {
           "type" : "component",
@@ -145,6 +149,7 @@
             }
           },
           "reference" : "a927bb62-e857-4906-971d-1a793268002d",
+          "hasValidationError" : false,
           "id" : "pbText"
         } ] ]
       } ], [ {
@@ -202,6 +207,7 @@
           }
         },
         "reference" : "741337e4-d476-4fd1-94bb-106dba97ae52",
+        "hasValidationError" : false,
         "id" : "pbTextarea"
       } ], [ {
         "type" : "component",
@@ -257,7 +263,8 @@
             "value" : ""
           },
           "targetUrlOnSuccess" : {
-            "type" : "interpolation"
+            "type" : "interpolation",
+            "value" : "?id={{task.caseId}}"
           },
           "collectionToModify" : {
             "type" : "variable"
@@ -271,9 +278,18 @@
           },
           "removeItem" : {
             "type" : "variable"
+          },
+          "closeOnSuccess" : {
+            "type" : "constant",
+            "value" : false
+          },
+          "modalId" : {
+            "type" : "constant",
+            "value" : ""
           }
         },
         "reference" : "a07936fe-f762-4990-a9e5-98686f606747",
+        "hasValidationError" : false,
         "id" : "pbButton"
       } ] ]
     }
@@ -319,6 +335,9 @@
       "exposed" : false
     }
   },
+  "hasValidationError" : false,
   "uuid" : "f6298197-360b-4e2c-87f0-1252b0e31adc",
-  "type" : "form"
+  "type" : "form",
+  "description" : "Page generated with Bonita UI designer",
+  "displayName" : "AddCommentForm"
 }

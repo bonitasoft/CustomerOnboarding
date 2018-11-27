@@ -3,7 +3,7 @@
   "previousDesignerVersion" : "1.7.11",
   "id" : "2903e26b-316f-4069-95ab-4752903d59ca",
   "name" : "CreateActivity",
-  "lastUpdate" : 1521044757271,
+  "lastUpdate" : 1543317003042,
   "rows" : [ [ {
     "type" : "component",
     "dimension" : {
@@ -35,6 +35,7 @@
       }
     },
     "reference" : "d2454d8d-80c1-4f6c-a335-b900a05f04f6",
+    "hasValidationError" : false,
     "id" : "pbText"
   } ], [ {
     "type" : "component",
@@ -108,6 +109,7 @@
       }
     },
     "reference" : "aeb92b56-9818-43c2-8cac-bf8730c58ff1",
+    "hasValidationError" : false,
     "id" : "pbInput"
   } ], [ {
     "type" : "component",
@@ -164,6 +166,7 @@
       }
     },
     "reference" : "be136fee-7f2d-49b1-9e21-f4d526469854",
+    "hasValidationError" : false,
     "id" : "pbTextarea"
   } ], [ {
     "type" : "component",
@@ -183,8 +186,8 @@
         "value" : false
       },
       "disabled" : {
-        "type" : "constant",
-        "value" : false
+        "type" : "expression",
+        "value" : "!activity.name"
       },
       "label" : {
         "type" : "interpolation",
@@ -212,7 +215,7 @@
       },
       "dataFromSuccess" : {
         "type" : "variable",
-        "value" : ""
+        "value" : "newActivityCreated"
       },
       "dataFromError" : {
         "type" : "variable",
@@ -233,9 +236,18 @@
       },
       "removeItem" : {
         "type" : "variable"
+      },
+      "closeOnSuccess" : {
+        "type" : "constant",
+        "value" : false
+      },
+      "modalId" : {
+        "type" : "constant",
+        "value" : ""
       }
     },
     "reference" : "1c9c0b8e-e1cc-4448-ab4c-fed9e90fbb12",
+    "hasValidationError" : false,
     "id" : "pbButton"
   } ] ],
   "assets" : [ ],
@@ -249,7 +261,17 @@
     "caseId" : {
       "type" : "constant",
       "exposed" : true
+    },
+    "newActivityCreated" : {
+      "type" : "constant",
+      "exposed" : true
+    },
+    "clean" : {
+      "type" : "expression",
+      "value" : "if($data.newActivityCreated){\n    console.log('cleaning');\n   $data.activity.name = \"\";\n    $data.activity.description = \"\";\n}\n",
+      "exposed" : false
     }
   },
+  "hasValidationError" : false,
   "type" : "fragment"
 }

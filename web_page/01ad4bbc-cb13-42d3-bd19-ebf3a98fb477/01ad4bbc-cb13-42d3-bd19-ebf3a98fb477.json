@@ -3,7 +3,7 @@
   "previousDesignerVersion" : "1.7.4",
   "id" : "01ad4bbc-cb13-42d3-bd19-ebf3a98fb477",
   "name" : "CaseManagementLayout",
-  "lastUpdate" : 1525288494696,
+  "lastUpdate" : 1543311479728,
   "rows" : [ [ {
     "type" : "container",
     "dimension" : {
@@ -26,6 +26,7 @@
       }
     },
     "reference" : "7319a256-1993-4c83-865f-59f8e3768dcf",
+    "hasValidationError" : false,
     "id" : "pbContainer",
     "rows" : [ [ {
       "type" : "component",
@@ -60,6 +61,7 @@
         }
       },
       "reference" : "e8a12fdf-16bf-4245-8ace-3a177b2ef171",
+      "hasValidationError" : false,
       "id" : "pbImage"
     }, {
       "type" : "component",
@@ -92,6 +94,7 @@
         }
       },
       "reference" : "2302d73d-f409-4e5a-8a0d-d2c1ce20fb31",
+      "hasValidationError" : false,
       "id" : "customSessionWidget"
     } ], [ {
       "type" : "component",
@@ -151,6 +154,7 @@
         }
       },
       "reference" : "5bf2b0ef-d602-4e8c-b8b2-d6f1ca033164",
+      "hasValidationError" : false,
       "id" : "customLivingApplicationMenuV2"
     } ] ]
   } ], [ {
@@ -176,6 +180,7 @@
       }
     },
     "reference" : "b22cdebf-0ecb-4456-855d-4654647ff4b2",
+    "hasValidationError" : false,
     "id" : "pbContainer",
     "rows" : [ [ {
       "type" : "component",
@@ -197,6 +202,7 @@
         }
       },
       "reference" : "938ae9e5-7f6f-46a5-8ce2-9e54ef504c1f",
+      "hasValidationError" : false,
       "id" : "customLivingApplicationIFrameV3"
     } ] ]
   } ], [ {
@@ -222,6 +228,7 @@
       }
     },
     "reference" : "4e0f14a2-def5-4af2-af9c-138e94a1e14f",
+    "hasValidationError" : false,
     "id" : "pbContainer",
     "rows" : [ [ ] ]
   } ] ],
@@ -270,6 +277,9 @@
       "exposed" : false
     }
   },
+  "hasValidationError" : false,
   "uuid" : "01ad4bbc-cb13-42d3-bd19-ebf3a98fb477",
-  "type" : "layout"
+  "type" : "layout",
+  "description" : "Page generated with Bonita UI designer",
+  "displayName" : "CaseManagementLayout"
 }

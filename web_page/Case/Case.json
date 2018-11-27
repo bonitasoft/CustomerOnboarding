@@ -3,7 +3,7 @@
   "previousDesignerVersion" : "1.7.11",
   "id" : "Case",
   "name" : "Case",
-  "lastUpdate" : 1524751347006,
+  "lastUpdate" : 1543316762799,
   "rows" : [ [ {
     "type" : "container",
     "dimension" : {
@@ -27,6 +27,7 @@
       }
     },
     "reference" : "3589445e-f9a3-40de-bb8d-82428d9dcf4c",
+    "hasValidationError" : false,
     "id" : "pbContainer",
     "rows" : [ [ {
       "type" : "fragment",
@@ -47,9 +48,11 @@
         }
       },
       "reference" : "7da35c6c-ac2d-4d07-a48d-bdd107b14236",
+      "hasValidationError" : false,
       "id" : "09d58625-c247-4277-b304-77b681ad8d2e",
       "binding" : {
-        "caseId" : "caseId"
+        "caseId" : "caseId",
+        "activities" : "activities"
       }
     } ], [ {
       "type" : "component",
@@ -123,6 +126,7 @@
         }
       },
       "reference" : "0ec3723a-79d8-4811-9689-9e6a3d109f5e",
+      "hasValidationError" : false,
       "id" : "pbButton"
     } ] ]
   }, {
@@ -144,9 +148,12 @@
       }
     },
     "reference" : "32caed50-6b87-4afd-9b02-5b720c8db40b",
+    "hasValidationError" : false,
     "id" : "2903e26b-316f-4069-95ab-4752903d59ca",
     "binding" : {
-      "caseId" : "caseId"
+      "caseId" : "caseId",
+      "activities" : "activities",
+      "newActivityCreated" : "newActivityCreated"
     }
   } ], [ {
     "type" : "tabsContainer",
@@ -167,6 +174,7 @@
       }
     },
     "reference" : "76e47303-7bb6-496e-9e69-00d82e2ddebf",
+    "hasValidationError" : false,
     "id" : "pbTabsContainer",
     "tabs" : [ {
       "container" : {
@@ -176,6 +184,7 @@
         },
         "propertyValues" : { },
         "reference" : "d15c2d3b-92f9-4e63-b0f5-e1a2f644e2de",
+        "hasValidationError" : false,
         "id" : "pbContainer",
         "rows" : [ [ {
           "type" : "fragment",
@@ -196,6 +205,7 @@
             }
           },
           "reference" : "47f42ecc-c0e2-4c84-b1d0-1bbf77106505",
+          "hasValidationError" : false,
           "id" : "c91a652b-61f9-4551-b385-d86639d0f674",
           "binding" : {
             "caseHistory" : "caseHistory"
@@ -211,6 +221,7 @@
         },
         "propertyValues" : { },
         "reference" : "3b35ac40-50ef-48a7-9ab0-c01a7fa23e0d",
+        "hasValidationError" : false,
         "id" : "pbContainer",
         "rows" : [ [ {
           "type" : "fragment",
@@ -231,6 +242,7 @@
             }
           },
           "reference" : "e469efa4-76df-4a8a-82b3-fa3d54bdebf1",
+          "hasValidationError" : false,
           "id" : "c4547271-ff13-498d-be4b-6c47e9d4495c",
           "binding" : {
             "caseComments" : "caseComments"
@@ -246,6 +258,7 @@
         },
         "propertyValues" : { },
         "reference" : "354362fb-1411-4d52-a8dc-42e5eb0b2f2c",
+        "hasValidationError" : false,
         "id" : "pbContainer",
         "rows" : [ [ {
           "type" : "fragment",
@@ -266,6 +279,7 @@
             }
           },
           "reference" : "3d3d8f45-fa41-454e-bae1-ad09a2313e1e",
+          "hasValidationError" : false,
           "id" : "0f4acbfa-0b0f-4616-9d1d-155fd9c04a4c",
           "binding" : {
             "caseDocuments" : "caseContext.caseDocuments_ref"
@@ -336,8 +350,21 @@
       "type" : "url",
       "value" : "../API/bpm/archivedCase/{{caseId}}",
       "exposed" : false
+    },
+    "activities" : {
+      "type" : "url",
+      "value" : "../API/extension/caseActivity?caseId={{caseId}}&reload={{newActivityCreated.name}}",
+      "exposed" : false
+    },
+    "newActivityCreated" : {
+      "type" : "json",
+      "value" : "{\n    \"name\" : \"\"\n}",
+      "exposed" : false
     }
   },
+  "hasValidationError" : false,
   "uuid" : "7295eeab-79e8-479b-93b3-fd60973600be",
-  "type" : "page"
+  "type" : "page",
+  "description" : "Page generated with Bonita UI designer",
+  "displayName" : "Case"
 }
