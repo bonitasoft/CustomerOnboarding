@@ -21,12 +21,13 @@ trait CaseActivityHelper {
 	def getState(ActivityInstance activityInstance, ProcessAPI processAPI) {
 		try {
 			def defaultState = activityInstance.getState()
-			def instance = processAPI.getActivityDataInstance("activityState", activityInstance.id)
+			def instance = processAPI.getActivityTransientDataInstance("activityState", activityInstance.id)
 			if (defaultState == ActivityStates.ABORTED_STATE || defaultState == ActivityStates.FAILED_STATE) {
 				return [name: defaultState, id: idOfState(instance.value)]
 			}
 			return [name: instance.value, id: idOfState(instance.value)]
 		} catch (DataNotFoundException e) {
+			println e.getMessage()
 			return [name: "Optional", id: idOfState("Optional")]
 		}
 	}

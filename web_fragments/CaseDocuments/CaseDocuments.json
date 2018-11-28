@@ -3,14 +3,14 @@
   "previousDesignerVersion" : "1.7.11",
   "id" : "CaseDocuments",
   "name" : "CaseDocuments",
-  "lastUpdate" : 1543321984289,
+  "lastUpdate" : 1543427064844,
   "rows" : [ [ {
     "type" : "component",
     "dimension" : {
-      "xs" : 12,
-      "sm" : 12,
-      "md" : 12,
-      "lg" : 12
+      "xs" : 9,
+      "sm" : 9,
+      "md" : 6,
+      "lg" : 6
     },
     "propertyValues" : {
       "cssClasses" : {
@@ -37,6 +37,85 @@
     "reference" : "3b6e04cd-651b-4fc2-9e8b-846ca747ebe8",
     "hasValidationError" : false,
     "id" : "pbText"
+  }, {
+    "type" : "component",
+    "dimension" : {
+      "xs" : 3,
+      "sm" : 3,
+      "md" : 6,
+      "lg" : 6
+    },
+    "propertyValues" : {
+      "cssClasses" : {
+        "type" : "constant",
+        "value" : "margin-top-20 margin-right-0"
+      },
+      "hidden" : {
+        "type" : "constant",
+        "value" : false
+      },
+      "disabled" : {
+        "type" : "constant",
+        "value" : false
+      },
+      "label" : {
+        "type" : "interpolation",
+        "value" : "<span class=\"glyphicon glyphicon-plus\"></span> Add a document"
+      },
+      "alignment" : {
+        "type" : "constant",
+        "value" : "right"
+      },
+      "buttonStyle" : {
+        "type" : "constant",
+        "value" : "success"
+      },
+      "action" : {
+        "type" : "constant",
+        "value" : "Open modal"
+      },
+      "url" : {
+        "type" : "interpolation"
+      },
+      "dataToSend" : {
+        "type" : "constant"
+      },
+      "dataFromSuccess" : {
+        "type" : "variable",
+        "value" : ""
+      },
+      "closeOnSuccess" : {
+        "type" : "constant",
+        "value" : false
+      },
+      "dataFromError" : {
+        "type" : "variable",
+        "value" : ""
+      },
+      "targetUrlOnSuccess" : {
+        "type" : "interpolation"
+      },
+      "collectionToModify" : {
+        "type" : "variable"
+      },
+      "modalId" : {
+        "type" : "constant",
+        "value" : "add-document"
+      },
+      "collectionPosition" : {
+        "type" : "constant",
+        "value" : "Last"
+      },
+      "valueToAdd" : {
+        "type" : "constant"
+      },
+      "removeItem" : {
+        "type" : "variable"
+      }
+    },
+    "reference" : "bb8951d6-c655-47c8-81b4-f00634205315",
+    "hasValidationError" : false,
+    "id" : "pbButton"
   } ], [ {
     "type" : "container",
     "dimension" : {
@@ -48,7 +127,7 @@
     "propertyValues" : {
       "cssClasses" : {
         "type" : "constant",
-        "value" : ""
+        "value" : "panel panel-default"
       },
       "hidden" : {
         "type" : "constant",
@@ -63,7 +142,7 @@
     "hasValidationError" : false,
     "id" : "pbContainer",
     "rows" : [ [ {
-      "type" : "component",
+      "type" : "container",
       "dimension" : {
         "xs" : 12,
         "sm" : 12,
@@ -73,67 +152,244 @@
       "propertyValues" : {
         "cssClasses" : {
           "type" : "constant",
-          "value" : ""
+          "value" : "panel-body"
         },
         "hidden" : {
           "type" : "constant",
           "value" : false
         },
-        "text" : {
-          "type" : "interpolation",
-          "value" : "<i class=\"glyphicon glyphicon-link\"></i> {{$item.fileName}}"
-        },
-        "type" : {
-          "type" : "constant",
-          "value" : "URL"
-        },
-        "targetUrl" : {
-          "type" : "expression",
-          "value" : "\"../API/\" + $item.url"
-        },
-        "pageToken" : {
-          "type" : "constant"
-        },
-        "processName" : {
-          "type" : "constant"
-        },
-        "processVersion" : {
-          "type" : "constant"
-        },
-        "taskId" : {
-          "type" : "constant"
-        },
-        "caseId" : {
-          "type" : "constant"
-        },
-        "target" : {
-          "type" : "constant",
-          "value" : "_blank"
-        },
-        "appToken" : {
-          "type" : "constant"
-        },
-        "urlParams" : {
-          "type" : "constant"
-        },
-        "alignment" : {
-          "type" : "constant",
-          "value" : "left"
-        },
-        "buttonStyle" : {
-          "type" : "constant",
-          "value" : "link"
+        "repeatedCollection" : {
+          "type" : "variable",
+          "value" : ""
         }
       },
-      "reference" : "56cb6304-7941-45dc-b70e-79e163d6b2ff",
+      "reference" : "0357d0ac-07d5-44f8-9d8d-d1acb0b8d32d",
       "hasValidationError" : false,
-      "id" : "pbLink"
+      "id" : "pbContainer",
+      "rows" : [ [ {
+        "type" : "component",
+        "dimension" : {
+          "xs" : 11,
+          "sm" : 11,
+          "md" : 8,
+          "lg" : 11
+        },
+        "propertyValues" : {
+          "cssClasses" : {
+            "type" : "constant",
+            "value" : ""
+          },
+          "hidden" : {
+            "type" : "constant",
+            "value" : false
+          },
+          "allowHTML" : {
+            "type" : "constant",
+            "value" : true
+          },
+          "text" : {
+            "type" : "interpolation",
+            "value" : "<h4>{{$item.name}}</h4>\n<em>{{$item.description}}</em>"
+          },
+          "alignment" : {
+            "type" : "constant",
+            "value" : "left"
+          }
+        },
+        "reference" : "880c26b1-be94-4a13-9472-0853c785777e",
+        "hasValidationError" : false,
+        "id" : "pbText"
+      }, {
+        "type" : "component",
+        "dimension" : {
+          "xs" : 1,
+          "sm" : 1,
+          "md" : 4,
+          "lg" : 1
+        },
+        "propertyValues" : {
+          "cssClasses" : {
+            "type" : "constant",
+            "value" : ""
+          },
+          "hidden" : {
+            "type" : "constant",
+            "value" : false
+          },
+          "disabled" : {
+            "type" : "constant",
+            "value" : false
+          },
+          "label" : {
+            "type" : "interpolation",
+            "value" : "<span class=\"glyphicon glyphicon-trash\"></span>"
+          },
+          "alignment" : {
+            "type" : "constant",
+            "value" : "right"
+          },
+          "buttonStyle" : {
+            "type" : "constant",
+            "value" : "default"
+          },
+          "action" : {
+            "type" : "constant",
+            "value" : "DELETE"
+          },
+          "url" : {
+            "type" : "interpolation",
+            "value" : "../API/extension/caseDocument?documentId={{$item.id}}"
+          },
+          "dataToSend" : {
+            "type" : "constant"
+          },
+          "dataFromSuccess" : {
+            "type" : "variable",
+            "value" : "documentDeleted"
+          },
+          "closeOnSuccess" : {
+            "type" : "constant",
+            "value" : false
+          },
+          "dataFromError" : {
+            "type" : "variable",
+            "value" : ""
+          },
+          "targetUrlOnSuccess" : {
+            "type" : "interpolation",
+            "value" : ""
+          },
+          "collectionToModify" : {
+            "type" : "variable"
+          },
+          "modalId" : {
+            "type" : "constant",
+            "value" : ""
+          },
+          "collectionPosition" : {
+            "type" : "constant",
+            "value" : "Last"
+          },
+          "valueToAdd" : {
+            "type" : "constant"
+          },
+          "removeItem" : {
+            "type" : "variable"
+          }
+        },
+        "reference" : "eaa6bed2-f81f-466e-a6ba-d4b79aefe6c9",
+        "hasValidationError" : false,
+        "id" : "pbButton"
+      } ], [ {
+        "type" : "component",
+        "dimension" : {
+          "xs" : 2,
+          "sm" : 2,
+          "md" : 2,
+          "lg" : 2
+        },
+        "propertyValues" : {
+          "cssClasses" : {
+            "type" : "constant",
+            "value" : ""
+          },
+          "hidden" : {
+            "type" : "constant",
+            "value" : false
+          },
+          "text" : {
+            "type" : "interpolation",
+            "value" : "<span class=\"glyphicon glyphicon-download-alt\"></span> Download"
+          },
+          "type" : {
+            "type" : "constant",
+            "value" : "URL"
+          },
+          "targetUrl" : {
+            "type" : "expression",
+            "value" : "\"../API/\" + $item.url"
+          },
+          "pageToken" : {
+            "type" : "constant"
+          },
+          "processName" : {
+            "type" : "constant"
+          },
+          "processVersion" : {
+            "type" : "constant"
+          },
+          "taskId" : {
+            "type" : "constant"
+          },
+          "caseId" : {
+            "type" : "constant"
+          },
+          "target" : {
+            "type" : "constant",
+            "value" : "_blank"
+          },
+          "appToken" : {
+            "type" : "constant"
+          },
+          "urlParams" : {
+            "type" : "constant"
+          },
+          "alignment" : {
+            "type" : "constant",
+            "value" : "left"
+          },
+          "buttonStyle" : {
+            "type" : "constant",
+            "value" : "primary"
+          }
+        },
+        "reference" : "56cb6304-7941-45dc-b70e-79e163d6b2ff",
+        "hasValidationError" : false,
+        "id" : "pbLink"
+      }, {
+        "type" : "component",
+        "dimension" : {
+          "xs" : 10,
+          "sm" : 10,
+          "md" : 10,
+          "lg" : 10
+        },
+        "propertyValues" : {
+          "cssClasses" : {
+            "type" : "constant",
+            "value" : ""
+          },
+          "hidden" : {
+            "type" : "constant",
+            "value" : false
+          },
+          "allowHTML" : {
+            "type" : "constant",
+            "value" : true
+          },
+          "text" : {
+            "type" : "interpolation",
+            "value" : "<small><span class=\"glyphicon glyphicon-calendar\"></span> Uploaded {{ $item.creationDate | fromNow }} by {{$item.username}}</small>"
+          },
+          "alignment" : {
+            "type" : "constant",
+            "value" : "right"
+          }
+        },
+        "reference" : "d7a1ab2f-1ed6-4088-b88a-69b18705b4f5",
+        "hasValidationError" : false,
+        "id" : "pbText"
+      } ] ]
     } ] ]
   } ] ],
   "assets" : [ ],
   "inactiveAssets" : [ ],
   "data" : {
     "caseDocuments" : {
+      "type" : "constant",
+      "exposed" : true
+    },
+    "documentDeleted" : {
       "type" : "constant",
       "exposed" : true
     }

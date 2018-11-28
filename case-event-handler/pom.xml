@@ -15,7 +15,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<!-- WARNING for Windows users: keep forward slashes like below (instead of backslashes) -->
 		<bonita.project.name>bonita-case-management</bonita.project.name>
-		<studio.workspace.path>/home/bonita/BonitaStudioSubscription-7.8.1-SNAPSHOT/workspace</studio.workspace.path>
+		<studio.workspace.path>/home/romain/BonitaStudioSubscription-7.8.1-SNAPSHOT/workspace</studio.workspace.path>
 		<platform.setup.dir>${studio.workspace.path}/tomcat/setup</platform.setup.dir>
 		<target.db.path>${studio.workspace.path}/${bonita.project.name}/h2_database</target.db.path>
 	</properties>

@@ -41,7 +41,7 @@ class CaseTest extends Specification {
         processAPI.searchArchivedProcessInstances(_) >> result
         processAPI.getProcessDefinition(_) >> processDefinition
         processAPI.searchHumanTaskInstances(_) >> taskResult
-        processAPI.getActivityDataInstance(_, _) >> dataInstance
+        processAPI.getActivityTransientDataInstance(_, _) >> dataInstance
 
         def list = [id: 45L, processDefinitionId: 56L, sourceObjectId: 78L, state: 'state']
         result.getResult() >> [list]

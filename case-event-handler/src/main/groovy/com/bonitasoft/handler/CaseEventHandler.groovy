@@ -71,34 +71,29 @@ class CaseEventHandler implements SHandler<SEvent> {
 		def DesignProcessDefinition design = processAPI.getDesignProcessDefinition(pDefId)
 		def dataToUpdate = []
 		caseActivities.each{ HumanTaskInstance task ->
-			def variables = [:]
 			try {
-				processAPI.getActivityDataDefinitions(taskInstance.processDefinitionId, task.name, 0, Integer.MAX_VALUE)
-						.collect{ DataDefinition dataDef ->
-							if(dataDef.defaultValueExpression != null
+				processAPI.getActivityDataDefinitions(task.processDefinitionId, task.name, 0, Integer.MAX_VALUE)
+						.each{ DataDefinition dataDef ->
+							if(dataDef.name == "activityState"
+							&&dataDef.defaultValueExpression != null
 							&& dataDef.defaultValueExpression.expressionType != ExpressionType.TYPE_CONSTANT.toString()
 							&& dataDef.defaultValueExpression.content != null
 							&& !dataDef.defaultValueExpression.content.isEmpty()
 							&& !dataDef.defaultValueExpression.content.equals("[]")) {
-								def newValue = refreshDataDefaultValue(task.id, dataDef, processAPI)
-								variables.put(dataDef.name, newValue)
+								def dataInstance = processAPI.getActivityTransientDataInstance(dataDef.name, task.id)
+								def deps = [:]
+								def expressions = [:]
+								expressions.put(dataDef.defaultValueExpression, deps)
+								def result = processAPI.evaluateExpressionsOnActivityInstance(task.id, expressions)
+								def newValue = result.values()[0]
 								println "$dataDef.name value of $task.id has been updated to $newValue"
+								processAPI.updateActivityTransientDataInstance("activityState",task.id, newValue)
 							}
 						}
-				processAPI.updateActivityInstanceVariables(task.id, variables)
 			}catch(ActivityDefinitionNotFoundException e) {
 				println "Cannot retrieve data for task $task.name"
 			}
 		}
-	}
-
-	def refreshDataDefaultValue(Long taskId,DataDefinition dataDef, ProcessAPI processAPI) {
-		def dataInstance = processAPI.getActivityDataInstance(dataDef.name, taskId)
-		def deps = [:]
-		def expressions = [:]
-		expressions.put(dataDef.defaultValueExpression, deps)
-		def result = processAPI.evaluateExpressionsOnActivityInstance(taskId, expressions)
-		return result.values()[0]
 	}
 
 	@Override
@@ -107,7 +102,6 @@ class CaseEventHandler implements SHandler<SEvent> {
 				event.asType(SUpdateEvent) &&
 				event.getObject() instanceof SUserTaskInstance &&
 				((SUserTaskInstance)event.getObject()).stateName == ActivityStates.COMPLETED_STATE
-
 	}
 
 

@@ -3,7 +3,7 @@
   "previousDesignerVersion" : "1.7.11",
   "id" : "CreateActivity",
   "name" : "CreateActivity",
-  "lastUpdate" : 1543322750776,
+  "lastUpdate" : 1543419112298,
   "rows" : [ [ {
     "type" : "component",
     "dimension" : {
@@ -255,7 +255,7 @@
   "data" : {
     "activity" : {
       "type" : "expression",
-      "value" : "return {\n    \"name\" : $data.formInput.name,\n    \"description\" : $data.formInput.description,\n    \"caseId\" : $data.caseId\n};",
+      "value" : "if($data.formInput){\n    return {\n        \"name\" : $data.formInput.name,\n        \"description\" : $data.formInput.description,\n        \"caseId\" : $data.caseId\n    };\n}",
       "exposed" : false
     },
     "caseId" : {

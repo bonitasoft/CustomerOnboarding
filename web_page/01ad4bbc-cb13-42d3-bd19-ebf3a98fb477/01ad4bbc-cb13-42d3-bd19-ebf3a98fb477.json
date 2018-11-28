@@ -3,7 +3,7 @@
   "previousDesignerVersion" : "1.7.4",
   "id" : "01ad4bbc-cb13-42d3-bd19-ebf3a98fb477",
   "name" : "CaseManagementLayout",
-  "lastUpdate" : 1543311479728,
+  "lastUpdate" : 1543415803117,
   "rows" : [ [ {
     "type" : "container",
     "dimension" : {
@@ -33,43 +33,8 @@
       "dimension" : {
         "xs" : 12,
         "sm" : 12,
-        "md" : 6,
-        "lg" : 6
-      },
-      "propertyValues" : {
-        "cssClasses" : {
-          "type" : "constant",
-          "value" : ""
-        },
-        "hidden" : {
-          "type" : "constant",
-          "value" : false
-        },
-        "srcType" : {
-          "type" : "constant",
-          "value" : "Asset"
-        },
-        "url" : {
-          "type" : "constant"
-        },
-        "assetName" : {
-          "type" : "constant",
-          "value" : "logo.png"
-        },
-        "alt" : {
-          "type" : "interpolation"
-        }
-      },
-      "reference" : "e8a12fdf-16bf-4245-8ace-3a177b2ef171",
-      "hasValidationError" : false,
-      "id" : "pbImage"
-    }, {
-      "type" : "component",
-      "dimension" : {
-        "xs" : 12,
-        "sm" : 12,
-        "md" : 6,
-        "lg" : 6
+        "md" : 12,
+        "lg" : 12
       },
       "propertyValues" : {
         "cssClasses" : {
@@ -82,7 +47,7 @@
         },
         "value" : {
           "type" : "constant",
-          "value" : "Logout"
+          "value" : "<span class=\"glyphicon glyphicon-off\"></span> Logout"
         },
         "alignment" : {
           "type" : "constant",
@@ -90,7 +55,7 @@
         },
         "buttonStyle" : {
           "type" : "constant",
-          "value" : "danger"
+          "value" : "link"
         }
       },
       "reference" : "2302d73d-f409-4e5a-8a0d-d2c1ce20fb31",
