@@ -3,7 +3,7 @@
   "previousDesignerVersion" : "1.7.11",
   "id" : "Case",
   "name" : "Case",
-  "lastUpdate" : 1543507641811,
+  "lastUpdate" : 1543511320103,
   "rows" : [ [ {
     "type" : "container",
     "dimension" : {
@@ -109,6 +109,45 @@
           "xs" : 12
         },
         "propertyValues" : { },
+        "reference" : "3b35ac40-50ef-48a7-9ab0-c01a7fa23e0d",
+        "hasValidationError" : false,
+        "id" : "pbContainer",
+        "rows" : [ [ {
+          "type" : "fragment",
+          "dimension" : {
+            "xs" : 12,
+            "sm" : 12,
+            "md" : 12,
+            "lg" : 12
+          },
+          "propertyValues" : {
+            "cssClasses" : {
+              "type" : "constant",
+              "value" : ""
+            },
+            "hidden" : {
+              "type" : "constant",
+              "value" : false
+            }
+          },
+          "reference" : "e469efa4-76df-4a8a-82b3-fa3d54bdebf1",
+          "hasValidationError" : false,
+          "id" : "CaseComments",
+          "binding" : {
+            "caseComments" : "caseComments",
+            "caseId" : "caseId",
+            "commentAdded" : "commentAdded"
+          }
+        } ] ]
+      },
+      "title" : "Comments"
+    }, {
+      "container" : {
+        "type" : "container",
+        "dimension" : {
+          "xs" : 12
+        },
+        "propertyValues" : { },
         "reference" : "d15c2d3b-92f9-4e63-b0f5-e1a2f644e2de",
         "hasValidationError" : false,
         "id" : "pbContainer",
@@ -139,43 +178,6 @@
         } ] ]
       },
       "title" : "History"
-    }, {
-      "container" : {
-        "type" : "container",
-        "dimension" : {
-          "xs" : 12
-        },
-        "propertyValues" : { },
-        "reference" : "3b35ac40-50ef-48a7-9ab0-c01a7fa23e0d",
-        "hasValidationError" : false,
-        "id" : "pbContainer",
-        "rows" : [ [ {
-          "type" : "fragment",
-          "dimension" : {
-            "xs" : 12,
-            "sm" : 12,
-            "md" : 12,
-            "lg" : 12
-          },
-          "propertyValues" : {
-            "cssClasses" : {
-              "type" : "constant",
-              "value" : ""
-            },
-            "hidden" : {
-              "type" : "constant",
-              "value" : false
-            }
-          },
-          "reference" : "e469efa4-76df-4a8a-82b3-fa3d54bdebf1",
-          "hasValidationError" : false,
-          "id" : "CaseComments",
-          "binding" : {
-            "caseComments" : "caseComments"
-          }
-        } ] ]
-      },
-      "title" : "Comments"
     }, {
       "container" : {
         "type" : "container",
@@ -794,7 +796,7 @@
     },
     "caseComments" : {
       "type" : "url",
-      "value" : "../API/extension/caseComment?caseId={{caseId}}",
+      "value" : "../API/extension/caseComment?caseId={{caseId}}&reload={{commentAdded.id}}",
       "exposed" : false
     },
     "caseId" : {
@@ -849,6 +851,11 @@
     },
     "documentCreationError" : {
       "type" : "constant",
+      "exposed" : false
+    },
+    "commentAdded" : {
+      "type" : "json",
+      "value" : "{\n    \"id\" : \"\"\n}",
       "exposed" : false
     }
   },
