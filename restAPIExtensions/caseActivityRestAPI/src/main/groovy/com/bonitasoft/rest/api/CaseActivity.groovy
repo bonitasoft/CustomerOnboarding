@@ -55,9 +55,14 @@ class CaseActivity implements RestApiController,CaseActivityHelper {
 		}
 
 		def designProcessDefinition = processAPI.getDesignProcessDefinition(pDef.id)
-		def loopTasks = designProcessDefinition.getFlowElementContainer().getActivities().findAll{
-			it instanceof HumanTaskDefinition && it.getLoopCharacteristics() instanceof StandardLoopCharacteristics
-		}.collect{ it.name }
+		def loopTasks = designProcessDefinition
+				.getFlowElementContainer()
+				.getActivities()
+				.findAll{
+					it instanceof HumanTaskDefinition && it.getLoopCharacteristics() instanceof StandardLoopCharacteristics
+				}.collect{ it.name }
+				
+		//Retrieve pending activities
 		def result = processAPI.getPendingHumanTaskInstances(context.apiSession.userId,0, Integer.MAX_VALUE, ActivityInstanceCriterion.EXPECTED_END_DATE_ASC)
 				.findAll{it.name != ACTIVITY_CONTAINER && it.name != CREATE_ACTIVITY }
 				.collect{ HumanTaskInstance task ->
@@ -70,7 +75,7 @@ class CaseActivity implements RestApiController,CaseActivityHelper {
 						state:task.state.capitalize(),
 						metadata:getMetadata(task,processAPI)
 					]
-				}
+				}.sort{ t1,t2 -> valueOf(t1.metadata.$activityState) <=> valueOf(t2.metadata.$activityState) }
 
 		def containerInstance = processAPI.searchHumanTaskInstances(new SearchOptionsBuilder(0, 1)
 				.filter(HumanTaskInstanceSearchDescriptor.PROCESS_INSTANCE_ID, caseId)
@@ -116,6 +121,16 @@ class CaseActivity implements RestApiController,CaseActivityHelper {
 		})
 
 		buildResponse(responseBuilder, HttpServletResponse.SC_OK, new JsonBuilder(result).toString())
+	}
+	
+	def valueOf(state) {
+		switch(state) {
+			case 'Required' : return 0
+			case 'Optional' : return 1
+			case 'Discretionary' : return 2
+			case 'N/A' : return 3
+			default : return 4
+		}
 	}
 
 	def getMetadata(HumanTaskInstance task, ProcessAPI processAPI) {
