@@ -3,7 +3,7 @@
   "previousDesignerVersion" : "1.7.11",
   "id" : "Case",
   "name" : "Case",
-  "lastUpdate" : 1543427323058,
+  "lastUpdate" : 1543499382978,
   "rows" : [ [ {
     "type" : "container",
     "dimension" : {
@@ -504,7 +504,7 @@
             },
             "maxLength" : {
               "type" : "constant",
-              "value" : ""
+              "value" : 50
             },
             "readOnly" : {
               "type" : "constant",
@@ -527,11 +527,12 @@
               "value" : 4
             },
             "placeholder" : {
-              "type" : "interpolation"
+              "type" : "interpolation",
+              "value" : "A display name for this docuement (50 characters max.)"
             },
             "value" : {
               "type" : "variable",
-              "value" : "newDocument.content.name"
+              "value" : "newDocument.name"
             },
             "type" : {
               "type" : "constant",
@@ -765,7 +766,7 @@
             },
             "disabled" : {
               "type" : "expression",
-              "value" : "!newDocument.content.name"
+              "value" : "!newDocument.name"
             },
             "label" : {
               "type" : "interpolation",
@@ -910,7 +911,7 @@
     },
     "docuementPayload" : {
       "type" : "expression",
-      "value" : "if($data.newDocument.content){\n    return {\n        \"caseId\" : $data.caseId,\n        \"file\" : $data.newDocument.content.tempPath,\n        \"fileName\" : $data.newDocument.content.filename,\n        \"name\" : $data.newDocument.content.name,\n        \"description\" : $data.newDocument.description\n    };\n}",
+      "value" : "if($data.newDocument.content){\n    return {\n        \"caseId\" : $data.caseId,\n        \"file\" : $data.newDocument.content.tempPath,\n        \"fileName\" : $data.newDocument.content.filename,\n        \"name\" : $data.newDocument.name,\n        \"description\" : $data.newDocument.description\n    };\n}",
       "exposed" : false
     },
     "caseDocuments" : {
@@ -930,7 +931,7 @@
     },
     "defaultName" : {
       "type" : "expression",
-      "value" : "if($data.newDocument.content.filename && $data.newDocument.content.name == null ){\n     $data.newDocument.content.name = $data.newDocument.content.filename;\n}\n",
+      "value" : "if($data.newDocument.content.filename && $data.newDocument.name === undefined ){\n     $data.newDocument.name = $data.newDocument.content.filename.slice(0, 50);\n}\n",
       "exposed" : false
     },
     "documentCreationError" : {

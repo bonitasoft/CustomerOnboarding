@@ -56,3 +56,21 @@ ul {
     margin-right: 0px;
     padding-right: 0px;
 }
+
+.padding-top-15{
+     padding-top: 15px;
+}
+
+.panel{
+    margin-right: 15px;
+}
+
+.fixed-scrollable{
+    min-height: 50px;
+    max-height: 50px;
+    overflow-y: scroll;
+}
+
+.auto-width{
+    width: 240px;
+}

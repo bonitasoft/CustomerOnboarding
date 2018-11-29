@@ -43,7 +43,7 @@ class CaseDocument implements RestApiController {
 				creationDate:doc.creationDate,
 				fileName:doc.contentFileName,
 				id:doc.id,
-				description:doc.description,
+				description:doc.description.replace("\n", "<br>"),
 				username:username(doc.author,context.apiClient.getIdentityAPI())
 			]
 		}
