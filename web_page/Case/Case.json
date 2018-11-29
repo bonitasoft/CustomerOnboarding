@@ -3,7 +3,7 @@
   "previousDesignerVersion" : "1.7.11",
   "id" : "Case",
   "name" : "Case",
-  "lastUpdate" : 1543499382978,
+  "lastUpdate" : 1543507641811,
   "rows" : [ [ {
     "type" : "container",
     "dimension" : {
@@ -54,88 +54,6 @@
         "caseId" : "caseId",
         "activities" : "activities"
       }
-    } ], [ {
-      "type" : "component",
-      "dimension" : {
-        "xs" : 12,
-        "sm" : 12,
-        "md" : 12,
-        "lg" : 12
-      },
-      "propertyValues" : {
-        "cssClasses" : {
-          "type" : "constant",
-          "value" : ""
-        },
-        "hidden" : {
-          "type" : "constant",
-          "value" : false
-        },
-        "disabled" : {
-          "type" : "constant",
-          "value" : false
-        },
-        "label" : {
-          "type" : "interpolation",
-          "value" : "<span class=\"glyphicon glyphicon-remove-sign\" aria-hidden=\"true\"></span> Close"
-        },
-        "alignment" : {
-          "type" : "constant",
-          "value" : "right"
-        },
-        "buttonStyle" : {
-          "type" : "constant",
-          "value" : "warning"
-        },
-        "action" : {
-          "type" : "constant",
-          "value" : "PUT"
-        },
-        "url" : {
-          "type" : "interpolation",
-          "value" : "../API/extension/case"
-        },
-        "dataToSend" : {
-          "type" : "expression",
-          "value" : "caseIdPayload"
-        },
-        "dataFromSuccess" : {
-          "type" : "variable",
-          "value" : "caseId"
-        },
-        "dataFromError" : {
-          "type" : "variable",
-          "value" : ""
-        },
-        "targetUrlOnSuccess" : {
-          "type" : "interpolation",
-          "value" : ".."
-        },
-        "collectionToModify" : {
-          "type" : "variable"
-        },
-        "collectionPosition" : {
-          "type" : "constant",
-          "value" : "Last"
-        },
-        "valueToAdd" : {
-          "type" : "constant"
-        },
-        "removeItem" : {
-          "type" : "variable"
-        },
-        "closeOnSuccess" : {
-          "type" : "constant",
-          "value" : false
-        },
-        "modalId" : {
-          "type" : "constant",
-          "value" : ""
-        }
-      },
-      "reference" : "0ec3723a-79d8-4811-9689-9e6a3d109f5e",
-      "hasValidationError" : false,
-      "id" : "pbButton"
     } ] ]
   }, {
     "type" : "fragment",
@@ -877,11 +795,6 @@
     "caseComments" : {
       "type" : "url",
       "value" : "../API/extension/caseComment?caseId={{caseId}}",
-      "exposed" : false
-    },
-    "caseIdPayload" : {
-      "type" : "expression",
-      "value" : "return {\n    'caseId' : $data.caseId\n};",
       "exposed" : false
     },
     "caseId" : {

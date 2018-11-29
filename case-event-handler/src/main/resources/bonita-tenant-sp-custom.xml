@@ -21,8 +21,14 @@
     -->
 
 	 <bean id="caseEventHandler" class="com.bonitasoft.handler.CaseEventHandler">
-      
-    </bean>
+      	<constructor-arg name="prefix" value="$"/>
+      	<constructor-arg name="ignoredActivities">
+      	<list>
+      		<value>Dymanic Activity Container</value>
+      		<value>Create Activity</value>
+      	</list>
+      	</constructor-arg>
+     </bean>
 	
     <bean id="eventHandlers" class="org.springframework.beans.factory.config.MapFactoryBean">
         <property name="targetMapClass">
