@@ -21,7 +21,7 @@ trait CaseActivityHelper {
 	def getState(ActivityInstance activityInstance, ProcessAPI processAPI) {
 		try {
 			def defaultState = activityInstance.getState()
-			def instance = processAPI.getActivityTransientDataInstance("activityState", activityInstance.id)
+			def instance = processAPI.getActivityTransientDataInstance('$activityState', activityInstance.id)
 			if (defaultState == ActivityStates.ABORTED_STATE || defaultState == ActivityStates.FAILED_STATE) {
 				return [name: defaultState, id: idOfState(instance.value)]
 			}
