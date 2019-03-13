@@ -310,7 +310,7 @@
             </children>
             <children xmi:type="notation:Shape" xmi:id="_HGbfEPUdEeeREboOt7l4UQ" type="3005" element="_HGQf8PUdEeeREboOt7l4UQ" fontName="Ubuntu" fillColor="14334392" lineColor="10710316">
               <children xmi:type="notation:DecorationNode" xmi:id="_HGcGIPUdEeeREboOt7l4UQ" type="5005" element="_HGQf8PUdEeeREboOt7l4UQ"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HGbfEfUdEeeREboOt7l4UQ" x="120" y="54" width="123" height="62"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HGbfEfUdEeeREboOt7l4UQ" x="96" y="54" width="123" height="62"/>
             </children>
             <children xmi:type="notation:Shape" xmi:id="_h4UNNvUdEeeREboOt7l4UQ" type="3005" element="_h4S_EPUdEeeREboOt7l4UQ" fontName="Ubuntu" fillColor="14334392" lineColor="10710316">
               <children xmi:type="notation:DecorationNode" xmi:id="_h4U0QPUdEeeREboOt7l4UQ" type="5005" element="_h4S_EPUdEeeREboOt7l4UQ"/>
