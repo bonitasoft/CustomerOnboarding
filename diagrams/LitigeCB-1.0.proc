@@ -248,9 +248,9 @@
         <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_RlF_xvIoEeiAVslBKvhhLg" id="GROOVY_SCRIPT"/>
         <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_RlF_x_IoEeiAVslBKvhhLg" id="VALIDATOR"/>
         <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_RlF_yPIoEeiAVslBKvhhLg" id="OTHER"/>
-        <parameters xmi:type="parameter:Parameter" xmi:id="_EQzM0EWmEeml4OmTM0FgHg" name="coucou" typeClassname="java.lang.String"/>
+        <parameters xmi:type="parameter:Parameter" xmi:id="_SP3oYEWpEeml4OmTM0FgHg" name="testParam" typeClassname="java.lang.String"/>
       </configurations>
-      <parameters xmi:type="parameter:Parameter" xmi:id="_D3RSgEWmEeml4OmTM0FgHg" name="coucou" typeClassname="java.lang.String"/>
+      <parameters xmi:type="parameter:Parameter" xmi:id="_RvTR8EWpEeml4OmTM0FgHg" name="testParam" typeClassname="java.lang.String"/>
       <contract xmi:type="process:Contract" xmi:id="_x5qCJPSMEeeYpYD60oU_zA"/>
       <documents xmi:type="process:Document" xmi:id="_iF-48PUhEeeREboOt7l4UQ" name="caseDocuments" multiple="true">
         <mimeType xmi:type="expression:Expression" xmi:id="_iF-48fUhEeeREboOt7l4UQ" name="" content="" returnTypeFixed="true"/>
