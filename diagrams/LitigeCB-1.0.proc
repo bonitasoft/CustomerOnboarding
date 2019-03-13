@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actormapping="http://www.bonitasoft.org/ns/actormapping/6.0" xmlns:configuration="http://www.bonitasoft.org/ns/studio/configuration" xmlns:decision="http://www.bonitasoft.org/ns/studio/process/decision" xmlns:expression="http://www.bonitasoft.org/ns/studio/expression" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:process="http://www.bonitasoft.org/ns/studio/process" xsi:schemaLocation="http://www.bonitasoft.org/ns/studio/process/decision http://www.bonitasoft.org/ns/studio/process#//decision">
-  <process:MainProcess xmi:id="_x5qBwPSMEeeYpYD60oU_zA" name="LitigeCB" author="romain" bonitaVersion="7.8.1" bonitaModelVersion="7.8.0-002" configId="ACED00057400184C69746967654342372E382E302D303032372E382E317370">
+  <process:MainProcess xmi:id="_x5qBwPSMEeeYpYD60oU_zA" name="LitigeCB" author="romain" bonitaVersion="7.8.3" bonitaModelVersion="7.8.3-001" configId="ACED00057400184C69746967654342372E382E332D303031372E382E337370">
     <elements xmi:type="process:Pool" xmi:id="_x5qBwfSMEeeYpYD60oU_zA" name="Litige CB">
       <elements xmi:type="process:Lane" xmi:id="_x5qByPSMEeeYpYD60oU_zA" name="Bank" actor="_x5qCI_SMEeeYpYD60oU_zA">
         <elements xmi:type="process:Task" xmi:id="_x5qB2fSMEeeYpYD60oU_zA" name="Investigate transaction" outgoing="_DWOHYPUeEeeREboOt7l4UQ" overrideActorsOfTheLane="false">
@@ -195,7 +195,7 @@
       </connections>
       <actors xmi:type="process:Actor" xmi:id="_x5qCIvSMEeeYpYD60oU_zA" name="Customer" initiator="true"/>
       <actors xmi:type="process:Actor" xmi:id="_x5qCI_SMEeeYpYD60oU_zA" name="Bank"/>
-      <configurations xmi:type="configuration:Configuration" xmi:id="_At93wAdeEeiGn-a9BKu52g" name="Qualification" version="7.6.0-002" username="walter.bates" password="bpm">
+      <configurations xmi:type="configuration:Configuration" xmi:id="_At93wAdeEeiGn-a9BKu52g" name="Qualification" version="7.8.3-001" username="walter.bates" password="bpm">
         <actorMappings xmi:type="actormapping:ActorMappingsType" xmi:id="_AuA7EAdeEeiGn-a9BKu52g">
           <actorMapping xmi:type="actormapping:ActorMapping" xmi:id="_AuA7EQdeEeiGn-a9BKu52g" name="Customer">
             <groups xmi:type="actormapping:Groups" xmi:id="_AuA7EgdeEeiGn-a9BKu52g"/>
@@ -210,12 +210,7 @@
             <users xmi:type="actormapping:Users" xmi:id="_AuA7GgdeEeiGn-a9BKu52g"/>
           </actorMapping>
         </actorMappings>
-        <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_At93wQdeEeiGn-a9BKu52g" type="ACTOR_FILTER" definitionId="initiator" definitionVersion="1.0.0" implementationId="initiator-impl" implementationVersion="1.0.0"/>
-        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_At-e0AdeEeiGn-a9BKu52g" id="ACTOR_FILTER">
-          <children xmi:type="configuration:FragmentContainer" xmi:id="_At-e0QdeEeiGn-a9BKu52g" id="initiator-impl-1.0.0">
-            <fragments xmi:type="configuration:Fragment" xmi:id="_At-e0gdeEeiGn-a9BKu52g" key="initiator-impl -- 1.0.0" value="bonita-userfilter-initiator-impl-1.0.0-SNAPSHOT.jar" type="ACTOR_FILTER"/>
-          </children>
-        </processDependencies>
+        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_At-e0AdeEeiGn-a9BKu52g" id="ACTOR_FILTER"/>
         <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_At-e0wdeEeiGn-a9BKu52g" id="CONNECTOR"/>
         <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_At-e1AdeEeiGn-a9BKu52g" id="DATA_TYPES"/>
         <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_At-e1QdeEeiGn-a9BKu52g" id="GROOVY_SCRIPT"/>
@@ -225,7 +220,7 @@
         <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_At-e2QdeEeiGn-a9BKu52g" id="VALIDATOR"/>
         <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_At-e2gdeEeiGn-a9BKu52g" id="OTHER"/>
       </configurations>
-      <configurations xmi:type="configuration:Configuration" xmi:id="_ZbqSYCeQEei7d4O1CuuFSg" name="Demo" version="7.8.0-002" username="walter.bates" password="bpm">
+      <configurations xmi:type="configuration:Configuration" xmi:id="_ZbqSYCeQEei7d4O1CuuFSg" name="Demo" version="7.8.3-001" username="walter.bates" password="bpm">
         <actorMappings xmi:type="actormapping:ActorMappingsType" xmi:id="_ZbqSYSeQEei7d4O1CuuFSg">
           <actorMapping xmi:type="actormapping:ActorMapping" xmi:id="_ZbqSYieQEei7d4O1CuuFSg" name="Customer">
             <groups xmi:type="actormapping:Groups" xmi:id="_ZbqSYyeQEei7d4O1CuuFSg">
