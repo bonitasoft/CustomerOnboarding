@@ -144,7 +144,7 @@ class CaseActivity implements RestApiController,CaseActivityHelper {
 
 	def String forge(String processName,String processVersion,ActivityInstance instance,contextPath) {
 		if(instance instanceof UserTaskInstance) {
-			"$contextPath/portal/form/taskInstance/?id=$instance.id&displayConfirmation=false"
+			"$contextPath/portal/form/taskInstance/$instance.id?displayConfirmation=false"
 		}else if(instance instanceof ManualTaskInstance) {
 			"$contextPath/apps/cases/do?id=$instance.id"
 		}
