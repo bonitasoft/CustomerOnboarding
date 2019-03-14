@@ -154,7 +154,7 @@
           <iteratorExpression xmi:type="expression:Expression" xmi:id="_EejnmvYSEeesarEo_Te_Dg" name="multiInstanceIterator" content="multiInstanceIterator" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Object" returnTypeFixed="true"/>
           <completionCondition xmi:type="expression:Expression" xmi:id="_EejnmfYSEeesarEo_Te_Dg" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <formMapping xmi:type="process:FormMapping" xmi:id="_EekOofYSEeesarEo_Te_Dg" type="NONE">
-            <targetForm xmi:type="expression:Expression" xmi:id="_FoCMIidqEeida-blYETd7g" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+            <targetForm xmi:type="expression:Expression" xmi:id="_FoCMIidqEeida-blYETd7g" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
           </formMapping>
           <contract xmi:type="process:Contract" xmi:id="_EekOoPYSEeesarEo_Te_Dg"/>
           <expectedDuration xmi:type="expression:Expression" xmi:id="_EekOo_YSEeesarEo_Te_Dg" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
