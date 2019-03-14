@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<implementation:connectorImplementation xmlns:implementation="http://www.bonitasoft.org/ns/connector/implementation/6.0">
+  <implementationId>coSignGetEnv-impl</implementationId>
+  <implementationVersion>1.0.0</implementationVersion>
+  <definitionId>coSignGetEnv</definitionId>
+  <definitionVersion>1.0.0</definitionVersion>
+  <implementationClassname>com.bonitasoft.connector.sign.CoSignGetEnvImpl</implementationClassname>
+  <hasSources>true</hasSources>
+  <description></description>
+  <jarDependencies>
+    <jarDependency>coSignGetEnv-impl-1.0.0.jar</jarDependency>
+    <jarDependency>libSign.jar</jarDependency>
+  </jarDependencies>
+</implementation:connectorImplementation>

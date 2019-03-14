@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definition:ConnectorDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:definition="http://www.bonitasoft.org/ns/connector/definition/6.1">
+  <id>coSignSend</id>
+  <version>1.0.0</version>
+  <input mandatory="true" name="authUserName" type="java.lang.String"/>
+  <input mandatory="true" name="authUserPass" type="java.lang.String"/>
+  <input mandatory="true" name="authIntegratorKey" type="java.lang.String"/>
+  <input mandatory="true" name="file" type="java.lang.String"/>
+  <input mandatory="true" name="fileTargetName" type="java.lang.String"/>
+  <input mandatory="true" name="emailSubjet" type="java.lang.String"/>
+  <input mandatory="true" name="emailContent" type="java.lang.String"/>
+  <input mandatory="true" name="destMail" type="java.lang.String"/>
+  <input mandatory="true" name="destName" type="java.lang.String"/>
+  <input mandatory="true" name="destAccountId" type="java.lang.String"/>
+  <input mandatory="true" name="path" type="java.lang.String"/>
+  <output name="envelopeId" type="java.lang.String"/>
+  <page id="inputs">
+    <widget xsi:type="definition:Text" id="authUserName" inputName="authUserName"/>
+    <widget xsi:type="definition:Text" id="authUserPass" inputName="authUserPass"/>
+    <widget xsi:type="definition:Text" id="authIntegratorKey" inputName="authIntegratorKey"/>
+    <widget xsi:type="definition:Text" id="file" inputName="file" showDocuments="true"/>
+    <widget xsi:type="definition:Text" id="fileTargetName" inputName="fileTargetName"/>
+    <widget xsi:type="definition:Text" id="emailSubjet" inputName="emailSubjet"/>
+    <widget xsi:type="definition:Text" id="emailContent" inputName="emailContent"/>
+    <widget xsi:type="definition:Text" id="destMail" inputName="destMail"/>
+    <widget xsi:type="definition:Text" id="destName" inputName="destName"/>
+    <widget xsi:type="definition:Text" id="destAccountId" inputName="destAccountId"/>
+    <widget xsi:type="definition:Text" id="Textpath" inputName="path"/>
+  </page>
+</definition:ConnectorDefinition>
