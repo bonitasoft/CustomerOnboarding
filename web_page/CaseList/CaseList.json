@@ -3,7 +3,7 @@
   "previousDesignerVersion" : "1.7.25",
   "id" : "CaseList",
   "name" : "CaseList",
-  "lastUpdate" : 1552555891756,
+  "lastUpdate" : 1552558531918,
   "rows" : [ [ {
     "type" : "component",
     "dimension" : {
@@ -183,7 +183,7 @@
       },
       "dataFromSuccess" : {
         "type" : "variable",
-        "value" : ""
+        "value" : "reload"
       },
       "dataFromError" : {
         "type" : "variable",
@@ -338,7 +338,7 @@
   "data" : {
     "cases" : {
       "type" : "url",
-      "value" : "../API/extension/case",
+      "value" : "../API/extension/case?t={{reload}}",
       "exposed" : false
     },
     "caseLabel" : {
@@ -377,6 +377,11 @@
     "processId" : {
       "type" : "expression",
       "value" : "return {\"processDefinitionId\" : $data.process[0].id };",
+      "exposed" : false
+    },
+    "reload" : {
+      "type" : "constant",
+      "value" : "no",
       "exposed" : false
     }
   },
