@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actormapping="http://www.bonitasoft.org/ns/actormapping/6.0" xmlns:configuration="http://www.bonitasoft.org/ns/studio/configuration" xmlns:decision="http://www.bonitasoft.org/ns/studio/process/decision" xmlns:expression="http://www.bonitasoft.org/ns/studio/expression" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:parameter="http://www.bonitasoft.org/ns/studio/parameter" xmlns:process="http://www.bonitasoft.org/ns/studio/process" xsi:schemaLocation="http://www.bonitasoft.org/ns/studio/process/decision http://www.bonitasoft.org/ns/studio/process#//decision">
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actormapping="http://www.bonitasoft.org/ns/actormapping/6.0" xmlns:configuration="http://www.bonitasoft.org/ns/studio/configuration" xmlns:decision="http://www.bonitasoft.org/ns/studio/process/decision" xmlns:expression="http://www.bonitasoft.org/ns/studio/expression" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:process="http://www.bonitasoft.org/ns/studio/process" xsi:schemaLocation="http://www.bonitasoft.org/ns/studio/process/decision http://www.bonitasoft.org/ns/studio/process#//decision">
   <process:MainProcess xmi:id="_x5qBwPSMEeeYpYD60oU_zA" name="CustomerOnboarding" author="romain" bonitaVersion="7.8.3" bonitaModelVersion="7.8.3-001" configId="ACED0005740022437573746F6D65724F6E626F617264696E67372E382E332D303031372E382E337370">
     <elements xmi:type="process:Pool" xmi:id="_x5qBwfSMEeeYpYD60oU_zA" name="OnBoarding">
       <elements xmi:type="process:Lane" xmi:id="_x5qByPSMEeeYpYD60oU_zA" name="Bank" actor="_x5qCI_SMEeeYpYD60oU_zA">
@@ -248,7 +248,6 @@
         <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_RlF_xvIoEeiAVslBKvhhLg" id="GROOVY_SCRIPT"/>
         <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_RlF_x_IoEeiAVslBKvhhLg" id="VALIDATOR"/>
         <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_RlF_yPIoEeiAVslBKvhhLg" id="OTHER"/>
-        <parameters xmi:type="parameter:Parameter" xmi:id="_SP3oYEWpEeml4OmTM0FgHg" name="testParam" typeClassname="java.lang.String"/>
       </configurations>
       <contract xmi:type="process:Contract" xmi:id="_x5qCJPSMEeeYpYD60oU_zA"/>
       <documents xmi:type="process:Document" xmi:id="_iF-48PUhEeeREboOt7l4UQ" name="caseDocuments" multiple="true">

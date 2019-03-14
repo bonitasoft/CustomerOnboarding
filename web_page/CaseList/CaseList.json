@@ -3,7 +3,7 @@
   "previousDesignerVersion" : "1.7.25",
   "id" : "CaseList",
   "name" : "CaseList",
-  "lastUpdate" : 1552409778717,
+  "lastUpdate" : 1552555891756,
   "rows" : [ [ {
     "type" : "component",
     "dimension" : {
@@ -204,6 +204,14 @@
       },
       "removeItem" : {
         "type" : "variable"
+      },
+      "closeOnSuccess" : {
+        "type" : "constant",
+        "value" : false
+      },
+      "modalId" : {
+        "type" : "constant",
+        "value" : ""
       }
     },
     "reference" : "24483bbe-4ec0-44c3-a239-e54140c9a512",
@@ -363,7 +371,7 @@
     },
     "process" : {
       "type" : "url",
-      "value" : "../API/bpm/process?p=0&c=1",
+      "value" : "../API/bpm/process?c=1&p=0&f=activationState=ENABLED&f=name=OnBoarding",
       "exposed" : false
     },
     "processId" : {
