@@ -51,7 +51,7 @@
           </contract>
           <expectedDuration xmi:type="expression:Expression" xmi:id="_x5qCCPSMEeeYpYD60oU_zA" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
         </elements>
-        <elements xmi:type="process:Task" xmi:id="_HGQf8PUdEeeREboOt7l4UQ" name="Call customer" type="STANDARD" testBefore="true" overrideActorsOfTheLane="false">
+        <elements xmi:type="process:Task" xmi:id="_HGQf8PUdEeeREboOt7l4UQ" name="Addhoc activity" type="STANDARD" testBefore="true" overrideActorsOfTheLane="false">
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_HGUxYfUdEeeREboOt7l4UQ" name="displayName()" content="return &quot;&amp;#128241; Call customer, Case ID: &quot; +processInstanceId" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true">
             <referencedElements xmi:type="expression:Expression" xmi:id="_btrr0E8CEeiL57cXslApDw" name="processInstanceId" content="processInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
           </dynamicLabel>
@@ -163,6 +163,21 @@
         <elements xmi:type="process:TextAnnotation" xmi:id="_t2k0cPYZEeesarEo_Te_Dg" text="Technical workaround to create Manual task"/>
         <elements xmi:type="process:TextAnnotation" xmi:id="_q1JU4AdeEeiGn-a9BKu52g" text="Should an incoming transition from 🔍 Investigate transaction&#xA;Using precondition for POC purposes"/>
         <elements xmi:type="process:TextAnnotation" xmi:id="_EA-EIAdfEeiGn-a9BKu52g" text="Could be replaced by an API call in the App&#xA;But would not be visible in the case history"/>
+        <elements xmi:type="process:CallActivity" xmi:id="_4NwwUEZ3Eeml4OmTM0FgHg" name="Onboarding process">
+          <dynamicLabel xmi:type="expression:Expression" xmi:id="_4NxXYUZ3Eeml4OmTM0FgHg" name="" content="" returnTypeFixed="true"/>
+          <dynamicDescription xmi:type="expression:Expression" xmi:id="_4NxXYEZ3Eeml4OmTM0FgHg" name="" content="" returnTypeFixed="true"/>
+          <stepSummary xmi:type="expression:Expression" xmi:id="_4NxXYkZ3Eeml4OmTM0FgHg" name="" content="" returnTypeFixed="true"/>
+          <data xmi:type="process:Data" xmi:id="_GJUTsEcREeml4OmTM0FgHg" name="$activityState" dataType="_x5qCOfSMEeeYpYD60oU_zA">
+            <defaultValue xmi:type="expression:Expression" xmi:id="_GJUTsUcREeml4OmTM0FgHg" name="Required" content="Required"/>
+          </data>
+          <loopCondition xmi:type="expression:Expression" xmi:id="_4NxXZUZ3Eeml4OmTM0FgHg" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+          <loopMaximum xmi:type="expression:Expression" xmi:id="_4NxXZkZ3Eeml4OmTM0FgHg" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
+          <cardinalityExpression xmi:type="expression:Expression" xmi:id="_4NxXZ0Z3Eeml4OmTM0FgHg" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
+          <iteratorExpression xmi:type="expression:Expression" xmi:id="_4NxXaUZ3Eeml4OmTM0FgHg" name="multiInstanceIterator" content="multiInstanceIterator" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Object" returnTypeFixed="true"/>
+          <completionCondition xmi:type="expression:Expression" xmi:id="_4NxXaEZ3Eeml4OmTM0FgHg" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+          <calledActivityName xmi:type="expression:Expression" xmi:id="_4NxXY0Z3Eeml4OmTM0FgHg" name="SayHello" content="SayHello" returnTypeFixed="true"/>
+          <calledActivityVersion xmi:type="expression:Expression" xmi:id="_4NxXZEZ3Eeml4OmTM0FgHg" name="" content="" returnTypeFixed="true"/>
+        </elements>
       </elements>
       <data xmi:type="process:BusinessObjectData" xmi:id="_mRGqAPUrEeeJbuCjYn0Nqw" name="customer" dataType="_x5qCPPSMEeeYpYD60oU_zA" className="com.company.model.Customer">
         <defaultValue xmi:type="expression:Expression" xmi:id="_mRGqAfUrEeeJbuCjYn0Nqw" name="" content="" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object"/>
@@ -309,7 +324,7 @@
             </children>
             <children xmi:type="notation:Shape" xmi:id="_HGbfEPUdEeeREboOt7l4UQ" type="3005" element="_HGQf8PUdEeeREboOt7l4UQ" fontName="Ubuntu" fillColor="14334392" lineColor="10710316">
               <children xmi:type="notation:DecorationNode" xmi:id="_HGcGIPUdEeeREboOt7l4UQ" type="5005" element="_HGQf8PUdEeeREboOt7l4UQ"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HGbfEfUdEeeREboOt7l4UQ" x="96" y="54" width="123" height="62"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HGbfEfUdEeeREboOt7l4UQ" x="136" y="54" width="123" height="62"/>
             </children>
             <children xmi:type="notation:Shape" xmi:id="_h4UNNvUdEeeREboOt7l4UQ" type="3005" element="_h4S_EPUdEeeREboOt7l4UQ" fontName="Ubuntu" fillColor="14334392" lineColor="10710316">
               <children xmi:type="notation:DecorationNode" xmi:id="_h4U0QPUdEeeREboOt7l4UQ" type="5005" element="_h4S_EPUdEeeREboOt7l4UQ"/>
@@ -360,6 +375,10 @@
               <styles xmi:type="notation:FontStyle" xmi:id="_EA_5UgdfEeiGn-a9BKu52g" fontName="Ubuntu"/>
               <styles xmi:type="notation:LineStyle" xmi:id="_EA_5UwdfEeiGn-a9BKu52g"/>
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EA_5VAdfEeiGn-a9BKu52g" x="550" y="127"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_4Nx-cEZ3Eeml4OmTM0FgHg" type="3063" element="_4NwwUEZ3Eeml4OmTM0FgHg" fontName=".AppleSystemUIFont" fillColor="14334392" lineColor="10710316">
+              <children xmi:type="notation:DecorationNode" xmi:id="_4Nx-ckZ3Eeml4OmTM0FgHg" type="5093"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4Nx-cUZ3Eeml4OmTM0FgHg" x="148" y="176"/>
             </children>
           </children>
           <styles xmi:type="notation:DescriptionStyle" xmi:id="_x5qCXPSMEeeYpYD60oU_zA"/>
