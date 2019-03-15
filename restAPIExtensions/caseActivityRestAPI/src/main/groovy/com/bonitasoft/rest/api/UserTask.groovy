@@ -19,22 +19,26 @@ class UserTask implements RestApiController {
 	
 	@Override
 	RestApiResponse doHandle(HttpServletRequest request, RestApiResponseBuilder responseBuilder, RestAPIContext context) {
-		def jsonBody = new JsonSlurper().parse(request.getReader())
-		def processAPI = context.apiClient.getProcessAPI()
-		if(!jsonBody.taskId) {
+		try {
+			def jsonBody = new JsonSlurper().parse(request.getReader())
+			def processAPI = context.apiClient.getProcessAPI()
+			if(!jsonBody.taskId) {
+				return responseBuilder.with {
+					withResponseStatus(HttpServletResponse.SC_BAD_REQUEST)
+					withResponse("No taskId in payload")
+					build()
+				}
+			}
+			def taskId = jsonBody.taskId.toLong()
+			processAPI.assignUserTask(taskId, context.apiSession.userId)
+			processAPI.executeUserTask(taskId, jsonBody)
+			processAPI.addProcessComment(jsonBody.processInstanceId.toLong(), jsonBody.content)
 			return responseBuilder.with {
-				withResponseStatus(HttpServletResponse.SC_BAD_REQUEST)
-				withResponse("No taskId in payload")
+				withResponseStatus(HttpServletResponse.SC_CREATED)
 				build()
 			}
-		}
-		def taskId = jsonBody.taskId.toLong()
-		processAPI.assignUserTask(taskId, context.apiSession.userId)
-		processAPI.executeUserTask(taskId, jsonBody)
-		processAPI.addProcessComment(jsonBody.processInstanceId.toLong(), jsonBody.content)
-		return responseBuilder.with {
-			withResponseStatus(HttpServletResponse.SC_CREATED)
-			build()
+		}catch(Exception e) {
+				println "Exception: $e.getMessage()"
 		}
 	}
 	

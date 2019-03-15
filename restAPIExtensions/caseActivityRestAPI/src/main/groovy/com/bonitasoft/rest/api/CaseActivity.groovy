@@ -40,7 +40,7 @@ class CaseActivity implements RestApiController,CaseActivityHelper {
 
 	@Override
 	RestApiResponse doHandle(HttpServletRequest request, RestApiResponseBuilder responseBuilder, RestAPIContext context) {
-		def contextPath = "http://$request.serverName:$request.localPort$request.contextPath"
+		def contextPath = "http://$request.serverName:$request.serverPort$request.contextPath"
 		def caseId = request.getParameter "caseId"
 		if (!caseId) {
 			return buildResponse(responseBuilder, HttpServletResponse.SC_BAD_REQUEST,"""{"error" : "the parameter caseId is missing"}""")
@@ -63,8 +63,9 @@ class CaseActivity implements RestApiController,CaseActivityHelper {
 				}.collect{ it.name }
 				
 		//Retrieve pending activities
+	//.findAll{it.name != ACTIVITY_CONTAINER && it.name != CREATE_ACTIVITY  && it.rootContainerId == Long.valueOf(caseId) }
 		def result = processAPI.getPendingHumanTaskInstances(context.apiSession.userId,0, Integer.MAX_VALUE, ActivityInstanceCriterion.EXPECTED_END_DATE_ASC)
-				.findAll{it.name != ACTIVITY_CONTAINER && it.name != CREATE_ACTIVITY  && it.rootContainerId == Long.valueOf(caseId) }
+				.findAll{it.name != ACTIVITY_CONTAINER && it.name != CREATE_ACTIVITY }
 				.collect{ HumanTaskInstance task ->
 					[
 						id:task.name,
@@ -144,7 +145,8 @@ class CaseActivity implements RestApiController,CaseActivityHelper {
 
 	def String forge(String processName,String processVersion,ActivityInstance instance,contextPath) {
 		if(instance instanceof UserTaskInstance) {
-			"$contextPath/portal/form/taskInstance/?id=$instance.id&displayConfirmation=false"
+			//"$contextPath/portal/form/taskInstance/$instance.id?displayConfirmation=false"
+			"$contextPath/portal/resource/taskInstance/$processName/$processVersion/$instance.name/content/?id=$instance.id&displayConfirmation=false"
 		}else if(instance instanceof ManualTaskInstance) {
 			"$contextPath/apps/cases/do?id=$instance.id"
 		}

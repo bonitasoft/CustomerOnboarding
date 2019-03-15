@@ -3,7 +3,7 @@
   "previousDesignerVersion" : "1.7.25",
   "id" : "CaseList",
   "name" : "CaseList",
-  "lastUpdate" : 1552558531918,
+  "lastUpdate" : 1552568031643,
   "rows" : [ [ {
     "type" : "component",
     "dimension" : {
@@ -338,7 +338,7 @@
   "data" : {
     "cases" : {
       "type" : "url",
-      "value" : "../API/extension/case?t={{reload}}",
+      "value" : "../API/extension/case?t={{reload.id}}",
       "exposed" : false
     },
     "caseLabel" : {
@@ -380,8 +380,8 @@
       "exposed" : false
     },
     "reload" : {
-      "type" : "constant",
-      "value" : "no",
+      "type" : "json",
+      "value" : "{\"id\":\"0\"}",
       "exposed" : false
     }
   },
