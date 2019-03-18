@@ -750,11 +750,11 @@
       <data xmi:type="process:Data" xmi:id="_6G3h6UZkEemrTfGNF0_5Xw" name="documents" generated="false" multiple="true" dataType="_6G3iLUZkEemrTfGNF0_5Xw">
         <defaultValue xmi:type="expression:Expression" xmi:id="_6G3h6kZkEemrTfGNF0_5Xw" content="" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List"/>
       </data>
-      <formMapping xmi:type="process:FormMapping" xmi:id="_6G3h7UZkEemrTfGNF0_5Xw">
+      <formMapping xmi:type="process:FormMapping" xmi:id="_6G3h7UZkEemrTfGNF0_5Xw" type="NONE">
         <targetForm xmi:type="expression:Expression" xmi:id="_sMuFgUZlEemrTfGNF0_5Xw" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
       </formMapping>
-      <overviewFormMapping xmi:type="process:FormMapping" xmi:id="_6G3h8EZkEemrTfGNF0_5Xw">
-        <targetForm xmi:type="expression:Expression" xmi:id="_6G3h8UZkEemrTfGNF0_5Xw" name="TestCaseOverview" content="e42eee42-0f81-4666-9276-00cf80b1592a" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+      <overviewFormMapping xmi:type="process:FormMapping" xmi:id="_6G3h8EZkEemrTfGNF0_5Xw" type="NONE">
+        <targetForm xmi:type="expression:Expression" xmi:id="_6G3h8UZkEemrTfGNF0_5Xw" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
       </overviewFormMapping>
       <connections xmi:type="process:SequenceFlow" xmi:id="_6G3h80ZkEemrTfGNF0_5Xw" target="_6G3h10ZkEemrTfGNF0_5Xw" source="_6G3hpkZkEemrTfGNF0_5Xw">
         <decisionTable xmi:type="decision:DecisionTable" xmi:id="_6G3h9EZkEemrTfGNF0_5Xw"/>
