@@ -223,6 +223,33 @@
         <parameters xmi:type="parameter:Parameter" xmi:id="_iYXowESzEeml4OmTM0FgHg" name="docusignUser" value="test" typeClassname="java.lang.String"/>
         <parameters xmi:type="parameter:Parameter" xmi:id="_iYXowUSzEeml4OmTM0FgHg" name="docusignAuthIntegratorKey" value="test" typeClassname="java.lang.String"/>
       </configurations>
+      <configurations xmi:type="configuration:Configuration" xmi:id="_1h7fEEpPEeml4OmTM0FgHg" name="Demo" version="7.8.3-001" username="walter.bates" password="bpm">
+        <actorMappings xmi:type="actormapping:ActorMappingsType" xmi:id="_1h8GIEpPEeml4OmTM0FgHg">
+          <actorMapping xmi:type="actormapping:ActorMapping" xmi:id="_1h8GIUpPEeml4OmTM0FgHg" name="actor">
+            <groups xmi:type="actormapping:Groups" xmi:id="_1h8GIkpPEeml4OmTM0FgHg"/>
+            <memberships xmi:type="actormapping:Membership" xmi:id="_1h8GI0pPEeml4OmTM0FgHg"/>
+            <roles xmi:type="actormapping:Roles" xmi:id="_1h8GJEpPEeml4OmTM0FgHg"/>
+            <users xmi:type="actormapping:Users" xmi:id="_1h8GJUpPEeml4OmTM0FgHg"/>
+          </actorMapping>
+        </actorMappings>
+        <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_1h7fEUpPEeml4OmTM0FgHg" type="CONNECTOR" definitionId="coSignGetStatus" definitionVersion="1.0.0" implementationId="coSignGetStatus-impl" implementationVersion="1.0.0"/>
+        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_1h7fEkpPEeml4OmTM0FgHg" id="ACTOR_FILTER"/>
+        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_1h7fE0pPEeml4OmTM0FgHg" id="CONNECTOR">
+          <children xmi:type="configuration:FragmentContainer" xmi:id="_1h7fFEpPEeml4OmTM0FgHg" id="coSignGetStatus-impl-1.0.0">
+            <fragments xmi:type="configuration:Fragment" xmi:id="_1h7fFUpPEeml4OmTM0FgHg" key="coSignGetStatus-impl -- 1.0.0" value="coSignGetStatus-impl-1.0.0.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_1h7fFkpPEeml4OmTM0FgHg" key="coSignGetStatus-impl -- 1.0.0" value="libSign.jar" type="CONNECTOR"/>
+          </children>
+        </processDependencies>
+        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_1h7fF0pPEeml4OmTM0FgHg" id="DATA_TYPES"/>
+        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_1h7fGEpPEeml4OmTM0FgHg" id="GROOVY_SCRIPT"/>
+        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_1h7fGUpPEeml4OmTM0FgHg" id="OTHER"/>
+        <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_1h7fGkpPEeml4OmTM0FgHg" id="DATA_TYPES"/>
+        <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_1h7fG0pPEeml4OmTM0FgHg" id="GROOVY_SCRIPT"/>
+        <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_1h7fHEpPEeml4OmTM0FgHg" id="OTHER"/>
+        <parameters xmi:type="parameter:Parameter" xmi:id="_1h8GJkpPEeml4OmTM0FgHg" name="docusignPassword" typeClassname="java.lang.String"/>
+        <parameters xmi:type="parameter:Parameter" xmi:id="_1h8GJ0pPEeml4OmTM0FgHg" name="docusignUser" typeClassname="java.lang.String"/>
+        <parameters xmi:type="parameter:Parameter" xmi:id="_1h8GKEpPEeml4OmTM0FgHg" name="docusignAuthIntegratorKey" typeClassname="java.lang.String"/>
+      </configurations>
       <parameters xmi:type="parameter:Parameter" xmi:id="_A1pYEnSdEeiXy_sNN3EIww" name="docusignPassword" typeClassname="java.lang.String"/>
       <parameters xmi:type="parameter:Parameter" xmi:id="_A1pYE3SdEeiXy_sNN3EIww" name="docusignUser" typeClassname="java.lang.String"/>
       <parameters xmi:type="parameter:Parameter" xmi:id="_A1pYFHSdEeiXy_sNN3EIww" name="docusignAuthIntegratorKey" typeClassname="java.lang.String"/>

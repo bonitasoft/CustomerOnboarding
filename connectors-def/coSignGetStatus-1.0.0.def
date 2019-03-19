@@ -2,6 +2,9 @@
 <definition:ConnectorDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:definition="http://www.bonitasoft.org/ns/connector/definition/6.1">
   <id>coSignGetStatus</id>
   <version>1.0.0</version>
+  <icon>9640-1539006991-9521794.png</icon>
+  <category icon="9640-1539006991-9521794.png" id="docusign" parentCategoryId="cms"/>
+  <category icon="CMS.png" id="cms"/>
   <input mandatory="true" name="authUserName" type="java.lang.String"/>
   <input mandatory="true" name="authPassword" type="java.lang.String"/>
   <input mandatory="true" name="authIntegratorKey" type="java.lang.String"/>
