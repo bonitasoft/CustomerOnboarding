@@ -48,7 +48,40 @@
                 <expression xmi:type="expression:Expression" xmi:id="_v7g7VkpyEeml4OmTM0FgHg" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_v7g7V0pyEeml4OmTM0FgHg" key="inputArguments">
-                <expression xmi:type="expression:TableExpression" xmi:id="_v7g7WEpyEeml4OmTM0FgHg"/>
+                <expression xmi:type="expression:TableExpression" xmi:id="_v7g7WEpyEeml4OmTM0FgHg">
+                  <expressions xmi:type="expression:ListExpression" xmi:id="_7GsDIEqGEemBGtySZy2Unw">
+                    <expressions xmi:type="expression:Expression" xmi:id="_7GsDIUqGEemBGtySZy2Unw" name="firstname" content="firstname"/>
+                    <expressions xmi:type="expression:Expression" xmi:id="_7GsDIkqGEemBGtySZy2Unw" name="Philippe" content="Philippe"/>
+                  </expressions>
+                  <expressions xmi:type="expression:ListExpression" xmi:id="_7GsDI0qGEemBGtySZy2Unw">
+                    <expressions xmi:type="expression:Expression" xmi:id="_7GsDJEqGEemBGtySZy2Unw" name="lastname" content="lastname"/>
+                    <expressions xmi:type="expression:Expression" xmi:id="_7GsDJUqGEemBGtySZy2Unw" name="Laumay" content="Laumay"/>
+                  </expressions>
+                  <expressions xmi:type="expression:ListExpression" xmi:id="_7GsDJkqGEemBGtySZy2Unw">
+                    <expressions xmi:type="expression:Expression" xmi:id="_7GsDJ0qGEemBGtySZy2Unw" name="dob" content="dob"/>
+                    <expressions xmi:type="expression:Expression" xmi:id="_7GsDKEqGEemBGtySZy2Unw" name="03/02/1976" content="03/02/1976"/>
+                  </expressions>
+                  <expressions xmi:type="expression:ListExpression" xmi:id="_7GsDKUqGEemBGtySZy2Unw">
+                    <expressions xmi:type="expression:Expression" xmi:id="_7GsDKkqGEemBGtySZy2Unw" name="credit" content="credit"/>
+                    <expressions xmi:type="expression:Expression" xmi:id="_7GsDK0qGEemBGtySZy2Unw" name="400000" content="400000"/>
+                  </expressions>
+                  <expressions xmi:type="expression:ListExpression" xmi:id="_7GsDLEqGEemBGtySZy2Unw">
+                    <expressions xmi:type="expression:Expression" xmi:id="_7GsDLUqGEemBGtySZy2Unw" name="taxid" content="taxid"/>
+                    <expressions xmi:type="expression:Expression" xmi:id="_7GsDLkqGEemBGtySZy2Unw" name="123456" content="123456"/>
+                  </expressions>
+                  <expressions xmi:type="expression:ListExpression" xmi:id="_eipa4EqGEemBGtySZy2Unw">
+                    <expressions xmi:type="expression:Expression" xmi:id="_eipa4UqGEemBGtySZy2Unw" name="bonitaUser" content="bonitaUser"/>
+                    <expressions xmi:type="expression:Expression" xmi:id="_eipa4kqGEemBGtySZy2Unw" name="walter.bates" content="walter.bates"/>
+                  </expressions>
+                  <expressions xmi:type="expression:ListExpression" xmi:id="_eizL4EqGEemBGtySZy2Unw">
+                    <expressions xmi:type="expression:Expression" xmi:id="_eizL4UqGEemBGtySZy2Unw" name="bonitaPassword" content="bonitaPassword"/>
+                    <expressions xmi:type="expression:Expression" xmi:id="_eizL4kqGEemBGtySZy2Unw" name="bpm" content="bpm"/>
+                  </expressions>
+                  <expressions xmi:type="expression:ListExpression" xmi:id="_eizL40qGEemBGtySZy2Unw">
+                    <expressions xmi:type="expression:Expression" xmi:id="_eizL5EqGEemBGtySZy2Unw" name="bonitaServerURL" content="bonitaServerURL"/>
+                    <expressions xmi:type="expression:Expression" xmi:id="_eizL5UqGEemBGtySZy2Unw" name="http://localhost:8080/bonita" content="http://localhost:8080/bonita"/>
+                  </expressions>
+                </expression>
               </parameters>
             </configuration>
           </connectors>
