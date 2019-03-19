@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <applications xmlns="http://documentation.bonitasoft.com/application-xml-schema/1.0">
-    <application token="bonita-bank" version="1.0" profile="User" homePage="home-page" state="ACTIVATED" layout="custompage_defaultlayout" theme="custompage_bootstrapdefaulttheme">
+    <application token="bonita-bank" version="1.0" profile="User" homePage="home-page" state="ACTIVATED" layout="custompage_defaultlayout" theme="custompage_acmetheme">
         <displayName>Bonita Bank App</displayName>
         <applicationPages>
             <applicationPage customPage="custompage_AccountOpenning" token="openning"/>
