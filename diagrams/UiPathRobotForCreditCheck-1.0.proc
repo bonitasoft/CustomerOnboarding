@@ -58,18 +58,11 @@
           <iteratorExpression xmi:type="expression:Expression" xmi:id="_COlSzkmeEemBGtySZy2Unw" name="multiInstanceIterator" content="multiInstanceIterator" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Object" returnTypeFixed="true"/>
           <completionCondition xmi:type="expression:Expression" xmi:id="_COlSz0meEemBGtySZy2Unw" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
         </elements>
-        <elements xmi:type="process:IntermediateCatchMessageEvent" xmi:id="_NFaSYEmeEemBGtySZy2Unw" name="creditCheckScore" outgoing="_Q_JkEEmeEemBGtySZy2Unw" incoming="_NFtNUEmeEemBGtySZy2Unw">
+        <elements xmi:type="process:IntermediateCatchMessageEvent" xmi:id="_NFaSYEmeEemBGtySZy2Unw" name="creditCheckScore" outgoing="_Q_JkEEmeEemBGtySZy2Unw" incoming="_NFtNUEmeEemBGtySZy2Unw" event="creditCheck">
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_NFaSYkmeEemBGtySZy2Unw" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_NFaSYUmeEemBGtySZy2Unw" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_NFaSY0meEemBGtySZy2Unw" name="" content="" returnTypeFixed="true"/>
-          <correlation xmi:type="expression:TableExpression" xmi:id="_PpBeoEmeEemBGtySZy2Unw">
-            <expressions xmi:type="expression:ListExpression" xmi:id="_7qlIUEmfEemBGtySZy2Unw">
-              <expressions xmi:type="expression:Expression" xmi:id="_7qlIUUmfEemBGtySZy2Unw" name="processInstanceId" content="processInstanceId"/>
-              <expressions xmi:type="expression:Expression" xmi:id="_7qlIUkmfEemBGtySZy2Unw" name="processInstanceId()" content="processInstanceId" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
-                <referencedElements xmi:type="expression:Expression" xmi:id="_AFsowEmgEemBGtySZy2Unw" name="processInstanceId" content="processInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
-              </expressions>
-            </expressions>
-          </correlation>
+          <correlation xmi:type="expression:TableExpression" xmi:id="_PpBeoEmeEemBGtySZy2Unw"/>
         </elements>
         <elements xmi:type="process:EndEvent" xmi:id="_Q-_zEEmeEemBGtySZy2Unw" name="End1" incoming="_Q_JkEEmeEemBGtySZy2Unw">
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_Q-_zEkmeEemBGtySZy2Unw" name="" content="" returnTypeFixed="true"/>
@@ -107,15 +100,25 @@
             <users xmi:type="actormapping:Users" xmi:id="_lMiqfkmeEemBGtySZy2Unw"/>
           </actorMapping>
         </actorMappings>
+        <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_SxmJUEpzEemBGtySZy2Unw" type="CONNECTOR" definitionId="uipath-startjob" definitionVersion="1.0.0" implementationId="uipath-startjob-impl" implementationVersion="1.0.3"/>
         <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_lMiqcUmeEemBGtySZy2Unw" id="ACTOR_FILTER"/>
-        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_lMiqckmeEemBGtySZy2Unw" id="CONNECTOR"/>
+        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_lMiqckmeEemBGtySZy2Unw" id="CONNECTOR">
+          <children xmi:type="configuration:FragmentContainer" xmi:id="_S20AgEpzEemBGtySZy2Unw" id="uipath-startjob-impl-1.0.3">
+            <fragments xmi:type="configuration:Fragment" xmi:id="_S3G7cEpzEemBGtySZy2Unw" key="uipath-startjob-impl -- 1.0.3" value="bonita-connector-uipath-1.0.3.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_S3G7cUpzEemBGtySZy2Unw" key="uipath-startjob-impl -- 1.0.3" value="okhttp-3.10.0.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_S3QscEpzEemBGtySZy2Unw" key="uipath-startjob-impl -- 1.0.3" value="retrofit-2.4.0.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_S3QscUpzEemBGtySZy2Unw" key="uipath-startjob-impl -- 1.0.3" value="logging-interceptor-3.11.0.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_S3QsckpzEemBGtySZy2Unw" key="uipath-startjob-impl -- 1.0.3" value="okio-1.14.0.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_S3Qsc0pzEemBGtySZy2Unw" key="uipath-startjob-impl -- 1.0.3" value="converter-jackson-2.4.0.jar" type="CONNECTOR"/>
+          </children>
+        </processDependencies>
         <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_lMiqc0meEemBGtySZy2Unw" id="DATA_TYPES"/>
         <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_lMiqdEmeEemBGtySZy2Unw" id="GROOVY_SCRIPT"/>
         <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_lMiqdUmeEemBGtySZy2Unw" id="OTHER"/>
         <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_lMiqdkmeEemBGtySZy2Unw" id="DATA_TYPES"/>
         <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_lMiqd0meEemBGtySZy2Unw" id="GROOVY_SCRIPT"/>
         <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_lMiqeEmeEemBGtySZy2Unw" id="OTHER"/>
-        <parameters xmi:type="parameter:Parameter" xmi:id="_Xr1EIEpyEeml4OmTM0FgHg" name="uiPathURL" value="http://localhost:8888/" typeClassname="java.lang.String"/>
+        <parameters xmi:type="parameter:Parameter" xmi:id="_Xr1EIEpyEeml4OmTM0FgHg" name="uiPathURL" value="http://ec2-54-154-0-15.eu-west-1.compute.amazonaws.com:8888" typeClassname="java.lang.String"/>
         <parameters xmi:type="parameter:Parameter" xmi:id="_Xr1EIUpyEeml4OmTM0FgHg" name="uiPathLogin" value="bonitauser" typeClassname="java.lang.String"/>
         <parameters xmi:type="parameter:Parameter" xmi:id="_Xr1EIkpyEeml4OmTM0FgHg" name="uiPathPassword" value="Bonita_2019" typeClassname="java.lang.String"/>
       </configurations>
