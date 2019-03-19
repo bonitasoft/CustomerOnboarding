@@ -258,12 +258,12 @@
         </filters>
       </elements>
       <data xmi:type="process:BusinessObjectData" xmi:id="_a7GGsG_PEeisvpHAXDrVXQ" name="customer" dataType="_WVG6hG7jEeiAPptCnO7t1w" className="com.company.model.Customer">
-        <defaultValue xmi:type="expression:Expression" xmi:id="_OQdl8HSXEeiXy_sNN3EIww" name="initCustomer()" content="def customerVar = new com.company.model.Customer()&#xA;customerVar.firstName = customerInput.firstName&#xA;customerVar.middleName = customerInput.middleName&#xA;customerVar.lastName = customerInput.lastName&#xA;customerVar.suffix = customerInput.suffix&#xA;customerVar.addressLine1 = customerInput.addressLine1&#xA;customerVar.addressLine2 = customerInput.addressLine2&#xA;customerVar.city = customerInput.city&#xA;customerVar.usState = customerInput.usState&#xA;customerVar.zipCode = customerInput.zipCode&#xA;customerVar.phoneNumber = customerInput.phoneNumber&#xA;customerVar.emailAddress = customerInput.emailAddress&#xA;customerVar.dateOfBirth = customerInput.dateOfBirth&#xA;return customerVar" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.Customer">
-          <referencedElements xmi:type="process:ContractInput" xmi:id="_R0JvIHSXEeiXy_sNN3EIww" name="customerInput" type="COMPLEX"/>
+        <defaultValue xmi:type="expression:Expression" xmi:id="_jevVu0prEem1xYT2gBFygA" name="initCustomer()" content="def customerVar = new com.company.model.Customer()&#xD;&#xA;customerVar.firstName = customerInput.firstName&#xD;&#xA;customerVar.lastName = customerInput.lastName&#xD;&#xA;customerVar.middleName = customerInput.middleName&#xD;&#xA;customerVar.address = {&#xD;&#xA;&#x9;def addressVar = customerVar.address == null ? new com.company.model.Address() : customerVar.address&#xD;&#xA;&#x9;addressVar.street = customerInput.address.street&#xD;&#xA;&#x9;addressVar.city = customerInput.address.city&#xD;&#xA;&#x9;addressVar.zipcode = customerInput.address.zipcode&#xD;&#xA;&#x9;addressVar.country = customerInput.address.country&#xD;&#xA;&#x9;return addressVar}()&#xD;&#xA;customerVar.phoneNumber = customerInput.phoneNumber&#xD;&#xA;customerVar.eMailAddress = customerInput.eMailAddress&#xD;&#xA;return customerVar" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.Customer">
+          <referencedElements xmi:type="process:ContractInput" xmi:id="_jevVvEprEem1xYT2gBFygA" name="customerInput" type="COMPLEX"/>
         </defaultValue>
       </data>
-      <formMapping xmi:type="process:FormMapping" xmi:id="_WVG6Ym7jEeiAPptCnO7t1w" type="NONE">
-        <targetForm xmi:type="expression:Expression" xmi:id="_wHuucG_NEeisvpHAXDrVXQ" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+      <formMapping xmi:type="process:FormMapping" xmi:id="_WVG6Ym7jEeiAPptCnO7t1w">
+        <targetForm xmi:type="expression:Expression" xmi:id="_VDFPUEppEem1xYT2gBFygA" name="newForm" content="1ea4e82c-0a0a-49e1-9603-a7b2f8ce7232" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
       </formMapping>
       <overviewFormMapping xmi:type="process:FormMapping" xmi:id="_WVG6ZW7jEeiAPptCnO7t1w">
         <targetForm xmi:type="expression:Expression" xmi:id="_bb90AHkjEeiSJs7w9ZoB7A" name="CaseOverview" content="d239b776-1965-44e1-a1e0-0e9d82cf51be" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
@@ -588,19 +588,18 @@
       <parameters xmi:type="parameter:Parameter" xmi:id="_agTJQEZ0Eeml4OmTM0FgHg" name="uiPathPassword" typeClassname="java.lang.String"/>
       <parameters xmi:type="parameter:Parameter" xmi:id="_RCxVQEmdEemBGtySZy2Unw" name="uiPathURL" typeClassname="java.lang.String"/>
       <contract xmi:type="process:Contract" xmi:id="_WVG6bG7jEeiAPptCnO7t1w">
-        <inputs xmi:type="process:ContractInput" xmi:id="_eXUV8G_PEeisvpHAXDrVXQ" name="customerInput" type="COMPLEX">
-          <inputs xmi:type="process:ContractInput" xmi:id="_eXUV8W_PEeisvpHAXDrVXQ" name="firstName"/>
-          <inputs xmi:type="process:ContractInput" xmi:id="_eXUV8m_PEeisvpHAXDrVXQ" name="middleName"/>
-          <inputs xmi:type="process:ContractInput" xmi:id="_eXUV82_PEeisvpHAXDrVXQ" name="lastName"/>
-          <inputs xmi:type="process:ContractInput" xmi:id="_eXUV9G_PEeisvpHAXDrVXQ" name="suffix"/>
-          <inputs xmi:type="process:ContractInput" xmi:id="_eXUV9W_PEeisvpHAXDrVXQ" name="addressLine1"/>
-          <inputs xmi:type="process:ContractInput" xmi:id="_eXUV9m_PEeisvpHAXDrVXQ" name="addressLine2"/>
-          <inputs xmi:type="process:ContractInput" xmi:id="_eXUV92_PEeisvpHAXDrVXQ" name="city"/>
-          <inputs xmi:type="process:ContractInput" xmi:id="_eXUV-G_PEeisvpHAXDrVXQ" name="usState"/>
-          <inputs xmi:type="process:ContractInput" xmi:id="_eXUV-W_PEeisvpHAXDrVXQ" name="zipCode"/>
-          <inputs xmi:type="process:ContractInput" xmi:id="_eXUV-m_PEeisvpHAXDrVXQ" name="phoneNumber"/>
-          <inputs xmi:type="process:ContractInput" xmi:id="_eXUV-2_PEeisvpHAXDrVXQ" name="emailAddress"/>
-          <inputs xmi:type="process:ContractInput" xmi:id="_eXUV_G_PEeisvpHAXDrVXQ" name="dateOfBirth" type="LOCALDATE"/>
+        <inputs xmi:type="process:ContractInput" xmi:id="_jevVsEprEem1xYT2gBFygA" name="customerInput" type="COMPLEX">
+          <inputs xmi:type="process:ContractInput" xmi:id="_jevVsUprEem1xYT2gBFygA" name="firstName"/>
+          <inputs xmi:type="process:ContractInput" xmi:id="_jevVskprEem1xYT2gBFygA" name="lastName"/>
+          <inputs xmi:type="process:ContractInput" xmi:id="_jevVs0prEem1xYT2gBFygA" name="middleName"/>
+          <inputs xmi:type="process:ContractInput" xmi:id="_jevVtEprEem1xYT2gBFygA" name="address" type="COMPLEX">
+            <inputs xmi:type="process:ContractInput" xmi:id="_jevVtUprEem1xYT2gBFygA" name="street"/>
+            <inputs xmi:type="process:ContractInput" xmi:id="_jevVtkprEem1xYT2gBFygA" name="city"/>
+            <inputs xmi:type="process:ContractInput" xmi:id="_jevVt0prEem1xYT2gBFygA" name="zipcode"/>
+            <inputs xmi:type="process:ContractInput" xmi:id="_jevVuEprEem1xYT2gBFygA" name="country"/>
+          </inputs>
+          <inputs xmi:type="process:ContractInput" xmi:id="_jevVuUprEem1xYT2gBFygA" name="phoneNumber"/>
+          <inputs xmi:type="process:ContractInput" xmi:id="_jevVukprEem1xYT2gBFygA" name="eMailAddress"/>
         </inputs>
       </contract>
       <documents xmi:type="process:Document" xmi:id="_ymNCMHSSEeiXy_sNN3EIww" documentation="Customer identification picture" name="identification">
