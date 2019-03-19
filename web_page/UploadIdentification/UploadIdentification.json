@@ -1,0 +1,277 @@
+{
+  "designerVersion" : "1.8.29",
+  "previousDesignerVersion" : "1.7.49",
+  "id" : "UploadIdentification",
+  "name" : "UploadIdentification",
+  "lastUpdate" : 1552324465138,
+  "rows" : [ [ {
+    "type" : "component",
+    "dimension" : {
+      "xs" : 12,
+      "sm" : 12,
+      "md" : 12,
+      "lg" : 12
+    },
+    "propertyValues" : {
+      "cssClasses" : {
+        "type" : "constant",
+        "value" : ""
+      },
+      "hidden" : {
+        "type" : "constant",
+        "value" : false
+      },
+      "text" : {
+        "type" : "interpolation",
+        "value" : "Upload your identification"
+      },
+      "level" : {
+        "type" : "constant",
+        "value" : "Level 1"
+      },
+      "alignment" : {
+        "type" : "constant",
+        "value" : "left"
+      }
+    },
+    "reference" : "b1d78809-bbf8-4db3-a353-3653e3cd570e",
+    "hasValidationError" : false,
+    "id" : "pbTitle"
+  } ], [ {
+    "type" : "formContainer",
+    "dimension" : {
+      "xs" : 12,
+      "sm" : 12,
+      "md" : 12,
+      "lg" : 12
+    },
+    "propertyValues" : {
+      "cssClasses" : {
+        "type" : "constant",
+        "value" : ""
+      },
+      "hidden" : {
+        "type" : "constant",
+        "value" : false
+      }
+    },
+    "reference" : "9f5b2e2d-0d60-4c08-a229-645aefc99a2e",
+    "hasValidationError" : false,
+    "id" : "pbFormContainer",
+    "container" : {
+      "type" : "container",
+      "dimension" : {
+        "xs" : 12
+      },
+      "propertyValues" : { },
+      "reference" : "726ce58a-24b3-4c27-a534-483607cb26b5",
+      "hasValidationError" : false,
+      "id" : "pbContainer",
+      "rows" : [ [ {
+        "type" : "component",
+        "dimension" : {
+          "xs" : 12,
+          "sm" : 12,
+          "md" : 12,
+          "lg" : 12
+        },
+        "propertyValues" : {
+          "cssClasses" : {
+            "type" : "constant",
+            "value" : ""
+          },
+          "hidden" : {
+            "type" : "constant",
+            "value" : false
+          },
+          "required" : {
+            "type" : "constant",
+            "value" : true
+          },
+          "labelHidden" : {
+            "type" : "constant",
+            "value" : true
+          },
+          "label" : {
+            "type" : "interpolation",
+            "value" : "Default label"
+          },
+          "labelPosition" : {
+            "type" : "constant",
+            "value" : "top"
+          },
+          "labelWidth" : {
+            "type" : "constant",
+            "value" : 4
+          },
+          "placeholder" : {
+            "type" : "interpolation"
+          },
+          "url" : {
+            "type" : "constant",
+            "value" : "../API/formFileUpload"
+          },
+          "value" : {
+            "type" : "variable",
+            "value" : "data.identificationInput"
+          },
+          "errorContent" : {
+            "type" : "variable",
+            "value" : ""
+          }
+        },
+        "reference" : "dcf0ee53-6e6c-454a-9891-6f7bf1c460c5",
+        "hasValidationError" : false,
+        "id" : "pbUpload"
+      } ], [ {
+        "type" : "component",
+        "dimension" : {
+          "xs" : 12,
+          "sm" : 12,
+          "md" : 12,
+          "lg" : 12
+        },
+        "propertyValues" : {
+          "cssClasses" : {
+            "type" : "constant",
+            "value" : ""
+          },
+          "hidden" : {
+            "type" : "constant",
+            "value" : false
+          },
+          "disabled" : {
+            "type" : "constant",
+            "value" : false
+          },
+          "label" : {
+            "type" : "interpolation",
+            "value" : "Submit"
+          },
+          "alignment" : {
+            "type" : "constant",
+            "value" : "center"
+          },
+          "buttonStyle" : {
+            "type" : "constant",
+            "value" : "primary"
+          },
+          "action" : {
+            "type" : "constant",
+            "value" : "POST"
+          },
+          "url" : {
+            "type" : "interpolation",
+            "value" : "/bonita/API/bpm/userTask/{{taskId}}/execution"
+          },
+          "dataToSend" : {
+            "type" : "expression",
+            "value" : "data"
+          },
+          "dataFromSuccess" : {
+            "type" : "variable",
+            "value" : "result"
+          },
+          "dataFromError" : {
+            "type" : "variable",
+            "value" : "result"
+          },
+          "targetUrlOnSuccess" : {
+            "type" : "interpolation",
+            "value" : "/bonita/apps/bonita-bank/openning/?fileref={{caseId}}"
+          },
+          "collectionToModify" : {
+            "type" : "variable"
+          },
+          "collectionPosition" : {
+            "type" : "constant",
+            "value" : "Last"
+          },
+          "valueToAdd" : {
+            "type" : "constant"
+          },
+          "removeItem" : {
+            "type" : "variable"
+          }
+        },
+        "reference" : "d8993eeb-17b1-4f07-9b9a-becc1a26e729",
+        "hasValidationError" : false,
+        "id" : "pbButton"
+      } ] ]
+    }
+  } ], [ {
+    "type" : "component",
+    "dimension" : {
+      "xs" : 12,
+      "sm" : 12,
+      "md" : 12,
+      "lg" : 12
+    },
+    "propertyValues" : {
+      "cssClasses" : {
+        "type" : "constant",
+        "value" : ""
+      },
+      "hidden" : {
+        "type" : "constant",
+        "value" : true
+      },
+      "allowHTML" : {
+        "type" : "constant",
+        "value" : true
+      },
+      "text" : {
+        "type" : "interpolation",
+        "value" : "result: {{result | json}}"
+      },
+      "alignment" : {
+        "type" : "constant",
+        "value" : "left"
+      }
+    },
+    "reference" : "c24df72e-6dc3-4ac1-8eb0-183995a04e4d",
+    "hasValidationError" : false,
+    "id" : "pbText"
+  } ] ],
+  "assets" : [ {
+    "id" : "becfafea-2c94-467e-9263-1899b07a4c95",
+    "name" : "localization.json",
+    "type" : "json",
+    "order" : 0,
+    "external" : false
+  }, {
+    "id" : "92dd6783-ded5-4ae7-a51c-95b5d5feb8d7",
+    "name" : "style.css",
+    "type" : "css",
+    "order" : 0,
+    "external" : false
+  } ],
+  "inactiveAssets" : [ ],
+  "data" : {
+    "data" : {
+      "type" : "json",
+      "value" : "{\"identificationInput\": null}",
+      "exposed" : false
+    },
+    "taskId" : {
+      "type" : "urlparameter",
+      "value" : "taskId",
+      "exposed" : false
+    },
+    "result" : {
+      "type" : "json",
+      "value" : "{}",
+      "exposed" : false
+    },
+    "caseId" : {
+      "type" : "urlparameter",
+      "value" : "caseId",
+      "exposed" : false
+    }
+  },
+  "hasValidationError" : false,
+  "uuid" : "565c363d-6fb7-451e-ab7e-568b9b33d301",
+  "type" : "page",
+  "description" : "Page generated with Bonita UI designer",
+  "displayName" : "UploadIdentification"
+}

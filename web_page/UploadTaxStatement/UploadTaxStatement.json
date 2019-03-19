@@ -1,0 +1,277 @@
+{
+  "designerVersion" : "1.8.29",
+  "previousDesignerVersion" : "1.7.49",
+  "id" : "UploadTaxStatement",
+  "name" : "UploadTaxStatement",
+  "lastUpdate" : 1552324465123,
+  "rows" : [ [ {
+    "type" : "component",
+    "dimension" : {
+      "xs" : 12,
+      "sm" : 12,
+      "md" : 12,
+      "lg" : 12
+    },
+    "propertyValues" : {
+      "cssClasses" : {
+        "type" : "constant",
+        "value" : ""
+      },
+      "hidden" : {
+        "type" : "constant",
+        "value" : false
+      },
+      "text" : {
+        "type" : "interpolation",
+        "value" : "Upload your tax statement"
+      },
+      "level" : {
+        "type" : "constant",
+        "value" : "Level 1"
+      },
+      "alignment" : {
+        "type" : "constant",
+        "value" : "left"
+      }
+    },
+    "reference" : "c49af9cc-a1dc-44bd-bd78-19ea4a321004",
+    "hasValidationError" : false,
+    "id" : "pbTitle"
+  } ], [ {
+    "type" : "formContainer",
+    "dimension" : {
+      "xs" : 12,
+      "sm" : 12,
+      "md" : 12,
+      "lg" : 12
+    },
+    "propertyValues" : {
+      "cssClasses" : {
+        "type" : "constant",
+        "value" : ""
+      },
+      "hidden" : {
+        "type" : "constant",
+        "value" : false
+      }
+    },
+    "reference" : "ab6ae3da-e24b-4126-b0ce-1f04746ad4ec",
+    "hasValidationError" : false,
+    "id" : "pbFormContainer",
+    "container" : {
+      "type" : "container",
+      "dimension" : {
+        "xs" : 12
+      },
+      "propertyValues" : { },
+      "reference" : "4028d44c-fe3f-44de-84cd-1d57c4082f73",
+      "hasValidationError" : false,
+      "id" : "pbContainer",
+      "rows" : [ [ {
+        "type" : "component",
+        "dimension" : {
+          "xs" : 12,
+          "sm" : 12,
+          "md" : 12,
+          "lg" : 12
+        },
+        "propertyValues" : {
+          "cssClasses" : {
+            "type" : "constant",
+            "value" : ""
+          },
+          "hidden" : {
+            "type" : "constant",
+            "value" : false
+          },
+          "required" : {
+            "type" : "constant",
+            "value" : true
+          },
+          "labelHidden" : {
+            "type" : "constant",
+            "value" : true
+          },
+          "label" : {
+            "type" : "interpolation",
+            "value" : "Default label"
+          },
+          "labelPosition" : {
+            "type" : "constant",
+            "value" : "top"
+          },
+          "labelWidth" : {
+            "type" : "constant",
+            "value" : 4
+          },
+          "placeholder" : {
+            "type" : "interpolation"
+          },
+          "url" : {
+            "type" : "constant",
+            "value" : "../API/formFileUpload"
+          },
+          "value" : {
+            "type" : "variable",
+            "value" : "data.taxStatementInput"
+          },
+          "errorContent" : {
+            "type" : "variable",
+            "value" : ""
+          }
+        },
+        "reference" : "2e084986-8c0a-4577-a6ed-3d9ac0c1e88d",
+        "hasValidationError" : false,
+        "id" : "pbUpload"
+      } ], [ {
+        "type" : "component",
+        "dimension" : {
+          "xs" : 12,
+          "sm" : 12,
+          "md" : 12,
+          "lg" : 12
+        },
+        "propertyValues" : {
+          "cssClasses" : {
+            "type" : "constant",
+            "value" : ""
+          },
+          "hidden" : {
+            "type" : "constant",
+            "value" : false
+          },
+          "disabled" : {
+            "type" : "constant",
+            "value" : false
+          },
+          "label" : {
+            "type" : "interpolation",
+            "value" : "Submit"
+          },
+          "alignment" : {
+            "type" : "constant",
+            "value" : "center"
+          },
+          "buttonStyle" : {
+            "type" : "constant",
+            "value" : "primary"
+          },
+          "action" : {
+            "type" : "constant",
+            "value" : "POST"
+          },
+          "url" : {
+            "type" : "interpolation",
+            "value" : "/bonita/API/bpm/userTask/{{taskId}}/execution"
+          },
+          "dataToSend" : {
+            "type" : "expression",
+            "value" : "data"
+          },
+          "dataFromSuccess" : {
+            "type" : "variable",
+            "value" : "result"
+          },
+          "dataFromError" : {
+            "type" : "variable",
+            "value" : "result"
+          },
+          "targetUrlOnSuccess" : {
+            "type" : "interpolation",
+            "value" : "/bonita/apps/bonita-bank/openning/?fileref={{caseId}}"
+          },
+          "collectionToModify" : {
+            "type" : "variable"
+          },
+          "collectionPosition" : {
+            "type" : "constant",
+            "value" : "Last"
+          },
+          "valueToAdd" : {
+            "type" : "constant"
+          },
+          "removeItem" : {
+            "type" : "variable"
+          }
+        },
+        "reference" : "1758eba3-3e91-482f-b6a8-6ca45a33bca9",
+        "hasValidationError" : false,
+        "id" : "pbButton"
+      } ] ]
+    }
+  } ], [ {
+    "type" : "component",
+    "dimension" : {
+      "xs" : 12,
+      "sm" : 12,
+      "md" : 12,
+      "lg" : 12
+    },
+    "propertyValues" : {
+      "cssClasses" : {
+        "type" : "constant",
+        "value" : ""
+      },
+      "hidden" : {
+        "type" : "constant",
+        "value" : true
+      },
+      "allowHTML" : {
+        "type" : "constant",
+        "value" : true
+      },
+      "text" : {
+        "type" : "interpolation",
+        "value" : "result: {{result | json}}"
+      },
+      "alignment" : {
+        "type" : "constant",
+        "value" : "left"
+      }
+    },
+    "reference" : "efe01809-ec41-4bfc-bc6d-fde7fcfbecc4",
+    "hasValidationError" : false,
+    "id" : "pbText"
+  } ] ],
+  "assets" : [ {
+    "id" : "becfafea-2c94-467e-9263-1899b07a4c95",
+    "name" : "localization.json",
+    "type" : "json",
+    "order" : 0,
+    "external" : false
+  }, {
+    "id" : "92dd6783-ded5-4ae7-a51c-95b5d5feb8d7",
+    "name" : "style.css",
+    "type" : "css",
+    "order" : 0,
+    "external" : false
+  } ],
+  "inactiveAssets" : [ ],
+  "data" : {
+    "data" : {
+      "type" : "json",
+      "value" : "{\"taxStatementInput\": null}",
+      "exposed" : false
+    },
+    "taskId" : {
+      "type" : "urlparameter",
+      "value" : "taskId",
+      "exposed" : false
+    },
+    "result" : {
+      "type" : "json",
+      "value" : "{}",
+      "exposed" : false
+    },
+    "caseId" : {
+      "type" : "urlparameter",
+      "value" : "caseId",
+      "exposed" : false
+    }
+  },
+  "hasValidationError" : false,
+  "uuid" : "85892a24-1ad7-4dc7-80ad-25d1b776b0ab",
+  "type" : "page",
+  "description" : "Page generated with Bonita UI designer",
+  "displayName" : "UploadTaxStatement"
+}

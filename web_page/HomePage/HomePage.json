@@ -1,0 +1,61 @@
+{
+  "designerVersion" : "1.8.29",
+  "previousDesignerVersion" : "1.7.49",
+  "id" : "HomePage",
+  "name" : "HomePage",
+  "lastUpdate" : 1552324465065,
+  "rows" : [ [ {
+    "type" : "component",
+    "dimension" : {
+      "xs" : 12,
+      "sm" : 12,
+      "md" : 12,
+      "lg" : 12
+    },
+    "propertyValues" : {
+      "cssClasses" : {
+        "type" : "constant",
+        "value" : ""
+      },
+      "hidden" : {
+        "type" : "constant",
+        "value" : false
+      },
+      "text" : {
+        "type" : "interpolation",
+        "value" : "🏦"
+      },
+      "level" : {
+        "type" : "constant",
+        "value" : "Level 1"
+      },
+      "alignment" : {
+        "type" : "constant",
+        "value" : "center"
+      }
+    },
+    "reference" : "470208c2-b3b2-4dc8-a9ab-72bfb2e168ee",
+    "hasValidationError" : false,
+    "id" : "pbTitle"
+  } ] ],
+  "assets" : [ {
+    "id" : "cb06e054-14e7-48e6-aadd-c24589ebe574",
+    "name" : "localization.json",
+    "type" : "json",
+    "order" : 0,
+    "external" : false
+  }, {
+    "id" : "24b1f248-c232-4375-9511-cf291907c81d",
+    "name" : "style.css",
+    "type" : "css",
+    "order" : 0,
+    "external" : false
+  } ],
+  "inactiveAssets" : [ ],
+  "data" : { },
+  "hasValidationError" : false,
+  "uuid" : "b66d59ae-17ff-4a2c-9cea-7a9c0e9c7602",
+  "type" : "page",
+  "description" : "Page generated with Bonita UI designer",
+  "displayName" : "HomePage"
+}

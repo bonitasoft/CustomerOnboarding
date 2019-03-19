@@ -1,0 +1,28 @@
+{
+  "designerVersion" : "1.8.29",
+  "previousDesignerVersion" : "1.7.49",
+  "id" : "RewardSaving",
+  "name" : "RewardSaving",
+  "lastUpdate" : 1552324465174,
+  "rows" : [ [ ] ],
+  "assets" : [ {
+    "id" : "99e9832f-f074-4b15-860b-ff439d726682",
+    "name" : "localization.json",
+    "type" : "json",
+    "order" : 0,
+    "external" : false
+  }, {
+    "id" : "ace35d8c-d6a3-4f15-9e31-1820747311d3",
+    "name" : "style.css",
+    "type" : "css",
+    "order" : 0,
+    "external" : false
+  } ],
+  "inactiveAssets" : [ ],
+  "data" : { },
+  "hasValidationError" : false,
+  "uuid" : "8639ebe2-2319-4480-a755-b92135bfe795",
+  "type" : "page",
+  "description" : "Page generated with Bonita UI designer",
+  "displayName" : "RewardSaving"
+}

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<applications xmlns="http://documentation.bonitasoft.com/application-xml-schema/1.0">
+    <application token="bonita-bank" version="1.0" profile="User" homePage="home-page" state="ACTIVATED" layout="custompage_defaultlayout" theme="custompage_bootstrapdefaulttheme">
+        <displayName>Bonita Bank App</displayName>
+        <applicationPages>
+            <applicationPage customPage="custompage_AccountOpenning" token="openning"/>
+            <applicationPage customPage="custompage_UploadIdentification" token="uploadIdentification"/>
+            <applicationPage customPage="custompage_UploadProofOfDomicile" token="uploadProofDomicile"/>
+            <applicationPage customPage="custompage_UploadTaxStatement" token="uploadTaxStatement"/>
+            <applicationPage customPage="custompage_HomePage" token="home-page"/>
+            <applicationPage customPage="custompage_CoreChecking" token="core-checking"/>
+            <applicationPage customPage="custompage_InterestChecking" token="interest-checking"/>
+            <applicationPage customPage="custompage_OpenAccount" token="open-account"/>
+            <applicationPage customPage="custompage_RewardSaving" token="reward-saving"/>
+        </applicationPages>
+        <applicationMenus>
+            <applicationMenu applicationPage="home-page">
+                <displayName>Home</displayName>
+            </applicationMenu>
+            <applicationMenu>
+                <displayName>Checking</displayName>
+                <applicationMenus>
+                    <applicationMenu applicationPage="core-checking">
+                        <displayName>Core Checking</displayName>
+                    </applicationMenu>
+                    <applicationMenu applicationPage="interest-checking">
+                        <displayName>Interest Checking</displayName>
+                    </applicationMenu>
+                    <applicationMenu applicationPage="open-account">
+                        <displayName>💵 Open an account</displayName>
+                    </applicationMenu>
+                </applicationMenus>
+            </applicationMenu>
+            <applicationMenu>
+                <displayName>Savings</displayName>
+                <applicationMenus>
+                    <applicationMenu applicationPage="reward-saving">
+                        <displayName>Rewards Savings</displayName>
+                    </applicationMenu>
+                </applicationMenus>
+            </applicationMenu>
+        </applicationMenus>
+    </application>
+</applications>
