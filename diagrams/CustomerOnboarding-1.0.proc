@@ -269,6 +269,7 @@
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_qGe3AUpxEeml4OmTM0FgHg" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_qGe3AEpxEeml4OmTM0FgHg" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_qGe3AkpxEeml4OmTM0FgHg" name="" content="" returnTypeFixed="true"/>
+          <correlation xmi:type="expression:TableExpression" xmi:id="_JOPa8Er7EemPQcsE1P7Gvw"/>
         </elements>
         <elements xmi:type="process:EndTerminatedEvent" xmi:id="_rhFIIEryEem1xYT2gBFygA" name="End1" incoming="_rhLOwEryEem1xYT2gBFygA">
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_rhFvMUryEem1xYT2gBFygA" name="" content="" returnTypeFixed="true"/>

@@ -3,7 +3,7 @@
   "previousDesignerVersion" : "1.7.25",
   "id" : "CaseList",
   "name" : "CaseList",
-  "lastUpdate" : 1553075476555,
+  "lastUpdate" : 1553077697361,
   "rows" : [ [ {
     "type" : "component",
     "dimension" : {
@@ -125,7 +125,7 @@
   "data" : {
     "cases" : {
       "type" : "url",
-      "value" : "../API/extension/case?procId={{processId}}&t={{reload.id}}",
+      "value" : "../API/extension/case?procId={{process[0].id}}&t={{reload.id}}",
       "exposed" : false
     },
     "caseLabel" : {
