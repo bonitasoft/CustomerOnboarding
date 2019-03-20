@@ -358,11 +358,11 @@
           </referencedElements>
         </defaultValue>
       </data>
-      <formMapping xmi:type="process:FormMapping" xmi:id="_x5qCE_SMEeeYpYD60oU_zA" type="NONE">
+      <formMapping xmi:type="process:FormMapping" xmi:id="_x5qCE_SMEeeYpYD60oU_zA">
         <targetForm xmi:type="expression:Expression" xmi:id="_5fzXYODnEeiqro8MYznsHA" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
       </formMapping>
-      <overviewFormMapping xmi:type="process:FormMapping" xmi:id="_x5qCFvSMEeeYpYD60oU_zA">
-        <targetForm xmi:type="expression:Expression" xmi:id="_x5qCF_SMEeeYpYD60oU_zA" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+      <overviewFormMapping xmi:type="process:FormMapping" xmi:id="_x5qCFvSMEeeYpYD60oU_zA" type="NONE">
+        <targetForm xmi:type="expression:Expression" xmi:id="_x5qCF_SMEeeYpYD60oU_zA" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
       </overviewFormMapping>
       <connections xmi:type="process:SequenceFlow" xmi:id="_14IpnEcjEeml4OmTM0FgHg" target="_14ICjEcjEeml4OmTM0FgHg" source="_14GNUEcjEeml4OmTM0FgHg">
         <decisionTable xmi:type="decision:DecisionTable" xmi:id="_14IpnUcjEeml4OmTM0FgHg"/>
@@ -543,8 +543,10 @@
         <initialMultipleContent xmi:type="expression:Expression" xmi:id="_dD5740pNEeml4OmTM0FgHg" name="" content="" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List" returnTypeFixed="true"/>
       </documents>
       <searchIndexes xmi:type="process:SearchIndex" xmi:id="_x5qCJfSMEeeYpYD60oU_zA">
-        <name xmi:type="expression:Expression" xmi:id="_x5qCJvSMEeeYpYD60oU_zA" content="" returnTypeFixed="true"/>
-        <value xmi:type="expression:Expression" xmi:id="_x5qCJ_SMEeeYpYD60oU_zA" content="" returnTypeFixed="true"/>
+        <name xmi:type="expression:Expression" xmi:id="_x5qCJvSMEeeYpYD60oU_zA" name="customerName" content="customerName" returnTypeFixed="true"/>
+        <value xmi:type="expression:Expression" xmi:id="_x5qCJ_SMEeeYpYD60oU_zA" name="FullCustomerName" content="customer.getFirstName() + &quot; &quot; +customer.getMiddleName()+ &quot; &quot; +customer.getLastName()" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true">
+          <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_oTdOMEr1Eem1xYT2gBFygA" name="customer" dataType="_x5qCPPSMEeeYpYD60oU_zA" className="com.company.model.Customer"/>
+        </value>
       </searchIndexes>
       <searchIndexes xmi:type="process:SearchIndex" xmi:id="_x5qCKPSMEeeYpYD60oU_zA">
         <name xmi:type="expression:Expression" xmi:id="_x5qCKfSMEeeYpYD60oU_zA" content="" returnTypeFixed="true"/>

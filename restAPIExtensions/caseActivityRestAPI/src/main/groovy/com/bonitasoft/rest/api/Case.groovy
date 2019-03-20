@@ -1,9 +1,12 @@
 package com.bonitasoft.rest.api
 
+import java.io.Serializable
+
 import javax.servlet.http.HttpServletRequest
 import javax.servlet.http.HttpServletResponse
 
 import com.bonitasoft.engine.api.ProcessAPI
+import com.bonitasoft.engine.bpm.process.impl.ProcessInstanceSearchDescriptor
 import com.bonitasoft.web.extension.rest.RestAPIContext
 import com.bonitasoft.web.extension.rest.RestApiController
 import groovy.json.JsonBuilder
@@ -21,17 +24,21 @@ class Case implements RestApiController, CaseActivityHelper {
     RestApiResponse doHandle(HttpServletRequest request, RestApiResponseBuilder responseBuilder, RestAPIContext context) {
         def contextPath = request.contextPath
         def processAPI = context.apiClient.getProcessAPI()
-        def searchOptions = new SearchOptionsBuilder(0, 9999).done()
+		def procId = request.getParameter "procId"
+		if (!procId) {
+			return buildResponse(responseBuilder, HttpServletResponse.SC_BAD_REQUEST,"""{"error" : "the parameter caseId is missing"}""")
+		}
+        def searchOptions = new SearchOptionsBuilder(0, 9999).filter(ProcessInstanceSearchDescriptor.PROCESS_DEFINITION_ID, Long.getLong(procId)).done()
         def result = processAPI.searchProcessInstances(searchOptions).getResult()
                 .collect {
-            [id: it.id, name: processName(it.processDefinitionId, processAPI), state: asLabel(it.state.toUpperCase(), "info"), viewAction: viewActionLink(it.id, processAPI, contextPath)]
+            [id: it.id, customer: it.stringIndex1, state: asLabel(it.state.toUpperCase(), "info"), viewAction: viewActionLink(it.id, processAPI, contextPath)]
         }
 
         processAPI.searchArchivedProcessInstances(searchOptions).getResult()
                 .collect {
-            result << [id: it.sourceObjectId, name: processName(it.processDefinitionId, processAPI), state: asLabel(it.state.toUpperCase(), "default"), viewAction: viewActionLink(it.sourceObjectId, processAPI, contextPath)]
+            result << [id: it.sourceObjectId, customer: it.getStringIndexValue(1), state: asLabel(it.state.toUpperCase(), "default"), viewAction: viewActionLink(it.sourceObjectId, processAPI, contextPath)]
         }
-
+		
         return responseBuilder.with {
             withResponseStatus(HttpServletResponse.SC_OK)
             withResponse(new JsonBuilder(result).toString())
@@ -42,11 +49,7 @@ class Case implements RestApiController, CaseActivityHelper {
     def asLabel(state, style) {
         """<span class="label label-$style">$state</span>"""
     }
-
-    def String processName(long processDefId, ProcessAPI processAPI) {
-        def definition = processAPI.getProcessDefinition(processDefId)
-        return "$definition.name ($definition.version)"
-    }
+    
 
     def String viewActionLink(long caseId, ProcessAPI processAPI, contextPath) {
         def openTasks = searchOpenedTasks(caseId, processAPI).result
@@ -59,4 +62,21 @@ class Case implements RestApiController, CaseActivityHelper {
             return ""
         }
     }
+	
+	/**
+	 * Build an HTTP response.
+	 *
+	 * @param  responseBuilder the Rest API response builder
+	 * @param  httpStatus the status of the response
+	 * @param  body the response body
+	 * @return a RestAPIResponse
+	 */
+	RestApiResponse buildResponse(RestApiResponseBuilder responseBuilder, int httpStatus, Serializable body) {
+		return responseBuilder.with {
+			withResponseStatus(httpStatus)
+			withResponse(body)
+			build()
+		}
+	}
+
 }

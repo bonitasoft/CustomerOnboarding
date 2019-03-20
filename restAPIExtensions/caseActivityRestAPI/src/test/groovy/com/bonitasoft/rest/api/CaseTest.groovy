@@ -32,7 +32,7 @@ class CaseTest extends Specification {
     SearchResult<ProcessInstance> result = Mock()
     SearchResult<HumanTaskInstance> taskResult = Mock()
     DataInstance dataInstance = Mock()
-
+/*
     def "setup"() {
         request.contextPath >> "/bonitaExpenseReport"
         context.apiClient >> apiClient
@@ -82,4 +82,5 @@ class CaseTest extends Specification {
 
         }
     }
+    */
 }
