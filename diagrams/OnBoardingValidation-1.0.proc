@@ -544,10 +544,10 @@
       </documents>
       <searchIndexes xmi:type="process:SearchIndex" xmi:id="_x5qCJfSMEeeYpYD60oU_zA">
         <name xmi:type="expression:Expression" xmi:id="_x5qCJvSMEeeYpYD60oU_zA" name="customerName" content="customerName" returnTypeFixed="true"/>
-        <value xmi:type="expression:Expression" xmi:id="_x5qCJ_SMEeeYpYD60oU_zA" name="newScript()" content="&#xD;&#xA;try{&#xD;&#xA;def c = customerDAO.findByPersistenceId(Long.getLong(customerId))&#xD;&#xA;return c.getFirstName() + &quot; &quot; +c.getMiddleName()+ &quot; &quot; +c.getLastName()&#xD;&#xA;&#xD;&#xA;}catch(Exception e){&#xD;&#xA;&#x9;return &quot;&quot;+customerId + &quot; - Error: &quot; + e.getMessage()&#xD;&#xA;}" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true">
-          <referencedElements xmi:type="expression:Expression" xmi:id="_hqzZAEsSEemPQcsE1P7Gvw" name="customerDAO" content="customerDAO" type="TYPE_BUSINESS_OBJECT_DAO" returnType="com.company.model.CustomerDAO" returnTypeFixed="true"/>
-          <referencedElements xmi:type="process:ContractInput" xmi:id="_hqzZAUsSEemPQcsE1P7Gvw" name="customerId">
-            <mapping xmi:type="process:ContractInputMapping" xmi:id="_hqzZAksSEemPQcsE1P7Gvw"/>
+        <value xmi:type="expression:Expression" xmi:id="_x5qCJ_SMEeeYpYD60oU_zA" name="newScript()" content="def c = customerDAO.findByPersistenceId(Long.parseLong(customerId))&#xD;&#xA;return c.getFirstName() + &quot; &quot; +c.getMiddleName()+ &quot; &quot; +c.getLastName()&#xD;&#xA;&#xD;&#xA;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true">
+          <referencedElements xmi:type="expression:Expression" xmi:id="_LecAUEsZEemHf4gYLAf65g" name="customerDAO" content="customerDAO" type="TYPE_BUSINESS_OBJECT_DAO" returnType="com.company.model.CustomerDAO" returnTypeFixed="true"/>
+          <referencedElements xmi:type="process:ContractInput" xmi:id="_LecAUUsZEemHf4gYLAf65g" name="customerId">
+            <mapping xmi:type="process:ContractInputMapping" xmi:id="_LecAUksZEemHf4gYLAf65g"/>
           </referencedElements>
         </value>
       </searchIndexes>

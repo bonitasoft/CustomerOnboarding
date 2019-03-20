@@ -28,12 +28,13 @@ class Case implements RestApiController, CaseActivityHelper {
 		if (!procId) {
 			return buildResponse(responseBuilder, HttpServletResponse.SC_BAD_REQUEST,"""{"error" : "the parameter procId is missing"}""")
 		}
-        def searchOptions = new SearchOptionsBuilder(0, 9999).filter(ProcessInstanceSearchDescriptor.PROCESS_DEFINITION_ID, Long.getLong(procId)).done()
+        def searchOptions = new SearchOptionsBuilder(0, 9999).filter(ProcessInstanceSearchDescriptor.PROCESS_DEFINITION_ID, Long.parseLong(procId)).done()				
         def result = processAPI.searchProcessInstances(searchOptions).getResult()
                 .collect {
             [id: it.id, customer: it.stringIndex1, state: asLabel(it.state.toUpperCase(), "info"), viewAction: viewActionLink(it.id, processAPI, contextPath)]
+			
         }
-
+		
         processAPI.searchArchivedProcessInstances(searchOptions).getResult()
                 .collect {
             result << [id: it.sourceObjectId, customer: it.getStringIndexValue(1), state: asLabel(it.state.toUpperCase(), "default"), viewAction: viewActionLink(it.sourceObjectId, processAPI, contextPath)]
