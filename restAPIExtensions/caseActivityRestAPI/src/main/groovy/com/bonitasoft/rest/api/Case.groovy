@@ -26,7 +26,7 @@ class Case implements RestApiController, CaseActivityHelper {
         def processAPI = context.apiClient.getProcessAPI()
 		def procId = request.getParameter "procId"
 		if (!procId) {
-			return buildResponse(responseBuilder, HttpServletResponse.SC_BAD_REQUEST,"""{"error" : "the parameter caseId is missing"}""")
+			return buildResponse(responseBuilder, HttpServletResponse.SC_BAD_REQUEST,"""{"error" : "the parameter procId is missing"}""")
 		}
         def searchOptions = new SearchOptionsBuilder(0, 9999).filter(ProcessInstanceSearchDescriptor.PROCESS_DEFINITION_ID, Long.getLong(procId)).done()
         def result = processAPI.searchProcessInstances(searchOptions).getResult()
