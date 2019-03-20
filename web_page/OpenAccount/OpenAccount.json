@@ -2,7 +2,7 @@
   "designerVersion" : "1.8.39",
   "id" : "OpenAccount",
   "name" : "OpenAccount",
-  "lastUpdate" : 1553016418667,
+  "lastUpdate" : 1553103610110,
   "rows" : [ [ {
     "type" : "component",
     "dimension" : {
@@ -192,7 +192,7 @@
             },
             "required" : {
               "type" : "constant",
-              "value" : false
+              "value" : true
             },
             "labelHidden" : {
               "type" : "constant",
@@ -832,7 +832,7 @@
               },
               "required" : {
                 "type" : "constant",
-                "value" : false
+                "value" : true
               },
               "minLength" : {
                 "type" : "constant",

@@ -79,7 +79,9 @@
                   </expressions>
                   <expressions xmi:type="expression:ListExpression" xmi:id="_eizL40qGEemBGtySZy2Unw">
                     <expressions xmi:type="expression:Expression" xmi:id="_eizL5EqGEemBGtySZy2Unw" name="bonitaServerURL" content="bonitaServerURL"/>
-                    <expressions xmi:type="expression:Expression" xmi:id="_eizL5UqGEemBGtySZy2Unw" name="http://localhost:8080/bonita" content="http://localhost:8080/bonita"/>
+                    <expressions xmi:type="expression:Expression" xmi:id="_eizL5UqGEemBGtySZy2Unw" name="bonitaServerURL" content="bonitaServerURL" type="TYPE_PARAMETER">
+                      <referencedElements xmi:type="parameter:Parameter" xmi:id="_k1KcYEs3Eem1ot0-2zrivw" name="bonitaServerURL" typeClassname="java.lang.String"/>
+                    </expressions>
                   </expressions>
                 </expression>
               </parameters>
@@ -154,10 +156,12 @@
         <parameters xmi:type="parameter:Parameter" xmi:id="_Xr1EIEpyEeml4OmTM0FgHg" name="uiPathURL" value="http://ec2-54-154-0-15.eu-west-1.compute.amazonaws.com:8888" typeClassname="java.lang.String"/>
         <parameters xmi:type="parameter:Parameter" xmi:id="_Xr1EIUpyEeml4OmTM0FgHg" name="uiPathLogin" value="bonitauser" typeClassname="java.lang.String"/>
         <parameters xmi:type="parameter:Parameter" xmi:id="_Xr1EIkpyEeml4OmTM0FgHg" name="uiPathPassword" value="Bonita_2019" typeClassname="java.lang.String"/>
+        <parameters xmi:type="parameter:Parameter" xmi:id="_p92NcEs3Eem1ot0-2zrivw" name="bonitaServerURL" value="http://ec2-34-243-60-57.eu-west-1.compute.amazonaws.com:8081/bonita" typeClassname="java.lang.String"/>
       </configurations>
       <parameters xmi:type="parameter:Parameter" xmi:id="_S1FXoEpyEeml4OmTM0FgHg" name="uiPathURL" typeClassname="java.lang.String"/>
       <parameters xmi:type="parameter:Parameter" xmi:id="_UMMUgEpyEeml4OmTM0FgHg" name="uiPathLogin" typeClassname="java.lang.String"/>
       <parameters xmi:type="parameter:Parameter" xmi:id="_VO0PIEpyEeml4OmTM0FgHg" name="uiPathPassword" typeClassname="java.lang.String"/>
+      <parameters xmi:type="parameter:Parameter" xmi:id="_kVe2wEs3Eem1ot0-2zrivw" name="bonitaServerURL" typeClassname="java.lang.String"/>
       <contract xmi:type="process:Contract" xmi:id="_COlS3EmeEemBGtySZy2Unw"/>
       <searchIndexes xmi:type="process:SearchIndex" xmi:id="_COlS3UmeEemBGtySZy2Unw">
         <name xmi:type="expression:Expression" xmi:id="_COlS3kmeEemBGtySZy2Unw" content="" returnTypeFixed="true"/>
