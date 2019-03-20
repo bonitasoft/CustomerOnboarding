@@ -3,7 +3,7 @@
   "previousDesignerVersion" : "1.7.25",
   "id" : "CaseList",
   "name" : "CaseList",
-  "lastUpdate" : 1552568031643,
+  "lastUpdate" : 1553072063188,
   "rows" : [ [ {
     "type" : "component",
     "dimension" : {
@@ -175,11 +175,11 @@
       },
       "url" : {
         "type" : "interpolation",
-        "value" : "../API/bpm/case"
+        "value" : "../API/bpm/process/{{processId}}/instantiation"
       },
       "dataToSend" : {
         "type" : "expression",
-        "value" : "processId"
+        "value" : "contract"
       },
       "dataFromSuccess" : {
         "type" : "variable",
@@ -371,7 +371,7 @@
     },
     "process" : {
       "type" : "url",
-      "value" : "../API/bpm/process?c=1&p=0&f=activationState=ENABLED&f=name=OnBoarding",
+      "value" : "../API/bpm/process?c=1&p=0&f=activationState=ENABLED&f=name=OnBoardingValidation",
       "exposed" : false
     },
     "processId" : {
@@ -382,6 +382,11 @@
     "reload" : {
       "type" : "json",
       "value" : "{\"id\":\"0\"}",
+      "exposed" : false
+    },
+    "contract" : {
+      "type" : "json",
+      "value" : "{\n    \"customerId\":\"0\"\n}",
       "exposed" : false
     }
   },

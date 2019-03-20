@@ -351,7 +351,12 @@
         </elements>
       </elements>
       <data xmi:type="process:BusinessObjectData" xmi:id="_mRGqAPUrEeeJbuCjYn0Nqw" name="customer" dataType="_x5qCPPSMEeeYpYD60oU_zA" className="com.company.model.Customer">
-        <defaultValue xmi:type="expression:Expression" xmi:id="_mRGqAfUrEeeJbuCjYn0Nqw" name="" content="" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object"/>
+        <defaultValue xmi:type="expression:Expression" xmi:id="_mRGqAfUrEeeJbuCjYn0Nqw" name="init_customer()" content="customerDAO.findByPersistenceId(Long.getLong(customerId))" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.Customer">
+          <referencedElements xmi:type="expression:Expression" xmi:id="_Zjas4ErrEeml4OmTM0FgHg" name="customerDAO" content="customerDAO" type="TYPE_BUSINESS_OBJECT_DAO" returnType="com.company.model.CustomerDAO" returnTypeFixed="true"/>
+          <referencedElements xmi:type="process:ContractInput" xmi:id="_Zjas4UrrEeml4OmTM0FgHg" name="customerId">
+            <mapping xmi:type="process:ContractInputMapping" xmi:id="_Zjas4krrEeml4OmTM0FgHg"/>
+          </referencedElements>
+        </defaultValue>
       </data>
       <formMapping xmi:type="process:FormMapping" xmi:id="_x5qCE_SMEeeYpYD60oU_zA" type="NONE">
         <targetForm xmi:type="expression:Expression" xmi:id="_5fzXYODnEeiqro8MYznsHA" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
@@ -517,7 +522,11 @@
       <parameters xmi:type="parameter:Parameter" xmi:id="_9hBckEpPEeml4OmTM0FgHg" name="docusignAuthIntegratorKey" typeClassname="java.lang.String"/>
       <parameters xmi:type="parameter:Parameter" xmi:id="_BPvxEEpQEeml4OmTM0FgHg" name="docusignUsername" typeClassname="java.lang.String"/>
       <parameters xmi:type="parameter:Parameter" xmi:id="_CpDtYEpQEeml4OmTM0FgHg" name="docusignPassword" typeClassname="java.lang.String"/>
-      <contract xmi:type="process:Contract" xmi:id="_x5qCJPSMEeeYpYD60oU_zA"/>
+      <contract xmi:type="process:Contract" xmi:id="_x5qCJPSMEeeYpYD60oU_zA">
+        <inputs xmi:type="process:ContractInput" xmi:id="_HxEFkErrEeml4OmTM0FgHg" name="customerId">
+          <mapping xmi:type="process:ContractInputMapping" xmi:id="_HxEFkUrrEeml4OmTM0FgHg"/>
+        </inputs>
+      </contract>
       <documents xmi:type="process:Document" xmi:id="_iF-48PUhEeeREboOt7l4UQ" name="caseDocuments" multiple="true">
         <mimeType xmi:type="expression:Expression" xmi:id="_iF-48fUhEeeREboOt7l4UQ" name="" content="" returnTypeFixed="true"/>
         <url xmi:type="expression:Expression" xmi:id="_iF-48vUhEeeREboOt7l4UQ" name="" content="" returnTypeFixed="true"/>
