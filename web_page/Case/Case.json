@@ -3,8 +3,41 @@
   "previousDesignerVersion" : "1.7.25",
   "id" : "Case",
   "name" : "Case",
-  "lastUpdate" : 1552656258543,
+  "lastUpdate" : 1553102599602,
   "rows" : [ [ {
+    "type" : "component",
+    "dimension" : {
+      "xs" : 12,
+      "sm" : 12,
+      "md" : 12,
+      "lg" : 12
+    },
+    "propertyValues" : {
+      "cssClasses" : {
+        "type" : "constant",
+        "value" : ""
+      },
+      "hidden" : {
+        "type" : "constant",
+        "value" : false
+      },
+      "text" : {
+        "type" : "interpolation",
+        "value" : "{{customer.firstName}} {{customer.middleName}}  {{customer.lastName}}"
+      },
+      "level" : {
+        "type" : "constant",
+        "value" : "Level 2"
+      },
+      "alignment" : {
+        "type" : "constant",
+        "value" : "left"
+      }
+    },
+    "reference" : "b5d9d926-490d-40dd-a5be-b1d3c62a7549",
+    "hasValidationError" : false,
+    "id" : "pbTitle"
+  } ], [ {
     "type" : "container",
     "dimension" : {
       "xs" : 12,
@@ -856,6 +889,11 @@
     "commentAdded" : {
       "type" : "json",
       "value" : "{\n    \"id\" : \"\"\n}",
+      "exposed" : false
+    },
+    "customer" : {
+      "type" : "url",
+      "value" : "../{{caseContext.customer_ref.link}}",
       "exposed" : false
     }
   },

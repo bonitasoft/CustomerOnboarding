@@ -35,7 +35,9 @@ class CaseDocument implements RestApiController {
 			filter(DocumentsSearchDescriptor.PROCESSINSTANCE_ID, caseId.toLong())
 			sort(DocumentsSearchDescriptor.DOCUMENT_CREATIONDATE, Order.DESC)
 			done()
-		}).getResult()
+		}).getResult().findAll{
+					it.name != "templateContract"
+				}
 		.collect{ Document doc -> 
 			result << [
 				name:doc.name,
@@ -52,8 +54,12 @@ class CaseDocument implements RestApiController {
     }
 	
 	def String username(Long userId,IdentityAPI identityApi) {
-		def user = identityApi.getUser(userId)
-		user.firstName + " " + user.lastName
+		try {
+			def user = identityApi.getUser(userId)
+			user.firstName + " " + user.lastName
+		}catch(Exception e) {
+			return "system"
+		}
 	}
 
 

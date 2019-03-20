@@ -3,7 +3,7 @@
   "previousDesignerVersion" : "1.7.11",
   "id" : "CaseDocuments",
   "name" : "CaseDocuments",
-  "lastUpdate" : 1543499447278,
+  "lastUpdate" : 1553102651353,
   "rows" : [ [ {
     "type" : "component",
     "dimension" : {
@@ -42,7 +42,7 @@
     "dimension" : {
       "xs" : 12,
       "sm" : 11,
-      "md" : 11,
+      "md" : 7,
       "lg" : 10
     },
     "propertyValues" : {
@@ -116,6 +116,72 @@
     "reference" : "bb8951d6-c655-47c8-81b4-f00634205315",
     "hasValidationError" : false,
     "id" : "pbButton"
+  }, {
+    "type" : "component",
+    "dimension" : {
+      "xs" : 12,
+      "sm" : 12,
+      "md" : 4,
+      "lg" : 1
+    },
+    "propertyValues" : {
+      "cssClasses" : {
+        "type" : "constant",
+        "value" : ""
+      },
+      "hidden" : {
+        "type" : "constant",
+        "value" : false
+      },
+      "text" : {
+        "type" : "interpolation",
+        "value" : "<span class=\"glyphicon glyphicon-plus\"></span> Access to CMS"
+      },
+      "type" : {
+        "type" : "constant",
+        "value" : "URL"
+      },
+      "targetUrl" : {
+        "type" : "constant",
+        "value" : "http://"
+      },
+      "pageToken" : {
+        "type" : "constant"
+      },
+      "processName" : {
+        "type" : "constant"
+      },
+      "processVersion" : {
+        "type" : "constant"
+      },
+      "taskId" : {
+        "type" : "constant"
+      },
+      "caseId" : {
+        "type" : "constant"
+      },
+      "target" : {
+        "type" : "constant",
+        "value" : "_self"
+      },
+      "appToken" : {
+        "type" : "constant"
+      },
+      "urlParams" : {
+        "type" : "constant"
+      },
+      "alignment" : {
+        "type" : "constant",
+        "value" : "right"
+      },
+      "buttonStyle" : {
+        "type" : "constant",
+        "value" : "info"
+      }
+    },
+    "reference" : "5784eff3-29bd-4ab5-b4ec-5db69e783402",
+    "hasValidationError" : false,
+    "id" : "pbLink"
   } ], [ {
     "type" : "container",
     "dimension" : {

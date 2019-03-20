@@ -431,7 +431,7 @@
         <defaultValue xmi:type="expression:Expression" xmi:id="_6G27CEZkEemrTfGNF0_5Xw" name="0" content="0" returnType="java.lang.Integer"/>
       </data>
       <formMapping xmi:type="process:FormMapping" xmi:id="_6G27DEZkEemrTfGNF0_5Xw">
-        <targetForm xmi:type="expression:Expression" xmi:id="_sDjicEZlEemrTfGNF0_5Xw" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+        <targetForm xmi:type="expression:Expression" xmi:id="_hOOWcEstEem1ot0-2zrivw" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
       </formMapping>
       <overviewFormMapping xmi:type="process:FormMapping" xmi:id="_6G27D0ZkEemrTfGNF0_5Xw">
         <targetForm xmi:type="expression:Expression" xmi:id="_6G27EEZkEemrTfGNF0_5Xw" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
@@ -557,7 +557,7 @@
         <parameters xmi:type="parameter:Parameter" xmi:id="_6G27uUZkEemrTfGNF0_5Xw" name="alfrescoAtomUrl" typeClassname="java.lang.String"/>
         <parameters xmi:type="parameter:Parameter" xmi:id="_6G27ukZkEemrTfGNF0_5Xw" name="retryMins" typeClassname="java.lang.Integer"/>
       </configurations>
-      <configurations xmi:type="configuration:Configuration" xmi:id="_ABqsIEZlEemrTfGNF0_5Xw" name="Production" version="7.6.0-002" username="walter.bates" password="bpm">
+      <configurations xmi:type="configuration:Configuration" xmi:id="_ABqsIEZlEemrTfGNF0_5Xw" name="Production" version="7.8.3-001" username="walter.bates" password="bpm">
         <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_ABqsIUZlEemrTfGNF0_5Xw" type="CONNECTOR" definitionId="cmis-createfolder" definitionVersion="2.0.1" implementationId="cmis-createfolder" implementationVersion="3.0.1"/>
         <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_ABqsIkZlEemrTfGNF0_5Xw" type="CONNECTOR" definitionId="cmis-uploadnewdocument" definitionVersion="2.0.1" implementationId="cmis-uploadnewdocument" implementationVersion="3.0.1"/>
         <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_ABqsI0ZlEemrTfGNF0_5Xw" type="CONNECTOR" definitionId="scripting-groovy-script" definitionVersion="1.0.1" implementationId="scripting-groovy-script-impl" implementationVersion="1.0.2"/>
@@ -627,6 +627,76 @@
         <parameters xmi:type="parameter:Parameter" xmi:id="_ABqsX0ZlEemrTfGNF0_5Xw" name="alfrescoRepository" value="default" typeClassname="java.lang.String"/>
         <parameters xmi:type="parameter:Parameter" xmi:id="_ABqsYEZlEemrTfGNF0_5Xw" name="alfrescoAtomUrl" value="http://52.209.119.234:8082/alfresco/api/-default-/public/cmis/versions/1.0/atom" typeClassname="java.lang.String"/>
         <parameters xmi:type="parameter:Parameter" xmi:id="_ABqsYUZlEemrTfGNF0_5Xw" name="retryMins" value="1" typeClassname="java.lang.Integer"/>
+      </configurations>
+      <configurations xmi:type="configuration:Configuration" xmi:id="_Sw9boEstEem1ot0-2zrivw" name="Demo" version="7.8.3-001" username="walter.bates" password="bpm">
+        <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_Sw9boUstEem1ot0-2zrivw" type="CONNECTOR" definitionId="cmis-createfolder" definitionVersion="2.0.1" implementationId="cmis-createfolder" implementationVersion="3.0.1"/>
+        <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_Sw9bokstEem1ot0-2zrivw" type="CONNECTOR" definitionId="cmis-uploadnewdocument" definitionVersion="2.0.1" implementationId="cmis-uploadnewdocument" implementationVersion="3.0.1"/>
+        <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_Sw9bo0stEem1ot0-2zrivw" type="CONNECTOR" definitionId="scripting-groovy-script" definitionVersion="1.0.1" implementationId="scripting-groovy-script-impl" implementationVersion="1.0.2"/>
+        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_Sw9bpEstEem1ot0-2zrivw" id="ACTOR_FILTER"/>
+        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_Sw9bpUstEem1ot0-2zrivw" id="CONNECTOR">
+          <children xmi:type="configuration:FragmentContainer" xmi:id="_Sw9bpkstEem1ot0-2zrivw" id="cmis-createfolder-3.0.1">
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Sw-CsEstEem1ot0-2zrivw" key="cmis-createfolder -- 3.0.1" value="bonita-connector-cmis-3.0.1.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Sw-CsUstEem1ot0-2zrivw" key="cmis-createfolder -- 3.0.1" value="chemistry-opencmis-commons-impl-0.13.0.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Sw-CskstEem1ot0-2zrivw" key="cmis-createfolder -- 3.0.1" value="xml-resolver-1.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Sw-Cs0stEem1ot0-2zrivw" key="cmis-createfolder -- 3.0.1" value="geronimo-javamail_1.4_spec-1.7.1.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Sw-CtEstEem1ot0-2zrivw" key="cmis-createfolder -- 3.0.1" value="cxf-rt-bindings-xml-2.7.7.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Sw-CtUstEem1ot0-2zrivw" key="cmis-createfolder -- 3.0.1" value="chemistry-opencmis-commons-api-0.13.0.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Sw-CtkstEem1ot0-2zrivw" key="cmis-createfolder -- 3.0.1" value="cxf-rt-core-2.7.7.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Sw-Ct0stEem1ot0-2zrivw" key="cmis-createfolder -- 3.0.1" value="cxf-rt-frontend-simple-2.7.7.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Sw-CuEstEem1ot0-2zrivw" key="cmis-createfolder -- 3.0.1" value="cxf-rt-ws-policy-2.7.7.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Sw-CuUstEem1ot0-2zrivw" key="cmis-createfolder -- 3.0.1" value="chemistry-opencmis-client-impl-0.13.0.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Sw-CukstEem1ot0-2zrivw" key="cmis-createfolder -- 3.0.1" value="wsdl4j-1.6.3.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Sw-Cu0stEem1ot0-2zrivw" key="cmis-createfolder -- 3.0.1" value="cxf-rt-transports-http-2.7.7.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Sw-CvEstEem1ot0-2zrivw" key="cmis-createfolder -- 3.0.1" value="cxf-rt-frontend-jaxws-2.7.7.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Sw-CvUstEem1ot0-2zrivw" key="cmis-createfolder -- 3.0.1" value="xmlschema-core-2.0.3.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Sw-CvkstEem1ot0-2zrivw" key="cmis-createfolder -- 3.0.1" value="cxf-rt-ws-addr-2.7.7.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Sw-Cv0stEem1ot0-2zrivw" key="cmis-createfolder -- 3.0.1" value="cxf-api-2.7.7.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Sw-CwEstEem1ot0-2zrivw" key="cmis-createfolder -- 3.0.1" value="cxf-rt-bindings-soap-2.7.7.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Sw-CwUstEem1ot0-2zrivw" key="cmis-createfolder -- 3.0.1" value="neethi-3.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Sw-CwkstEem1ot0-2zrivw" key="cmis-createfolder -- 3.0.1" value="chemistry-opencmis-client-bindings-0.13.0.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Sw-Cw0stEem1ot0-2zrivw" key="cmis-createfolder -- 3.0.1" value="cxf-rt-databinding-jaxb-2.7.7.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Sw-CxEstEem1ot0-2zrivw" key="cmis-createfolder -- 3.0.1" value="chemistry-opencmis-client-api-0.13.0.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Sw-CxUstEem1ot0-2zrivw" key="cmis-createfolder -- 3.0.1" value="asm-3.3.1.jar" type="CONNECTOR"/>
+          </children>
+          <children xmi:type="configuration:FragmentContainer" xmi:id="_Sw-CxkstEem1ot0-2zrivw" id="cmis-uploadnewdocument-3.0.1">
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Sw-Cx0stEem1ot0-2zrivw" key="cmis-uploadnewdocument -- 3.0.1" value="bonita-connector-cmis-3.0.1.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Sw-CyEstEem1ot0-2zrivw" key="cmis-uploadnewdocument -- 3.0.1" value="chemistry-opencmis-commons-impl-0.13.0.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Sw-CyUstEem1ot0-2zrivw" key="cmis-uploadnewdocument -- 3.0.1" value="xml-resolver-1.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Sw-CykstEem1ot0-2zrivw" key="cmis-uploadnewdocument -- 3.0.1" value="geronimo-javamail_1.4_spec-1.7.1.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Sw-Cy0stEem1ot0-2zrivw" key="cmis-uploadnewdocument -- 3.0.1" value="cxf-rt-bindings-xml-2.7.7.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Sw-CzEstEem1ot0-2zrivw" key="cmis-uploadnewdocument -- 3.0.1" value="chemistry-opencmis-commons-api-0.13.0.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Sw-CzUstEem1ot0-2zrivw" key="cmis-uploadnewdocument -- 3.0.1" value="cxf-rt-core-2.7.7.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Sw-CzkstEem1ot0-2zrivw" key="cmis-uploadnewdocument -- 3.0.1" value="cxf-rt-frontend-simple-2.7.7.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Sw-Cz0stEem1ot0-2zrivw" key="cmis-uploadnewdocument -- 3.0.1" value="cxf-rt-ws-policy-2.7.7.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Sw-C0EstEem1ot0-2zrivw" key="cmis-uploadnewdocument -- 3.0.1" value="chemistry-opencmis-client-impl-0.13.0.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Sw-C0UstEem1ot0-2zrivw" key="cmis-uploadnewdocument -- 3.0.1" value="wsdl4j-1.6.3.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Sw-C0kstEem1ot0-2zrivw" key="cmis-uploadnewdocument -- 3.0.1" value="cxf-rt-transports-http-2.7.7.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Sw-C00stEem1ot0-2zrivw" key="cmis-uploadnewdocument -- 3.0.1" value="cxf-rt-frontend-jaxws-2.7.7.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Sw-C1EstEem1ot0-2zrivw" key="cmis-uploadnewdocument -- 3.0.1" value="xmlschema-core-2.0.3.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Sw-C1UstEem1ot0-2zrivw" key="cmis-uploadnewdocument -- 3.0.1" value="cxf-rt-ws-addr-2.7.7.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Sw-C1kstEem1ot0-2zrivw" key="cmis-uploadnewdocument -- 3.0.1" value="cxf-api-2.7.7.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Sw-C10stEem1ot0-2zrivw" key="cmis-uploadnewdocument -- 3.0.1" value="cxf-rt-bindings-soap-2.7.7.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Sw-C2EstEem1ot0-2zrivw" key="cmis-uploadnewdocument -- 3.0.1" value="neethi-3.0.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Sw-C2UstEem1ot0-2zrivw" key="cmis-uploadnewdocument -- 3.0.1" value="chemistry-opencmis-client-bindings-0.13.0.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Sw-C2kstEem1ot0-2zrivw" key="cmis-uploadnewdocument -- 3.0.1" value="cxf-rt-databinding-jaxb-2.7.7.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Sw-C20stEem1ot0-2zrivw" key="cmis-uploadnewdocument -- 3.0.1" value="chemistry-opencmis-client-api-0.13.0.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Sw-C3EstEem1ot0-2zrivw" key="cmis-uploadnewdocument -- 3.0.1" value="asm-3.3.1.jar" type="CONNECTOR"/>
+          </children>
+          <children xmi:type="configuration:FragmentContainer" xmi:id="_Sw-C3UstEem1ot0-2zrivw" id="scripting-groovy-script-impl-1.0.2">
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Sw-C3kstEem1ot0-2zrivw" key="scripting-groovy-script-impl -- 1.0.2" value="bonita-connector-scripting-groovy-script-impl-1.0.2.jar" type="CONNECTOR"/>
+          </children>
+        </processDependencies>
+        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_Sw-C30stEem1ot0-2zrivw" id="DATA_TYPES"/>
+        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_Sw-C4EstEem1ot0-2zrivw" id="GROOVY_SCRIPT"/>
+        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_Sw-C4UstEem1ot0-2zrivw" id="OTHER"/>
+        <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_Sw-C4kstEem1ot0-2zrivw" id="DATA_TYPES"/>
+        <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_Sw-C40stEem1ot0-2zrivw" id="GROOVY_SCRIPT"/>
+        <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_Sw-C5EstEem1ot0-2zrivw" id="OTHER"/>
+        <parameters xmi:type="parameter:Parameter" xmi:id="_Sw-C5UstEem1ot0-2zrivw" name="alfrescoUsername" value="admin" typeClassname="java.lang.String"/>
+        <parameters xmi:type="parameter:Parameter" xmi:id="_Sw-C5kstEem1ot0-2zrivw" name="alfrescoPassword" value="admin" typeClassname="java.lang.String"/>
+        <parameters xmi:type="parameter:Parameter" xmi:id="_Sw-C50stEem1ot0-2zrivw" name="alfrescoRepository" value="default" typeClassname="java.lang.String"/>
+        <parameters xmi:type="parameter:Parameter" xmi:id="_Sw-C6EstEem1ot0-2zrivw" name="alfrescoAtomUrl" value="http://52.209.119.234:8082/alfresco/api/-default-/public/cmis/versions/1.0/atom" typeClassname="java.lang.String"/>
+        <parameters xmi:type="parameter:Parameter" xmi:id="_Sw-C6UstEem1ot0-2zrivw" name="retryMins" value="1" typeClassname="java.lang.Integer"/>
       </configurations>
       <parameters xmi:type="parameter:Parameter" xmi:id="_6G27u0ZkEemrTfGNF0_5Xw" name="alfrescoUsername" typeClassname="java.lang.String"/>
       <parameters xmi:type="parameter:Parameter" xmi:id="_6G27vEZkEemrTfGNF0_5Xw" name="alfrescoPassword" typeClassname="java.lang.String"/>
@@ -742,7 +812,7 @@
         <iteratorExpression xmi:type="expression:Expression" xmi:id="_6G3h30ZkEemrTfGNF0_5Xw" name="multiInstanceIterator" content="multiInstanceIterator" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Object" returnTypeFixed="true"/>
         <completionCondition xmi:type="expression:Expression" xmi:id="_6G3h4EZkEemrTfGNF0_5Xw" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
         <formMapping xmi:type="process:FormMapping" xmi:id="_6G3h40ZkEemrTfGNF0_5Xw">
-          <targetForm xmi:type="expression:Expression" xmi:id="_sMuFgEZlEemrTfGNF0_5Xw" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+          <targetForm xmi:type="expression:Expression" xmi:id="_dZdEUEstEem1ot0-2zrivw" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
         </formMapping>
         <contract xmi:type="process:Contract" xmi:id="_6G3h5UZkEemrTfGNF0_5Xw"/>
         <expectedDuration xmi:type="expression:Expression" xmi:id="_6G3h5kZkEemrTfGNF0_5Xw" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
@@ -793,6 +863,26 @@
         <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_6G3iDUZkEemrTfGNF0_5Xw" id="GROOVY_SCRIPT"/>
         <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_6G3iDkZkEemrTfGNF0_5Xw" id="VALIDATOR"/>
         <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_6G3iD0ZkEemrTfGNF0_5Xw" id="OTHER"/>
+      </configurations>
+      <configurations xmi:type="configuration:Configuration" xmi:id="_bZ61gEstEem1ot0-2zrivw" name="Demo" version="7.8.3-001" username="walter.bates" password="bpm">
+        <actorMappings xmi:type="actormapping:ActorMappingsType" xmi:id="_bZ61iUstEem1ot0-2zrivw">
+          <actorMapping xmi:type="actormapping:ActorMapping" xmi:id="_bZ61ikstEem1ot0-2zrivw" name="Actor1">
+            <groups xmi:type="actormapping:Groups" xmi:id="_bZ61i0stEem1ot0-2zrivw">
+              <group>/acme</group>
+            </groups>
+            <memberships xmi:type="actormapping:Membership" xmi:id="_bZ61jEstEem1ot0-2zrivw"/>
+            <roles xmi:type="actormapping:Roles" xmi:id="_bZ61jUstEem1ot0-2zrivw"/>
+            <users xmi:type="actormapping:Users" xmi:id="_bZ61jkstEem1ot0-2zrivw"/>
+          </actorMapping>
+        </actorMappings>
+        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_bZ61gUstEem1ot0-2zrivw" id="ACTOR_FILTER"/>
+        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_bZ61gkstEem1ot0-2zrivw" id="CONNECTOR"/>
+        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_bZ61g0stEem1ot0-2zrivw" id="DATA_TYPES"/>
+        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_bZ61hEstEem1ot0-2zrivw" id="GROOVY_SCRIPT"/>
+        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_bZ61hUstEem1ot0-2zrivw" id="OTHER"/>
+        <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_bZ61hkstEem1ot0-2zrivw" id="DATA_TYPES"/>
+        <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_bZ61h0stEem1ot0-2zrivw" id="GROOVY_SCRIPT"/>
+        <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_bZ61iEstEem1ot0-2zrivw" id="OTHER"/>
       </configurations>
       <contract xmi:type="process:Contract" xmi:id="_6G3iEEZkEemrTfGNF0_5Xw">
         <inputs xmi:type="process:ContractInput" xmi:id="_6G3iEUZkEemrTfGNF0_5Xw" name="singleDocumentInput" type="FILE"/>
