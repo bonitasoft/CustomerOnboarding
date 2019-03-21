@@ -208,6 +208,85 @@
               </operator>
             </outputs>
           </connectors>
+          <connectors xmi:type="process:Connector" xmi:id="_RqSsQEviEem6Z88CeGGvTw" name="creditCheckRPA" definitionId="uipath-startjob" event="ON_ENTER" definitionVersion="1.0.0">
+            <configuration xmi:type="connectorconfiguration:ConnectorConfiguration" xmi:id="_RqSsQUviEem6Z88CeGGvTw" definitionId="uipath-startjob" version="1.0.0" modelVersion="7.8.3-001">
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_RqSsQkviEem6Z88CeGGvTw" key="url">
+                <expression xmi:type="expression:Expression" xmi:id="_RqSsQ0viEem6Z88CeGGvTw" name="uiPathURL" content="uiPathURL" type="TYPE_PARAMETER" returnTypeFixed="true">
+                  <referencedElements xmi:type="parameter:Parameter" xmi:id="_RqSsREviEem6Z88CeGGvTw" name="uiPathURL" typeClassname="java.lang.String"/>
+                </expression>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_RqSsRUviEem6Z88CeGGvTw" key="tenant">
+                <expression xmi:type="expression:Expression" xmi:id="_RqSsRkviEem6Z88CeGGvTw" name="Default" content="Default" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_RqSsR0viEem6Z88CeGGvTw" key="user">
+                <expression xmi:type="expression:Expression" xmi:id="_RqSsSEviEem6Z88CeGGvTw" name="uiPathLogin" content="uiPathLogin" type="TYPE_PARAMETER" returnTypeFixed="true">
+                  <referencedElements xmi:type="parameter:Parameter" xmi:id="_RqSsSUviEem6Z88CeGGvTw" name="uiPathLogin" typeClassname="java.lang.String"/>
+                </expression>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_RqSsSkviEem6Z88CeGGvTw" key="password">
+                <expression xmi:type="expression:Expression" xmi:id="_RqSsS0viEem6Z88CeGGvTw" name="uiPathPassword" content="uiPathPassword" type="TYPE_PARAMETER" returnTypeFixed="true">
+                  <referencedElements xmi:type="parameter:Parameter" xmi:id="_RqSsTEviEem6Z88CeGGvTw" name="uiPathPassword" typeClassname="java.lang.String"/>
+                </expression>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_RqSsTUviEem6Z88CeGGvTw" key="processName">
+                <expression xmi:type="expression:Expression" xmi:id="_RqSsTkviEem6Z88CeGGvTw" name="LegacyBankCreditCheck" content="LegacyBankCreditCheck" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_RqSsT0viEem6Z88CeGGvTw" key="processVersion">
+                <expression xmi:type="expression:Expression" xmi:id="_RqSsUEviEem6Z88CeGGvTw" content="" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_RqSsUUviEem6Z88CeGGvTw" key="strategy">
+                <expression xmi:type="expression:Expression" xmi:id="_RqTTUEviEem6Z88CeGGvTw" name="All" content="All" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_RqTTUUviEem6Z88CeGGvTw" key="robotNames">
+                <expression xmi:type="expression:ListExpression" xmi:id="_RqTTUkviEem6Z88CeGGvTw"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_RqTTU0viEem6Z88CeGGvTw" key="jobsCount">
+                <expression xmi:type="expression:Expression" xmi:id="_RqTTVEviEem6Z88CeGGvTw" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_RqTTVUviEem6Z88CeGGvTw" key="inputArguments">
+                <expression xmi:type="expression:TableExpression" xmi:id="_RqTTVkviEem6Z88CeGGvTw">
+                  <expressions xmi:type="expression:ListExpression" xmi:id="_JEXi0EvjEem6Z88CeGGvTw">
+                    <expressions xmi:type="expression:Expression" xmi:id="_JEXi0UvjEem6Z88CeGGvTw" name="bonitaUser" content="bonitaUser"/>
+                    <expressions xmi:type="expression:Expression" xmi:id="_JEXi0kvjEem6Z88CeGGvTw" name="walter.bates" content="walter.bates"/>
+                  </expressions>
+                  <expressions xmi:type="expression:ListExpression" xmi:id="_JEXi00vjEem6Z88CeGGvTw">
+                    <expressions xmi:type="expression:Expression" xmi:id="_JEXi1EvjEem6Z88CeGGvTw" name="bonitaPassword" content="bonitaPassword"/>
+                    <expressions xmi:type="expression:Expression" xmi:id="_JEXi1UvjEem6Z88CeGGvTw" name="bpm" content="bpm"/>
+                  </expressions>
+                  <expressions xmi:type="expression:ListExpression" xmi:id="_RqTTV0viEem6Z88CeGGvTw">
+                    <expressions xmi:type="expression:Expression" xmi:id="_RqTTWEviEem6Z88CeGGvTw" name="firstname" content="firstname"/>
+                    <expressions xmi:type="expression:Expression" xmi:id="_RqTTWUviEem6Z88CeGGvTw" name="getCustomerFirstName()" content="customer.getFirstName()" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+                      <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_RqTTWkviEem6Z88CeGGvTw" name="customer" dataType="_WVG6hG7jEeiAPptCnO7t1w" className="com.company.model.Customer"/>
+                    </expressions>
+                  </expressions>
+                  <expressions xmi:type="expression:ListExpression" xmi:id="_RqTTW0viEem6Z88CeGGvTw">
+                    <expressions xmi:type="expression:Expression" xmi:id="_RqTTXEviEem6Z88CeGGvTw" name="lastname" content="lastname"/>
+                    <expressions xmi:type="expression:Expression" xmi:id="_RqTTXUviEem6Z88CeGGvTw" name="getCustomerLastName()" content="customer.getLastName()" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+                      <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_RqTTXkviEem6Z88CeGGvTw" name="customer" dataType="_WVG6hG7jEeiAPptCnO7t1w" className="com.company.model.Customer"/>
+                    </expressions>
+                  </expressions>
+                  <expressions xmi:type="expression:ListExpression" xmi:id="_RqTTX0viEem6Z88CeGGvTw">
+                    <expressions xmi:type="expression:Expression" xmi:id="_RqTTYEviEem6Z88CeGGvTw" name="dob" content="dob"/>
+                    <expressions xmi:type="expression:Expression" xmi:id="_RqTTYUviEem6Z88CeGGvTw" name="getCustomerDOB()" content="return &quot;12/03/1976&quot;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT"/>
+                  </expressions>
+                  <expressions xmi:type="expression:ListExpression" xmi:id="_RqTTYkviEem6Z88CeGGvTw">
+                    <expressions xmi:type="expression:Expression" xmi:id="_RqTTY0viEem6Z88CeGGvTw" name="bonitaServerURL" content="bonitaServerURL"/>
+                    <expressions xmi:type="expression:Expression" xmi:id="_RqTTZEviEem6Z88CeGGvTw" name="bonitaURL" content="bonitaURL" type="TYPE_PARAMETER">
+                      <referencedElements xmi:type="parameter:Parameter" xmi:id="_RqTTZUviEem6Z88CeGGvTw" name="bonitaURL" typeClassname="java.lang.String"/>
+                    </expressions>
+                  </expressions>
+                  <expressions xmi:type="expression:ListExpression" xmi:id="_RqTTZkviEem6Z88CeGGvTw">
+                    <expressions xmi:type="expression:Expression" xmi:id="_RqTTZ0viEem6Z88CeGGvTw" name="credit" content="credit"/>
+                    <expressions xmi:type="expression:Expression" xmi:id="_RqTTaEviEem6Z88CeGGvTw" name="120" content="120"/>
+                  </expressions>
+                  <expressions xmi:type="expression:ListExpression" xmi:id="_RqTTaUviEem6Z88CeGGvTw">
+                    <expressions xmi:type="expression:Expression" xmi:id="_RqTTakviEem6Z88CeGGvTw" name="taxid" content="taxid"/>
+                    <expressions xmi:type="expression:Expression" xmi:id="_RqTTa0viEem6Z88CeGGvTw" name="1234" content="1234"/>
+                  </expressions>
+                </expression>
+              </parameters>
+            </configuration>
+          </connectors>
           <loopCondition xmi:type="expression:Expression" xmi:id="_MAPHVHL4EeiTGP__0J9PXQ" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <loopMaximum xmi:type="expression:Expression" xmi:id="_MAPHVXL4EeiTGP__0J9PXQ" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
           <cardinalityExpression xmi:type="expression:Expression" xmi:id="_MAPHVnL4EeiTGP__0J9PXQ" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
@@ -332,7 +411,7 @@
         <defaultValue xmi:type="expression:Expression" xmi:id="_e5xdAEssEem1ot0-2zrivw" content="" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List"/>
       </data>
       <formMapping xmi:type="process:FormMapping" xmi:id="_WVG6Ym7jEeiAPptCnO7t1w">
-        <targetForm xmi:type="expression:Expression" xmi:id="_VDFPUEppEem1xYT2gBFygA" name="newForm" content="1ea4e82c-0a0a-49e1-9603-a7b2f8ce7232" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+        <targetForm xmi:type="expression:Expression" xmi:id="_VDFPUEppEem1xYT2gBFygA" name="OpenAccount" content="1ea4e82c-0a0a-49e1-9603-a7b2f8ce7232" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
       </formMapping>
       <overviewFormMapping xmi:type="process:FormMapping" xmi:id="_WVG6ZW7jEeiAPptCnO7t1w">
         <targetForm xmi:type="expression:Expression" xmi:id="_bb90AHkjEeiSJs7w9ZoB7A" name="CaseOverview" content="d239b776-1965-44e1-a1e0-0e9d82cf51be" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
@@ -641,6 +720,7 @@
         </actorMappings>
         <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_EyFmwUmdEemBGtySZy2Unw" type="ACTOR_FILTER" definitionId="initiator" definitionVersion="1.0.0" implementationId="initiator-impl" implementationVersion="1.0.0"/>
         <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_EyFmwkmdEemBGtySZy2Unw" type="CONNECTOR" definitionId="scripting-groovy-script" definitionVersion="1.0.1" implementationId="scripting-groovy-script-impl" implementationVersion="1.0.2"/>
+        <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_YCI_IEviEem6Z88CeGGvTw" type="CONNECTOR" definitionId="uipath-startjob" definitionVersion="1.0.0" implementationId="uipath-startjob-impl" implementationVersion="1.0.3"/>
         <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_EyFmw0mdEemBGtySZy2Unw" id="ACTOR_FILTER">
           <children xmi:type="configuration:FragmentContainer" xmi:id="_EyFmxEmdEemBGtySZy2Unw" id="initiator-impl-1.0.0">
             <fragments xmi:type="configuration:Fragment" xmi:id="_EyFmxUmdEemBGtySZy2Unw" key="initiator-impl -- 1.0.0" value="bonita-userfilter-initiator-impl-1.0.0-SNAPSHOT.jar" type="ACTOR_FILTER"/>
@@ -649,6 +729,14 @@
         <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_EyFmxkmdEemBGtySZy2Unw" id="CONNECTOR">
           <children xmi:type="configuration:FragmentContainer" xmi:id="_EyFmx0mdEemBGtySZy2Unw" id="scripting-groovy-script-impl-1.0.2">
             <fragments xmi:type="configuration:Fragment" xmi:id="_EyFmyEmdEemBGtySZy2Unw" key="scripting-groovy-script-impl -- 1.0.2" value="bonita-connector-scripting-groovy-script-impl-1.0.2.jar" type="CONNECTOR"/>
+          </children>
+          <children xmi:type="configuration:FragmentContainer" xmi:id="_YCchIEviEem6Z88CeGGvTw" id="uipath-startjob-impl-1.0.3">
+            <fragments xmi:type="configuration:Fragment" xmi:id="_YCrxsEviEem6Z88CeGGvTw" key="uipath-startjob-impl -- 1.0.3" value="bonita-connector-uipath-1.0.3.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_YCs_0EviEem6Z88CeGGvTw" key="uipath-startjob-impl -- 1.0.3" value="okhttp-3.10.0.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_YCtm4EviEem6Z88CeGGvTw" key="uipath-startjob-impl -- 1.0.3" value="retrofit-2.4.0.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_YCtm4UviEem6Z88CeGGvTw" key="uipath-startjob-impl -- 1.0.3" value="logging-interceptor-3.11.0.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_YCu1AEviEem6Z88CeGGvTw" key="uipath-startjob-impl -- 1.0.3" value="okio-1.14.0.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_YCvcEEviEem6Z88CeGGvTw" key="uipath-startjob-impl -- 1.0.3" value="converter-jackson-2.4.0.jar" type="CONNECTOR"/>
           </children>
         </processDependencies>
         <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_EyFmyUmdEemBGtySZy2Unw" id="DATA_TYPES"/>
@@ -659,11 +747,13 @@
         <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_EyFmzkmdEemBGtySZy2Unw" id="OTHER"/>
         <parameters xmi:type="parameter:Parameter" xmi:id="_EyFm2UmdEemBGtySZy2Unw" name="uiPathLogin" value="bonitauser" typeClassname="java.lang.String"/>
         <parameters xmi:type="parameter:Parameter" xmi:id="_EyFm2kmdEemBGtySZy2Unw" name="uiPathPassword" value="Bonita_2019" typeClassname="java.lang.String"/>
-        <parameters xmi:type="parameter:Parameter" xmi:id="_RrJj4EmdEemBGtySZy2Unw" name="uiPathURL" value="ec2-54-154-0-15.eu-west-1.compute.amazonaws.com:8090" typeClassname="java.lang.String"/>
+        <parameters xmi:type="parameter:Parameter" xmi:id="_RrJj4EmdEemBGtySZy2Unw" name="uiPathURL" value="http://ec2-54-154-0-15.eu-west-1.compute.amazonaws.com:8888" typeClassname="java.lang.String"/>
+        <parameters xmi:type="parameter:Parameter" xmi:id="_YC07oEviEem6Z88CeGGvTw" name="bonitaURL" value="http://ec2-34-243-60-57.eu-west-1.compute.amazonaws.com:8081/bonita" typeClassname="java.lang.String"/>
       </configurations>
       <parameters xmi:type="parameter:Parameter" xmi:id="_XD_acEZ0Eeml4OmTM0FgHg" name="uiPathLogin" typeClassname="java.lang.String"/>
       <parameters xmi:type="parameter:Parameter" xmi:id="_agTJQEZ0Eeml4OmTM0FgHg" name="uiPathPassword" typeClassname="java.lang.String"/>
       <parameters xmi:type="parameter:Parameter" xmi:id="_RCxVQEmdEemBGtySZy2Unw" name="uiPathURL" typeClassname="java.lang.String"/>
+      <parameters xmi:type="parameter:Parameter" xmi:id="_PCmRQEviEem6Z88CeGGvTw" name="bonitaURL" typeClassname="java.lang.String"/>
       <contract xmi:type="process:Contract" xmi:id="_WVG6bG7jEeiAPptCnO7t1w">
         <inputs xmi:type="process:ContractInput" xmi:id="_jevVsEprEem1xYT2gBFygA" name="customerInput" type="COMPLEX">
           <inputs xmi:type="process:ContractInput" xmi:id="_jevVsUprEem1xYT2gBFygA" name="firstName"/>
