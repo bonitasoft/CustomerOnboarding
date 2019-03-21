@@ -3,7 +3,7 @@
   "previousDesignerVersion" : "1.7.11",
   "id" : "CaseDocuments",
   "name" : "CaseDocuments",
-  "lastUpdate" : 1553155219597,
+  "lastUpdate" : 1553156500601,
   "rows" : [ [ {
     "type" : "component",
     "dimension" : {
@@ -162,7 +162,7 @@
       },
       "target" : {
         "type" : "constant",
-        "value" : "_self"
+        "value" : "_blank"
       },
       "appToken" : {
         "type" : "constant"

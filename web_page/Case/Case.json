@@ -3,7 +3,7 @@
   "previousDesignerVersion" : "1.7.25",
   "id" : "Case",
   "name" : "Case",
-  "lastUpdate" : 1553155496718,
+  "lastUpdate" : 1553157056256,
   "rows" : [ [ {
     "type" : "component",
     "dimension" : {
@@ -23,7 +23,7 @@
       },
       "text" : {
         "type" : "interpolation",
-        "value" : "{{customer.firstName}} {{customer.middleName}}  {{customer.lastName}}"
+        "value" : "CUSTOMER: {{customer.firstName}} {{customer.middleName}}  {{customer.lastName}}"
       },
       "level" : {
         "type" : "constant",
@@ -899,7 +899,7 @@
     },
     "exp_cmsUrl" : {
       "type" : "expression",
-      "value" : "if($data.customer && $data.caseId){\n    var url = \"http://52.209.119.234:8080/share/page/repository#filter=path|/Sites/Forrester/pendingValidation/2019/\";\n    url += \" - \"\n    url += $data.customer.firstName\n    url += \" \"\n    url +=$data.customer.middleName\n    url += \" \"\n    url +=$data.customer.lastName\n    url += \"|&page=1\"\n}",
+      "value" : "if($data.customer && $data.caseId){\n    var url = \"http://52.209.119.234:8080/share/page/repository#filter=path|/Sites/Forrester/pendingValidation/2019/\";\n    url += $data.caseId\n    url += \" - \"\n    url += $data.customer.firstName\n    url += \" \"\n    url +=$data.customer.middleName\n    url += \" \"\n    url +=$data.customer.lastName\n    url += \"|&page=1\"\n    return url\n}",
       "exposed" : false
     }
   },
