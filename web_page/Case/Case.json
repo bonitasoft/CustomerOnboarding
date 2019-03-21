@@ -3,7 +3,7 @@
   "previousDesignerVersion" : "1.7.25",
   "id" : "Case",
   "name" : "Case",
-  "lastUpdate" : 1553102599602,
+  "lastUpdate" : 1553155496718,
   "rows" : [ [ {
     "type" : "component",
     "dimension" : {
@@ -246,7 +246,8 @@
             "caseDocuments" : "caseDocuments",
             "docuementDeleted" : "documentDeleted",
             "documentDeleted" : "documentDeleted",
-            "caseId" : "caseId"
+            "caseId" : "caseId",
+            "cmsUrl" : "exp_cmsUrl"
           }
         } ] ]
       },
@@ -894,6 +895,11 @@
     "customer" : {
       "type" : "url",
       "value" : "../{{caseContext.customer_ref.link}}",
+      "exposed" : false
+    },
+    "exp_cmsUrl" : {
+      "type" : "expression",
+      "value" : "if($data.customer && $data.caseId){\n    var url = \"http://52.209.119.234:8080/share/page/repository#filter=path|/Sites/Forrester/pendingValidation/2019/\";\n    url += \" - \"\n    url += $data.customer.firstName\n    url += \" \"\n    url +=$data.customer.middleName\n    url += \" \"\n    url +=$data.customer.lastName\n    url += \"|&page=1\"\n}",
       "exposed" : false
     }
   },

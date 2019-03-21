@@ -3,7 +3,7 @@
   "previousDesignerVersion" : "1.7.11",
   "id" : "CaseDocuments",
   "name" : "CaseDocuments",
-  "lastUpdate" : 1553102651353,
+  "lastUpdate" : 1553155219597,
   "rows" : [ [ {
     "type" : "component",
     "dimension" : {
@@ -41,9 +41,9 @@
     "type" : "component",
     "dimension" : {
       "xs" : 12,
-      "sm" : 11,
-      "md" : 7,
-      "lg" : 10
+      "sm" : 2,
+      "md" : 3,
+      "lg" : 3
     },
     "propertyValues" : {
       "cssClasses" : {
@@ -120,9 +120,9 @@
     "type" : "component",
     "dimension" : {
       "xs" : 12,
-      "sm" : 12,
-      "md" : 4,
-      "lg" : 1
+      "sm" : 9,
+      "md" : 8,
+      "lg" : 8
     },
     "propertyValues" : {
       "cssClasses" : {
@@ -142,8 +142,8 @@
         "value" : "URL"
       },
       "targetUrl" : {
-        "type" : "constant",
-        "value" : "http://"
+        "type" : "expression",
+        "value" : "cmsUrl"
       },
       "pageToken" : {
         "type" : "constant"
@@ -172,7 +172,7 @@
       },
       "alignment" : {
         "type" : "constant",
-        "value" : "right"
+        "value" : "left"
       },
       "buttonStyle" : {
         "type" : "constant",
@@ -423,6 +423,10 @@
       "exposed" : true
     },
     "documentDeleted" : {
+      "type" : "constant",
+      "exposed" : true
+    },
+    "cmsUrl" : {
       "type" : "constant",
       "exposed" : true
     }
