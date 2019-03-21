@@ -300,8 +300,8 @@
             <processSource xmi:type="expression:Expression" xmi:id="_um3A8UssEem1ot0-2zrivw" name="/sites/Forrester" content="/sites/Forrester"/>
           </inputMappings>
           <inputMappings xmi:type="process:InputMapping" xmi:id="_unbosEssEem1ot0-2zrivw" subprocessTarget="caseName">
-            <processSource xmi:type="expression:Expression" xmi:id="_unbosUssEem1ot0-2zrivw" name="CustomerName" content="customer.firstName + &quot; &quot; + customer.middleName + &quot; &quot; + customer.lastName" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_9639kEssEem1ot0-2zrivw" name="customer" dataType="_WVG6hG7jEeiAPptCnO7t1w" className="com.company.model.Customer"/>
+            <processSource xmi:type="expression:Expression" xmi:id="_unbosUssEem1ot0-2zrivw" name="CustomerName" content="customer.persistenceId + &quot; - &quot; + customer.firstName + &quot; &quot; + customer.middleName + &quot; &quot; + customer.lastName" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_lEpzAEu9EemBcOD5CMOafw" name="customer" dataType="_WVG6hG7jEeiAPptCnO7t1w" className="com.company.model.Customer"/>
             </processSource>
           </inputMappings>
           <inputMappings xmi:type="process:InputMapping" xmi:id="_un1RUEssEem1ot0-2zrivw" subprocessTarget="exitStatus">

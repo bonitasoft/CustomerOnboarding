@@ -186,7 +186,7 @@
               </expression>
             </parameters>
             <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_6GyplkZkEemrTfGNF0_5Xw" key="subfolder_name">
-              <expression xmi:type="expression:Expression" xmi:id="_6Gypl0ZkEemrTfGNF0_5Xw" name="firstLevel" content="if(&quot;&quot;.equals(caseName)){&#xD;&#xA;&#x9;return &quot;&quot;+rootProcessInstanceId&#xD;&#xA;}else{&#xD;&#xA;&#x9;return &quot;&quot;+rootProcessInstanceId + &quot; - &quot; + caseName&#xD;&#xA;}" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true">
+              <expression xmi:type="expression:Expression" xmi:id="_6Gypl0ZkEemrTfGNF0_5Xw" name="firstLevel" content="if(&quot;&quot;.equals(caseName)){&#xD;&#xA;&#x9;return &quot;&quot;+rootProcessInstanceId&#xD;&#xA;}else{&#xD;&#xA;&#x9;return caseName&#xD;&#xA;}" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true">
                 <referencedElements xmi:type="process:Data" xmi:id="_6GypmEZkEemrTfGNF0_5Xw" name="caseName" dataType="_6G3iL0ZkEemrTfGNF0_5Xw"/>
                 <referencedElements xmi:type="expression:Expression" xmi:id="_6GypmUZkEemrTfGNF0_5Xw" name="rootProcessInstanceId" content="rootProcessInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
               </expression>
@@ -670,7 +670,7 @@
         <parameters xmi:type="parameter:Parameter" xmi:id="_Sw-C5UstEem1ot0-2zrivw" name="alfrescoUsername" value="admin" typeClassname="java.lang.String"/>
         <parameters xmi:type="parameter:Parameter" xmi:id="_Sw-C5kstEem1ot0-2zrivw" name="alfrescoPassword" value="admin" typeClassname="java.lang.String"/>
         <parameters xmi:type="parameter:Parameter" xmi:id="_Sw-C50stEem1ot0-2zrivw" name="alfrescoRepository" value="default" typeClassname="java.lang.String"/>
-        <parameters xmi:type="parameter:Parameter" xmi:id="_Sw-C6EstEem1ot0-2zrivw" name="alfrescoAtomUrl" value="http://52.209.119.234:8082/alfresco/api/-default-/public/cmis/versions/1.0/atom" typeClassname="java.lang.String"/>
+        <parameters xmi:type="parameter:Parameter" xmi:id="_Sw-C6EstEem1ot0-2zrivw" name="alfrescoAtomUrl" value="http://ec2-52-209-119-234.eu-west-1.compute.amazonaws.com:8082/alfresco/api/-default-/public/cmis/versions/1.0/atom" typeClassname="java.lang.String"/>
         <parameters xmi:type="parameter:Parameter" xmi:id="_Sw-C6UstEem1ot0-2zrivw" name="retryMins" value="1" typeClassname="java.lang.Integer"/>
       </configurations>
       <parameters xmi:type="parameter:Parameter" xmi:id="_6G27u0ZkEemrTfGNF0_5Xw" name="alfrescoUsername" typeClassname="java.lang.String"/>

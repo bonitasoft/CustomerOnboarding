@@ -3,7 +3,7 @@
   "previousDesignerVersion" : "1.7.25",
   "id" : "Case",
   "name" : "Case",
-  "lastUpdate" : 1553157056256,
+  "lastUpdate" : 1553161232171,
   "rows" : [ [ {
     "type" : "component",
     "dimension" : {
@@ -899,7 +899,7 @@
     },
     "exp_cmsUrl" : {
       "type" : "expression",
-      "value" : "if($data.customer && $data.caseId){\n    var url = \"http://52.209.119.234:8080/share/page/repository#filter=path|/Sites/Forrester/pendingValidation/2019/\";\n    url += $data.caseId\n    url += \" - \"\n    url += $data.customer.firstName\n    url += \" \"\n    url +=$data.customer.middleName\n    url += \" \"\n    url +=$data.customer.lastName\n    url += \"|&page=1\"\n    return url\n}",
+      "value" : "if($data.customer ){\n    var baseUrl = \"http://ec2-52-209-119-234.eu-west-1.compute.amazonaws.com:8080/share/page/repository#filter=\";\n    var url = \"path|/Sites/Forrester/pendingValidation/2019/\"\n    url += $data.customer.persistenceId\n    url += \" - \"\n    url += $data.customer.firstName\n    url += \" \"\n    url +=$data.customer.middleName\n    url += \" \"\n    url +=$data.customer.lastName\n    url += \"|\"\n    return baseUrl+encodeURIComponent(url)+\"&page=1\"\n}",
       "exposed" : false
     }
   },
