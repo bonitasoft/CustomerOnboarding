@@ -349,6 +349,206 @@
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_hwpaEUcnEeml4OmTM0FgHg" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_hwpaE0cnEeml4OmTM0FgHg" name="" content="" returnTypeFixed="true"/>
         </elements>
+        <elements xmi:type="process:Task" xmi:id="_KujaQEvDEemBcOD5CMOafw" name="Update Customer" type="STANDARD" overrideActorsOfTheLane="false">
+          <dynamicLabel xmi:type="expression:Expression" xmi:id="_Kur9IUvDEemBcOD5CMOafw" name="" content="" returnTypeFixed="true"/>
+          <dynamicDescription xmi:type="expression:Expression" xmi:id="_Kur9IEvDEemBcOD5CMOafw" name="" content="" returnTypeFixed="true"/>
+          <stepSummary xmi:type="expression:Expression" xmi:id="_Kur9IkvDEemBcOD5CMOafw" name="" content="" returnTypeFixed="true"/>
+          <data xmi:type="process:Data" xmi:id="_iGHWkEvDEemBcOD5CMOafw" name="$activityState" transient="true" datasourceId="IN_MEMORY" dataType="_x5qCOfSMEeeYpYD60oU_zA">
+            <defaultValue xmi:type="expression:Expression" xmi:id="_iGHWkUvDEemBcOD5CMOafw" name="Optional" content="Optional"/>
+          </data>
+          <operations xmi:type="expression:Operation" xmi:id="_PZv-EEvDEemBcOD5CMOafw">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_PZv-EUvDEemBcOD5CMOafw" name="customer" content="customer" type="TYPE_VARIABLE" returnType="com.company.model.Customer">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_PZv-EkvDEemBcOD5CMOafw" name="customer" dataType="_x5qCPPSMEeeYpYD60oU_zA" className="com.company.model.Customer"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_PZv-E0vDEemBcOD5CMOafw" name="customerInput.firstName" content="customerInput.firstName" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_PZv-FEvDEemBcOD5CMOafw" name="customerInput" type="COMPLEX"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_PZv-FUvDEemBcOD5CMOafw" type="JAVA_METHOD" expression="setFirstName">
+              <inputTypes>java.lang.String</inputTypes>
+            </operator>
+          </operations>
+          <operations xmi:type="expression:Operation" xmi:id="_PZv-FkvDEemBcOD5CMOafw">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_PZv-F0vDEemBcOD5CMOafw" name="customer" content="customer" type="TYPE_VARIABLE" returnType="com.company.model.Customer">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_PZv-GEvDEemBcOD5CMOafw" name="customer" dataType="_x5qCPPSMEeeYpYD60oU_zA" className="com.company.model.Customer"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_PZv-GUvDEemBcOD5CMOafw" name="customerInput.lastName" content="customerInput.lastName" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_PZv-GkvDEemBcOD5CMOafw" name="customerInput" type="COMPLEX"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_PZv-G0vDEemBcOD5CMOafw" type="JAVA_METHOD" expression="setLastName">
+              <inputTypes>java.lang.String</inputTypes>
+            </operator>
+          </operations>
+          <operations xmi:type="expression:Operation" xmi:id="_PZv-HEvDEemBcOD5CMOafw">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_PZv-HUvDEemBcOD5CMOafw" name="customer" content="customer" type="TYPE_VARIABLE" returnType="com.company.model.Customer">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_PZv-HkvDEemBcOD5CMOafw" name="customer" dataType="_x5qCPPSMEeeYpYD60oU_zA" className="com.company.model.Customer"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_PZv-H0vDEemBcOD5CMOafw" name="customerInput.middleName" content="customerInput.middleName" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_PZv-IEvDEemBcOD5CMOafw" name="customerInput" type="COMPLEX"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_PZv-IUvDEemBcOD5CMOafw" type="JAVA_METHOD" expression="setMiddleName">
+              <inputTypes>java.lang.String</inputTypes>
+            </operator>
+          </operations>
+          <operations xmi:type="expression:Operation" xmi:id="_PZv-IkvDEemBcOD5CMOafw">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_PZv-I0vDEemBcOD5CMOafw" name="customer" content="customer" type="TYPE_VARIABLE" returnType="com.company.model.Customer">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_PZv-JEvDEemBcOD5CMOafw" name="customer" dataType="_x5qCPPSMEeeYpYD60oU_zA" className="com.company.model.Customer"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_PZv-JUvDEemBcOD5CMOafw" name="customerInput.address" content="def addressVar = customer.address == null ? new com.company.model.Address() : customer.address&#xD;&#xA;addressVar.street = customerInput.address.street&#xD;&#xA;addressVar.city = customerInput.address.city&#xD;&#xA;addressVar.zipcode = customerInput.address.zipcode&#xD;&#xA;addressVar.country = customerInput.address.country&#xD;&#xA;return addressVar" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.Address">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_PZv-JkvDEemBcOD5CMOafw" name="customerInput" type="COMPLEX"/>
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_PZv-J0vDEemBcOD5CMOafw" name="customer" dataType="_x5qCPPSMEeeYpYD60oU_zA" className="com.company.model.Customer"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_PZv-KEvDEemBcOD5CMOafw" type="JAVA_METHOD" expression="setAddress">
+              <inputTypes>com.company.model.Address</inputTypes>
+            </operator>
+          </operations>
+          <operations xmi:type="expression:Operation" xmi:id="_PZv-KUvDEemBcOD5CMOafw">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_PZv-KkvDEemBcOD5CMOafw" name="customer" content="customer" type="TYPE_VARIABLE" returnType="com.company.model.Customer">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_PZv-K0vDEemBcOD5CMOafw" name="customer" dataType="_x5qCPPSMEeeYpYD60oU_zA" className="com.company.model.Customer"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_PZv-LEvDEemBcOD5CMOafw" name="customerInput.phoneNumber" content="customerInput.phoneNumber" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_PZv-LUvDEemBcOD5CMOafw" name="customerInput" type="COMPLEX"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_PZv-LkvDEemBcOD5CMOafw" type="JAVA_METHOD" expression="setPhoneNumber">
+              <inputTypes>java.lang.String</inputTypes>
+            </operator>
+          </operations>
+          <operations xmi:type="expression:Operation" xmi:id="_PZv-L0vDEemBcOD5CMOafw">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_PZv-MEvDEemBcOD5CMOafw" name="customer" content="customer" type="TYPE_VARIABLE" returnType="com.company.model.Customer">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_PZv-MUvDEemBcOD5CMOafw" name="customer" dataType="_x5qCPPSMEeeYpYD60oU_zA" className="com.company.model.Customer"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_PZv-MkvDEemBcOD5CMOafw" name="customerInput.contract" content="//Retrieve aggregated Contract using its DAO and persistenceId&#xD;&#xA;def contractVar = contractDAO.findByPersistenceId(customerInput.contract.persistenceId.toLong())&#xD;&#xA;contractVar.id = customerInput.contract.id&#xD;&#xA;contractVar.type = customerInput.contract.type&#xD;&#xA;return contractVar" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.Contract">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_PZv-M0vDEemBcOD5CMOafw" name="customerInput" type="COMPLEX"/>
+              <referencedElements xmi:type="expression:Expression" xmi:id="_PZv-NEvDEemBcOD5CMOafw" name="contractDAO" content="contractDAO" type="TYPE_BUSINESS_OBJECT_DAO" returnType="com.company.model.ContractDAO" returnTypeFixed="true"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_PZv-NUvDEemBcOD5CMOafw" type="JAVA_METHOD" expression="setContract">
+              <inputTypes>com.company.model.Contract</inputTypes>
+            </operator>
+          </operations>
+          <operations xmi:type="expression:Operation" xmi:id="_PZv-NkvDEemBcOD5CMOafw">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_PZv-N0vDEemBcOD5CMOafw" name="customer" content="customer" type="TYPE_VARIABLE" returnType="com.company.model.Customer">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_PZv-OEvDEemBcOD5CMOafw" name="customer" dataType="_x5qCPPSMEeeYpYD60oU_zA" className="com.company.model.Customer"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_PZv-OUvDEemBcOD5CMOafw" name="customerInput.accountId" content="customerInput.accountId" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_PZv-OkvDEemBcOD5CMOafw" name="customerInput" type="COMPLEX"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_PZv-O0vDEemBcOD5CMOafw" type="JAVA_METHOD" expression="setAccountId">
+              <inputTypes>java.lang.String</inputTypes>
+            </operator>
+          </operations>
+          <operations xmi:type="expression:Operation" xmi:id="_PZv-PEvDEemBcOD5CMOafw">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_PZv-PUvDEemBcOD5CMOafw" name="customer" content="customer" type="TYPE_VARIABLE" returnType="com.company.model.Customer">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_PZv-PkvDEemBcOD5CMOafw" name="customer" dataType="_x5qCPPSMEeeYpYD60oU_zA" className="com.company.model.Customer"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_PZv-P0vDEemBcOD5CMOafw" name="customerInput.validIdentification" content="customerInput.validIdentification" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Boolean">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_PZv-QEvDEemBcOD5CMOafw" name="customerInput" type="COMPLEX"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_PZv-QUvDEemBcOD5CMOafw" type="JAVA_METHOD" expression="setValidIdentification">
+              <inputTypes>java.lang.Boolean</inputTypes>
+            </operator>
+          </operations>
+          <operations xmi:type="expression:Operation" xmi:id="_PZv-QkvDEemBcOD5CMOafw">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_PZv-Q0vDEemBcOD5CMOafw" name="customer" content="customer" type="TYPE_VARIABLE" returnType="com.company.model.Customer">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_PZv-REvDEemBcOD5CMOafw" name="customer" dataType="_x5qCPPSMEeeYpYD60oU_zA" className="com.company.model.Customer"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_PZv-RUvDEemBcOD5CMOafw" name="customerInput.validProofDomicile" content="customerInput.validProofDomicile" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Boolean">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_PZv-RkvDEemBcOD5CMOafw" name="customerInput" type="COMPLEX"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_PZv-R0vDEemBcOD5CMOafw" type="JAVA_METHOD" expression="setValidProofDomicile">
+              <inputTypes>java.lang.Boolean</inputTypes>
+            </operator>
+          </operations>
+          <operations xmi:type="expression:Operation" xmi:id="_PZv-SEvDEemBcOD5CMOafw">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_PZv-SUvDEemBcOD5CMOafw" name="customer" content="customer" type="TYPE_VARIABLE" returnType="com.company.model.Customer">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_PZv-SkvDEemBcOD5CMOafw" name="customer" dataType="_x5qCPPSMEeeYpYD60oU_zA" className="com.company.model.Customer"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_PZv-S0vDEemBcOD5CMOafw" name="customerInput.validTaxStatement" content="customerInput.validTaxStatement" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Boolean">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_PZv-TEvDEemBcOD5CMOafw" name="customerInput" type="COMPLEX"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_PZv-TUvDEemBcOD5CMOafw" type="JAVA_METHOD" expression="setValidTaxStatement">
+              <inputTypes>java.lang.Boolean</inputTypes>
+            </operator>
+          </operations>
+          <operations xmi:type="expression:Operation" xmi:id="_PZv-TkvDEemBcOD5CMOafw">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_PZv-T0vDEemBcOD5CMOafw" name="customer" content="customer" type="TYPE_VARIABLE" returnType="com.company.model.Customer">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_PZv-UEvDEemBcOD5CMOafw" name="customer" dataType="_x5qCPPSMEeeYpYD60oU_zA" className="com.company.model.Customer"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_PZv-UUvDEemBcOD5CMOafw" name="customerInput.eMailAddress" content="customerInput.eMailAddress" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_PZv-UkvDEemBcOD5CMOafw" name="customerInput" type="COMPLEX"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_PZv-U0vDEemBcOD5CMOafw" type="JAVA_METHOD" expression="setEMailAddress">
+              <inputTypes>java.lang.String</inputTypes>
+            </operator>
+          </operations>
+          <operations xmi:type="expression:Operation" xmi:id="_PZv-VEvDEemBcOD5CMOafw">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_PZv-VUvDEemBcOD5CMOafw" name="customer" content="customer" type="TYPE_VARIABLE" returnType="com.company.model.Customer">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_PZv-VkvDEemBcOD5CMOafw" name="customer" dataType="_x5qCPPSMEeeYpYD60oU_zA" className="com.company.model.Customer"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_PZv-V0vDEemBcOD5CMOafw" name="customerInput.contractDocusignId" content="customerInput.contractDocusignId" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_PZv-WEvDEemBcOD5CMOafw" name="customerInput" type="COMPLEX"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_PZv-WUvDEemBcOD5CMOafw" type="JAVA_METHOD" expression="setContractDocusignId">
+              <inputTypes>java.lang.String</inputTypes>
+            </operator>
+          </operations>
+          <operations xmi:type="expression:Operation" xmi:id="_PZv-WkvDEemBcOD5CMOafw">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_PZv-W0vDEemBcOD5CMOafw" name="customer" content="customer" type="TYPE_VARIABLE" returnType="com.company.model.Customer">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_PZv-XEvDEemBcOD5CMOafw" name="customer" dataType="_x5qCPPSMEeeYpYD60oU_zA" className="com.company.model.Customer"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_PZv-XUvDEemBcOD5CMOafw" name="customerInput.scoring" content="customerInput.scoring" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Integer">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_PZv-XkvDEemBcOD5CMOafw" name="customerInput" type="COMPLEX"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_PZv-X0vDEemBcOD5CMOafw" type="JAVA_METHOD" expression="setScoring">
+              <inputTypes>java.lang.Integer</inputTypes>
+            </operator>
+          </operations>
+          <operations xmi:type="expression:Operation" xmi:id="_PZv-YEvDEemBcOD5CMOafw">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_PZv-YUvDEemBcOD5CMOafw" name="customer" content="customer" type="TYPE_VARIABLE" returnType="com.company.model.Customer">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_PZv-YkvDEemBcOD5CMOafw" name="customer" dataType="_x5qCPPSMEeeYpYD60oU_zA" className="com.company.model.Customer"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_PZv-Y0vDEemBcOD5CMOafw" name="customerInput.docusignStatus" content="customerInput.docusignStatus" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_PZv-ZEvDEemBcOD5CMOafw" name="customerInput" type="COMPLEX"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_PZv-ZUvDEemBcOD5CMOafw" type="JAVA_METHOD" expression="setDocusignStatus">
+              <inputTypes>java.lang.String</inputTypes>
+            </operator>
+          </operations>
+          <loopCondition xmi:type="expression:Expression" xmi:id="_Kur9I0vDEemBcOD5CMOafw" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+          <loopMaximum xmi:type="expression:Expression" xmi:id="_Kur9JEvDEemBcOD5CMOafw" name="10" content="10" returnType="java.lang.Integer" returnTypeFixed="true"/>
+          <cardinalityExpression xmi:type="expression:Expression" xmi:id="_Kur9JUvDEemBcOD5CMOafw" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
+          <iteratorExpression xmi:type="expression:Expression" xmi:id="_KuskMUvDEemBcOD5CMOafw" name="multiInstanceIterator" content="multiInstanceIterator" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Object" returnTypeFixed="true"/>
+          <completionCondition xmi:type="expression:Expression" xmi:id="_KuskMEvDEemBcOD5CMOafw" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+          <formMapping xmi:type="process:FormMapping" xmi:id="_KuskM0vDEemBcOD5CMOafw">
+            <targetForm xmi:type="expression:Expression" xmi:id="_KuskNEvDEemBcOD5CMOafw" name="CustomerEdition" content="1aa16e17-f627-4c10-990d-2ebe9cab9a1d" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+          </formMapping>
+          <contract xmi:type="process:Contract" xmi:id="_KuskMkvDEemBcOD5CMOafw">
+            <inputs xmi:type="process:ContractInput" xmi:id="_PZsTsEvDEemBcOD5CMOafw" name="customerInput" type="COMPLEX">
+              <inputs xmi:type="process:ContractInput" xmi:id="_PZsTsUvDEemBcOD5CMOafw" name="firstName"/>
+              <inputs xmi:type="process:ContractInput" xmi:id="_PZsTskvDEemBcOD5CMOafw" name="lastName"/>
+              <inputs xmi:type="process:ContractInput" xmi:id="_PZsTs0vDEemBcOD5CMOafw" name="middleName"/>
+              <inputs xmi:type="process:ContractInput" xmi:id="_PZsTtEvDEemBcOD5CMOafw" name="address" type="COMPLEX">
+                <inputs xmi:type="process:ContractInput" xmi:id="_PZsTtUvDEemBcOD5CMOafw" name="street"/>
+                <inputs xmi:type="process:ContractInput" xmi:id="_PZsTtkvDEemBcOD5CMOafw" name="city"/>
+                <inputs xmi:type="process:ContractInput" xmi:id="_PZsTt0vDEemBcOD5CMOafw" name="zipcode"/>
+                <inputs xmi:type="process:ContractInput" xmi:id="_PZsTuEvDEemBcOD5CMOafw" name="country"/>
+              </inputs>
+              <inputs xmi:type="process:ContractInput" xmi:id="_PZsTuUvDEemBcOD5CMOafw" name="phoneNumber"/>
+              <inputs xmi:type="process:ContractInput" xmi:id="_PZsTukvDEemBcOD5CMOafw" name="contract" type="COMPLEX">
+                <inputs xmi:type="process:ContractInput" xmi:id="_PZsTu0vDEemBcOD5CMOafw" name="persistenceId"/>
+                <inputs xmi:type="process:ContractInput" xmi:id="_PZsTvEvDEemBcOD5CMOafw" name="id"/>
+                <inputs xmi:type="process:ContractInput" xmi:id="_PZsTvUvDEemBcOD5CMOafw" name="type"/>
+              </inputs>
+              <inputs xmi:type="process:ContractInput" xmi:id="_PZsTvkvDEemBcOD5CMOafw" name="accountId"/>
+              <inputs xmi:type="process:ContractInput" xmi:id="_PZsTv0vDEemBcOD5CMOafw" name="validIdentification" type="BOOLEAN"/>
+              <inputs xmi:type="process:ContractInput" xmi:id="_PZsTwEvDEemBcOD5CMOafw" name="validProofDomicile" type="BOOLEAN"/>
+              <inputs xmi:type="process:ContractInput" xmi:id="_PZsTwUvDEemBcOD5CMOafw" name="validTaxStatement" type="BOOLEAN"/>
+              <inputs xmi:type="process:ContractInput" xmi:id="_PZsTwkvDEemBcOD5CMOafw" name="eMailAddress"/>
+              <inputs xmi:type="process:ContractInput" xmi:id="_PZsTw0vDEemBcOD5CMOafw" name="contractDocusignId"/>
+              <inputs xmi:type="process:ContractInput" xmi:id="_PZsTxEvDEemBcOD5CMOafw" name="scoring" type="INTEGER"/>
+              <inputs xmi:type="process:ContractInput" xmi:id="_PZsTxUvDEemBcOD5CMOafw" name="docusignStatus"/>
+            </inputs>
+          </contract>
+          <expectedDuration xmi:type="expression:Expression" xmi:id="_KuskNUvDEemBcOD5CMOafw" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
+        </elements>
       </elements>
       <data xmi:type="process:BusinessObjectData" xmi:id="_mRGqAPUrEeeJbuCjYn0Nqw" name="customer" dataType="_x5qCPPSMEeeYpYD60oU_zA" className="com.company.model.Customer">
         <defaultValue xmi:type="expression:Expression" xmi:id="_mRGqAfUrEeeJbuCjYn0Nqw" name="init_customer()" content="customerDAO.findByPersistenceId(Long.parseLong(customerId))" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.Customer">
@@ -670,6 +870,10 @@
                 <layoutConstraint xmi:type="notation:Location" xmi:id="_hwqBI0cnEeml4OmTM0FgHg" y="5"/>
               </children>
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hwqBIUcnEeml4OmTM0FgHg" x="610" y="347"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_Kuw1oEvDEemBcOD5CMOafw" type="3005" element="_KujaQEvDEemBcOD5CMOafw" fontName="Segoe UI" fillColor="14334392" lineColor="10710316">
+              <children xmi:type="notation:DecorationNode" xmi:id="_KuxcsEvDEemBcOD5CMOafw" type="5005"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Kuw1oUvDEemBcOD5CMOafw" x="159" y="435" width="120" height="60"/>
             </children>
           </children>
           <styles xmi:type="notation:DescriptionStyle" xmi:id="_x5qCXPSMEeeYpYD60oU_zA"/>

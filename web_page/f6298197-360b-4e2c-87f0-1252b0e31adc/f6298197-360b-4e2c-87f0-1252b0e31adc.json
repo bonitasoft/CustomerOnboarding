@@ -3,7 +3,7 @@
   "previousDesignerVersion" : "1.7.25",
   "id" : "f6298197-360b-4e2c-87f0-1252b0e31adc",
   "name" : "AddCommentForm",
-  "lastUpdate" : 1552409778638,
+  "lastUpdate" : 1553164017499,
   "rows" : [ [ {
     "type" : "formContainer",
     "dimension" : {
@@ -152,6 +152,31 @@
           "hasValidationError" : false,
           "id" : "pbText"
         } ] ]
+      } ], [ {
+        "type" : "fragment",
+        "dimension" : {
+          "xs" : 12,
+          "sm" : 12,
+          "md" : 12,
+          "lg" : 12
+        },
+        "propertyValues" : {
+          "cssClasses" : {
+            "type" : "constant",
+            "value" : ""
+          },
+          "hidden" : {
+            "type" : "constant",
+            "value" : false
+          }
+        },
+        "reference" : "7c9b03b5-5d80-4ce3-8c1e-3c9771fa0fe7",
+        "hasValidationError" : false,
+        "id" : "CustomerInfo",
+        "binding" : {
+          "customer" : "customer",
+          "parameters" : ""
+        }
       } ], [ {
         "type" : "component",
         "dimension" : {
@@ -332,6 +357,11 @@
     "task" : {
       "type" : "url",
       "value" : "../API/bpm/humanTask/{{taskId}}",
+      "exposed" : false
+    },
+    "customer" : {
+      "type" : "url",
+      "value" : "../{{context.customer_ref.link}}",
       "exposed" : false
     }
   },
