@@ -7,13 +7,12 @@
         <dynamicDescription xmi:type="expression:Expression" xmi:id="_6GyCFUZkEemrTfGNF0_5Xw" name="" content="" returnTypeFixed="true"/>
         <stepSummary xmi:type="expression:Expression" xmi:id="_6GyCFkZkEemrTfGNF0_5Xw" name="" content="" returnTypeFixed="true"/>
       </elements>
-      <elements xmi:type="process:XORGateway" xmi:id="_6GyCF0ZkEemrTfGNF0_5Xw" name="is there first level?" outgoing="_6G27EkZkEemrTfGNF0_5Xw _6G27GUZkEemrTfGNF0_5Xw" incoming="_6G27K0ZkEemrTfGNF0_5Xw _6G27NEZkEemrTfGNF0_5Xw">
+      <elements xmi:type="process:XORGateway" xmi:id="_6GyCF0ZkEemrTfGNF0_5Xw" name="is there first level?" outgoing="_6G27EkZkEemrTfGNF0_5Xw _6G27GUZkEemrTfGNF0_5Xw" incoming="_6G27K0ZkEemrTfGNF0_5Xw">
         <dynamicLabel xmi:type="expression:Expression" xmi:id="_6GyCGUZkEemrTfGNF0_5Xw" name="" content="" returnTypeFixed="true"/>
         <dynamicDescription xmi:type="expression:Expression" xmi:id="_6GyCGkZkEemrTfGNF0_5Xw" name="" content="" returnTypeFixed="true"/>
         <stepSummary xmi:type="expression:Expression" xmi:id="_6GyCG0ZkEemrTfGNF0_5Xw" name="" content="" returnTypeFixed="true"/>
       </elements>
       <elements xmi:type="process:ServiceTask" xmi:id="_6GyCHEZkEemrTfGNF0_5Xw" name="Create first level" outgoing="_6G27FkZkEemrTfGNF0_5Xw" incoming="_6G27EkZkEemrTfGNF0_5Xw">
-        <textAnnotationAttachment xmi:type="process:TextAnnotationAttachment" xmi:id="_zGRscEZnEemLwOjf8FV7iQ" source="_6G2600ZkEemrTfGNF0_5Xw"/>
         <dynamicLabel xmi:type="expression:Expression" xmi:id="_6GyCH0ZkEemrTfGNF0_5Xw" name="" content="" returnTypeFixed="true"/>
         <dynamicDescription xmi:type="expression:Expression" xmi:id="_6GyCIEZkEemrTfGNF0_5Xw" name="" content="" returnTypeFixed="true"/>
         <stepSummary xmi:type="expression:Expression" xmi:id="_6GyCIUZkEemrTfGNF0_5Xw" name="descriptionAfterCompletion()" content="&quot;Folder &quot;+ baseFolder + &quot; created&quot; " interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true">
@@ -85,7 +84,6 @@
         <stepSummary xmi:type="expression:Expression" xmi:id="_6GypTEZkEemrTfGNF0_5Xw" name="" content="" returnTypeFixed="true"/>
       </elements>
       <elements xmi:type="process:ServiceTask" xmi:id="_6GypTUZkEemrTfGNF0_5Xw" name="Create year level" outgoing="_6G27H0ZkEemrTfGNF0_5Xw" incoming="_6G27HEZkEemrTfGNF0_5Xw">
-        <textAnnotationAttachment xmi:type="process:TextAnnotationAttachment" xmi:id="_zGRse0ZnEemLwOjf8FV7iQ" source="_6G2600ZkEemrTfGNF0_5Xw"/>
         <dynamicLabel xmi:type="expression:Expression" xmi:id="_6GypUEZkEemrTfGNF0_5Xw" name="" content="" returnTypeFixed="true"/>
         <dynamicDescription xmi:type="expression:Expression" xmi:id="_6GypUUZkEemrTfGNF0_5Xw" name="" content="" returnTypeFixed="true"/>
         <stepSummary xmi:type="expression:Expression" xmi:id="_6GypUkZkEemrTfGNF0_5Xw" name="" content="" returnTypeFixed="true"/>
@@ -161,7 +159,7 @@
         <dynamicLabel xmi:type="expression:Expression" xmi:id="_6GypgkZkEemrTfGNF0_5Xw" name="" content="" returnTypeFixed="true"/>
         <dynamicDescription xmi:type="expression:Expression" xmi:id="_6Gypg0ZkEemrTfGNF0_5Xw" name="" content="" returnTypeFixed="true"/>
         <stepSummary xmi:type="expression:Expression" xmi:id="_6GyphEZkEemrTfGNF0_5Xw" name="" content="" returnTypeFixed="true"/>
-        <connectors xmi:type="process:Connector" xmi:id="_6GyphUZkEemrTfGNF0_5Xw" name="Create first folder1" definitionId="cmis-createfolder" event="ON_FINISH" throwErrorEvent="true" namedError="AlfrescoError" definitionVersion="2.0.1">
+        <connectors xmi:type="process:Connector" xmi:id="_6GyphUZkEemrTfGNF0_5Xw" name="Create first folder1" definitionId="cmis-createfolder" event="ON_FINISH" namedError="AlfrescoError" definitionVersion="2.0.1">
           <configuration xmi:type="connectorconfiguration:ConnectorConfiguration" xmi:id="_6GyphkZkEemrTfGNF0_5Xw" definitionId="cmis-createfolder" version="2.0.1" modelVersion="7.6.0-002">
             <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_6Gyph0ZkEemrTfGNF0_5Xw" key="username">
               <expression xmi:type="expression:Expression" xmi:id="_6GypiEZkEemrTfGNF0_5Xw" name="admin" content="admin" returnTypeFixed="true"/>
@@ -241,7 +239,6 @@
         <cardinalityExpression xmi:type="expression:Expression" xmi:id="_6GypuEZkEemrTfGNF0_5Xw" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
         <iteratorExpression xmi:type="expression:Expression" xmi:id="_6GypuUZkEemrTfGNF0_5Xw" name="multiInstanceIterator" content="multiInstanceIterator" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Object" returnTypeFixed="true"/>
         <completionCondition xmi:type="expression:Expression" xmi:id="_6GypukZkEemrTfGNF0_5Xw" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
-        <BoundaryIntermediateEvents xmi:type="process:IntermediateErrorCatchEvent" xmi:id="_6Gypu0ZkEemrTfGNF0_5Xw" name="Error1" outgoing="_6G27MUZkEemrTfGNF0_5Xw" errorCode="AlfrescoError"/>
       </elements>
       <elements xmi:type="process:ServiceTask" xmi:id="_6GypvEZkEemrTfGNF0_5Xw" name="Push Documents" outgoing="_6G27JUZkEemrTfGNF0_5Xw" incoming="_6G27IkZkEemrTfGNF0_5Xw" type="SEQUENTIAL" collectionDataToMultiInstantiate="_6G27A0ZkEemrTfGNF0_5Xw">
         <dynamicLabel xmi:type="expression:Expression" xmi:id="_6G2TgEZkEemrTfGNF0_5Xw" name="" content="" returnTypeFixed="true"/>
@@ -250,7 +247,7 @@
         <data xmi:type="process:Data" xmi:id="_6G2Tg0ZkEemrTfGNF0_5Xw" name="alfrescoDocId" dataType="_6G3iL0ZkEemrTfGNF0_5Xw">
           <defaultValue xmi:type="expression:Expression" xmi:id="_6G2ThEZkEemrTfGNF0_5Xw" content=""/>
         </data>
-        <connectors xmi:type="process:Connector" xmi:id="_6G2ThUZkEemrTfGNF0_5Xw" name="upload" definitionId="cmis-uploadnewdocument" event="ON_FINISH" throwErrorEvent="true" namedError="AlfrescoError" definitionVersion="2.0.1">
+        <connectors xmi:type="process:Connector" xmi:id="_6G2ThUZkEemrTfGNF0_5Xw" name="upload" definitionId="cmis-uploadnewdocument" event="ON_FINISH" namedError="AlfrescoError" definitionVersion="2.0.1">
           <configuration xmi:type="connectorconfiguration:ConnectorConfiguration" xmi:id="_6G2ThkZkEemrTfGNF0_5Xw" definitionId="cmis-uploadnewdocument" version="2.0.1" modelVersion="7.6.0-002">
             <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_6G2Th0ZkEemrTfGNF0_5Xw" key="username">
               <expression xmi:type="expression:Expression" xmi:id="_6G2TiEZkEemrTfGNF0_5Xw" name="alfrescoUsername" content="alfrescoUsername" type="TYPE_PARAMETER" returnTypeFixed="true">
@@ -356,21 +353,11 @@
         <cardinalityExpression xmi:type="expression:Expression" xmi:id="_6G26ykZkEemrTfGNF0_5Xw" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
         <iteratorExpression xmi:type="expression:Expression" xmi:id="_6G26y0ZkEemrTfGNF0_5Xw" name="documentId" content="documentId" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Long" returnTypeFixed="true"/>
         <completionCondition xmi:type="expression:Expression" xmi:id="_6G26zEZkEemrTfGNF0_5Xw" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
-        <BoundaryIntermediateEvents xmi:type="process:IntermediateErrorCatchEvent" xmi:id="_6G26zUZkEemrTfGNF0_5Xw" name="Error2" outgoing="_6G27LkZkEemrTfGNF0_5Xw" errorCode="AlfrescoError"/>
       </elements>
       <elements xmi:type="process:EndTerminatedEvent" xmi:id="_6G26zkZkEemrTfGNF0_5Xw" name="End1" incoming="_6G27KEZkEemrTfGNF0_5Xw">
         <dynamicLabel xmi:type="expression:Expression" xmi:id="_6G260EZkEemrTfGNF0_5Xw" name="" content="" returnTypeFixed="true"/>
         <dynamicDescription xmi:type="expression:Expression" xmi:id="_6G260UZkEemrTfGNF0_5Xw" name="" content="" returnTypeFixed="true"/>
         <stepSummary xmi:type="expression:Expression" xmi:id="_6G260kZkEemrTfGNF0_5Xw" name="" content="" returnTypeFixed="true"/>
-      </elements>
-      <elements xmi:type="process:TextAnnotation" xmi:id="_6G2600ZkEemrTfGNF0_5Xw" text="If it fails can be because the folder is created, so we ignore the error and we do the focus on the other connector errors if any"/>
-      <elements xmi:type="process:IntermediateCatchTimerEvent" xmi:id="_6G261EZkEemrTfGNF0_5Xw" name="Timer1" outgoing="_6G27NEZkEemrTfGNF0_5Xw" incoming="_6G27LkZkEemrTfGNF0_5Xw _6G27MUZkEemrTfGNF0_5Xw">
-        <dynamicLabel xmi:type="expression:Expression" xmi:id="_6G261kZkEemrTfGNF0_5Xw" name="" content="" returnTypeFixed="true"/>
-        <dynamicDescription xmi:type="expression:Expression" xmi:id="_6G2610ZkEemrTfGNF0_5Xw" name="" content="" returnTypeFixed="true"/>
-        <stepSummary xmi:type="expression:Expression" xmi:id="_6G262EZkEemrTfGNF0_5Xw" name="" content="" returnTypeFixed="true"/>
-        <condition xmi:type="expression:Expression" xmi:id="_6G262UZkEemrTfGNF0_5Xw" name="retryMins" content="retryMins * 60 * 1000L" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Long">
-          <referencedElements xmi:type="parameter:Parameter" xmi:id="_6G262kZkEemrTfGNF0_5Xw" name="retryMins" typeClassname="java.lang.Integer"/>
-        </condition>
       </elements>
       <elements xmi:type="process:ServiceTask" xmi:id="_6G2620ZkEemrTfGNF0_5Xw" name="Clean parent process documents" outgoing="_6G27KEZkEemrTfGNF0_5Xw" incoming="_6G27JUZkEemrTfGNF0_5Xw">
         <dynamicLabel xmi:type="expression:Expression" xmi:id="_6G263UZkEemrTfGNF0_5Xw" name="" content="" returnTypeFixed="true"/>
@@ -430,7 +417,7 @@
       <data xmi:type="process:Data" xmi:id="_6G27B0ZkEemrTfGNF0_5Xw" name="counter" dataType="_6G3iLEZkEemrTfGNF0_5Xw">
         <defaultValue xmi:type="expression:Expression" xmi:id="_6G27CEZkEemrTfGNF0_5Xw" name="0" content="0" returnType="java.lang.Integer"/>
       </data>
-      <formMapping xmi:type="process:FormMapping" xmi:id="_6G27DEZkEemrTfGNF0_5Xw">
+      <formMapping xmi:type="process:FormMapping" xmi:id="_6G27DEZkEemrTfGNF0_5Xw" type="NONE">
         <targetForm xmi:type="expression:Expression" xmi:id="_hOOWcEstEem1ot0-2zrivw" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
       </formMapping>
       <overviewFormMapping xmi:type="process:FormMapping" xmi:id="_6G27D0ZkEemrTfGNF0_5Xw">
@@ -473,18 +460,6 @@
       <connections xmi:type="process:SequenceFlow" xmi:id="_6G27K0ZkEemrTfGNF0_5Xw" target="_6GyCF0ZkEemrTfGNF0_5Xw" source="_6GyCEkZkEemrTfGNF0_5Xw">
         <decisionTable xmi:type="decision:DecisionTable" xmi:id="_6G27LEZkEemrTfGNF0_5Xw"/>
         <condition xmi:type="expression:Expression" xmi:id="_6G27LUZkEemrTfGNF0_5Xw" name="" content="" type="TYPE_CONDITION" returnType="java.lang.Boolean" returnTypeFixed="true"/>
-      </connections>
-      <connections xmi:type="process:SequenceFlow" xmi:id="_6G27LkZkEemrTfGNF0_5Xw" target="_6G261EZkEemrTfGNF0_5Xw" source="_6G26zUZkEemrTfGNF0_5Xw">
-        <decisionTable xmi:type="decision:DecisionTable" xmi:id="_6G27L0ZkEemrTfGNF0_5Xw"/>
-        <condition xmi:type="expression:Expression" xmi:id="_6G27MEZkEemrTfGNF0_5Xw" name="" type="TYPE_CONDITION" returnType="java.lang.Boolean" returnTypeFixed="true"/>
-      </connections>
-      <connections xmi:type="process:SequenceFlow" xmi:id="_6G27MUZkEemrTfGNF0_5Xw" target="_6G261EZkEemrTfGNF0_5Xw" source="_6Gypu0ZkEemrTfGNF0_5Xw">
-        <decisionTable xmi:type="decision:DecisionTable" xmi:id="_6G27MkZkEemrTfGNF0_5Xw"/>
-        <condition xmi:type="expression:Expression" xmi:id="_6G27M0ZkEemrTfGNF0_5Xw" name="" type="TYPE_CONDITION" returnType="java.lang.Boolean" returnTypeFixed="true"/>
-      </connections>
-      <connections xmi:type="process:SequenceFlow" xmi:id="_6G27NEZkEemrTfGNF0_5Xw" target="_6GyCF0ZkEemrTfGNF0_5Xw" source="_6G261EZkEemrTfGNF0_5Xw">
-        <decisionTable xmi:type="decision:DecisionTable" xmi:id="_6G27NUZkEemrTfGNF0_5Xw"/>
-        <condition xmi:type="expression:Expression" xmi:id="_6G27NkZkEemrTfGNF0_5Xw" name="" type="TYPE_CONDITION" returnType="java.lang.Boolean" returnTypeFixed="true"/>
       </connections>
       <configurations xmi:type="configuration:Configuration" xmi:id="_6G27eUZkEemrTfGNF0_5Xw" name="Qualification" version="7.6.0-002" username="walter.bates" password="bpm">
         <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_6G27ekZkEemrTfGNF0_5Xw" type="CONNECTOR" definitionId="cmis-createfolder" definitionVersion="2.0.1" implementationId="cmis-createfolder" implementationVersion="3.0.1"/>
@@ -961,22 +936,10 @@
         </children>
         <children xmi:type="notation:Shape" xmi:id="_6G3iSUZkEemrTfGNF0_5Xw" type="3027" element="_6GypgEZkEemrTfGNF0_5Xw" fontName="Segoe UI" fillColor="14334392" lineColor="10710316">
           <children xmi:type="notation:DecorationNode" xmi:id="_6G3iSkZkEemrTfGNF0_5Xw" type="5017" element="_6GypgEZkEemrTfGNF0_5Xw"/>
-          <children xmi:type="notation:Shape" xmi:id="_6G3iS0ZkEemrTfGNF0_5Xw" type="3032" element="_6Gypu0ZkEemrTfGNF0_5Xw" fontName="Segoe UI">
-            <children xmi:type="notation:DecorationNode" xmi:id="_6G3iTEZkEemrTfGNF0_5Xw" type="5062" element="_6Gypu0ZkEemrTfGNF0_5Xw">
-              <layoutConstraint xmi:type="notation:Location" xmi:id="_6G3iTUZkEemrTfGNF0_5Xw" y="5"/>
-            </children>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6G3iTkZkEemrTfGNF0_5Xw" x="92" y="17"/>
-          </children>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6G3iT0ZkEemrTfGNF0_5Xw" x="886" y="53"/>
         </children>
         <children xmi:type="notation:Shape" xmi:id="_6G3iUEZkEemrTfGNF0_5Xw" type="3027" element="_6GypvEZkEemrTfGNF0_5Xw" fontName="Segoe UI" fillColor="14334392" lineColor="10710316">
           <children xmi:type="notation:DecorationNode" xmi:id="_6G3iUUZkEemrTfGNF0_5Xw" type="5017" element="_6GypvEZkEemrTfGNF0_5Xw"/>
-          <children xmi:type="notation:Shape" xmi:id="_6G3iUkZkEemrTfGNF0_5Xw" type="3032" element="_6G26zUZkEemrTfGNF0_5Xw" fontName="Segoe UI">
-            <children xmi:type="notation:DecorationNode" xmi:id="_6G3iU0ZkEemrTfGNF0_5Xw" type="5062" element="_6G26zUZkEemrTfGNF0_5Xw">
-              <layoutConstraint xmi:type="notation:Location" xmi:id="_6G3iVEZkEemrTfGNF0_5Xw" y="5"/>
-            </children>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6G3iVUZkEemrTfGNF0_5Xw" x="106" y="14"/>
-          </children>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6G3iVkZkEemrTfGNF0_5Xw" x="879" y="173" width="114" height="57"/>
         </children>
         <children xmi:type="notation:Shape" xmi:id="_6G3iV0ZkEemrTfGNF0_5Xw" type="3062" element="_6G26zkZkEemrTfGNF0_5Xw" fontName="Segoe UI">
@@ -984,19 +947,6 @@
             <layoutConstraint xmi:type="notation:Location" xmi:id="_6G3iWUZkEemrTfGNF0_5Xw" y="5"/>
           </children>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6G3iWkZkEemrTfGNF0_5Xw" x="1088" y="298"/>
-        </children>
-        <children xmi:type="notation:Node" xmi:id="_6G3iW0ZkEemrTfGNF0_5Xw" type="3015" element="_6G2600ZkEemrTfGNF0_5Xw">
-          <children xmi:type="notation:DecorationNode" xmi:id="_6G3iXEZkEemrTfGNF0_5Xw" type="5010" element="_6G2600ZkEemrTfGNF0_5Xw"/>
-          <styles xmi:type="notation:DescriptionStyle" xmi:id="_6G3iXUZkEemrTfGNF0_5Xw"/>
-          <styles xmi:type="notation:FontStyle" xmi:id="_6G3iXkZkEemrTfGNF0_5Xw" fontName="Segoe UI"/>
-          <styles xmi:type="notation:LineStyle" xmi:id="_6G3iX0ZkEemrTfGNF0_5Xw"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6G3iYEZkEemrTfGNF0_5Xw" x="497" y="35" width="172" height="95"/>
-        </children>
-        <children xmi:type="notation:Shape" xmi:id="_6G3iYUZkEemrTfGNF0_5Xw" type="3017" element="_6G261EZkEemrTfGNF0_5Xw" fontName="Segoe UI">
-          <children xmi:type="notation:DecorationNode" xmi:id="_6G3iYkZkEemrTfGNF0_5Xw" type="5032" element="_6G261EZkEemrTfGNF0_5Xw">
-            <layoutConstraint xmi:type="notation:Location" xmi:id="_6G3iY0ZkEemrTfGNF0_5Xw" y="5"/>
-          </children>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6G3iZEZkEemrTfGNF0_5Xw" x="1088" y="122"/>
         </children>
         <children xmi:type="notation:Shape" xmi:id="_6G3iZUZkEemrTfGNF0_5Xw" type="3027" element="_6G2620ZkEemrTfGNF0_5Xw" fontName="Segoe UI" fillColor="14334392" lineColor="10710316">
           <children xmi:type="notation:DecorationNode" xmi:id="_6G3iZkZkEemrTfGNF0_5Xw" type="5017" element="_6G2620ZkEemrTfGNF0_5Xw"/>
@@ -1136,29 +1086,6 @@
       </children>
       <styles xmi:type="notation:FontStyle" xmi:id="_6G4ItkZkEemrTfGNF0_5Xw" fontName="Segoe UI"/>
       <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_6G4It0ZkEemrTfGNF0_5Xw" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
-    </edges>
-    <edges xmi:type="notation:Connector" xmi:id="_6G4IuEZkEemrTfGNF0_5Xw" type="4001" element="_6G27LkZkEemrTfGNF0_5Xw" source="_6G3iUkZkEemrTfGNF0_5Xw" target="_6G3iYUZkEemrTfGNF0_5Xw" roundedBendpointsRadius="10" routing="Rectilinear">
-      <children xmi:type="notation:DecorationNode" xmi:id="_6G4IuUZkEemrTfGNF0_5Xw" type="6001" element="_6G27LkZkEemrTfGNF0_5Xw">
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_6G4IukZkEemrTfGNF0_5Xw" y="-10"/>
-      </children>
-      <styles xmi:type="notation:FontStyle" xmi:id="_6G4Iu0ZkEemrTfGNF0_5Xw" fontName="Segoe UI"/>
-      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_6G4IvEZkEemrTfGNF0_5Xw" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
-    </edges>
-    <edges xmi:type="notation:Connector" xmi:id="_6G4IvUZkEemrTfGNF0_5Xw" type="4001" element="_6G27MUZkEemrTfGNF0_5Xw" source="_6G3iS0ZkEemrTfGNF0_5Xw" target="_6G3iYUZkEemrTfGNF0_5Xw" roundedBendpointsRadius="10" routing="Rectilinear">
-      <children xmi:type="notation:DecorationNode" xmi:id="_6G4IvkZkEemrTfGNF0_5Xw" type="6001" element="_6G27MUZkEemrTfGNF0_5Xw">
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_6G4Iv0ZkEemrTfGNF0_5Xw" y="-10"/>
-      </children>
-      <styles xmi:type="notation:FontStyle" xmi:id="_6G4IwEZkEemrTfGNF0_5Xw" fontName="Segoe UI"/>
-      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_6G4IwUZkEemrTfGNF0_5Xw" points="[0, 0, -107, -42]$[100, 28, -7, -14]"/>
-      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_6G4IwkZkEemrTfGNF0_5Xw" id="(1.0,1.0)"/>
-    </edges>
-    <edges xmi:type="notation:Connector" xmi:id="_6G4Iw0ZkEemrTfGNF0_5Xw" type="4001" element="_6G27NEZkEemrTfGNF0_5Xw" source="_6G3iYUZkEemrTfGNF0_5Xw" target="_6G3iO0ZkEemrTfGNF0_5Xw" roundedBendpointsRadius="10" routing="Rectilinear">
-      <children xmi:type="notation:DecorationNode" xmi:id="_6G4IxEZkEemrTfGNF0_5Xw" type="6001" element="_6G27NEZkEemrTfGNF0_5Xw">
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_6G4IxUZkEemrTfGNF0_5Xw" y="-10"/>
-      </children>
-      <styles xmi:type="notation:FontStyle" xmi:id="_6G4IxkZkEemrTfGNF0_5Xw" fontName="Segoe UI"/>
-      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_6G4Ix0ZkEemrTfGNF0_5Xw" points="[-15, -30, 643, -81]$[-15, -125, 643, -176]$[-658, -125, 0, -176]$[-658, 30, 0, -21]"/>
-      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_6G4IyEZkEemrTfGNF0_5Xw" id="(1.0,1.0)"/>
     </edges>
   </notation:Diagram>
 </xmi:XMI>
