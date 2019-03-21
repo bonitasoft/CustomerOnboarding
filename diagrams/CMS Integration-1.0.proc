@@ -208,7 +208,7 @@
             <leftOperand xmi:type="expression:Expression" xmi:id="_6Gypo0ZkEemrTfGNF0_5Xw" name="baseFolder" content="baseFolder" type="TYPE_VARIABLE">
               <referencedElements xmi:type="process:Data" xmi:id="_6GyppEZkEemrTfGNF0_5Xw" name="baseFolder" dataType="_6G3iL0ZkEemrTfGNF0_5Xw"/>
             </leftOperand>
-            <rightOperand xmi:type="expression:Expression" xmi:id="_6GyppUZkEemrTfGNF0_5Xw" name="baseFolder + folder_id" content="if(&quot;&quot;.equals(caseName)){&#xD;&#xA;&#x9;return baseFolder + &quot;/&quot;+rootProcessInstanceId&#xD;&#xA;}else{&#xD;&#xA;&#x9;return baseFolder + &quot;/&quot;+rootProcessInstanceId + &quot; - &quot; + caseName&#xD;&#xA;}" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
+            <rightOperand xmi:type="expression:Expression" xmi:id="_6GyppUZkEemrTfGNF0_5Xw" name="baseFolder + folder_id" content="if(&quot;&quot;.equals(caseName)){&#xD;&#xA;&#x9;return baseFolder + &quot;/&quot;+rootProcessInstanceId&#xD;&#xA;}else{&#xD;&#xA;&#x9;return baseFolder + &quot;/&quot;+ caseName&#xD;&#xA;}" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT">
               <referencedElements xmi:type="process:Data" xmi:id="_6GyppkZkEemrTfGNF0_5Xw" name="baseFolder" dataType="_6G3iL0ZkEemrTfGNF0_5Xw"/>
               <referencedElements xmi:type="process:Data" xmi:id="_6Gypp0ZkEemrTfGNF0_5Xw" name="caseName" dataType="_6G3iL0ZkEemrTfGNF0_5Xw"/>
               <referencedElements xmi:type="expression:Expression" xmi:id="_6GypqEZkEemrTfGNF0_5Xw" name="rootProcessInstanceId" content="rootProcessInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
