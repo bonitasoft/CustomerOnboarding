@@ -740,12 +740,7 @@
       </documents>
       <searchIndexes xmi:type="process:SearchIndex" xmi:id="_x5qCJfSMEeeYpYD60oU_zA">
         <name xmi:type="expression:Expression" xmi:id="_x5qCJvSMEeeYpYD60oU_zA" name="customerName" content="customerName" returnTypeFixed="true"/>
-        <value xmi:type="expression:Expression" xmi:id="_x5qCJ_SMEeeYpYD60oU_zA" name="newScript()" content="try{&#xD;&#xA;&#x9;def c = customerDAO.findByPersistenceId(Long.parseLong(customerId))&#xD;&#xA;&#x9;return c.getFirstName() + &quot; &quot; +c.getMiddleName()+ &quot; &quot; +c.getLastName()&#xD;&#xA;}catch(Exception e){&#xD;&#xA;&#x9;return &quot;Customer Id:&quot; + customerId&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true">
-          <referencedElements xmi:type="expression:Expression" xmi:id="_ym5ZsEyyEemBcOD5CMOafw" name="customerDAO" content="customerDAO" type="TYPE_BUSINESS_OBJECT_DAO" returnType="com.company.model.CustomerDAO" returnTypeFixed="true"/>
-          <referencedElements xmi:type="process:ContractInput" xmi:id="_ym5ZsUyyEemBcOD5CMOafw" name="customerId">
-            <mapping xmi:type="process:ContractInputMapping" xmi:id="_ym5ZskyyEemBcOD5CMOafw"/>
-          </referencedElements>
-        </value>
+        <value xmi:type="expression:Expression" xmi:id="_x5qCJ_SMEeeYpYD60oU_zA" name="newScript()" content="&quot;Customer&quot;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true"/>
       </searchIndexes>
       <searchIndexes xmi:type="process:SearchIndex" xmi:id="_x5qCKPSMEeeYpYD60oU_zA">
         <name xmi:type="expression:Expression" xmi:id="_x5qCKfSMEeeYpYD60oU_zA" content="" returnTypeFixed="true"/>

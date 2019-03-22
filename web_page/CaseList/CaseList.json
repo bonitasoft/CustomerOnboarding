@@ -3,7 +3,7 @@
   "previousDesignerVersion" : "1.7.25",
   "id" : "CaseList",
   "name" : "CaseList",
-  "lastUpdate" : 1553266741543,
+  "lastUpdate" : 1553268038472,
   "rows" : [ [ {
     "type" : "component",
     "dimension" : {
@@ -145,7 +145,7 @@
       },
       "content" : {
         "type" : "expression",
-        "value" : "cases"
+        "value" : "cases|filter:filter"
       },
       "columnsKey" : {
         "type" : "constant",
@@ -163,8 +163,7 @@
         "value" : 10
       },
       "filter" : {
-        "type" : "expression",
-        "value" : "filter"
+        "type" : "constant"
       }
     },
     "reference" : "3f6ace3b-3dc3-49b2-9e71-b3fe28d122ed",
@@ -249,6 +248,10 @@
     "contract" : {
       "type" : "json",
       "value" : "{\n    \"customerId\":\"0\"\n}",
+      "exposed" : false
+    },
+    "filter" : {
+      "type" : "constant",
       "exposed" : false
     }
   },
