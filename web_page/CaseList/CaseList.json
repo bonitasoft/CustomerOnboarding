@@ -3,14 +3,14 @@
   "previousDesignerVersion" : "1.7.25",
   "id" : "CaseList",
   "name" : "CaseList",
-  "lastUpdate" : 1553090824300,
+  "lastUpdate" : 1553266741543,
   "rows" : [ [ {
     "type" : "component",
     "dimension" : {
       "xs" : 12,
       "sm" : 12,
-      "md" : 12,
-      "lg" : 12
+      "md" : 6,
+      "lg" : 6
     },
     "propertyValues" : {
       "cssClasses" : {
@@ -37,6 +37,80 @@
     "reference" : "9e0a4149-b701-4ce5-83a7-1ed6a2bf7881",
     "hasValidationError" : false,
     "id" : "pbTitle"
+  } ], [ {
+    "type" : "component",
+    "dimension" : {
+      "xs" : 12,
+      "sm" : 12,
+      "md" : 12,
+      "lg" : 12
+    },
+    "propertyValues" : {
+      "cssClasses" : {
+        "type" : "constant",
+        "value" : ""
+      },
+      "hidden" : {
+        "type" : "constant",
+        "value" : false
+      },
+      "required" : {
+        "type" : "constant",
+        "value" : false
+      },
+      "minLength" : {
+        "type" : "constant",
+        "value" : ""
+      },
+      "maxLength" : {
+        "type" : "constant",
+        "value" : ""
+      },
+      "readOnly" : {
+        "type" : "constant",
+        "value" : false
+      },
+      "labelHidden" : {
+        "type" : "constant",
+        "value" : false
+      },
+      "label" : {
+        "type" : "interpolation",
+        "value" : "Search"
+      },
+      "labelPosition" : {
+        "type" : "constant",
+        "value" : "left"
+      },
+      "labelWidth" : {
+        "type" : "constant",
+        "value" : 9
+      },
+      "placeholder" : {
+        "type" : "interpolation"
+      },
+      "value" : {
+        "type" : "variable",
+        "value" : "filter"
+      },
+      "type" : {
+        "type" : "constant",
+        "value" : "text"
+      },
+      "min" : {
+        "type" : "constant"
+      },
+      "max" : {
+        "type" : "constant"
+      },
+      "step" : {
+        "type" : "constant",
+        "value" : 1
+      }
+    },
+    "reference" : "c17fe197-f7a7-462b-b6cd-4f600a57c294",
+    "hasValidationError" : false,
+    "id" : "pbInput"
   } ], [ {
     "type" : "component",
     "dimension" : {
@@ -89,7 +163,8 @@
         "value" : 10
       },
       "filter" : {
-        "type" : "constant"
+        "type" : "expression",
+        "value" : "filter"
       }
     },
     "reference" : "3f6ace3b-3dc3-49b2-9e71-b3fe28d122ed",

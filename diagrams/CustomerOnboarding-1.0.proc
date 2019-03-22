@@ -747,8 +747,8 @@
         <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_EyFmzkmdEemBGtySZy2Unw" id="OTHER"/>
         <parameters xmi:type="parameter:Parameter" xmi:id="_EyFm2UmdEemBGtySZy2Unw" name="uiPathLogin" value="bonitauser" typeClassname="java.lang.String"/>
         <parameters xmi:type="parameter:Parameter" xmi:id="_EyFm2kmdEemBGtySZy2Unw" name="uiPathPassword" value="Bonita_2019" typeClassname="java.lang.String"/>
-        <parameters xmi:type="parameter:Parameter" xmi:id="_RrJj4EmdEemBGtySZy2Unw" name="uiPathURL" value="http://ec2-18-203-251-84.eu-west-1.compute.amazonaws.com:8081/bonita" typeClassname="java.lang.String"/>
-        <parameters xmi:type="parameter:Parameter" xmi:id="_YC07oEviEem6Z88CeGGvTw" name="bonitaURL" value="http://ec2-34-243-60-57.eu-west-1.compute.amazonaws.com:8081/bonita" typeClassname="java.lang.String"/>
+        <parameters xmi:type="parameter:Parameter" xmi:id="_RrJj4EmdEemBGtySZy2Unw" name="uiPathURL" value="http://ec2-54-154-0-15.eu-west-1.compute.amazonaws.com:8888" typeClassname="java.lang.String"/>
+        <parameters xmi:type="parameter:Parameter" xmi:id="_YC07oEviEem6Z88CeGGvTw" name="bonitaURL" value="http://ec2-34-247-66-235.eu-west-1.compute.amazonaws.com:8081/bonita" typeClassname="java.lang.String"/>
       </configurations>
       <parameters xmi:type="parameter:Parameter" xmi:id="_XD_acEZ0Eeml4OmTM0FgHg" name="uiPathLogin" typeClassname="java.lang.String"/>
       <parameters xmi:type="parameter:Parameter" xmi:id="_agTJQEZ0Eeml4OmTM0FgHg" name="uiPathPassword" typeClassname="java.lang.String"/>
