@@ -4,7 +4,7 @@
     <elements xmi:type="process:Pool" xmi:id="_x5qBwfSMEeeYpYD60oU_zA" name="OnBoardingValidation">
       <elements xmi:type="process:Lane" xmi:id="_x5qByPSMEeeYpYD60oU_zA" name="Bank" actor="_x5qCI_SMEeeYpYD60oU_zA">
         <elements xmi:type="process:Task" xmi:id="_x5qB2fSMEeeYpYD60oU_zA" name="Investigate onboarding request" outgoing="_hi4VwEclEeml4OmTM0FgHg" overrideActorsOfTheLane="false">
-          <dynamicLabel xmi:type="expression:Expression" xmi:id="_x5qB2_SMEeeYpYD60oU_zA" name="displayName()" content="return &quot;&amp;#128269;  Investigate transaction, Case ID: &quot;+processInstanceId;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true">
+          <dynamicLabel xmi:type="expression:Expression" xmi:id="_x5qB2_SMEeeYpYD60oU_zA" name="displayName()" content="return &quot;&amp;#128269;  Investigate request, Case ID: &quot;+processInstanceId;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true">
             <referencedElements xmi:type="expression:Expression" xmi:id="_hMSCgE8CEeiL57cXslApDw" name="processInstanceId" content="processInstanceId" type="TYPE_ENGINE_CONSTANT" returnType="java.lang.Long"/>
           </dynamicLabel>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_x5qB3PSMEeeYpYD60oU_zA" name="" content="" returnTypeFixed="true"/>
@@ -210,7 +210,7 @@
                 </expression>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_14HbsUcjEeml4OmTM0FgHg" key="destName">
-                <expression xmi:type="expression:Expression" xmi:id="_14HbskcjEeml4OmTM0FgHg" name="fullName()" content="&quot;&quot;&quot;${customer.firstName} ${customer.middleName} ${customer.lastName} ${customer.suffix}&quot;&quot;&quot;.toString()" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true">
+                <expression xmi:type="expression:Expression" xmi:id="_14HbskcjEeml4OmTM0FgHg" name="fullName()" content="&quot;&quot;&quot;${customer.firstName} ${customer.middleName} ${customer.lastName} &quot;&quot;&quot;.toString()" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true">
                   <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_14Hbs0cjEeml4OmTM0FgHg" name="customer" dataType="_x5qCPPSMEeeYpYD60oU_zA" className="com.company.model.Customer"/>
                 </expression>
               </parameters>
@@ -566,7 +566,9 @@
       </connections>
       <connections xmi:type="process:SequenceFlow" xmi:id="_14KewEcjEeml4OmTM0FgHg" target="_14HbcEcjEeml4OmTM0FgHg" source="_14GNaUcjEeml4OmTM0FgHg">
         <decisionTable xmi:type="decision:DecisionTable" xmi:id="_14KewUcjEeml4OmTM0FgHg"/>
-        <condition xmi:type="expression:Expression" xmi:id="_14KewkcjEeml4OmTM0FgHg" name="true" content="true" type="TYPE_CONDITION" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+        <condition xmi:type="expression:Expression" xmi:id="_14KewkcjEeml4OmTM0FgHg" name="minimal_scoring" content="minimal_scoring" type="TYPE_PARAMETER" returnType="java.lang.Boolean" returnTypeFixed="true">
+          <referencedElements xmi:type="parameter:Parameter" xmi:id="_xem2wEzEEemBcOD5CMOafw" name="minimal_scoring" typeClassname="java.lang.Boolean"/>
+        </condition>
       </connections>
       <connections xmi:type="process:SequenceFlow" xmi:id="_14KeykcjEeml4OmTM0FgHg" target="_14GNUEcjEeml4OmTM0FgHg" source="_14HbcEcjEeml4OmTM0FgHg">
         <decisionTable xmi:type="decision:DecisionTable" xmi:id="_14Key0cjEeml4OmTM0FgHg"/>
@@ -709,11 +711,13 @@
         <parameters xmi:type="parameter:Parameter" xmi:id="_J-rQEUpQEeml4OmTM0FgHg" name="docusignAuthIntegratorKey" value="f4f85187-2228-44ac-9e9a-3ee16dd18800" typeClassname="java.lang.String"/>
         <parameters xmi:type="parameter:Parameter" xmi:id="_J-rQEkpQEeml4OmTM0FgHg" name="docusignUsername" value="philippe.laumay@bonitasoft.com" typeClassname="java.lang.String"/>
         <parameters xmi:type="parameter:Parameter" xmi:id="_J-rQE0pQEeml4OmTM0FgHg" name="docusignPassword" value="Bonita_2019" typeClassname="java.lang.String"/>
+        <parameters xmi:type="parameter:Parameter" xmi:id="_yB2twEzEEemBcOD5CMOafw" name="minimal_scoring" value="false" typeClassname="java.lang.Boolean"/>
       </configurations>
       <parameters xmi:type="parameter:Parameter" xmi:id="_5VIq8EpPEeml4OmTM0FgHg" name="docusignAccountId" typeClassname="java.lang.String"/>
       <parameters xmi:type="parameter:Parameter" xmi:id="_9hBckEpPEeml4OmTM0FgHg" name="docusignAuthIntegratorKey" typeClassname="java.lang.String"/>
       <parameters xmi:type="parameter:Parameter" xmi:id="_BPvxEEpQEeml4OmTM0FgHg" name="docusignUsername" typeClassname="java.lang.String"/>
       <parameters xmi:type="parameter:Parameter" xmi:id="_CpDtYEpQEeml4OmTM0FgHg" name="docusignPassword" typeClassname="java.lang.String"/>
+      <parameters xmi:type="parameter:Parameter" xmi:id="_wT264EzEEemBcOD5CMOafw" name="minimal_scoring" typeClassname="java.lang.Boolean"/>
       <contract xmi:type="process:Contract" xmi:id="_x5qCJPSMEeeYpYD60oU_zA">
         <inputs xmi:type="process:ContractInput" xmi:id="_HxEFkErrEeml4OmTM0FgHg" name="customerId">
           <mapping xmi:type="process:ContractInputMapping" xmi:id="_HxEFkUrrEeml4OmTM0FgHg"/>
