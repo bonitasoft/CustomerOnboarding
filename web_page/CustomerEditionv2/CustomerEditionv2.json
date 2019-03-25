@@ -2,13 +2,22 @@
   "designerVersion" : "1.8.39",
   "id" : "CustomerEditionv2",
   "name" : "CustomerEditionv2",
-  "lastUpdate" : 1553533362033,
+  "lastUpdate" : 1553535352447,
   "rows" : [ [ {
     "type" : "formContainer",
     "dimension" : {
       "xs" : 12
     },
-    "propertyValues" : { },
+    "propertyValues" : {
+      "cssClasses" : {
+        "type" : "constant",
+        "value" : ""
+      },
+      "hidden" : {
+        "type" : "constant",
+        "value" : false
+      }
+    },
     "reference" : "cc03caee-bca3-45bb-8eeb-6a16e57b5110",
     "hasValidationError" : false,
     "id" : "pbFormContainer",
@@ -232,7 +241,7 @@
           },
           "action" : {
             "type" : "constant",
-            "value" : "POST"
+            "value" : "Submit task"
           },
           "collectionToModify" : {
             "type" : "variable"
@@ -262,7 +271,7 @@
           },
           "url" : {
             "type" : "interpolation",
-            "value" : "../API/extension/userTask"
+            "value" : "../API/extension/userTaskUpdate"
           },
           "dataFromSuccess" : {
             "type" : "variable",
@@ -304,7 +313,7 @@
   "data" : {
     "formOutput" : {
       "type" : "expression",
-      "value" : "return {\n\t'content': \"Customer information updated\",\n\t'customerInput': $data.customer,\n\t'processInstanceId' : $data.task.caseId,\n\t'taskId': $data.taskId\n};",
+      "value" : "return {\n\t'customerInput': $data.customer\n};",
       "exposed" : false
     },
     "customer" : {
