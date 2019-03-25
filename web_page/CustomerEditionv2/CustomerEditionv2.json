@@ -2,7 +2,7 @@
   "designerVersion" : "1.8.39",
   "id" : "CustomerEditionv2",
   "name" : "CustomerEditionv2",
-  "lastUpdate" : 1553530008029,
+  "lastUpdate" : 1553533362033,
   "rows" : [ [ {
     "type" : "formContainer",
     "dimension" : {
@@ -232,7 +232,7 @@
           },
           "action" : {
             "type" : "constant",
-            "value" : "Submit task"
+            "value" : "POST"
           },
           "collectionToModify" : {
             "type" : "variable"
@@ -262,7 +262,7 @@
           },
           "url" : {
             "type" : "interpolation",
-            "value" : "{{onboardingProcessInstantiationURL}}"
+            "value" : "../API/extension/userTask"
           },
           "dataFromSuccess" : {
             "type" : "variable",
@@ -304,7 +304,7 @@
   "data" : {
     "formOutput" : {
       "type" : "expression",
-      "value" : "return {\n\t'customerInput': $data.customer\n};",
+      "value" : "return {\n\t'content': \"Customer information updated\",\n\t'customerInput': $data.customer,\n\t'processInstanceId' : $data.task.caseId,\n\t'taskId': $data.taskId\n};",
       "exposed" : false
     },
     "customer" : {
@@ -325,6 +325,11 @@
     "taskId" : {
       "type" : "urlparameter",
       "value" : "id",
+      "exposed" : false
+    },
+    "task" : {
+      "type" : "url",
+      "value" : "../API/bpm/humanTask/{{taskId}}",
       "exposed" : false
     }
   },

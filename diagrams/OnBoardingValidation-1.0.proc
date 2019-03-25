@@ -479,15 +479,6 @@
           <formMapping xmi:type="process:FormMapping" xmi:id="_KuskM0vDEemBcOD5CMOafw">
             <targetForm xmi:type="expression:Expression" xmi:id="_KuskNEvDEemBcOD5CMOafw" name="CustomerEdition" content="1aa16e17-f627-4c10-990d-2ebe9cab9a1d" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
           </formMapping>
-          <filters xmi:type="process:ActorFilter" xmi:id="_JXMisE8ZEemBcOD5CMOafw" name="Assigned" definitionId="single-user" definitionVersion="1.0.0">
-            <configuration xmi:type="connectorconfiguration:ConnectorConfiguration" xmi:id="_JXMisU8ZEemBcOD5CMOafw" definitionId="single-user" version="1.0.0">
-              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_JXMisk8ZEemBcOD5CMOafw" key="userId">
-                <expression xmi:type="expression:Expression" xmi:id="_JXMis08ZEemBcOD5CMOafw" name="userId()" content="apiAccessor.getIdentityAPI().getUserByUserName(&quot;walter.bates&quot;).getId()" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Long" returnTypeFixed="true">
-                  <referencedElements xmi:type="expression:Expression" xmi:id="_JXMitE8ZEemBcOD5CMOafw" name="apiAccessor" content="apiAccessor" type="TYPE_ENGINE_CONSTANT" returnType="com.bonitasoft.engine.api.APIAccessor"/>
-                </expression>
-              </parameters>
-            </configuration>
-          </filters>
           <contract xmi:type="process:Contract" xmi:id="_KuskMkvDEemBcOD5CMOafw">
             <inputs xmi:type="process:ContractInput" xmi:id="_PZsTsEvDEemBcOD5CMOafw" name="customerInput" type="COMPLEX">
               <inputs xmi:type="process:ContractInput" xmi:id="_PZsTsUvDEemBcOD5CMOafw" name="firstName"/>
