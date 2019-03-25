@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actormapping="http://www.bonitasoft.org/ns/actormapping/6.0" xmlns:configuration="http://www.bonitasoft.org/ns/studio/configuration" xmlns:connectorconfiguration="http://wwww.bonitasoft.org/model/connector/configuration" xmlns:decision="http://www.bonitasoft.org/ns/studio/process/decision" xmlns:definition="http://www.bonitasoft.org/ns/connector/definition/6.1" xmlns:expression="http://www.bonitasoft.org/ns/studio/expression" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:parameter="http://www.bonitasoft.org/ns/studio/parameter" xmlns:process="http://www.bonitasoft.org/ns/studio/process" xsi:schemaLocation="http://www.bonitasoft.org/ns/studio/process/decision http://www.bonitasoft.org/ns/studio/process#//decision">
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actormapping="http://www.bonitasoft.org/ns/actormapping/6.0" xmlns:configuration="http://www.bonitasoft.org/ns/studio/configuration" xmlns:connectorconfiguration="http://wwww.bonitasoft.org/model/connector/configuration" xmlns:decision="http://www.bonitasoft.org/ns/studio/process/decision" xmlns:definition="http://www.bonitasoft.org/ns/connector/definition/6.1" xmlns:expression="http://www.bonitasoft.org/ns/studio/expression" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:parameter="http://www.bonitasoft.org/ns/studio/parameter" xmlns:process="http://www.bonitasoft.org/ns/studio/process" xmlns:transitions="http://www.bonitasoft.org/ns/studio/process/decision/transitions" xsi:schemaLocation="http://www.bonitasoft.org/ns/studio/process/decision http://www.bonitasoft.org/ns/studio/process#//decision http://www.bonitasoft.org/ns/studio/process/decision/transitions http://www.bonitasoft.org/ns/studio/process#//decision/transitions">
   <process:MainProcess xmi:id="_WVG6QG7jEeiAPptCnO7t1w" name="CustomerOnboarding" author="antoine" bonitaVersion="7.8.3" bonitaModelVersion="7.8.3-001" configId="ACED0005740022437573746F6D65724F6E626F617264696E67372E382E332D303031372E382E337370">
     <elements xmi:type="process:Pool" xmi:id="_WVG6QW7jEeiAPptCnO7t1w" name="CustomerOnboarding" displayName="Customer onboarding">
       <elements xmi:type="process:Lane" xmi:id="_WVG6Qm7jEeiAPptCnO7t1w" name="Customer lane" actor="_WVG6a27jEeiAPptCnO7t1w">
@@ -471,8 +471,34 @@
         <decisionTable xmi:type="decision:DecisionTable" xmi:id="_NTD1AEvcEem6Z88CeGGvTw"/>
         <condition xmi:type="expression:Expression" xmi:id="_NTD1AUvcEem6Z88CeGGvTw" name="" type="TYPE_CONDITION" returnType="java.lang.Boolean" returnTypeFixed="true"/>
       </connections>
-      <connections xmi:type="process:SequenceFlow" xmi:id="_QApcoEvcEem6Z88CeGGvTw" target="_QAlyQEvcEem6Z88CeGGvTw" source="_NijCgEvcEem6Z88CeGGvTw">
-        <decisionTable xmi:type="decision:DecisionTable" xmi:id="_QApcoUvcEem6Z88CeGGvTw"/>
+      <connections xmi:type="process:SequenceFlow" xmi:id="_QApcoEvcEem6Z88CeGGvTw" target="_QAlyQEvcEem6Z88CeGGvTw" source="_NijCgEvcEem6Z88CeGGvTw" conditionType="DECISION_TABLE">
+        <decisionTable xmi:type="decision:DecisionTable" xmi:id="_mtIGQE7qEem6Z88CeGGvTw">
+          <lines xmi:type="decision:DecisionTableLine" xmi:id="_mtIGQU7qEem6Z88CeGGvTw">
+            <conditions xmi:type="expression:Expression" xmi:id="_mtIGQk7qEem6Z88CeGGvTw" name="creditCheck > 100" content="creditCheck > 100" type="TYPE_CONDITION" returnType="java.lang.Boolean" returnTypeFixed="true">
+              <referencedElements xmi:type="process:Data" xmi:id="_mtIGQ07qEem6Z88CeGGvTw" name="creditCheck" dataType="_WVG6fm7jEeiAPptCnO7t1w"/>
+            </conditions>
+            <action xmi:type="transitions:TakeTransitionAction" xmi:id="_mtIGRE7qEem6Z88CeGGvTw" takeTransition="true"/>
+          </lines>
+          <lines xmi:type="decision:DecisionTableLine" xmi:id="_mtIGRU7qEem6Z88CeGGvTw">
+            <conditions xmi:type="expression:Expression" xmi:id="_mtIGRk7qEem6Z88CeGGvTw" name="creditCheck &lt; 100" content="creditCheck &lt; 100" type="TYPE_CONDITION" returnType="java.lang.Boolean" returnTypeFixed="true">
+              <referencedElements xmi:type="process:Data" xmi:id="_mtIGR07qEem6Z88CeGGvTw" name="creditCheck" dataType="_WVG6fm7jEeiAPptCnO7t1w"/>
+            </conditions>
+            <conditions xmi:type="expression:Expression" xmi:id="_mtIGSE7qEem6Z88CeGGvTw" name="creditCheck > 80" content="creditCheck > 80" type="TYPE_CONDITION" returnType="java.lang.Boolean" returnTypeFixed="true">
+              <referencedElements xmi:type="process:Data" xmi:id="_mtIGSU7qEem6Z88CeGGvTw" name="creditCheck" dataType="_WVG6fm7jEeiAPptCnO7t1w"/>
+            </conditions>
+            <conditions xmi:type="expression:Expression" xmi:id="_mtIGSk7qEem6Z88CeGGvTw" name="customerAge &lt; 40" content="customerAge &lt; 40" type="TYPE_CONDITION" returnType="java.lang.Boolean" returnTypeFixed="true">
+              <referencedElements xmi:type="process:Data" xmi:id="_mtIGS07qEem6Z88CeGGvTw" name="customerAge" dataType="_WVG6fm7jEeiAPptCnO7t1w"/>
+            </conditions>
+            <action xmi:type="transitions:TakeTransitionAction" xmi:id="_mtIGTE7qEem6Z88CeGGvTw" takeTransition="true"/>
+          </lines>
+          <lines xmi:type="decision:DecisionTableLine" xmi:id="_mtIGTU7qEem6Z88CeGGvTw">
+            <conditions xmi:type="expression:Expression" xmi:id="_mtIGTk7qEem6Z88CeGGvTw" name="creditCheck &lt; 80" content="creditCheck &lt; 80" type="TYPE_CONDITION" returnType="java.lang.Boolean" returnTypeFixed="true">
+              <referencedElements xmi:type="process:Data" xmi:id="_mtIGT07qEem6Z88CeGGvTw" name="creditCheck" dataType="_WVG6fm7jEeiAPptCnO7t1w"/>
+            </conditions>
+            <action xmi:type="transitions:TakeTransitionAction" xmi:id="_mtIGUE7qEem6Z88CeGGvTw"/>
+          </lines>
+          <defaultAction xmi:type="transitions:TakeTransitionAction" xmi:id="_mtIGUU7qEem6Z88CeGGvTw"/>
+        </decisionTable>
         <condition xmi:type="expression:Expression" xmi:id="_QApcokvcEem6Z88CeGGvTw" name="" content="" type="TYPE_CONDITION" returnType="java.lang.Boolean" returnTypeFixed="true"/>
       </connections>
       <connections xmi:type="process:SequenceFlow" xmi:id="_zDsvsEvcEem6Z88CeGGvTw" target="_q1VQEEssEem1ot0-2zrivw" source="_QAlyQEvcEem6Z88CeGGvTw">
