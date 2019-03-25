@@ -632,7 +632,12 @@
         <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_MsOlEEcnEeml4OmTM0FgHg" type="CONNECTOR" definitionId="document-converter" definitionVersion="1.0.2" implementationId="document-converter-impl" implementationVersion="1.0.2"/>
         <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_MuqOAEcnEeml4OmTM0FgHg" type="CONNECTOR" definitionId="coSignSend" definitionVersion="1.0.0" implementationId="coSignSend-impl" implementationVersion="1.0.0"/>
         <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_MvVjcEcnEeml4OmTM0FgHg" type="CONNECTOR" definitionId="coSignGetEnv" definitionVersion="1.0.0" implementationId="coSignGetEnv-impl" implementationVersion="1.0.0"/>
-        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_RlF_wPIoEeiAVslBKvhhLg" id="ACTOR_FILTER"/>
+        <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_TzPDwE8ZEemBcOD5CMOafw" type="ACTOR_FILTER" definitionId="single-user" definitionVersion="1.0.0" implementationId="single-user-impl" implementationVersion="1.0.0"/>
+        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_RlF_wPIoEeiAVslBKvhhLg" id="ACTOR_FILTER">
+          <children xmi:type="configuration:FragmentContainer" xmi:id="_TzcfIE8ZEemBcOD5CMOafw" id="single-user-impl-1.0.0">
+            <fragments xmi:type="configuration:Fragment" xmi:id="_Tze7YE8ZEemBcOD5CMOafw" key="single-user-impl -- 1.0.0" value="bonita-userfilter-single-user-impl-1.0.0-SNAPSHOT.jar" type="ACTOR_FILTER"/>
+          </children>
+        </processDependencies>
         <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_RlF_wfIoEeiAVslBKvhhLg" id="CONNECTOR">
           <children xmi:type="configuration:FragmentContainer" xmi:id="_MpuDoEcnEeml4OmTM0FgHg" id="document-templating-impl-1.0.1">
             <fragments xmi:type="configuration:Fragment" xmi:id="_MqDa0EcnEeml4OmTM0FgHg" key="document-templating-impl -- 1.0.1" value="bonita-connector-document-templating-impl-1.0.1.jar" type="CONNECTOR"/>
