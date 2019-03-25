@@ -63,7 +63,21 @@ class CaseActivity implements RestApiController,CaseActivityHelper {
 				}.collect{ it.name }
 				
 		//Retrieve pending activities
-	
+		SearchOptionsBuilder sob = new SearchOptionsBuilder(0, Integer.MAX_VALUE);
+		def result = processAPI.searchAssignedAndPendingHumanTasksFor(pDef.id, context.apiSession.userId, sob.done()).getResult()
+		.findAll{it.name != ACTIVITY_CONTAINER && it.name != CREATE_ACTIVITY && it.parentProcessInstanceId == Long.parseLong(caseId) }
+		.collect{ HumanTaskInstance task ->
+			[
+				id:task.name,
+				name:task.displayName ?: task.name,
+				url:forge(pDef.name,pDef.version,task,contextPath),
+				description:task.description,
+				target:linkTarget(task),
+				state:task.state.capitalize(),
+				metadata:getMetadata(task,processAPI)
+			]
+		}.sort{ t1,t2 -> valueOf(t1.metadata.$activityState) <=> valueOf(t2.metadata.$activityState) }
+		/*		
 		def result = processAPI.getPendingHumanTaskInstances(context.apiSession.userId,0, Integer.MAX_VALUE, ActivityInstanceCriterion.EXPECTED_END_DATE_ASC)
 				.findAll{it.name != ACTIVITY_CONTAINER && it.name != CREATE_ACTIVITY && it.parentProcessInstanceId == Long.parseLong(caseId) }
 				.collect{ HumanTaskInstance task ->
@@ -77,7 +91,7 @@ class CaseActivity implements RestApiController,CaseActivityHelper {
 						metadata:getMetadata(task,processAPI)
 					]
 				}.sort{ t1,t2 -> valueOf(t1.metadata.$activityState) <=> valueOf(t2.metadata.$activityState) }
-
+*/
 		def containerInstance = processAPI.searchHumanTaskInstances(new SearchOptionsBuilder(0, 1)
 				.filter(HumanTaskInstanceSearchDescriptor.PROCESS_INSTANCE_ID, caseId)
 				.filter(HumanTaskInstanceSearchDescriptor.NAME, ACTIVITY_CONTAINER)

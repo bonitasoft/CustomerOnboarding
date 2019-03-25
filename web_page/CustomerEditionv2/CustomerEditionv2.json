@@ -1,15 +1,15 @@
 {
   "designerVersion" : "1.8.39",
-  "id" : "CustomerEdition",
-  "name" : "CustomerEdition",
-  "lastUpdate" : 1553530027335,
+  "id" : "CustomerEditionv2",
+  "name" : "CustomerEditionv2",
+  "lastUpdate" : 1553530008029,
   "rows" : [ [ {
     "type" : "formContainer",
     "dimension" : {
       "xs" : 12
     },
     "propertyValues" : { },
-    "reference" : "6e5188d3-ccf9-4eff-957a-bee68180c85d",
+    "reference" : "cc03caee-bca3-45bb-8eeb-6a16e57b5110",
     "hasValidationError" : false,
     "id" : "pbFormContainer",
     "container" : {
@@ -18,7 +18,7 @@
         "xs" : 12
       },
       "propertyValues" : { },
-      "reference" : "27357512-2b3b-4060-9864-3fe750993feb",
+      "reference" : "cf49ad96-36b2-486c-802f-4f9b0be0aff4",
       "hasValidationError" : false,
       "id" : "pbContainer",
       "rows" : [ [ {
@@ -39,7 +39,7 @@
             "value" : false
           }
         },
-        "reference" : "c3f21ebf-93eb-4cb2-9579-c8e188bbdb59",
+        "reference" : "e7d278c3-76b5-44e0-99e8-3c94aaba2fe6",
         "hasValidationError" : false,
         "id" : "CustomerInfo",
         "binding" : {
@@ -76,9 +76,109 @@
             "value" : "left"
           }
         },
-        "reference" : "b591611a-6fed-48b4-b6f7-c12a0bac6486",
+        "reference" : "40a1d61b-7c8c-4f2e-aeaa-98a2f3ea41c4",
         "hasValidationError" : false,
         "id" : "pbText"
+      } ], [ {
+        "type" : "container",
+        "dimension" : {
+          "xs" : 12,
+          "sm" : 12,
+          "md" : 12,
+          "lg" : 12
+        },
+        "propertyValues" : {
+          "cssClasses" : {
+            "type" : "constant",
+            "value" : ""
+          },
+          "hidden" : {
+            "type" : "constant",
+            "value" : false
+          },
+          "repeatedCollection" : {
+            "type" : "variable",
+            "value" : ""
+          }
+        },
+        "reference" : "72747042-e7b6-47cd-955c-0488dff8ccb3",
+        "hasValidationError" : false,
+        "id" : "pbContainer",
+        "rows" : [ [ {
+          "type" : "component",
+          "dimension" : {
+            "xs" : 12,
+            "sm" : 12,
+            "md" : 12,
+            "lg" : 12
+          },
+          "propertyValues" : {
+            "cssClasses" : {
+              "type" : "constant",
+              "value" : ""
+            },
+            "hidden" : {
+              "type" : "constant",
+              "value" : false
+            },
+            "required" : {
+              "type" : "constant",
+              "value" : false
+            },
+            "minLength" : {
+              "type" : "constant",
+              "value" : ""
+            },
+            "maxLength" : {
+              "type" : "constant",
+              "value" : ""
+            },
+            "readOnly" : {
+              "type" : "constant",
+              "value" : false
+            },
+            "labelHidden" : {
+              "type" : "constant",
+              "value" : false
+            },
+            "label" : {
+              "type" : "interpolation",
+              "value" : "Customer Loan Rate"
+            },
+            "labelPosition" : {
+              "type" : "constant",
+              "value" : "top"
+            },
+            "labelWidth" : {
+              "type" : "constant",
+              "value" : 4
+            },
+            "placeholder" : {
+              "type" : "interpolation"
+            },
+            "value" : {
+              "type" : "variable",
+              "value" : "customer.loanRate"
+            },
+            "type" : {
+              "type" : "constant",
+              "value" : "text"
+            },
+            "min" : {
+              "type" : "constant"
+            },
+            "max" : {
+              "type" : "constant"
+            },
+            "step" : {
+              "type" : "constant",
+              "value" : 1
+            }
+          },
+          "reference" : "56ee36c1-760a-430a-9bd1-52eeeb494ca0",
+          "hasValidationError" : false,
+          "id" : "pbInput"
+        } ] ]
       } ], [ {
         "type" : "component",
         "dimension" : {
@@ -181,7 +281,7 @@
             "value" : ""
           }
         },
-        "reference" : "fd52c030-6670-47d1-b8ed-40f8e0574364",
+        "reference" : "de397579-5a13-4ca5-bae8-92fc9ab6bc0d",
         "hasValidationError" : false,
         "id" : "pbButton"
       } ] ]
@@ -229,7 +329,7 @@
     }
   },
   "hasValidationError" : false,
-  "uuid" : "1aa16e17-f627-4c10-990d-2ebe9cab9a1d",
+  "uuid" : "9bccc871-90f4-4589-94fe-c3e4f93b5a64",
   "type" : "form",
   "description" : "Page generated with Bonita UI designer",
   "displayName" : "Customer Update"

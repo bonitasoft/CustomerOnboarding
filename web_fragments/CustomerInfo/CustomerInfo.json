@@ -2,7 +2,7 @@
   "designerVersion" : "1.8.39",
   "id" : "CustomerInfo",
   "name" : "CustomerInfo",
-  "lastUpdate" : 1553266914264,
+  "lastUpdate" : 1553529842185,
   "rows" : [ [ {
     "type" : "component",
     "dimension" : {
@@ -1137,18 +1137,18 @@
     "propertyValues" : {
       "cssClasses" : {
         "type" : "constant",
-        "value" : "jumbotron"
+        "value" : ""
       },
       "hidden" : {
-        "type" : "expression",
-        "value" : "!customer.loanRate"
+        "type" : "constant",
+        "value" : false
       },
       "repeatedCollection" : {
         "type" : "variable",
         "value" : ""
       }
     },
-    "reference" : "a0de557f-08c9-4a02-84f9-d5152a2ceb5b",
+    "reference" : "19c278b9-8213-4b9a-b712-243bcfa15f5c",
     "hasValidationError" : false,
     "id" : "pbContainer",
     "rows" : [ [ {
@@ -1190,7 +1190,7 @@
         },
         "label" : {
           "type" : "interpolation",
-          "value" : "Customer Loan Rate"
+          "value" : "Scoring"
         },
         "labelPosition" : {
           "type" : "constant",
@@ -1205,7 +1205,7 @@
         },
         "value" : {
           "type" : "variable",
-          "value" : "customer.loanRate"
+          "value" : "customer.scoring"
         },
         "type" : {
           "type" : "constant",
@@ -1222,7 +1222,7 @@
           "value" : 1
         }
       },
-      "reference" : "b183faa6-b8f3-44f8-884b-8dc8ed6b708a",
+      "reference" : "3bee39a2-7556-4ecb-80ec-995f7e73a8dc",
       "hasValidationError" : false,
       "id" : "pbInput"
     } ] ]
