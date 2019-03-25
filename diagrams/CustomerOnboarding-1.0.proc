@@ -338,6 +338,33 @@
               <operator xmi:type="expression:Operator" xmi:id="_5okAPEryEem1xYT2gBFygA" type="ASSIGNMENT"/>
             </outputs>
           </connectors>
+          <connectors xmi:type="process:Connector" xmi:id="_MRZ88E8MEemBcOD5CMOafw" name="Predict Scoring" definitionId="GoogleMLPredict" event="ON_ENTER" ignoreErrors="true" definitionVersion="1.0.0">
+            <configuration xmi:type="connectorconfiguration:ConnectorConfiguration" xmi:id="_MRZ88U8MEemBcOD5CMOafw" definitionId="GoogleMLPredict" version="1.0.0" modelVersion="7.8.3-001">
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_MRZ88k8MEemBcOD5CMOafw" key="projectId">
+                <expression xmi:type="expression:Expression" xmi:id="_MRZ8808MEemBcOD5CMOafw" name="demoforrester" content="demoforrester" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_MRZ89E8MEemBcOD5CMOafw" key="modelId">
+                <expression xmi:type="expression:Expression" xmi:id="_MRZ89U8MEemBcOD5CMOafw" name="census_forrester_3" content="census_forrester_3" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_MRZ89k8MEemBcOD5CMOafw" key="versionId">
+                <expression xmi:type="expression:Expression" xmi:id="_MRZ8908MEemBcOD5CMOafw" name="v1" content="v1" returnTypeFixed="true"/>
+              </parameters>
+              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_MRZ8-E8MEemBcOD5CMOafw" key="jsonPayload">
+                <expression xmi:type="expression:Expression" xmi:id="_MRZ8-U8MEemBcOD5CMOafw" name="&lt;pattern-expression>" content="{&#xD;&#xA;  &quot;instances&quot;: [&#xD;&#xA;    {&#xD;&#xA;      &quot;age&quot;: 25,&#xD;&#xA;      &quot;workclass&quot;: &quot; Private&quot;,&#xD;&#xA;      &quot;education&quot;: &quot; 11th&quot;,&#xD;&#xA;      &quot;education_num&quot;: 7,&#xD;&#xA;      &quot;marital_status&quot;: &quot; Never-married&quot;,&#xD;&#xA;      &quot;occupation&quot;: &quot; Machine-op-inspct&quot;,&#xD;&#xA;      &quot;relationship&quot;: &quot; Own-child&quot;,&#xD;&#xA;      &quot;race&quot;: &quot; Black&quot;,&#xD;&#xA;      &quot;gender&quot;: &quot; Male&quot;,&#xD;&#xA;      &quot;capital_gain&quot;: 0,&#xD;&#xA;      &quot;capital_loss&quot;: 0,&#xD;&#xA;      &quot;hours_per_week&quot;: 40,&#xD;&#xA;      &quot;native_country&quot;: &quot; United-States&quot;&#xD;&#xA;    }&#xD;&#xA;  ]&#xD;&#xA;}" type="TYPE_PATTERN" returnTypeFixed="true"/>
+              </parameters>
+            </configuration>
+            <outputs xmi:type="expression:Operation" xmi:id="_MRZ8-k8MEemBcOD5CMOafw">
+              <leftOperand xmi:type="expression:Expression" xmi:id="_MRZ8-08MEemBcOD5CMOafw" name="customer" content="customer" type="TYPE_VARIABLE" returnType="com.company.model.Customer">
+                <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_MRZ8_E8MEemBcOD5CMOafw" name="customer" dataType="_WVG6hG7jEeiAPptCnO7t1w" className="com.company.model.Customer"/>
+              </leftOperand>
+              <rightOperand xmi:type="expression:Expression" xmi:id="_MRZ8_U8MEemBcOD5CMOafw" name="prediction" content="import groovy.json.JsonSlurper&#xD;&#xA;&#xD;&#xA;def jsonSlurper = new JsonSlurper()&#xD;&#xA;def object = jsonSlurper.parseText(prediction)&#xD;&#xA;&#xD;&#xA;Double prob = object[&quot;predictions&quot;][&quot;probabilities&quot;].get(0).get(0);&#xD;&#xA;prob = prob *100;&#xD;&#xA;return (int)prob.doubleValue()" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Integer">
+                <referencedElements xmi:type="definition:Output" xmi:id="_MRZ8_k8MEemBcOD5CMOafw" name="prediction" type="java.lang.String"/>
+              </rightOperand>
+              <operator xmi:type="expression:Operator" xmi:id="_MRZ8_08MEemBcOD5CMOafw" type="JAVA_METHOD" expression="setScoring">
+                <inputTypes>java.lang.Integer</inputTypes>
+              </operator>
+            </outputs>
+          </connectors>
           <operations xmi:type="expression:Operation" xmi:id="_a9J2cEssEem1ot0-2zrivw">
             <leftOperand xmi:type="expression:Expression" xmi:id="_a9J2cUssEem1ot0-2zrivw" name="documentsToKeep" content="documentsToKeep" type="TYPE_VARIABLE" returnType="java.util.List">
               <referencedElements xmi:type="process:Data" xmi:id="_fCbCsEssEem1ot0-2zrivw" name="documentsToKeep" multiple="true" dataType="_WVG6f27jEeiAPptCnO7t1w"/>
