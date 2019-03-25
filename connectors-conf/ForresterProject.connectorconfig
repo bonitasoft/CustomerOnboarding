@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<connectorconfiguration:ConnectorConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:connectorconfiguration="http://wwww.bonitasoft.org/model/connector/configuration" xmlns:expression="http://www.bonitasoft.org/ns/studio/expression" definitionId="GoogleMLPredict" version="1.0.0" name="ForresterProject" modelVersion="7.8.3-001">
+  <parameters key="projectId">
+    <expression xsi:type="expression:Expression" name="demoforrester" content="demoforrester" returnTypeFixed="true"/>
+  </parameters>
+  <parameters key="modelId">
+    <expression xsi:type="expression:Expression" name="census_forrester_3" content="census_forrester_3" returnTypeFixed="true"/>
+  </parameters>
+  <parameters key="versionId">
+    <expression xsi:type="expression:Expression" name="v1" content="v1" returnTypeFixed="true"/>
+  </parameters>
+  <parameters key="jsonPayload">
+    <expression xsi:type="expression:Expression" name="&lt;pattern-expression>" content="{&#xD;&#xA;  &quot;instances&quot;: [&#xD;&#xA;    {&#xD;&#xA;      &quot;age&quot;: 25,&#xD;&#xA;      &quot;workclass&quot;: &quot; Private&quot;,&#xD;&#xA;      &quot;education&quot;: &quot; 11th&quot;,&#xD;&#xA;      &quot;education_num&quot;: 7,&#xD;&#xA;      &quot;marital_status&quot;: &quot; Never-married&quot;,&#xD;&#xA;      &quot;occupation&quot;: &quot; Machine-op-inspct&quot;,&#xD;&#xA;      &quot;relationship&quot;: &quot; Own-child&quot;,&#xD;&#xA;      &quot;race&quot;: &quot; Black&quot;,&#xD;&#xA;      &quot;gender&quot;: &quot; Male&quot;,&#xD;&#xA;      &quot;capital_gain&quot;: 0,&#xD;&#xA;      &quot;capital_loss&quot;: 0,&#xD;&#xA;      &quot;hours_per_week&quot;: 40,&#xD;&#xA;      &quot;native_country&quot;: &quot; United-States&quot;&#xD;&#xA;    }&#xD;&#xA;  ]&#xD;&#xA;}" type="TYPE_PATTERN" returnTypeFixed="true"/>
+  </parameters>
+</connectorconfiguration:ConnectorConfiguration>
