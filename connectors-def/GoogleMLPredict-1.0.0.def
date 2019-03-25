@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definition:ConnectorDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:definition="http://www.bonitasoft.org/ns/connector/definition/6.1">
+  <id>GoogleMLPredict</id>
+  <version>1.0.0</version>
+  <icon>cloudml.png</icon>
+  <category icon="cloudml.png" id="ML"/>
+  <input mandatory="true" name="projectId" type="java.lang.String"/>
+  <input mandatory="true" name="modelId" type="java.lang.String"/>
+  <input mandatory="true" name="versionId" type="java.lang.String"/>
+  <input mandatory="true" name="jsonPayload" type="java.lang.String"/>
+  <output name="prediction" type="java.lang.String"/>
+  <page id="ModelConfiguration">
+    <widget xsi:type="definition:Text" id="ProjectId" inputName="projectId"/>
+    <widget xsi:type="definition:Text" id="ModelId" inputName="modelId"/>
+    <widget xsi:type="definition:Text" id="VersionId" inputName="versionId"/>
+  </page>
+  <page id="Content">
+    <widget xsi:type="definition:TextArea" id="content" inputName="jsonPayload"/>
+  </page>
+</definition:ConnectorDefinition>

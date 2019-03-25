@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<implementation:connectorImplementation xmlns:implementation="http://www.bonitasoft.org/ns/connector/implementation/6.0">
+  <implementationId>GoogleMLPredict-impl</implementationId>
+  <implementationVersion>1.0.0</implementationVersion>
+  <definitionId>GoogleMLPredict</definitionId>
+  <definitionVersion>1.0.0</definitionVersion>
+  <implementationClassname>com.bonitasoft.connector.ml.GoogleMLPredictImpl</implementationClassname>
+  <description></description>
+  <jarDependencies>
+    <jarDependency>mlengine-online-prediction-1-jar-with-dependencies.jar</jarDependency>
+  </jarDependencies>
+</implementation:connectorImplementation>
