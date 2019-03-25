@@ -748,6 +748,7 @@
         <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_EyFmwUmdEemBGtySZy2Unw" type="ACTOR_FILTER" definitionId="initiator" definitionVersion="1.0.0" implementationId="initiator-impl" implementationVersion="1.0.0"/>
         <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_EyFmwkmdEemBGtySZy2Unw" type="CONNECTOR" definitionId="scripting-groovy-script" definitionVersion="1.0.1" implementationId="scripting-groovy-script-impl" implementationVersion="1.0.2"/>
         <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_YCI_IEviEem6Z88CeGGvTw" type="CONNECTOR" definitionId="uipath-startjob" definitionVersion="1.0.0" implementationId="uipath-startjob-impl" implementationVersion="1.0.3"/>
+        <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_wY7S0E8OEemBcOD5CMOafw" type="CONNECTOR" definitionId="GoogleMLPredict" definitionVersion="1.0.0" implementationId="GoogleMLPredict-impl" implementationVersion="1.0.0"/>
         <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_EyFmw0mdEemBGtySZy2Unw" id="ACTOR_FILTER">
           <children xmi:type="configuration:FragmentContainer" xmi:id="_EyFmxEmdEemBGtySZy2Unw" id="initiator-impl-1.0.0">
             <fragments xmi:type="configuration:Fragment" xmi:id="_EyFmxUmdEemBGtySZy2Unw" key="initiator-impl -- 1.0.0" value="bonita-userfilter-initiator-impl-1.0.0-SNAPSHOT.jar" type="ACTOR_FILTER"/>
@@ -764,6 +765,10 @@
             <fragments xmi:type="configuration:Fragment" xmi:id="_YCtm4UviEem6Z88CeGGvTw" key="uipath-startjob-impl -- 1.0.3" value="logging-interceptor-3.11.0.jar" type="CONNECTOR"/>
             <fragments xmi:type="configuration:Fragment" xmi:id="_YCu1AEviEem6Z88CeGGvTw" key="uipath-startjob-impl -- 1.0.3" value="okio-1.14.0.jar" type="CONNECTOR"/>
             <fragments xmi:type="configuration:Fragment" xmi:id="_YCvcEEviEem6Z88CeGGvTw" key="uipath-startjob-impl -- 1.0.3" value="converter-jackson-2.4.0.jar" type="CONNECTOR"/>
+          </children>
+          <children xmi:type="configuration:FragmentContainer" xmi:id="_wZVigE8OEemBcOD5CMOafw" id="GoogleMLPredict-impl-1.0.0">
+            <fragments xmi:type="configuration:Fragment" xmi:id="_wZXXsE8OEemBcOD5CMOafw" key="GoogleMLPredict-impl -- 1.0.0" value="mlengine-online-prediction-1-jar-with-dependencies.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_wZX-wE8OEemBcOD5CMOafw" key="GoogleMLPredict-impl -- 1.0.0" value="GoogleMLPredict-impl-1.0.0.jar" type="CONNECTOR"/>
           </children>
         </processDependencies>
         <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_EyFmyUmdEemBGtySZy2Unw" id="DATA_TYPES"/>
