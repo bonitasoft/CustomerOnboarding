@@ -383,18 +383,6 @@
               <inputTypes>java.lang.String</inputTypes>
             </operator>
           </operations>
-          <operations xmi:type="expression:Operation" xmi:id="_PZv-L0vDEemBcOD5CMOafw">
-            <leftOperand xmi:type="expression:Expression" xmi:id="_PZv-MEvDEemBcOD5CMOafw" name="customer" content="customer" type="TYPE_VARIABLE" returnType="com.company.model.Customer">
-              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_PZv-MUvDEemBcOD5CMOafw" name="customer" dataType="_x5qCPPSMEeeYpYD60oU_zA" className="com.company.model.Customer"/>
-            </leftOperand>
-            <rightOperand xmi:type="expression:Expression" xmi:id="_PZv-MkvDEemBcOD5CMOafw" name="customerInput.contract" content="//Retrieve aggregated Contract using its DAO and persistenceId&#xD;&#xA;def contractVar = contractDAO.findByPersistenceId(customerInput.contract.persistenceId.toLong())&#xD;&#xA;contractVar.id = customerInput.contract.id&#xD;&#xA;contractVar.type = customerInput.contract.type&#xD;&#xA;return contractVar" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.Contract">
-              <referencedElements xmi:type="process:ContractInput" xmi:id="_PZv-M0vDEemBcOD5CMOafw" name="customerInput" type="COMPLEX"/>
-              <referencedElements xmi:type="expression:Expression" xmi:id="_PZv-NEvDEemBcOD5CMOafw" name="contractDAO" content="contractDAO" type="TYPE_BUSINESS_OBJECT_DAO" returnType="com.company.model.ContractDAO" returnTypeFixed="true"/>
-            </rightOperand>
-            <operator xmi:type="expression:Operator" xmi:id="_PZv-NUvDEemBcOD5CMOafw" type="JAVA_METHOD" expression="setContract">
-              <inputTypes>com.company.model.Contract</inputTypes>
-            </operator>
-          </operations>
           <operations xmi:type="expression:Operation" xmi:id="_PZv-NkvDEemBcOD5CMOafw">
             <leftOperand xmi:type="expression:Expression" xmi:id="_PZv-N0vDEemBcOD5CMOafw" name="customer" content="customer" type="TYPE_VARIABLE" returnType="com.company.model.Customer">
               <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_PZv-OEvDEemBcOD5CMOafw" name="customer" dataType="_x5qCPPSMEeeYpYD60oU_zA" className="com.company.model.Customer"/>
@@ -503,11 +491,6 @@
                 <inputs xmi:type="process:ContractInput" xmi:id="_PZsTuEvDEemBcOD5CMOafw" name="country"/>
               </inputs>
               <inputs xmi:type="process:ContractInput" xmi:id="_PZsTuUvDEemBcOD5CMOafw" name="phoneNumber"/>
-              <inputs xmi:type="process:ContractInput" xmi:id="_PZsTukvDEemBcOD5CMOafw" name="contract" type="COMPLEX">
-                <inputs xmi:type="process:ContractInput" xmi:id="_PZsTu0vDEemBcOD5CMOafw" name="persistenceId"/>
-                <inputs xmi:type="process:ContractInput" xmi:id="_PZsTvEvDEemBcOD5CMOafw" name="id"/>
-                <inputs xmi:type="process:ContractInput" xmi:id="_PZsTvUvDEemBcOD5CMOafw" name="type"/>
-              </inputs>
               <inputs xmi:type="process:ContractInput" xmi:id="_PZsTvkvDEemBcOD5CMOafw" name="accountId"/>
               <inputs xmi:type="process:ContractInput" xmi:id="_PZsTv0vDEemBcOD5CMOafw" name="validIdentification" type="BOOLEAN"/>
               <inputs xmi:type="process:ContractInput" xmi:id="_PZsTwEvDEemBcOD5CMOafw" name="validProofDomicile" type="BOOLEAN"/>
