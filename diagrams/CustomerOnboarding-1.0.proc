@@ -338,33 +338,6 @@
               <operator xmi:type="expression:Operator" xmi:id="_5okAPEryEem1xYT2gBFygA" type="ASSIGNMENT"/>
             </outputs>
           </connectors>
-          <connectors xmi:type="process:Connector" xmi:id="_uUZSQE7tEemBcOD5CMOafw" name="Predict" definitionId="GoogleMLPredict" event="ON_ENTER" ignoreErrors="true" definitionVersion="1.0.0">
-            <configuration xmi:type="connectorconfiguration:ConnectorConfiguration" xmi:id="_uUZSQU7tEemBcOD5CMOafw" definitionId="GoogleMLPredict" version="1.0.0" modelVersion="7.8.3-001">
-              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_uUZSQk7tEemBcOD5CMOafw" key="projectId">
-                <expression xmi:type="expression:Expression" xmi:id="_uUZSQ07tEemBcOD5CMOafw" name="demoforrester" content="demoforrester" returnTypeFixed="true"/>
-              </parameters>
-              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_uUZSRE7tEemBcOD5CMOafw" key="modelId">
-                <expression xmi:type="expression:Expression" xmi:id="_uUZSRU7tEemBcOD5CMOafw" name="census_forrester_3" content="census_forrester_3" returnTypeFixed="true"/>
-              </parameters>
-              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_uUZSRk7tEemBcOD5CMOafw" key="versionId">
-                <expression xmi:type="expression:Expression" xmi:id="_uUZSR07tEemBcOD5CMOafw" name="v1" content="v1" returnTypeFixed="true"/>
-              </parameters>
-              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_uUZSSE7tEemBcOD5CMOafw" key="jsonPayload">
-                <expression xmi:type="expression:Expression" xmi:id="_uUZSSU7tEemBcOD5CMOafw" name="&lt;pattern-expression>" content="{&#xD;&#xA;  &quot;instances&quot;: [&#xD;&#xA;    {&#xD;&#xA;      &quot;age&quot;: 25,&#xD;&#xA;      &quot;workclass&quot;: &quot; Private&quot;,&#xD;&#xA;      &quot;education&quot;: &quot; 11th&quot;,&#xD;&#xA;      &quot;education_num&quot;: 7,&#xD;&#xA;      &quot;marital_status&quot;: &quot; Never-married&quot;,&#xD;&#xA;      &quot;occupation&quot;: &quot; Machine-op-inspct&quot;,&#xD;&#xA;      &quot;relationship&quot;: &quot; Own-child&quot;,&#xD;&#xA;      &quot;race&quot;: &quot; Black&quot;,&#xD;&#xA;      &quot;gender&quot;: &quot; Male&quot;,&#xD;&#xA;      &quot;capital_gain&quot;: 0,&#xD;&#xA;      &quot;capital_loss&quot;: 0,&#xD;&#xA;      &quot;hours_per_week&quot;: 40,&#xD;&#xA;      &quot;native_country&quot;: &quot; United-States&quot;&#xD;&#xA;    }&#xD;&#xA;  ]&#xD;&#xA;}" type="TYPE_PATTERN" returnTypeFixed="true"/>
-              </parameters>
-            </configuration>
-            <outputs xmi:type="expression:Operation" xmi:id="_uUZSSk7tEemBcOD5CMOafw">
-              <leftOperand xmi:type="expression:Expression" xmi:id="_uUZSS07tEemBcOD5CMOafw" name="customer" content="customer" type="TYPE_VARIABLE" returnType="com.company.model.Customer">
-                <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_uUZSTE7tEemBcOD5CMOafw" name="customer" dataType="_WVG6hG7jEeiAPptCnO7t1w" className="com.company.model.Customer"/>
-              </leftOperand>
-              <rightOperand xmi:type="expression:Expression" xmi:id="_uUZSTU7tEemBcOD5CMOafw" name="prediction" content="import groovy.json.JsonSlurper&#xD;&#xA;&#xD;&#xA;def jsonSlurper = new JsonSlurper()&#xD;&#xA;def object = jsonSlurper.parseText(prediction)&#xD;&#xA;&#xD;&#xA;Double prob = object[&quot;predictions&quot;][&quot;probabilities&quot;].get(0).get(0);&#xD;&#xA;prob = prob *100;&#xD;&#xA;return (int)prob.doubleValue()" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Integer">
-                <referencedElements xmi:type="definition:Output" xmi:id="_OSFW4E7uEemBcOD5CMOafw" name="prediction" type="java.lang.String"/>
-              </rightOperand>
-              <operator xmi:type="expression:Operator" xmi:id="_uUZST07tEemBcOD5CMOafw" type="JAVA_METHOD" expression="setScoring">
-                <inputTypes>java.lang.Integer</inputTypes>
-              </operator>
-            </outputs>
-          </connectors>
           <operations xmi:type="expression:Operation" xmi:id="_a9J2cEssEem1ot0-2zrivw">
             <leftOperand xmi:type="expression:Expression" xmi:id="_a9J2cUssEem1ot0-2zrivw" name="documentsToKeep" content="documentsToKeep" type="TYPE_VARIABLE" returnType="java.util.List">
               <referencedElements xmi:type="process:Data" xmi:id="_fCbCsEssEem1ot0-2zrivw" name="documentsToKeep" multiple="true" dataType="_WVG6f27jEeiAPptCnO7t1w"/>
@@ -748,7 +721,6 @@
         <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_EyFmwUmdEemBGtySZy2Unw" type="ACTOR_FILTER" definitionId="initiator" definitionVersion="1.0.0" implementationId="initiator-impl" implementationVersion="1.0.0"/>
         <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_EyFmwkmdEemBGtySZy2Unw" type="CONNECTOR" definitionId="scripting-groovy-script" definitionVersion="1.0.1" implementationId="scripting-groovy-script-impl" implementationVersion="1.0.2"/>
         <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_YCI_IEviEem6Z88CeGGvTw" type="CONNECTOR" definitionId="uipath-startjob" definitionVersion="1.0.0" implementationId="uipath-startjob-impl" implementationVersion="1.0.3"/>
-        <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_2dMDsE8AEemBcOD5CMOafw" type="CONNECTOR" definitionId="GoogleMLPredict" definitionVersion="1.0.0" implementationId="GoogleMLPredict-impl" implementationVersion="1.0.0"/>
         <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_EyFmw0mdEemBGtySZy2Unw" id="ACTOR_FILTER">
           <children xmi:type="configuration:FragmentContainer" xmi:id="_EyFmxEmdEemBGtySZy2Unw" id="initiator-impl-1.0.0">
             <fragments xmi:type="configuration:Fragment" xmi:id="_EyFmxUmdEemBGtySZy2Unw" key="initiator-impl -- 1.0.0" value="bonita-userfilter-initiator-impl-1.0.0-SNAPSHOT.jar" type="ACTOR_FILTER"/>
@@ -766,10 +738,6 @@
             <fragments xmi:type="configuration:Fragment" xmi:id="_YCu1AEviEem6Z88CeGGvTw" key="uipath-startjob-impl -- 1.0.3" value="okio-1.14.0.jar" type="CONNECTOR"/>
             <fragments xmi:type="configuration:Fragment" xmi:id="_YCvcEEviEem6Z88CeGGvTw" key="uipath-startjob-impl -- 1.0.3" value="converter-jackson-2.4.0.jar" type="CONNECTOR"/>
           </children>
-          <children xmi:type="configuration:FragmentContainer" xmi:id="_2dmTYE8AEemBcOD5CMOafw" id="GoogleMLPredict-impl-1.0.0">
-            <fragments xmi:type="configuration:Fragment" xmi:id="_2dovoE8AEemBcOD5CMOafw" key="GoogleMLPredict-impl -- 1.0.0" value="mlengine-online-prediction-1-jar-with-dependencies.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_2dovoU8AEemBcOD5CMOafw" key="GoogleMLPredict-impl -- 1.0.0" value="GoogleMLPredict-impl-1.0.0.jar" type="CONNECTOR"/>
-          </children>
         </processDependencies>
         <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_EyFmyUmdEemBGtySZy2Unw" id="DATA_TYPES"/>
         <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_EyFmykmdEemBGtySZy2Unw" id="GROOVY_SCRIPT"/>
@@ -780,7 +748,7 @@
         <parameters xmi:type="parameter:Parameter" xmi:id="_EyFm2UmdEemBGtySZy2Unw" name="uiPathLogin" value="bonitauser" typeClassname="java.lang.String"/>
         <parameters xmi:type="parameter:Parameter" xmi:id="_EyFm2kmdEemBGtySZy2Unw" name="uiPathPassword" value="Bonita_2019" typeClassname="java.lang.String"/>
         <parameters xmi:type="parameter:Parameter" xmi:id="_RrJj4EmdEemBGtySZy2Unw" name="uiPathURL" value="http://ec2-54-154-0-15.eu-west-1.compute.amazonaws.com:8888" typeClassname="java.lang.String"/>
-        <parameters xmi:type="parameter:Parameter" xmi:id="_YC07oEviEem6Z88CeGGvTw" name="bonitaURL" value="http://ec2-34-247-66-235.eu-west-1.compute.amazonaws.com:8081/bonita" typeClassname="java.lang.String"/>
+        <parameters xmi:type="parameter:Parameter" xmi:id="_YC07oEviEem6Z88CeGGvTw" name="bonitaURL" value="http://ec2-52-211-186-116.eu-west-1.compute.amazonaws.com:8081/bonita" typeClassname="java.lang.String"/>
       </configurations>
       <parameters xmi:type="parameter:Parameter" xmi:id="_XD_acEZ0Eeml4OmTM0FgHg" name="uiPathLogin" typeClassname="java.lang.String"/>
       <parameters xmi:type="parameter:Parameter" xmi:id="_agTJQEZ0Eeml4OmTM0FgHg" name="uiPathPassword" typeClassname="java.lang.String"/>
