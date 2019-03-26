@@ -2,7 +2,7 @@
   "designerVersion" : "1.8.39",
   "id" : "CustomerEditionv2",
   "name" : "CustomerEditionv2",
-  "lastUpdate" : 1553596054039,
+  "lastUpdate" : 1553598527506,
   "rows" : [ [ {
     "type" : "formContainer",
     "dimension" : {
@@ -33,9 +33,9 @@
       "rows" : [ [ {
         "type" : "fragment",
         "dimension" : {
-          "md" : 12,
-          "sm" : 12,
           "xs" : 12,
+          "sm" : 12,
+          "md" : 12,
           "lg" : 12
         },
         "propertyValues" : {
@@ -48,7 +48,7 @@
             "value" : false
           }
         },
-        "reference" : "e7d278c3-76b5-44e0-99e8-3c94aaba2fe6",
+        "reference" : "b6ffb035-d890-4136-b7a8-80c0946f5a04",
         "hasValidationError" : false,
         "id" : "CustomerInfo",
         "binding" : {

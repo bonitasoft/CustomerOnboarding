@@ -2,7 +2,7 @@
   "designerVersion" : "1.8.39",
   "id" : "CustomerInfo",
   "name" : "CustomerInfo",
-  "lastUpdate" : 1553534701412,
+  "lastUpdate" : 1553598201631,
   "rows" : [ [ {
     "type" : "component",
     "dimension" : {
@@ -361,7 +361,7 @@
       },
       "readOnly" : {
         "type" : "constant",
-        "value" : true
+        "value" : false
       },
       "labelHidden" : {
         "type" : "constant",
@@ -401,7 +401,7 @@
         "value" : 1
       }
     },
-    "reference" : "3bee39a2-7556-4ecb-80ec-995f7e73a8dc",
+    "reference" : "836d1077-f538-4b88-a5d2-4b2404da548b",
     "hasValidationError" : false,
     "id" : "pbInput"
   } ], [ {
