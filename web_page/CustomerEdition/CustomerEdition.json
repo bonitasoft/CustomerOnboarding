@@ -2,7 +2,7 @@
   "designerVersion" : "1.8.39",
   "id" : "CustomerEdition",
   "name" : "CustomerEdition",
-  "lastUpdate" : 1553585661819,
+  "lastUpdate" : 1553594520681,
   "rows" : [ [ {
     "type" : "formContainer",
     "dimension" : {
@@ -139,6 +139,10 @@
           "assignedId" : {
             "type" : "expression",
             "value" : "user.user_id"
+          },
+          "targetUrlOnSuccess" : {
+            "type" : "interpolation",
+            "value" : "?id={{task.caseId}}"
           }
         },
         "reference" : "b36d3426-85dd-4830-a467-263c65a84fe6",
