@@ -247,28 +247,6 @@
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_MAPHUXL4EeiTGP__0J9PXQ" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_MAPHUHL4EeiTGP__0J9PXQ" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_MAPHUnL4EeiTGP__0J9PXQ" name="" content="" returnTypeFixed="true"/>
-          <connectors xmi:type="process:Connector" xmi:id="_hdgxoHkhEeiSJs7w9ZoB7A" name="setToTrue" definitionId="scripting-groovy-script" event="ON_ENTER" definitionVersion="1.0.1">
-            <configuration xmi:type="connectorconfiguration:ConnectorConfiguration" xmi:id="_hdgxoXkhEeiSJs7w9ZoB7A" definitionId="scripting-groovy-script" version="1.0.1" modelVersion="7.6.0-002">
-              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_hdgxonkhEeiSJs7w9ZoB7A" key="script">
-                <expression xmi:type="expression:Expression" xmi:id="_hdgxo3khEeiSJs7w9ZoB7A" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true"/>
-              </parameters>
-              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_hdgxpHkhEeiSJs7w9ZoB7A" key="variables"/>
-              <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_hdgxpXkhEeiSJs7w9ZoB7A" key="fakeScriptExpression">
-                <expression xmi:type="expression:Expression" xmi:id="_hdgxpnkhEeiSJs7w9ZoB7A" name="true" content="return true" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object" returnTypeFixed="true"/>
-              </parameters>
-            </configuration>
-            <outputs xmi:type="expression:Operation" xmi:id="_hdgxp3khEeiSJs7w9ZoB7A">
-              <leftOperand xmi:type="expression:Expression" xmi:id="_hdgxqHkhEeiSJs7w9ZoB7A" name="customer" content="customer" type="TYPE_VARIABLE" returnType="com.company.model.Customer">
-                <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_hdgxqXkhEeiSJs7w9ZoB7A" name="customer" dataType="_WVG6hG7jEeiAPptCnO7t1w" className="com.company.model.Customer"/>
-              </leftOperand>
-              <rightOperand xmi:type="expression:Expression" xmi:id="_hdgxqnkhEeiSJs7w9ZoB7A" name="result" content="result" type="CONNECTOR_OUTPUT_TYPE" returnType="java.lang.Object">
-                <referencedElements xmi:type="definition:Output" xmi:id="_hdgxq3khEeiSJs7w9ZoB7A" name="result" type="java.lang.Object"/>
-              </rightOperand>
-              <operator xmi:type="expression:Operator" xmi:id="_hdgxrHkhEeiSJs7w9ZoB7A" type="JAVA_METHOD" expression="setValidTaxStatement">
-                <inputTypes>java.lang.Boolean</inputTypes>
-              </operator>
-            </outputs>
-          </connectors>
           <loopCondition xmi:type="expression:Expression" xmi:id="_MAPHVHL4EeiTGP__0J9PXQ" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <loopMaximum xmi:type="expression:Expression" xmi:id="_MAPHVXL4EeiTGP__0J9PXQ" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
           <cardinalityExpression xmi:type="expression:Expression" xmi:id="_MAPHVnL4EeiTGP__0J9PXQ" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
