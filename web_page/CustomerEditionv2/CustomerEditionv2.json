@@ -2,7 +2,7 @@
   "designerVersion" : "1.8.39",
   "id" : "CustomerEditionv2",
   "name" : "CustomerEditionv2",
-  "lastUpdate" : 1553535352447,
+  "lastUpdate" : 1553586366756,
   "rows" : [ [ {
     "type" : "formContainer",
     "dimension" : {
@@ -191,108 +191,63 @@
       } ], [ {
         "type" : "component",
         "dimension" : {
+          "xs" : 12,
+          "sm" : 12,
           "md" : 12,
-          "sm" : 6,
-          "xs" : 6,
-          "lg" : 6
+          "lg" : 12
         },
         "propertyValues" : {
-          "removeItem" : {
-            "type" : "variable"
-          },
           "cssClasses" : {
             "type" : "constant",
             "value" : ""
-          },
-          "widgetId" : {
-            "type" : "constant",
-            "value" : "pbButton"
-          },
-          "buttonStyle" : {
-            "type" : "constant",
-            "value" : "primary"
-          },
-          "isDisplayed" : {
-            "type" : "constant",
-            "value" : true
-          },
-          "label" : {
-            "type" : "interpolation",
-            "value" : "Submit"
-          },
-          "dataToSend" : {
-            "type" : "expression",
-            "value" : "formOutput"
-          },
-          "labelHidden" : {
-            "type" : "constant",
-            "value" : false
-          },
-          "readonly" : {
-            "type" : "constant",
-            "value" : false
-          },
-          "collectionPosition" : {
-            "type" : "constant"
-          },
-          "targetUrlOnSuccess" : {
-            "type" : "interpolation",
-            "value" : "?id={{task.caseId}}"
-          },
-          "action" : {
-            "type" : "constant",
-            "value" : "Submit task"
-          },
-          "collectionToModify" : {
-            "type" : "variable"
-          },
-          "valueToAdd" : {
-            "type" : "expression"
-          },
-          "disabled" : {
-            "type" : "expression",
-            "value" : "$form.$invalid"
-          },
-          "alignment" : {
-            "type" : "constant",
-            "value" : "right"
-          },
-          "class" : {
-            "type" : "constant",
-            "value" : "org.bonitasoft.web.designer.experimental.parametrizedWidget.ButtonWidget"
-          },
-          "dimension" : {
-            "type" : "constant",
-            "value" : 12
           },
           "hidden" : {
             "type" : "constant",
             "value" : false
           },
-          "url" : {
+          "disabled" : {
+            "type" : "expression",
+            "value" : "$form.$invalid"
+          },
+          "label" : {
             "type" : "interpolation",
-            "value" : "../API/extension/userTaskUpdate"
+            "value" : "Submit"
           },
-          "dataFromSuccess" : {
-            "type" : "variable",
-            "value" : ""
-          },
-          "closeOnSuccess" : {
+          "alignment" : {
             "type" : "constant",
-            "value" : false
+            "value" : "right"
+          },
+          "buttonStyle" : {
+            "type" : "constant",
+            "value" : "primary"
+          },
+          "action" : {
+            "type" : "constant",
+            "value" : "Submit task"
+          },
+          "url" : {
+            "type" : "interpolation"
+          },
+          "contract" : {
+            "type" : "expression",
+            "value" : "formOutput"
           },
           "dataFromError" : {
             "type" : "variable",
             "value" : ""
           },
-          "modalId" : {
-            "type" : "constant",
-            "value" : ""
+          "assignedId" : {
+            "type" : "expression",
+            "value" : "user.user_id"
+          },
+          "targetUrlOnSuccess" : {
+            "type" : "interpolation",
+            "value" : "?id={{task.caseId}}"
           }
         },
-        "reference" : "de397579-5a13-4ca5-bae8-92fc9ab6bc0d",
+        "reference" : "bf1d4a08-1300-42c4-884e-172652d636b4",
         "hasValidationError" : false,
-        "id" : "pbButton"
+        "id" : "customAssignWC"
       } ] ]
     }
   } ] ],
@@ -339,6 +294,11 @@
     "task" : {
       "type" : "url",
       "value" : "../API/bpm/humanTask/{{taskId}}",
+      "exposed" : false
+    },
+    "user" : {
+      "type" : "url",
+      "value" : "../API/system/session/1",
       "exposed" : false
     }
   },

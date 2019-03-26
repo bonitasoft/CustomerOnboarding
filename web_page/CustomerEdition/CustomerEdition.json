@@ -2,7 +2,7 @@
   "designerVersion" : "1.8.39",
   "id" : "CustomerEdition",
   "name" : "CustomerEdition",
-  "lastUpdate" : 1553535433265,
+  "lastUpdate" : 1553585661819,
   "rows" : [ [ {
     "type" : "formContainer",
     "dimension" : {
@@ -93,87 +93,7 @@
         "dimension" : {
           "xs" : 12,
           "sm" : 12,
-          "md" : 6,
-          "lg" : 6
-        },
-        "propertyValues" : {
-          "cssClasses" : {
-            "type" : "constant",
-            "value" : ""
-          },
-          "hidden" : {
-            "type" : "constant",
-            "value" : false
-          },
-          "disabled" : {
-            "type" : "constant",
-            "value" : false
-          },
-          "label" : {
-            "type" : "interpolation",
-            "value" : "Back"
-          },
-          "alignment" : {
-            "type" : "constant",
-            "value" : "right"
-          },
-          "buttonStyle" : {
-            "type" : "constant",
-            "value" : "warning"
-          },
-          "action" : {
-            "type" : "constant",
-            "value" : "Close modal"
-          },
-          "url" : {
-            "type" : "interpolation"
-          },
-          "dataToSend" : {
-            "type" : "constant"
-          },
-          "dataFromSuccess" : {
-            "type" : "variable",
-            "value" : ""
-          },
-          "closeOnSuccess" : {
-            "type" : "constant",
-            "value" : false
-          },
-          "dataFromError" : {
-            "type" : "variable",
-            "value" : "?id={{task.caseId}}"
-          },
-          "targetUrlOnSuccess" : {
-            "type" : "interpolation"
-          },
-          "collectionToModify" : {
-            "type" : "variable",
-            "value" : ""
-          },
-          "modalId" : {
-            "type" : "constant",
-            "value" : ""
-          },
-          "collectionPosition" : {
-            "type" : "constant",
-            "value" : "Last"
-          },
-          "valueToAdd" : {
-            "type" : "constant"
-          },
-          "removeItem" : {
-            "type" : "variable"
-          }
-        },
-        "reference" : "3ca7851b-1d66-4eab-8810-6a343f22f27d",
-        "hasValidationError" : false,
-        "id" : "pbButton"
-      }, {
-        "type" : "component",
-        "dimension" : {
-          "xs" : 12,
-          "sm" : 12,
-          "md" : 6,
+          "md" : 12,
           "lg" : 6
         },
         "propertyValues" : {
@@ -191,11 +111,11 @@
           },
           "label" : {
             "type" : "interpolation",
-            "value" : "Save"
+            "value" : "Submit"
           },
           "alignment" : {
             "type" : "constant",
-            "value" : "left"
+            "value" : "right"
           },
           "buttonStyle" : {
             "type" : "constant",
@@ -219,13 +139,9 @@
           "assignedId" : {
             "type" : "expression",
             "value" : "user.user_id"
-          },
-          "targetUrlOnSuccess" : {
-            "type" : "interpolation",
-            "value" : "?id={{task.caseId}}"
           }
         },
-        "reference" : "441575fc-3c59-4ef5-a4db-3f779d423209",
+        "reference" : "b36d3426-85dd-4830-a467-263c65a84fe6",
         "hasValidationError" : false,
         "id" : "customAssignWC"
       } ] ]
