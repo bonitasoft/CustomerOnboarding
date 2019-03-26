@@ -2,7 +2,7 @@
   "designerVersion" : "1.8.39",
   "id" : "CustomerEdition",
   "name" : "CustomerEdition",
-  "lastUpdate" : 1553594520681,
+  "lastUpdate" : 1553596035050,
   "rows" : [ [ {
     "type" : "formContainer",
     "dimension" : {
@@ -206,5 +206,5 @@
   "uuid" : "1aa16e17-f627-4c10-990d-2ebe9cab9a1d",
   "type" : "form",
   "description" : "Page generated with Bonita UI designer",
-  "displayName" : "Customer Update"
+  "displayName" : "Customer Edition"
 }
