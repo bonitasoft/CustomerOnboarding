@@ -1,25 +1,30 @@
 {
-  "designerVersion" : "1.8.29",
-  "previousDesignerVersion" : "1.7.49",
+  "modelVersion" : "2.0",
+  "previousArtifactVersion" : "1.8.29",
   "id" : "InterestChecking",
   "name" : "InterestChecking",
-  "lastUpdate" : 1552324465051,
-  "rows" : [ [ ] ],
-  "assets" : [ {
-    "id" : "0f071198-29fc-4bbe-b24b-c82d88a80bf9",
-    "name" : "style.css",
-    "type" : "css",
-    "order" : 0,
-    "external" : false
-  }, {
-    "id" : "556098ca-f54d-446d-8607-3815cdce1971",
-    "name" : "localization.json",
-    "type" : "json",
-    "order" : 0,
-    "external" : false
-  } ],
+  "lastUpdate" : 1626353687165,
+  "rows" : [
+    [ ]
+  ],
+  "assets" : [
+    {
+      "id" : "0f071198-29fc-4bbe-b24b-c82d88a80bf9",
+      "name" : "style.css",
+      "type" : "css",
+      "order" : 0,
+      "external" : false
+    },
+    {
+      "id" : "556098ca-f54d-446d-8607-3815cdce1971",
+      "name" : "localization.json",
+      "type" : "json",
+      "order" : 0,
+      "external" : false
+    }
+  ],
   "inactiveAssets" : [ ],
-  "data" : { },
+  "variables" : { },
   "hasValidationError" : false,
   "uuid" : "ac77fe65-ae6d-4adf-afc5-53e6bd37d2e9",
   "type" : "page",

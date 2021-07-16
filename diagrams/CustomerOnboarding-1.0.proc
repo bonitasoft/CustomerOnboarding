@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actormapping="http://www.bonitasoft.org/ns/actormapping/6.0" xmlns:configuration="http://www.bonitasoft.org/ns/studio/configuration" xmlns:connectorconfiguration="http://wwww.bonitasoft.org/model/connector/configuration" xmlns:decision="http://www.bonitasoft.org/ns/studio/process/decision" xmlns:definition="http://www.bonitasoft.org/ns/connector/definition/6.1" xmlns:expression="http://www.bonitasoft.org/ns/studio/expression" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:parameter="http://www.bonitasoft.org/ns/studio/parameter" xmlns:process="http://www.bonitasoft.org/ns/studio/process" xsi:schemaLocation="http://www.bonitasoft.org/ns/studio/process/decision http://www.bonitasoft.org/ns/studio/process#//decision">
-  <process:MainProcess xmi:id="_WVG6QG7jEeiAPptCnO7t1w" name="CustomerOnboarding" author="antoine" bonitaVersion="7.8.3" bonitaModelVersion="7.8.3-001" configId="ACED0005740022437573746F6D65724F6E626F617264696E67372E382E332D303031372E382E337370">
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actormapping="http://www.bonitasoft.org/ns/actormapping/6.0" xmlns:configuration="http://www.bonitasoft.org/ns/studio/configuration" xmlns:connectorconfiguration="http://wwww.bonitasoft.org/model/connector/configuration" xmlns:decision="http://www.bonitasoft.org/ns/studio/process/decision" xmlns:definition="http://www.bonitasoft.org/ns/connector/definition/6.1" xmlns:expression="http://www.bonitasoft.org/ns/studio/expression" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:parameter="http://www.bonitasoft.org/ns/studio/parameter" xmlns:process="http://www.bonitasoft.org/ns/studio/process" xsi:schemaLocation="http://www.bonitasoft.org/ns/studio/process/decision http://www.bonitasoft.org/ns/studio/process#//decision">
+  <process:MainProcess xmi:id="_WVG6QG7jEeiAPptCnO7t1w" name="CustomerOnboarding" author="antoine" bonitaVersion="7.12.4" bonitaModelVersion="7.12.0-004" configId="ACED0005740022437573746F6D65724F6E626F617264696E67372E382E332D303031372E382E337370">
     <elements xmi:type="process:Pool" xmi:id="_WVG6QW7jEeiAPptCnO7t1w" name="CustomerOnboarding" displayName="Customer onboarding">
       <elements xmi:type="process:Lane" xmi:id="_WVG6Qm7jEeiAPptCnO7t1w" name="Customer lane" actor="_WVG6a27jEeiAPptCnO7t1w">
         <elements xmi:type="process:StartEvent" xmi:id="_WVG6Q27jEeiAPptCnO7t1w" name="Open account" outgoing="_9ks8wHL1EeiTGP__0J9PXQ">
@@ -208,8 +208,8 @@
               </operator>
             </outputs>
           </connectors>
-          <connectors xmi:type="process:Connector" xmi:id="_RqSsQEviEem6Z88CeGGvTw" name="creditCheckRPA" definitionId="uipath-startjob" event="ON_ENTER" definitionVersion="1.0.0">
-            <configuration xmi:type="connectorconfiguration:ConnectorConfiguration" xmi:id="_RqSsQUviEem6Z88CeGGvTw" definitionId="uipath-startjob" version="1.0.0" modelVersion="7.8.3-001">
+          <connectors xmi:type="process:Connector" xmi:id="_RqSsQEviEem6Z88CeGGvTw" name="creditCheckRPA" definitionId="uipath-startjob" event="ON_ENTER" definitionVersion="2.0.0">
+            <configuration xmi:type="connectorconfiguration:ConnectorConfiguration" xmi:id="_RqSsQUviEem6Z88CeGGvTw" definitionId="uipath-startjob" version="2.0.0" modelVersion="7.8.3-001">
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_RqSsQkviEem6Z88CeGGvTw" key="url">
                 <expression xmi:type="expression:Expression" xmi:id="_RqSsQ0viEem6Z88CeGGvTw" name="uiPathURL" content="uiPathURL" type="TYPE_PARAMETER" returnTypeFixed="true">
                   <referencedElements xmi:type="parameter:Parameter" xmi:id="_RqSsREviEem6Z88CeGGvTw" name="uiPathURL" typeClassname="java.lang.String"/>
@@ -421,8 +421,8 @@
           <calledActivityName xmi:type="expression:Expression" xmi:id="_q1b9w0ssEem1ot0-2zrivw" name="CMS-Save-Documents" content="CMS-Save-Documents" returnTypeFixed="true"/>
           <calledActivityVersion xmi:type="expression:Expression" xmi:id="_q1b9xEssEem1ot0-2zrivw" name="" content="" returnTypeFixed="true"/>
         </elements>
-        <filters xmi:type="process:ActorFilter" xmi:id="_4HlyUHkgEeiSJs7w9ZoB7A" name="customer" definitionId="initiator" definitionVersion="1.0.0">
-          <configuration xmi:type="connectorconfiguration:ConnectorConfiguration" xmi:id="_4HmZYHkgEeiSJs7w9ZoB7A" definitionId="initiator" version="1.0.0">
+        <filters xmi:type="process:ActorFilter" xmi:id="_4HlyUHkgEeiSJs7w9ZoB7A" name="customer" definitionId="bonita-actorfilter-initiator" definitionVersion="1.0">
+          <configuration xmi:type="connectorconfiguration:ConnectorConfiguration" xmi:id="_4HmZYHkgEeiSJs7w9ZoB7A" definitionId="bonita-actorfilter-initiator" version="1.0">
             <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_4HmZYXkgEeiSJs7w9ZoB7A" key="autoAssign">
               <expression xmi:type="expression:Expression" xmi:id="_4HmZYnkgEeiSJs7w9ZoB7A" name="true" content="true" returnType="java.lang.Boolean" returnTypeFixed="true"/>
             </parameters>
@@ -437,8 +437,8 @@
       <data xmi:type="process:Data" xmi:id="_e5w18EssEem1ot0-2zrivw" name="documentsToKeep" multiple="true" dataType="_WVG6f27jEeiAPptCnO7t1w">
         <defaultValue xmi:type="expression:Expression" xmi:id="_e5xdAEssEem1ot0-2zrivw" content="" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List"/>
       </data>
-      <formMapping xmi:type="process:FormMapping" xmi:id="_WVG6Ym7jEeiAPptCnO7t1w">
-        <targetForm xmi:type="expression:Expression" xmi:id="_VDFPUEppEem1xYT2gBFygA" name="OpenAccount" content="1ea4e82c-0a0a-49e1-9603-a7b2f8ce7232" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+      <formMapping xmi:type="process:FormMapping" xmi:id="_WVG6Ym7jEeiAPptCnO7t1w" type="NONE">
+        <targetForm xmi:type="expression:Expression" xmi:id="_VDFPUEppEem1xYT2gBFygA" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
       </formMapping>
       <overviewFormMapping xmi:type="process:FormMapping" xmi:id="_WVG6ZW7jEeiAPptCnO7t1w">
         <targetForm xmi:type="expression:Expression" xmi:id="_bb90AHkjEeiSJs7w9ZoB7A" name="CaseOverview" content="d239b776-1965-44e1-a1e0-0e9d82cf51be" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
@@ -542,7 +542,7 @@
         <condition xmi:type="expression:Expression" xmi:id="_q2NZ0UssEem1ot0-2zrivw" name="" type="TYPE_CONDITION" returnType="java.lang.Boolean" returnTypeFixed="true"/>
       </connections>
       <actors xmi:type="process:Actor" xmi:id="_WVG6a27jEeiAPptCnO7t1w" name="Customer" initiator="true"/>
-      <configurations xmi:type="configuration:Configuration" xmi:id="_N8jwIHlFEei1K_sjKuwmTg" name="Qualification" version="7.8.3-001" username="walter.bates" password="bpm">
+      <configurations xmi:type="configuration:Configuration" xmi:id="_N8jwIHlFEei1K_sjKuwmTg" name="Qualification" version="7.12.0-004" username="walter.bates" password="bpm">
         <actorMappings xmi:type="actormapping:ActorMappingsType" xmi:id="_N8jwIXlFEei1K_sjKuwmTg">
           <actorMapping xmi:type="actormapping:ActorMapping" xmi:id="_N8jwInlFEei1K_sjKuwmTg" name="Customer">
             <groups xmi:type="actormapping:Groups" xmi:id="_N8jwI3lFEei1K_sjKuwmTg"/>
@@ -553,77 +553,30 @@
             <users xmi:type="actormapping:Users" xmi:id="_N8jwJnlFEei1K_sjKuwmTg"/>
           </actorMapping>
         </actorMappings>
-        <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_N8jwJ3lFEei1K_sjKuwmTg" type="ACTOR_FILTER" definitionId="initiator" definitionVersion="1.0.0" implementationId="initiator-impl" implementationVersion="1.0.0"/>
-        <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_N8jwKHlFEei1K_sjKuwmTg" type="CONNECTOR" definitionId="scripting-groovy-script" definitionVersion="1.0.1" implementationId="scripting-groovy-script-impl" implementationVersion="1.0.2"/>
-        <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_N8jwKXlFEei1K_sjKuwmTg" type="CONNECTOR" definitionId="document-templating" definitionVersion="1.0.1" implementationId="document-templating-impl" implementationVersion="1.0.1"/>
-        <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_N8jwKnlFEei1K_sjKuwmTg" type="CONNECTOR" definitionId="document-converter" definitionVersion="1.0.2" implementationId="document-converter-impl" implementationVersion="1.0.2"/>
-        <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_N8jwK3lFEei1K_sjKuwmTg" type="CONNECTOR" definitionId="coSignSend" definitionVersion="1.0.0" implementationId="coSignSend-impl" implementationVersion="1.0.0"/>
-        <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_N8jwLHlFEei1K_sjKuwmTg" type="CONNECTOR" definitionId="coSignGetEnv" definitionVersion="1.0.0" implementationId="coSignGetEnv-impl" implementationVersion="1.0.0"/>
+        <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_N8jwKHlFEei1K_sjKuwmTg" type="CONNECTOR" definitionId="scripting-groovy-script" definitionVersion="1.0.1" implementationId="scripting-groovy-script-impl" implementationVersion="1.1.2"/>
+        <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_07lNUOVrEeuJfqbdKZt5gw" type="ACTOR_FILTER" definitionId="bonita-actorfilter-initiator" definitionVersion="1.0" implementationId="bonita-actorfilter-initiator-impl" implementationVersion="1.0.0"/>
+        <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_08a60eVrEeuJfqbdKZt5gw" type="CONNECTOR" definitionId="uipath-startjob" definitionVersion="2.0.0" implementationId="uipath-startjob-impl" implementationVersion="2.1.1"/>
+        <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_082_sOVrEeuJfqbdKZt5gw" type="CONNECTOR" definitionId="GoogleMLPredict" definitionVersion="1.0.0" implementationId="GoogleMLPredict-impl" implementationVersion="1.0.0"/>
         <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_N8jwLXlFEei1K_sjKuwmTg" id="ACTOR_FILTER">
-          <children xmi:type="configuration:FragmentContainer" xmi:id="_N8jwLnlFEei1K_sjKuwmTg" id="initiator-impl-1.0.0">
-            <fragments xmi:type="configuration:Fragment" xmi:id="_N8jwL3lFEei1K_sjKuwmTg" key="initiator-impl -- 1.0.0" value="bonita-userfilter-initiator-impl-1.0.0-SNAPSHOT.jar" type="ACTOR_FILTER"/>
+          <children xmi:type="configuration:FragmentContainer" xmi:id="_079AwOVrEeuJfqbdKZt5gw" id="bonita-actorfilter-initiator-impl-1.0.0">
+            <fragments xmi:type="configuration:Fragment" xmi:id="_07-O4OVrEeuJfqbdKZt5gw" key="bonita-actorfilter-initiator-impl -- 1.0.0" value="bonita-actorfilter-initiator-1.0.0.jar" type="ACTOR_FILTER"/>
           </children>
         </processDependencies>
         <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_N8jwMHlFEei1K_sjKuwmTg" id="CONNECTOR">
-          <children xmi:type="configuration:FragmentContainer" xmi:id="_N8jwMXlFEei1K_sjKuwmTg" id="scripting-groovy-script-impl-1.0.2">
-            <fragments xmi:type="configuration:Fragment" xmi:id="_N8jwMnlFEei1K_sjKuwmTg" key="scripting-groovy-script-impl -- 1.0.2" value="bonita-connector-scripting-groovy-script-impl-1.0.2.jar" type="CONNECTOR"/>
+          <children xmi:type="configuration:FragmentContainer" xmi:id="_08SX8OVrEeuJfqbdKZt5gw" id="scripting-groovy-script-impl-1.1.2">
+            <fragments xmi:type="configuration:Fragment" xmi:id="_08a60OVrEeuJfqbdKZt5gw" key="scripting-groovy-script-impl -- 1.1.2" value="bonita-connector-groovy-1.1.2.jar" type="CONNECTOR"/>
           </children>
-          <children xmi:type="configuration:FragmentContainer" xmi:id="_N8jwM3lFEei1K_sjKuwmTg" id="document-templating-impl-1.0.1">
-            <fragments xmi:type="configuration:Fragment" xmi:id="_N8jwNHlFEei1K_sjKuwmTg" key="document-templating-impl -- 1.0.1" value="bonita-connector-document-templating-impl-1.0.1.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_N8jwNXlFEei1K_sjKuwmTg" key="document-templating-impl -- 1.0.1" value="oro-2.0.8.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_N8jwNnlFEei1K_sjKuwmTg" key="document-templating-impl -- 1.0.1" value="itext-2.1.7.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_N8jwN3lFEei1K_sjKuwmTg" key="document-templating-impl -- 1.0.1" value="fr.opensagres.xdocreport.template.velocity-1.0.5.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_N8jwOHlFEei1K_sjKuwmTg" key="document-templating-impl -- 1.0.1" value="org.odftoolkit.odfdom.converter.xhtml-1.0.5.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_N8jwOXlFEei1K_sjKuwmTg" key="document-templating-impl -- 1.0.1" value="fr.opensagres.xdocreport.converter-1.0.5.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_N8jwOnlFEei1K_sjKuwmTg" key="document-templating-impl -- 1.0.1" value="commons-lang-2.4.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_N8jwO3lFEei1K_sjKuwmTg" key="document-templating-impl -- 1.0.1" value="org.odftoolkit.odfdom.converter.pdf-1.0.5.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_N8jwPHlFEei1K_sjKuwmTg" key="document-templating-impl -- 1.0.1" value="xercesImpl-2.9.1.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_N8jwPXlFEei1K_sjKuwmTg" key="document-templating-impl -- 1.0.1" value="org.odftoolkit.odfdom.converter.core-1.0.5.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_N8jwPnlFEei1K_sjKuwmTg" key="document-templating-impl -- 1.0.1" value="odfdom-java-0.8.7.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_N8jwP3lFEei1K_sjKuwmTg" key="document-templating-impl -- 1.0.1" value="fr.opensagres.xdocreport.converter.odt.odfdom-1.0.5.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_N8jwQHlFEei1K_sjKuwmTg" key="document-templating-impl -- 1.0.1" value="fr.opensagres.xdocreport.document-1.0.5.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_N8jwQXlFEei1K_sjKuwmTg" key="document-templating-impl -- 1.0.1" value="fr.opensagres.xdocreport.template-1.0.5.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_N8jwQnlFEei1K_sjKuwmTg" key="document-templating-impl -- 1.0.1" value="fr.opensagres.xdocreport.itext.extension-1.0.5.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_N8jwQ3lFEei1K_sjKuwmTg" key="document-templating-impl -- 1.0.1" value="fr.opensagres.xdocreport.document.docx-1.0.5.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_N8jwRHlFEei1K_sjKuwmTg" key="document-templating-impl -- 1.0.1" value="velocity-1.7.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_N8jwRXlFEei1K_sjKuwmTg" key="document-templating-impl -- 1.0.1" value="fr.opensagres.xdocreport.core-1.0.5.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_N8jwRnlFEei1K_sjKuwmTg" key="document-templating-impl -- 1.0.1" value="fr.opensagres.xdocreport.document.odt-1.0.5.jar" type="CONNECTOR"/>
+          <children xmi:type="configuration:FragmentContainer" xmi:id="_08qLYOVrEeuJfqbdKZt5gw" id="uipath-startjob-impl-2.1.1">
+            <fragments xmi:type="configuration:Fragment" xmi:id="_08xgIOVrEeuJfqbdKZt5gw" key="uipath-startjob-impl -- 2.1.1" value="bonita-connector-uipath-2.1.1.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_08xgIeVrEeuJfqbdKZt5gw" key="uipath-startjob-impl -- 2.1.1" value="converter-jackson-2.9.0.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_08xgIuVrEeuJfqbdKZt5gw" key="uipath-startjob-impl -- 2.1.1" value="logging-interceptor-3.11.0.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_08xgI-VrEeuJfqbdKZt5gw" key="uipath-startjob-impl -- 2.1.1" value="okhttp-3.14.9.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_08xgJOVrEeuJfqbdKZt5gw" key="uipath-startjob-impl -- 2.1.1" value="okio-1.17.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_08xgJeVrEeuJfqbdKZt5gw" key="uipath-startjob-impl -- 2.1.1" value="retrofit-2.9.0.jar" type="CONNECTOR"/>
           </children>
-          <children xmi:type="configuration:FragmentContainer" xmi:id="_N8jwR3lFEei1K_sjKuwmTg" id="document-converter-impl-1.0.2">
-            <fragments xmi:type="configuration:Fragment" xmi:id="_N8jwSHlFEei1K_sjKuwmTg" key="document-converter-impl -- 1.0.2" value="bonita-connector-document-converter-impl-1.0.2.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_N8jwSXlFEei1K_sjKuwmTg" key="document-converter-impl -- 1.0.2" value="oro-2.0.8.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_N8jwSnlFEei1K_sjKuwmTg" key="document-converter-impl -- 1.0.2" value="itext-2.1.7.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_N8jwS3lFEei1K_sjKuwmTg" key="document-converter-impl -- 1.0.2" value="fr.opensagres.xdocreport.template.velocity-1.0.5.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_N8jwTHlFEei1K_sjKuwmTg" key="document-converter-impl -- 1.0.2" value="org.odftoolkit.odfdom.converter.xhtml-1.0.5.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_N8jwTXlFEei1K_sjKuwmTg" key="document-converter-impl -- 1.0.2" value="fr.opensagres.xdocreport.converter-1.0.5.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_N8jwTnlFEei1K_sjKuwmTg" key="document-converter-impl -- 1.0.2" value="commons-lang-2.4.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_N8jwT3lFEei1K_sjKuwmTg" key="document-converter-impl -- 1.0.2" value="xercesImpl-2.9.1.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_N8jwUHlFEei1K_sjKuwmTg" key="document-converter-impl -- 1.0.2" value="org.odftoolkit.odfdom.converter.pdf-1.0.5.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_N8jwUXlFEei1K_sjKuwmTg" key="document-converter-impl -- 1.0.2" value="poi-3.10-FINAL.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_N8jwUnlFEei1K_sjKuwmTg" key="document-converter-impl -- 1.0.2" value="org.apache.poi.xwpf.converter.core-1.0.5.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_N8jwU3lFEei1K_sjKuwmTg" key="document-converter-impl -- 1.0.2" value="odfdom-java-0.8.7.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_N8jwVHlFEei1K_sjKuwmTg" key="document-converter-impl -- 1.0.2" value="org.odftoolkit.odfdom.converter.core-1.0.5.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_N8jwVXlFEei1K_sjKuwmTg" key="document-converter-impl -- 1.0.2" value="fr.opensagres.xdocreport.converter.odt.odfdom-1.0.5.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_N8jwVnlFEei1K_sjKuwmTg" key="document-converter-impl -- 1.0.2" value="fr.opensagres.xdocreport.converter.docx.xwpf-1.0.5.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_N8jwV3lFEei1K_sjKuwmTg" key="document-converter-impl -- 1.0.2" value="org.apache.poi.xwpf.converter.xhtml-1.0.5.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_N8jwWHlFEei1K_sjKuwmTg" key="document-converter-impl -- 1.0.2" value="fr.opensagres.xdocreport.document-1.0.5.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_N8jwWXlFEei1K_sjKuwmTg" key="document-converter-impl -- 1.0.2" value="fr.opensagres.xdocreport.template-1.0.5.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_N8kXMHlFEei1K_sjKuwmTg" key="document-converter-impl -- 1.0.2" value="ooxml-schemas-1.1.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_N8kXMXlFEei1K_sjKuwmTg" key="document-converter-impl -- 1.0.2" value="poi-ooxml-3.10-FINAL.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_N8kXMnlFEei1K_sjKuwmTg" key="document-converter-impl -- 1.0.2" value="fr.opensagres.xdocreport.itext.extension-1.0.5.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_N8kXM3lFEei1K_sjKuwmTg" key="document-converter-impl -- 1.0.2" value="org.apache.poi.xwpf.converter.pdf-1.0.5.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_N8kXNHlFEei1K_sjKuwmTg" key="document-converter-impl -- 1.0.2" value="fr.opensagres.xdocreport.document.docx-1.0.5.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_N8kXNXlFEei1K_sjKuwmTg" key="document-converter-impl -- 1.0.2" value="fr.opensagres.xdocreport.document.odt-1.0.5.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_N8kXNnlFEei1K_sjKuwmTg" key="document-converter-impl -- 1.0.2" value="fr.opensagres.xdocreport.core-1.0.5.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_N8kXN3lFEei1K_sjKuwmTg" key="document-converter-impl -- 1.0.2" value="velocity-1.7.jar" type="CONNECTOR"/>
-          </children>
-          <children xmi:type="configuration:FragmentContainer" xmi:id="_N8kXOHlFEei1K_sjKuwmTg" id="coSignSend-impl-1.0.0">
-            <fragments xmi:type="configuration:Fragment" xmi:id="_N8kXOXlFEei1K_sjKuwmTg" key="coSignSend-impl -- 1.0.0" value="coSignSend-impl-1.0.0.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_N8kXOnlFEei1K_sjKuwmTg" key="coSignSend-impl -- 1.0.0" value="libSign.jar" type="CONNECTOR"/>
-          </children>
-          <children xmi:type="configuration:FragmentContainer" xmi:id="_N8kXO3lFEei1K_sjKuwmTg" id="coSignGetEnv-impl-1.0.0">
-            <fragments xmi:type="configuration:Fragment" xmi:id="_N8kXPHlFEei1K_sjKuwmTg" key="coSignGetEnv-impl -- 1.0.0" value="coSignGetEnv-impl-1.0.0.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_N8kXPXlFEei1K_sjKuwmTg" key="coSignGetEnv-impl -- 1.0.0" value="libSign.jar" type="CONNECTOR"/>
+          <children xmi:type="configuration:FragmentContainer" xmi:id="_09G3UOVrEeuJfqbdKZt5gw" id="GoogleMLPredict-impl-1.0.0">
+            <fragments xmi:type="configuration:Fragment" xmi:id="_09JTkOVrEeuJfqbdKZt5gw" key="GoogleMLPredict-impl -- 1.0.0" value="mlengine-online-prediction-1-jar-with-dependencies.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_09JTkeVrEeuJfqbdKZt5gw" key="GoogleMLPredict-impl -- 1.0.0" value="GoogleMLPredict-impl-1.0.0.jar" type="CONNECTOR"/>
           </children>
         </processDependencies>
         <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_N8kXPnlFEei1K_sjKuwmTg" id="DATA_TYPES"/>
@@ -633,12 +586,12 @@
         <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_N8kXQnlFEei1K_sjKuwmTg" id="GROOVY_SCRIPT"/>
         <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_N8kXQ3lFEei1K_sjKuwmTg" id="VALIDATOR"/>
         <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_N8kXRHlFEei1K_sjKuwmTg" id="OTHER"/>
-        <parameters xmi:type="parameter:Parameter" xmi:id="_N8kXRXlFEei1K_sjKuwmTg" name="docusignAuthIntegratorKey" typeClassname="java.lang.String"/>
-        <parameters xmi:type="parameter:Parameter" xmi:id="_N8kXRnlFEei1K_sjKuwmTg" name="docusignPassword" typeClassname="java.lang.String"/>
-        <parameters xmi:type="parameter:Parameter" xmi:id="_N8kXR3lFEei1K_sjKuwmTg" name="docusignUsername" typeClassname="java.lang.String"/>
-        <parameters xmi:type="parameter:Parameter" xmi:id="_N8kXSHlFEei1K_sjKuwmTg" name="docusignAccountId" typeClassname="java.lang.String"/>
+        <parameters xmi:type="parameter:Parameter" xmi:id="_09J6oOVrEeuJfqbdKZt5gw" name="uiPathLogin" typeClassname="java.lang.String"/>
+        <parameters xmi:type="parameter:Parameter" xmi:id="_09J6oeVrEeuJfqbdKZt5gw" name="uiPathPassword" typeClassname="java.lang.String"/>
+        <parameters xmi:type="parameter:Parameter" xmi:id="_09J6ouVrEeuJfqbdKZt5gw" name="uiPathURL" typeClassname="java.lang.String"/>
+        <parameters xmi:type="parameter:Parameter" xmi:id="_09J6o-VrEeuJfqbdKZt5gw" name="bonitaURL" typeClassname="java.lang.String"/>
       </configurations>
-      <configurations xmi:type="configuration:Configuration" xmi:id="_nYTVAHnlEeimVcJ7KG-S2g" name="Test" version="7.6.0-002" username="walter.bates" password="bpm">
+      <configurations xmi:type="configuration:Configuration" xmi:id="_nYTVAHnlEeimVcJ7KG-S2g" name="Test" version="7.12.0-004" username="walter.bates" password="bpm">
         <actorMappings xmi:type="actormapping:ActorMappingsType" xmi:id="_nYTVAXnlEeimVcJ7KG-S2g">
           <actorMapping xmi:type="actormapping:ActorMapping" xmi:id="_nYTVAnnlEeimVcJ7KG-S2g" name="Customer">
             <groups xmi:type="actormapping:Groups" xmi:id="_nYTVA3nlEeimVcJ7KG-S2g"/>
@@ -649,77 +602,30 @@
             <users xmi:type="actormapping:Users" xmi:id="_nYTVBnnlEeimVcJ7KG-S2g"/>
           </actorMapping>
         </actorMappings>
-        <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_nYTVB3nlEeimVcJ7KG-S2g" type="CONNECTOR" definitionId="scripting-groovy-script" definitionVersion="1.0.1" implementationId="scripting-groovy-script-impl" implementationVersion="1.0.2"/>
-        <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_nYTVCHnlEeimVcJ7KG-S2g" type="CONNECTOR" definitionId="document-templating" definitionVersion="1.0.1" implementationId="document-templating-impl" implementationVersion="1.0.1"/>
-        <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_nYTVCXnlEeimVcJ7KG-S2g" type="CONNECTOR" definitionId="document-converter" definitionVersion="1.0.2" implementationId="document-converter-impl" implementationVersion="1.0.2"/>
-        <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_nYTVCnnlEeimVcJ7KG-S2g" type="CONNECTOR" definitionId="coSignSend" definitionVersion="1.0.0" implementationId="coSignSend-impl" implementationVersion="1.0.0"/>
-        <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_nYTVC3nlEeimVcJ7KG-S2g" type="CONNECTOR" definitionId="coSignGetEnv" definitionVersion="1.0.0" implementationId="coSignGetEnv-impl" implementationVersion="1.0.0"/>
-        <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_nYTVDHnlEeimVcJ7KG-S2g" type="ACTOR_FILTER" definitionId="initiator" definitionVersion="1.0.0" implementationId="initiator-impl" implementationVersion="1.0.0"/>
+        <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_nYTVB3nlEeimVcJ7KG-S2g" type="CONNECTOR" definitionId="scripting-groovy-script" definitionVersion="1.0.1" implementationId="scripting-groovy-script-impl" implementationVersion="1.1.2"/>
+        <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_09KhsOVrEeuJfqbdKZt5gw" type="ACTOR_FILTER" definitionId="bonita-actorfilter-initiator" definitionVersion="1.0" implementationId="bonita-actorfilter-initiator-impl" implementationVersion="1.0.0"/>
+        <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_09lYcOVrEeuJfqbdKZt5gw" type="CONNECTOR" definitionId="uipath-startjob" definitionVersion="2.0.0" implementationId="uipath-startjob-impl" implementationVersion="2.1.1"/>
+        <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_0979wOVrEeuJfqbdKZt5gw" type="CONNECTOR" definitionId="GoogleMLPredict" definitionVersion="1.0.0" implementationId="GoogleMLPredict-impl" implementationVersion="1.0.0"/>
         <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_nYTVDXnlEeimVcJ7KG-S2g" id="ACTOR_FILTER">
-          <children xmi:type="configuration:FragmentContainer" xmi:id="_nYTVDnnlEeimVcJ7KG-S2g" id="initiator-impl-1.0.0">
-            <fragments xmi:type="configuration:Fragment" xmi:id="_nYTVD3nlEeimVcJ7KG-S2g" key="initiator-impl -- 1.0.0" value="bonita-userfilter-initiator-impl-1.0.0-SNAPSHOT.jar" type="ACTOR_FILTER"/>
+          <children xmi:type="configuration:FragmentContainer" xmi:id="_09MW4OVrEeuJfqbdKZt5gw" id="bonita-actorfilter-initiator-impl-1.0.0">
+            <fragments xmi:type="configuration:Fragment" xmi:id="_09M98OVrEeuJfqbdKZt5gw" key="bonita-actorfilter-initiator-impl -- 1.0.0" value="bonita-actorfilter-initiator-1.0.0.jar" type="ACTOR_FILTER"/>
           </children>
         </processDependencies>
         <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_nYTVEHnlEeimVcJ7KG-S2g" id="CONNECTOR">
-          <children xmi:type="configuration:FragmentContainer" xmi:id="_nYTVEXnlEeimVcJ7KG-S2g" id="scripting-groovy-script-impl-1.0.2">
-            <fragments xmi:type="configuration:Fragment" xmi:id="_nYTVEnnlEeimVcJ7KG-S2g" key="scripting-groovy-script-impl -- 1.0.2" value="bonita-connector-scripting-groovy-script-impl-1.0.2.jar" type="CONNECTOR"/>
+          <children xmi:type="configuration:FragmentContainer" xmi:id="_09c1kOVrEeuJfqbdKZt5gw" id="scripting-groovy-script-impl-1.1.2">
+            <fragments xmi:type="configuration:Fragment" xmi:id="_09kxYOVrEeuJfqbdKZt5gw" key="scripting-groovy-script-impl -- 1.1.2" value="bonita-connector-groovy-1.1.2.jar" type="CONNECTOR"/>
           </children>
-          <children xmi:type="configuration:FragmentContainer" xmi:id="_nYTVE3nlEeimVcJ7KG-S2g" id="document-templating-impl-1.0.1">
-            <fragments xmi:type="configuration:Fragment" xmi:id="_nYTVFHnlEeimVcJ7KG-S2g" key="document-templating-impl -- 1.0.1" value="bonita-connector-document-templating-impl-1.0.1.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_nYTVFXnlEeimVcJ7KG-S2g" key="document-templating-impl -- 1.0.1" value="oro-2.0.8.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_nYTVFnnlEeimVcJ7KG-S2g" key="document-templating-impl -- 1.0.1" value="itext-2.1.7.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_nYTVF3nlEeimVcJ7KG-S2g" key="document-templating-impl -- 1.0.1" value="fr.opensagres.xdocreport.template.velocity-1.0.5.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_nYTVGHnlEeimVcJ7KG-S2g" key="document-templating-impl -- 1.0.1" value="org.odftoolkit.odfdom.converter.xhtml-1.0.5.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_nYTVGXnlEeimVcJ7KG-S2g" key="document-templating-impl -- 1.0.1" value="fr.opensagres.xdocreport.converter-1.0.5.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_nYTVGnnlEeimVcJ7KG-S2g" key="document-templating-impl -- 1.0.1" value="commons-lang-2.4.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_nYTVG3nlEeimVcJ7KG-S2g" key="document-templating-impl -- 1.0.1" value="org.odftoolkit.odfdom.converter.pdf-1.0.5.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_nYTVHHnlEeimVcJ7KG-S2g" key="document-templating-impl -- 1.0.1" value="xercesImpl-2.9.1.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_nYTVHXnlEeimVcJ7KG-S2g" key="document-templating-impl -- 1.0.1" value="org.odftoolkit.odfdom.converter.core-1.0.5.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_nYTVHnnlEeimVcJ7KG-S2g" key="document-templating-impl -- 1.0.1" value="odfdom-java-0.8.7.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_nYTVH3nlEeimVcJ7KG-S2g" key="document-templating-impl -- 1.0.1" value="fr.opensagres.xdocreport.converter.odt.odfdom-1.0.5.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_nYTVIHnlEeimVcJ7KG-S2g" key="document-templating-impl -- 1.0.1" value="fr.opensagres.xdocreport.document-1.0.5.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_nYTVIXnlEeimVcJ7KG-S2g" key="document-templating-impl -- 1.0.1" value="fr.opensagres.xdocreport.template-1.0.5.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_nYTVInnlEeimVcJ7KG-S2g" key="document-templating-impl -- 1.0.1" value="fr.opensagres.xdocreport.itext.extension-1.0.5.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_nYTVI3nlEeimVcJ7KG-S2g" key="document-templating-impl -- 1.0.1" value="fr.opensagres.xdocreport.document.docx-1.0.5.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_nYTVJHnlEeimVcJ7KG-S2g" key="document-templating-impl -- 1.0.1" value="velocity-1.7.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_nYTVJXnlEeimVcJ7KG-S2g" key="document-templating-impl -- 1.0.1" value="fr.opensagres.xdocreport.core-1.0.5.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_nYTVJnnlEeimVcJ7KG-S2g" key="document-templating-impl -- 1.0.1" value="fr.opensagres.xdocreport.document.odt-1.0.5.jar" type="CONNECTOR"/>
+          <children xmi:type="configuration:FragmentContainer" xmi:id="_090pAOVrEeuJfqbdKZt5gw" id="uipath-startjob-impl-2.1.1">
+            <fragments xmi:type="configuration:Fragment" xmi:id="_097WsOVrEeuJfqbdKZt5gw" key="uipath-startjob-impl -- 2.1.1" value="bonita-connector-uipath-2.1.1.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_097WseVrEeuJfqbdKZt5gw" key="uipath-startjob-impl -- 2.1.1" value="converter-jackson-2.9.0.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_097WsuVrEeuJfqbdKZt5gw" key="uipath-startjob-impl -- 2.1.1" value="logging-interceptor-3.11.0.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_097Ws-VrEeuJfqbdKZt5gw" key="uipath-startjob-impl -- 2.1.1" value="okhttp-3.14.9.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_097WtOVrEeuJfqbdKZt5gw" key="uipath-startjob-impl -- 2.1.1" value="okio-1.17.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_097WteVrEeuJfqbdKZt5gw" key="uipath-startjob-impl -- 2.1.1" value="retrofit-2.9.0.jar" type="CONNECTOR"/>
           </children>
-          <children xmi:type="configuration:FragmentContainer" xmi:id="_nYTVJ3nlEeimVcJ7KG-S2g" id="document-converter-impl-1.0.2">
-            <fragments xmi:type="configuration:Fragment" xmi:id="_nYTVKHnlEeimVcJ7KG-S2g" key="document-converter-impl -- 1.0.2" value="bonita-connector-document-converter-impl-1.0.2.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_nYTVKXnlEeimVcJ7KG-S2g" key="document-converter-impl -- 1.0.2" value="oro-2.0.8.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_nYTVKnnlEeimVcJ7KG-S2g" key="document-converter-impl -- 1.0.2" value="itext-2.1.7.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_nYTVK3nlEeimVcJ7KG-S2g" key="document-converter-impl -- 1.0.2" value="fr.opensagres.xdocreport.template.velocity-1.0.5.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_nYTVLHnlEeimVcJ7KG-S2g" key="document-converter-impl -- 1.0.2" value="org.odftoolkit.odfdom.converter.xhtml-1.0.5.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_nYTVLXnlEeimVcJ7KG-S2g" key="document-converter-impl -- 1.0.2" value="fr.opensagres.xdocreport.converter-1.0.5.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_nYTVLnnlEeimVcJ7KG-S2g" key="document-converter-impl -- 1.0.2" value="commons-lang-2.4.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_nYTVL3nlEeimVcJ7KG-S2g" key="document-converter-impl -- 1.0.2" value="xercesImpl-2.9.1.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_nYTVMHnlEeimVcJ7KG-S2g" key="document-converter-impl -- 1.0.2" value="org.odftoolkit.odfdom.converter.pdf-1.0.5.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_nYTVMXnlEeimVcJ7KG-S2g" key="document-converter-impl -- 1.0.2" value="poi-3.10-FINAL.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_nYTVMnnlEeimVcJ7KG-S2g" key="document-converter-impl -- 1.0.2" value="org.apache.poi.xwpf.converter.core-1.0.5.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_nYTVM3nlEeimVcJ7KG-S2g" key="document-converter-impl -- 1.0.2" value="odfdom-java-0.8.7.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_nYTVNHnlEeimVcJ7KG-S2g" key="document-converter-impl -- 1.0.2" value="org.odftoolkit.odfdom.converter.core-1.0.5.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_nYTVNXnlEeimVcJ7KG-S2g" key="document-converter-impl -- 1.0.2" value="fr.opensagres.xdocreport.converter.odt.odfdom-1.0.5.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_nYTVNnnlEeimVcJ7KG-S2g" key="document-converter-impl -- 1.0.2" value="fr.opensagres.xdocreport.converter.docx.xwpf-1.0.5.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_nYTVN3nlEeimVcJ7KG-S2g" key="document-converter-impl -- 1.0.2" value="org.apache.poi.xwpf.converter.xhtml-1.0.5.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_nYTVOHnlEeimVcJ7KG-S2g" key="document-converter-impl -- 1.0.2" value="fr.opensagres.xdocreport.document-1.0.5.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_nYTVOXnlEeimVcJ7KG-S2g" key="document-converter-impl -- 1.0.2" value="fr.opensagres.xdocreport.template-1.0.5.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_nYTVOnnlEeimVcJ7KG-S2g" key="document-converter-impl -- 1.0.2" value="ooxml-schemas-1.1.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_nYTVO3nlEeimVcJ7KG-S2g" key="document-converter-impl -- 1.0.2" value="poi-ooxml-3.10-FINAL.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_nYTVPHnlEeimVcJ7KG-S2g" key="document-converter-impl -- 1.0.2" value="fr.opensagres.xdocreport.itext.extension-1.0.5.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_nYTVPXnlEeimVcJ7KG-S2g" key="document-converter-impl -- 1.0.2" value="org.apache.poi.xwpf.converter.pdf-1.0.5.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_nYTVPnnlEeimVcJ7KG-S2g" key="document-converter-impl -- 1.0.2" value="fr.opensagres.xdocreport.document.docx-1.0.5.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_nYTVP3nlEeimVcJ7KG-S2g" key="document-converter-impl -- 1.0.2" value="fr.opensagres.xdocreport.document.odt-1.0.5.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_nYTVQHnlEeimVcJ7KG-S2g" key="document-converter-impl -- 1.0.2" value="fr.opensagres.xdocreport.core-1.0.5.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_nYTVQXnlEeimVcJ7KG-S2g" key="document-converter-impl -- 1.0.2" value="velocity-1.7.jar" type="CONNECTOR"/>
-          </children>
-          <children xmi:type="configuration:FragmentContainer" xmi:id="_nYTVQnnlEeimVcJ7KG-S2g" id="coSignSend-impl-1.0.0">
-            <fragments xmi:type="configuration:Fragment" xmi:id="_nYTVQ3nlEeimVcJ7KG-S2g" key="coSignSend-impl -- 1.0.0" value="coSignSend-impl-1.0.0.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_nYTVRHnlEeimVcJ7KG-S2g" key="coSignSend-impl -- 1.0.0" value="libSign.jar" type="CONNECTOR"/>
-          </children>
-          <children xmi:type="configuration:FragmentContainer" xmi:id="_nYTVRXnlEeimVcJ7KG-S2g" id="coSignGetEnv-impl-1.0.0">
-            <fragments xmi:type="configuration:Fragment" xmi:id="_nYTVRnnlEeimVcJ7KG-S2g" key="coSignGetEnv-impl -- 1.0.0" value="coSignGetEnv-impl-1.0.0.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_nYTVR3nlEeimVcJ7KG-S2g" key="coSignGetEnv-impl -- 1.0.0" value="libSign.jar" type="CONNECTOR"/>
+          <children xmi:type="configuration:FragmentContainer" xmi:id="_0-MccOVrEeuJfqbdKZt5gw" id="GoogleMLPredict-impl-1.0.0">
+            <fragments xmi:type="configuration:Fragment" xmi:id="_0-ORoOVrEeuJfqbdKZt5gw" key="GoogleMLPredict-impl -- 1.0.0" value="mlengine-online-prediction-1-jar-with-dependencies.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_0-ORoeVrEeuJfqbdKZt5gw" key="GoogleMLPredict-impl -- 1.0.0" value="GoogleMLPredict-impl-1.0.0.jar" type="CONNECTOR"/>
           </children>
         </processDependencies>
         <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_nYTVSHnlEeimVcJ7KG-S2g" id="DATA_TYPES"/>
@@ -729,12 +635,12 @@
         <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_nYTVTHnlEeimVcJ7KG-S2g" id="GROOVY_SCRIPT"/>
         <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_nYTVTXnlEeimVcJ7KG-S2g" id="VALIDATOR"/>
         <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_nYTVTnnlEeimVcJ7KG-S2g" id="OTHER"/>
-        <parameters xmi:type="parameter:Parameter" xmi:id="_nYTVT3nlEeimVcJ7KG-S2g" name="docusignAuthIntegratorKey" value="a2e18cc2-65d9-42a5-94e9-5f2f3f5dd863" typeClassname="java.lang.String"/>
-        <parameters xmi:type="parameter:Parameter" xmi:id="_nYTVUHnlEeimVcJ7KG-S2g" name="docusignPassword" value="#oxyd8kc3!!" typeClassname="java.lang.String"/>
-        <parameters xmi:type="parameter:Parameter" xmi:id="_nYTVUXnlEeimVcJ7KG-S2g" name="docusignUsername" value="antoine.mottier@bonitasoft.com" typeClassname="java.lang.String"/>
-        <parameters xmi:type="parameter:Parameter" xmi:id="_nYTVUnnlEeimVcJ7KG-S2g" name="docusignAccountId" value="4748987" typeClassname="java.lang.String"/>
+        <parameters xmi:type="parameter:Parameter" xmi:id="_0-O4sOVrEeuJfqbdKZt5gw" name="uiPathLogin" typeClassname="java.lang.String"/>
+        <parameters xmi:type="parameter:Parameter" xmi:id="_0-O4seVrEeuJfqbdKZt5gw" name="uiPathPassword" typeClassname="java.lang.String"/>
+        <parameters xmi:type="parameter:Parameter" xmi:id="_0-O4suVrEeuJfqbdKZt5gw" name="uiPathURL" typeClassname="java.lang.String"/>
+        <parameters xmi:type="parameter:Parameter" xmi:id="_0-O4s-VrEeuJfqbdKZt5gw" name="bonitaURL" typeClassname="java.lang.String"/>
       </configurations>
-      <configurations xmi:type="configuration:Configuration" xmi:id="_EyFmwEmdEemBGtySZy2Unw" name="Demo" version="7.8.3-001" username="walter.bates" password="bpm">
+      <configurations xmi:type="configuration:Configuration" xmi:id="_EyFmwEmdEemBGtySZy2Unw" name="Demo" version="7.12.0-004" username="walter.bates" password="bpm">
         <actorMappings xmi:type="actormapping:ActorMappingsType" xmi:id="_EyFmz0mdEemBGtySZy2Unw">
           <actorMapping xmi:type="actormapping:ActorMapping" xmi:id="_EyFm0EmdEemBGtySZy2Unw" name="Customer">
             <groups xmi:type="actormapping:Groups" xmi:id="_EyFm0UmdEemBGtySZy2Unw">
@@ -745,30 +651,30 @@
             <users xmi:type="actormapping:Users" xmi:id="_EyFm1EmdEemBGtySZy2Unw"/>
           </actorMapping>
         </actorMappings>
-        <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_EyFmwUmdEemBGtySZy2Unw" type="ACTOR_FILTER" definitionId="initiator" definitionVersion="1.0.0" implementationId="initiator-impl" implementationVersion="1.0.0"/>
-        <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_EyFmwkmdEemBGtySZy2Unw" type="CONNECTOR" definitionId="scripting-groovy-script" definitionVersion="1.0.1" implementationId="scripting-groovy-script-impl" implementationVersion="1.0.2"/>
-        <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_YCI_IEviEem6Z88CeGGvTw" type="CONNECTOR" definitionId="uipath-startjob" definitionVersion="1.0.0" implementationId="uipath-startjob-impl" implementationVersion="1.0.3"/>
+        <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_EyFmwkmdEemBGtySZy2Unw" type="CONNECTOR" definitionId="scripting-groovy-script" definitionVersion="1.0.1" implementationId="scripting-groovy-script-impl" implementationVersion="1.1.2"/>
         <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_wY7S0E8OEemBcOD5CMOafw" type="CONNECTOR" definitionId="GoogleMLPredict" definitionVersion="1.0.0" implementationId="GoogleMLPredict-impl" implementationVersion="1.0.0"/>
+        <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_0-PfwOVrEeuJfqbdKZt5gw" type="ACTOR_FILTER" definitionId="bonita-actorfilter-initiator" definitionVersion="1.0" implementationId="bonita-actorfilter-initiator-impl" implementationVersion="1.0.0"/>
+        <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_0-sLseVrEeuJfqbdKZt5gw" type="CONNECTOR" definitionId="uipath-startjob" definitionVersion="2.0.0" implementationId="uipath-startjob-impl" implementationVersion="2.1.1"/>
         <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_EyFmw0mdEemBGtySZy2Unw" id="ACTOR_FILTER">
-          <children xmi:type="configuration:FragmentContainer" xmi:id="_EyFmxEmdEemBGtySZy2Unw" id="initiator-impl-1.0.0">
-            <fragments xmi:type="configuration:Fragment" xmi:id="_EyFmxUmdEemBGtySZy2Unw" key="initiator-impl -- 1.0.0" value="bonita-userfilter-initiator-impl-1.0.0-SNAPSHOT.jar" type="ACTOR_FILTER"/>
+          <children xmi:type="configuration:FragmentContainer" xmi:id="_0-RU8OVrEeuJfqbdKZt5gw" id="bonita-actorfilter-initiator-impl-1.0.0">
+            <fragments xmi:type="configuration:Fragment" xmi:id="_0-TKIOVrEeuJfqbdKZt5gw" key="bonita-actorfilter-initiator-impl -- 1.0.0" value="bonita-actorfilter-initiator-1.0.0.jar" type="ACTOR_FILTER"/>
           </children>
         </processDependencies>
         <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_EyFmxkmdEemBGtySZy2Unw" id="CONNECTOR">
-          <children xmi:type="configuration:FragmentContainer" xmi:id="_EyFmx0mdEemBGtySZy2Unw" id="scripting-groovy-script-impl-1.0.2">
-            <fragments xmi:type="configuration:Fragment" xmi:id="_EyFmyEmdEemBGtySZy2Unw" key="scripting-groovy-script-impl -- 1.0.2" value="bonita-connector-scripting-groovy-script-impl-1.0.2.jar" type="CONNECTOR"/>
-          </children>
-          <children xmi:type="configuration:FragmentContainer" xmi:id="_YCchIEviEem6Z88CeGGvTw" id="uipath-startjob-impl-1.0.3">
-            <fragments xmi:type="configuration:Fragment" xmi:id="_YCrxsEviEem6Z88CeGGvTw" key="uipath-startjob-impl -- 1.0.3" value="bonita-connector-uipath-1.0.3.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_YCs_0EviEem6Z88CeGGvTw" key="uipath-startjob-impl -- 1.0.3" value="okhttp-3.10.0.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_YCtm4EviEem6Z88CeGGvTw" key="uipath-startjob-impl -- 1.0.3" value="retrofit-2.4.0.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_YCtm4UviEem6Z88CeGGvTw" key="uipath-startjob-impl -- 1.0.3" value="logging-interceptor-3.11.0.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_YCu1AEviEem6Z88CeGGvTw" key="uipath-startjob-impl -- 1.0.3" value="okio-1.14.0.jar" type="CONNECTOR"/>
-            <fragments xmi:type="configuration:Fragment" xmi:id="_YCvcEEviEem6Z88CeGGvTw" key="uipath-startjob-impl -- 1.0.3" value="converter-jackson-2.4.0.jar" type="CONNECTOR"/>
-          </children>
           <children xmi:type="configuration:FragmentContainer" xmi:id="_wZVigE8OEemBcOD5CMOafw" id="GoogleMLPredict-impl-1.0.0">
             <fragments xmi:type="configuration:Fragment" xmi:id="_wZXXsE8OEemBcOD5CMOafw" key="GoogleMLPredict-impl -- 1.0.0" value="mlengine-online-prediction-1-jar-with-dependencies.jar" type="CONNECTOR"/>
             <fragments xmi:type="configuration:Fragment" xmi:id="_wZX-wE8OEemBcOD5CMOafw" key="GoogleMLPredict-impl -- 1.0.0" value="GoogleMLPredict-impl-1.0.0.jar" type="CONNECTOR"/>
+          </children>
+          <children xmi:type="configuration:FragmentContainer" xmi:id="_0-jo0OVrEeuJfqbdKZt5gw" id="scripting-groovy-script-impl-1.1.2">
+            <fragments xmi:type="configuration:Fragment" xmi:id="_0-sLsOVrEeuJfqbdKZt5gw" key="scripting-groovy-script-impl -- 1.1.2" value="bonita-connector-groovy-1.1.2.jar" type="CONNECTOR"/>
+          </children>
+          <children xmi:type="configuration:FragmentContainer" xmi:id="_0-94gOVrEeuJfqbdKZt5gw" id="uipath-startjob-impl-2.1.1">
+            <fragments xmi:type="configuration:Fragment" xmi:id="_0_F0UOVrEeuJfqbdKZt5gw" key="uipath-startjob-impl -- 2.1.1" value="bonita-connector-uipath-2.1.1.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_0_F0UeVrEeuJfqbdKZt5gw" key="uipath-startjob-impl -- 2.1.1" value="converter-jackson-2.9.0.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_0_F0UuVrEeuJfqbdKZt5gw" key="uipath-startjob-impl -- 2.1.1" value="logging-interceptor-3.11.0.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_0_F0U-VrEeuJfqbdKZt5gw" key="uipath-startjob-impl -- 2.1.1" value="okhttp-3.14.9.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_0_F0VOVrEeuJfqbdKZt5gw" key="uipath-startjob-impl -- 2.1.1" value="okio-1.17.2.jar" type="CONNECTOR"/>
+            <fragments xmi:type="configuration:Fragment" xmi:id="_0_F0VeVrEeuJfqbdKZt5gw" key="uipath-startjob-impl -- 2.1.1" value="retrofit-2.9.0.jar" type="CONNECTOR"/>
           </children>
         </processDependencies>
         <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_EyFmyUmdEemBGtySZy2Unw" id="DATA_TYPES"/>
@@ -780,7 +686,7 @@
         <parameters xmi:type="parameter:Parameter" xmi:id="_EyFm2UmdEemBGtySZy2Unw" name="uiPathLogin" value="bonitauser" typeClassname="java.lang.String"/>
         <parameters xmi:type="parameter:Parameter" xmi:id="_EyFm2kmdEemBGtySZy2Unw" name="uiPathPassword" value="Bonita_2019" typeClassname="java.lang.String"/>
         <parameters xmi:type="parameter:Parameter" xmi:id="_RrJj4EmdEemBGtySZy2Unw" name="uiPathURL" value="http://ec2-54-154-0-15.eu-west-1.compute.amazonaws.com:8888" typeClassname="java.lang.String"/>
-        <parameters xmi:type="parameter:Parameter" xmi:id="_YC07oEviEem6Z88CeGGvTw" name="bonitaURL" value="http://ec2-52-211-186-116.eu-west-1.compute.amazonaws.com:8081/bonita" typeClassname="java.lang.String"/>
+        <parameters xmi:type="parameter:Parameter" xmi:id="_YC07oEviEem6Z88CeGGvTw" name="bonitaURL" value="https://ec2-34-241-105-228.eu-west-1.compute.amazonaws.com:8081/bonita" typeClassname="java.lang.String"/>
       </configurations>
       <parameters xmi:type="parameter:Parameter" xmi:id="_XD_acEZ0Eeml4OmTM0FgHg" name="uiPathLogin" typeClassname="java.lang.String"/>
       <parameters xmi:type="parameter:Parameter" xmi:id="_agTJQEZ0Eeml4OmTM0FgHg" name="uiPathPassword" typeClassname="java.lang.String"/>
@@ -943,23 +849,23 @@
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_lz2PVHL4EeiTGP__0J9PXQ" x="859" y="285" width="43" height="43"/>
             </children>
             <children xmi:type="notation:Shape" xmi:id="_eY7QUES2Eeml4OmTM0FgHg" type="3027" element="_eYucAES2Eeml4OmTM0FgHg" fontName=".AppleSystemUIFont" fillColor="14334392" lineColor="10710316">
-              <children xmi:type="notation:DecorationNode" xmi:id="_eY73YES2Eeml4OmTM0FgHg" type="5017"/>
+              <children xmi:type="notation:DecorationNode" xmi:id="_eY73YES2Eeml4OmTM0FgHg" type="5017" element="_eYucAES2Eeml4OmTM0FgHg"/>
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eY7QUUS2Eeml4OmTM0FgHg" x="1050" y="163" width="120" height="60"/>
             </children>
             <children xmi:type="notation:Shape" xmi:id="_qGgsMEpxEeml4OmTM0FgHg" type="3013" element="_qGdB0EpxEeml4OmTM0FgHg" fontName=".AppleSystemUIFont">
-              <children xmi:type="notation:DecorationNode" xmi:id="_qGgsMkpxEeml4OmTM0FgHg" type="5027">
+              <children xmi:type="notation:DecorationNode" xmi:id="_qGgsMkpxEeml4OmTM0FgHg" type="5027" element="_qGdB0EpxEeml4OmTM0FgHg">
                 <layoutConstraint xmi:type="notation:Location" xmi:id="_qGgsM0pxEeml4OmTM0FgHg" y="5"/>
               </children>
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qGgsMUpxEeml4OmTM0FgHg" x="778" y="292"/>
             </children>
             <children xmi:type="notation:Shape" xmi:id="_rhGWQEryEem1xYT2gBFygA" type="3062" element="_rhFIIEryEem1xYT2gBFygA" fontName="Segoe UI">
-              <children xmi:type="notation:DecorationNode" xmi:id="_rhGWQkryEem1xYT2gBFygA" type="5090">
+              <children xmi:type="notation:DecorationNode" xmi:id="_rhGWQkryEem1xYT2gBFygA" type="5090" element="_rhFIIEryEem1xYT2gBFygA">
                 <layoutConstraint xmi:type="notation:Location" xmi:id="_rhGWQ0ryEem1xYT2gBFygA" y="5"/>
               </children>
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_rhGWQUryEem1xYT2gBFygA" x="1449" y="174"/>
             </children>
             <children xmi:type="notation:Shape" xmi:id="_q1foIEssEem1ot0-2zrivw" type="3063" element="_q1VQEEssEem1ot0-2zrivw" fontName="Segoe UI" fillColor="14334392" lineColor="10710316">
-              <children xmi:type="notation:DecorationNode" xmi:id="_q1gPMEssEem1ot0-2zrivw" type="5093"/>
+              <children xmi:type="notation:DecorationNode" xmi:id="_q1gPMEssEem1ot0-2zrivw" type="5093" element="_q1VQEEssEem1ot0-2zrivw"/>
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_q1foIUssEem1ot0-2zrivw" x="1259" y="164" width="120" height="60"/>
             </children>
           </children>
@@ -1112,14 +1018,14 @@
       <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_npIV8HL4EeiTGP__0J9PXQ" id="(1.0,0.7209302325581395)"/>
     </edges>
     <edges xmi:type="notation:Connector" xmi:id="_eZLH8ES2Eeml4OmTM0FgHg" type="4001" element="_eZKg4ES2Eeml4OmTM0FgHg" source="_-TY80HL3EeiTGP__0J9PXQ" target="_eY7QUES2Eeml4OmTM0FgHg" roundedBendpointsRadius="10" routing="Rectilinear">
-      <children xmi:type="notation:DecorationNode" xmi:id="_eZLvAES2Eeml4OmTM0FgHg" type="6001">
+      <children xmi:type="notation:DecorationNode" xmi:id="_eZLvAES2Eeml4OmTM0FgHg" type="6001" element="_eZKg4ES2Eeml4OmTM0FgHg">
         <layoutConstraint xmi:type="notation:Location" xmi:id="_eZLvAUS2Eeml4OmTM0FgHg" y="-10"/>
       </children>
       <styles xmi:type="notation:FontStyle" xmi:id="_eZLH8US2Eeml4OmTM0FgHg" fontName=".AppleSystemUIFont"/>
       <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_eZLH8kS2Eeml4OmTM0FgHg" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
     </edges>
     <edges xmi:type="notation:Connector" xmi:id="_scB_oEpREeml4OmTM0FgHg" type="4001" element="_sb-8UEpREeml4OmTM0FgHg" source="_qGgsMEpxEeml4OmTM0FgHg" target="_lz2PU3L4EeiTGP__0J9PXQ" roundedBendpointsRadius="10" routing="Rectilinear">
-      <children xmi:type="notation:DecorationNode" xmi:id="_scB_o0pREeml4OmTM0FgHg" type="6001">
+      <children xmi:type="notation:DecorationNode" xmi:id="_scB_o0pREeml4OmTM0FgHg" type="6001" element="_sb-8UEpREeml4OmTM0FgHg">
         <layoutConstraint xmi:type="notation:Location" xmi:id="_scB_pEpREeml4OmTM0FgHg" y="-10"/>
       </children>
       <styles xmi:type="notation:FontStyle" xmi:id="_scB_oUpREeml4OmTM0FgHg" fontName=".AppleSystemUIFont"/>
@@ -1127,21 +1033,21 @@
       <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_scEb4EpREeml4OmTM0FgHg" id="(0.8,0.4666666666666667)"/>
     </edges>
     <edges xmi:type="notation:Connector" xmi:id="_qGnZ4EpxEeml4OmTM0FgHg" type="4001" element="_qGmLwEpxEeml4OmTM0FgHg" source="_MAPuYHL4EeiTGP__0J9PXQ" target="_qGgsMEpxEeml4OmTM0FgHg" roundedBendpointsRadius="10" routing="Rectilinear">
-      <children xmi:type="notation:DecorationNode" xmi:id="_qGoA8EpxEeml4OmTM0FgHg" type="6001">
+      <children xmi:type="notation:DecorationNode" xmi:id="_qGoA8EpxEeml4OmTM0FgHg" type="6001" element="_qGmLwEpxEeml4OmTM0FgHg">
         <layoutConstraint xmi:type="notation:Location" xmi:id="_qGoA8UpxEeml4OmTM0FgHg" y="-10"/>
       </children>
       <styles xmi:type="notation:FontStyle" xmi:id="_qGnZ4UpxEeml4OmTM0FgHg" fontName=".AppleSystemUIFont"/>
       <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_qGnZ4kpxEeml4OmTM0FgHg" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
     </edges>
     <edges xmi:type="notation:Connector" xmi:id="_rhLOw0ryEem1xYT2gBFygA" type="4001" element="_rhLOwEryEem1xYT2gBFygA" source="_eY7QUES2Eeml4OmTM0FgHg" target="_q1foIEssEem1ot0-2zrivw" roundedBendpointsRadius="10" routing="Rectilinear">
-      <children xmi:type="notation:DecorationNode" xmi:id="_rhL10EryEem1xYT2gBFygA" type="6001">
+      <children xmi:type="notation:DecorationNode" xmi:id="_rhL10EryEem1xYT2gBFygA" type="6001" element="_rhLOwEryEem1xYT2gBFygA">
         <layoutConstraint xmi:type="notation:Location" xmi:id="_rhL10UryEem1xYT2gBFygA" y="-10"/>
       </children>
       <styles xmi:type="notation:FontStyle" xmi:id="_rhLOxEryEem1xYT2gBFygA" fontName="Segoe UI"/>
       <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_rhLOxUryEem1xYT2gBFygA" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
     </edges>
     <edges xmi:type="notation:Connector" xmi:id="_q2On8EssEem1ot0-2zrivw" type="4001" element="_q2MywEssEem1ot0-2zrivw" source="_q1foIEssEem1ot0-2zrivw" target="_rhGWQEryEem1xYT2gBFygA" roundedBendpointsRadius="10" routing="Rectilinear">
-      <children xmi:type="notation:DecorationNode" xmi:id="_q2P2EEssEem1ot0-2zrivw" type="6001">
+      <children xmi:type="notation:DecorationNode" xmi:id="_q2P2EEssEem1ot0-2zrivw" type="6001" element="_q2MywEssEem1ot0-2zrivw">
         <layoutConstraint xmi:type="notation:Location" xmi:id="_q2P2EUssEem1ot0-2zrivw" y="-10"/>
       </children>
       <styles xmi:type="notation:FontStyle" xmi:id="_q2PPAEssEem1ot0-2zrivw" fontName="Segoe UI"/>

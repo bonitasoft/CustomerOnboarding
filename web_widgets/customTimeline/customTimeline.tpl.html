@@ -1,0 +1,10 @@
+ <div class="well well-sm">
+     <div class="timeline">
+          <div ng-class="$index % 2 === 0 ? 'box left' : 'box right'" ng-repeat="event in properties.events track by $index">
+            <div class="content">
+              <h3 ng-bind-html="event.title"></h3>
+              <p ng-bind-html="event.body"></p>
+            </div>
+          </div>
+    </div>
+</div>

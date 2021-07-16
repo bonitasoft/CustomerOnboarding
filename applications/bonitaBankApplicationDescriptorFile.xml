@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <applications xmlns="http://documentation.bonitasoft.com/application-xml-schema/1.0">
-    <application token="bonita-bank" version="1.0" profile="User" homePage="home-page" state="ACTIVATED" layout="custompage_defaultlayout" theme="custompage_acmetheme">
+    <application token="bonita-bank" version="1.0" profile="User" homePage="home-page" state="ACTIVATED" layout="custompage_layoutBonita" theme="custompage_themeBonita">
         <displayName>Bonita Bank App</displayName>
         <applicationPages>
             <applicationPage customPage="custompage_AccountOpenning" token="openning"/>
@@ -27,7 +27,7 @@
                         <displayName>Interest Checking</displayName>
                     </applicationMenu>
                     <applicationMenu applicationPage="open-account">
-                        <displayName>💵 Open an account</displayName>
+                        <displayName>Open an account</displayName>
                     </applicationMenu>
                 </applicationMenus>
             </applicationMenu>

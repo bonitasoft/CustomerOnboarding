@@ -1,19 +1,22 @@
 {
-  "designerVersion" : "1.7.49",
+  "modelVersion" : "2.0",
+  "previousArtifactVersion" : "1.7.49",
   "id" : "customCameraWidget",
   "name" : "cameraWidget",
-  "lastUpdate" : 1529485675482,
-  "template" : "<div class=\"row\">\n    <div class=\"camera col-12 text-center\">\n      <video id=\"video\" autoplay></video>\n    </div>\n    \n    <canvas id=\"canvas\"></canvas>\n    \n    <div class=\"output col-12 text-center\">\n        <img id=\"picture\" alt=\"The picture taken will appear in this box\" />\n    </div>\n</div>\n\n<div class=\"row text-center\">\n    <div class=\"btn-group\" role=\"group\" aria-label=\"Picture actions\">\n        <button type=\"button\" class=\"btn btn-secondary\" id=\"take-picture\">Take picture</button>\n        <button type=\"button\" class=\"btn btn-secondary\" id=\"upload-picture\">Upload</button>\n        <button type=\"button\" class=\"btn btn-secondary\" id=\"new-picture\">New picture</button>\n    </div>\n</div>\n\n<div id=\"notification\"></div>",
-  "controller" : "function ($scope, $http) {\n\n    function clearPicture() {\n        var context = canvas.getContext('2d');\n        context.fillStyle = \"#AAA\";\n        context.fillRect(0, 0, canvas.width, canvas.height);\n    \n        data = canvas.toDataURL('image/png');\n        picture.setAttribute('src', data);\n    }\n  \n    function takePicture() {\n        var context = canvas.getContext('2d');\n        if (width && height) {\n          canvas.width = width;\n          canvas.height = height;\n          context.drawImage(video, 0, 0, width, height);\n        \n          data = canvas.toDataURL('image/png');\n          picture.setAttribute('src', data);\n        } else {\n          clearPicture();\n        }\n        \n        video.hidden = true;\n        picture.hidden = false;\n        takePictureButton.setAttribute(\"disabled\", \"\");\n        uploadButton.removeAttribute(\"disabled\");\n        newPictureButton.removeAttribute(\"disabled\");\n    }\n   \n    console.log(\"Start widget initialization\");\n    \n    //var width = 320;    // We will scale the picture width to this\n    var width = 0;\n    var height = 0; // This will be computed based on the input stream\n    \n    var streaming = false;\n    \n    var video = null;\n    var canvas = null;\n    var picture = null;\n    var takePictureButton = null;\n    var uploadButton = null;\n    var newPictureButton = null\n    \n    var data = null;\n\n    video = document.getElementById('video');\n    canvas = document.getElementById('canvas');\n    picture = document.getElementById('picture');\n    takePictureButton = document.getElementById('take-picture');\n    uploadButton = document.getElementById('upload-picture');\n    newPictureButton = document.getElementById('new-picture');\n    \n    picture.hidden = true;\n    uploadButton.setAttribute(\"disabled\", \"\");\n    newPictureButton.setAttribute(\"disabled\", \"\");\n    \n    navigator.mediaDevices.getUserMedia({video: true, audio: false})\n    .then(function(stream) {\n            video.srcObject = stream;\n            video.onloadedmetadata = function(e) {\n                video.play();\n            }\n    })\n    .catch(function(err) {\n            var message = \"An error occured! \" + err;\n            console.log(message);\n            notification.innerHTML = message;\n    });\n    \n    video.addEventListener('canplay', function(ev){\n        if (!streaming) {\n            height = video.videoHeight;\n            width = video.videoWidth;\n    \n            // Firefox currently has a bug where the height can't be read from\n            // the video, so we will make assumptions if this happens.    \n            if (isNaN(height)) {\n                height = width / (4/3);\n            }\n                \n            video.setAttribute('width', width);\n            video.setAttribute('height', height);\n            canvas.setAttribute('width', width);\n            canvas.setAttribute('height', height);\n            streaming = true;\n        }\n    }, false);\n    \n    takePictureButton.addEventListener('click', function(ev){\n        takePicture();\n        ev.preventDefault();\n    }, false);\n    \n    newPictureButton.addEventListener('click', function(ev){\n      video.hidden = false;\n      picture.hidden = true;\n      takePictureButton.removeAttribute(\"disabled\");\n      uploadButton.setAttribute(\"disabled\", \"\");\n      newPictureButton.setAttribute(\"disabled\", \"\");\n      ev.preventDefault();\n    }, false);\n    \n    uploadButton.addEventListener('click', function(ev){\n        var blobBin = atob(data.split(',')[1]);\n        var array = [];\n        for(var i = 0; i < blobBin.length; i++) {\n            array.push(blobBin.charCodeAt(i));\n        }\n        var file = new Blob([new Uint8Array(array)], {type: 'image/png'});\n        \n        var fd = new FormData();\n        fd.append('file', file);\n        \n        var request = {\n            method: 'POST',\n            url: '/bonita/portal/fileUpload',\n            headers: {\n                'Content-Type': undefined\n            },\n            transformRequest: angular.identity,\n            data: fd\n        };\n        $http(request).success(function(data, status, headers, config) {\n            console.log(\"success: \" + status);\n        }).\n        error(function(data, status, headers, config) {\n            console.log(\"error: \" + status);\n        });\n        ev.preventDefault();\n    }, false);\n    \n    clearPicture();    \n}",
+  "lastUpdate" : 1626353687448,
+  "template" : "@customCameraWidget.tpl.html",
+  "controller" : "@customCameraWidget.ctrl.js",
   "custom" : true,
   "properties" : [ ],
-  "assets" : [ {
-    "id" : "80b79e97-495c-45a5-bb0b-8d0632407fa9",
-    "name" : "style-camera-widget.css",
-    "type" : "css",
-    "order" : 1,
-    "external" : false
-  } ],
+  "assets" : [
+    {
+      "id" : "80b79e97-495c-45a5-bb0b-8d0632407fa9",
+      "name" : "style-camera-widget.css",
+      "type" : "css",
+      "order" : 1,
+      "external" : false
+    }
+  ],
   "requiredModules" : [ ],
   "type" : "widget",
   "hasHelp" : false

@@ -1,0 +1,21 @@
+<style>
+    .login{
+        margin:10px;
+    }
+</style>
+
+<div class="text-{{ properties.alignment }}">
+    <div style="display:inline-block;">
+        <select id="languageSelector" onchange="setLanguage(this)">
+            <option value="">Select language</option>
+            <option value="en">English</option>
+            <option value="es">Español</option>
+            <option value="fr">Français</option>
+            
+        </select>
+    </div>
+    
+    <span style="display:inline-block; margin: 10px;"><span class="glyphicon glyphicon-user"></span> {{firstName}} {{lastName}}  <a ng-click="logout()" ng-class="'btn btn-' + properties.buttonStyle" ng-bind-html="properties.value | uiTranslate"></a></span>
+</div>
+
+

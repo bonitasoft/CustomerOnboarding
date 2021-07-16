@@ -1,25 +1,30 @@
 {
-  "designerVersion" : "1.8.29",
-  "previousDesignerVersion" : "1.7.49",
+  "modelVersion" : "2.0",
+  "previousArtifactVersion" : "1.8.29",
   "id" : "CoreChecking",
   "name" : "CoreChecking",
-  "lastUpdate" : 1552324465108,
-  "rows" : [ [ ] ],
-  "assets" : [ {
-    "id" : "3a565e93-68cc-4ac9-9f5a-ffd8fc30463e",
-    "name" : "style.css",
-    "type" : "css",
-    "order" : 0,
-    "external" : false
-  }, {
-    "id" : "d33abf63-d313-4e79-b355-e8d7a4469238",
-    "name" : "localization.json",
-    "type" : "json",
-    "order" : 0,
-    "external" : false
-  } ],
+  "lastUpdate" : 1626353686958,
+  "rows" : [
+    [ ]
+  ],
+  "assets" : [
+    {
+      "id" : "3a565e93-68cc-4ac9-9f5a-ffd8fc30463e",
+      "name" : "style.css",
+      "type" : "css",
+      "order" : 0,
+      "external" : false
+    },
+    {
+      "id" : "d33abf63-d313-4e79-b355-e8d7a4469238",
+      "name" : "localization.json",
+      "type" : "json",
+      "order" : 0,
+      "external" : false
+    }
+  ],
   "inactiveAssets" : [ ],
-  "data" : { },
+  "variables" : { },
   "hasValidationError" : false,
   "uuid" : "a64e987a-de41-4d32-b070-efb51f5991b5",
   "type" : "page",

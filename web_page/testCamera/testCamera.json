@@ -1,46 +1,53 @@
 {
-  "designerVersion" : "1.8.29",
-  "previousDesignerVersion" : "1.7.49",
+  "modelVersion" : "2.0",
+  "previousArtifactVersion" : "1.8.29",
   "id" : "testCamera",
   "name" : "testCamera",
-  "lastUpdate" : 1552324465037,
-  "rows" : [ [ {
-    "type" : "component",
-    "dimension" : {
-      "xs" : 12,
-      "sm" : 12,
-      "md" : 12,
-      "lg" : 12
-    },
-    "propertyValues" : {
-      "cssClasses" : {
-        "type" : "constant",
-        "value" : ""
-      },
-      "hidden" : {
-        "type" : "constant",
-        "value" : false
+  "lastUpdate" : 1626353687464,
+  "rows" : [
+    [
+      {
+        "type" : "component",
+        "dimension" : {
+          "xs" : 12,
+          "sm" : 12,
+          "md" : 12,
+          "lg" : 12
+        },
+        "propertyValues" : {
+          "cssClasses" : {
+            "type" : "constant",
+            "value" : ""
+          },
+          "hidden" : {
+            "type" : "constant",
+            "value" : false
+          }
+        },
+        "reference" : "b3fe1020-9083-4dfd-a894-fc981d106f3d",
+        "hasValidationError" : false,
+        "id" : "customCameraWidget"
       }
+    ]
+  ],
+  "assets" : [
+    {
+      "id" : "1508c628-5ed0-4be5-ba12-f003e426c8bb",
+      "name" : "localization.json",
+      "type" : "json",
+      "order" : 0,
+      "external" : false
     },
-    "reference" : "b3fe1020-9083-4dfd-a894-fc981d106f3d",
-    "hasValidationError" : false,
-    "id" : "customCameraWidget"
-  } ] ],
-  "assets" : [ {
-    "id" : "1508c628-5ed0-4be5-ba12-f003e426c8bb",
-    "name" : "localization.json",
-    "type" : "json",
-    "order" : 0,
-    "external" : false
-  }, {
-    "id" : "c647c805-f266-401f-8866-918db9a8dac5",
-    "name" : "style.css",
-    "type" : "css",
-    "order" : 0,
-    "external" : false
-  } ],
+    {
+      "id" : "c647c805-f266-401f-8866-918db9a8dac5",
+      "name" : "style.css",
+      "type" : "css",
+      "order" : 0,
+      "external" : false
+    }
+  ],
   "inactiveAssets" : [ ],
-  "data" : { },
+  "variables" : { },
   "hasValidationError" : false,
   "uuid" : "167d6c3e-7d1a-4c54-901e-42a4d064cd74",
   "type" : "page",

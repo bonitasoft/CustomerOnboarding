@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actormapping="http://www.bonitasoft.org/ns/actormapping/6.0" xmlns:configuration="http://www.bonitasoft.org/ns/studio/configuration" xmlns:connectorconfiguration="http://wwww.bonitasoft.org/model/connector/configuration" xmlns:decision="http://www.bonitasoft.org/ns/studio/process/decision" xmlns:definition="http://www.bonitasoft.org/ns/connector/definition/6.1" xmlns:expression="http://www.bonitasoft.org/ns/studio/expression" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:process="http://www.bonitasoft.org/ns/studio/process" xsi:schemaLocation="http://www.bonitasoft.org/ns/studio/process/decision http://www.bonitasoft.org/ns/studio/process#//decision">
-  <process:MainProcess xmi:id="_ZtCLgE7TEemBcOD5CMOafw" name="GoogleMLTestProcess" author="bonitasoft" bonitaVersion="7.8.3" bonitaModelVersion="7.8.3-001" configId="ACED0005740023476F6F676C654D4C5465737450726F63657373372E382E332D303031372E382E337370">
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actormapping="http://www.bonitasoft.org/ns/actormapping/6.0" xmlns:configuration="http://www.bonitasoft.org/ns/studio/configuration" xmlns:connectorconfiguration="http://wwww.bonitasoft.org/model/connector/configuration" xmlns:decision="http://www.bonitasoft.org/ns/studio/process/decision" xmlns:definition="http://www.bonitasoft.org/ns/connector/definition/6.1" xmlns:expression="http://www.bonitasoft.org/ns/studio/expression" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:process="http://www.bonitasoft.org/ns/studio/process" xsi:schemaLocation="http://www.bonitasoft.org/ns/studio/process/decision http://www.bonitasoft.org/ns/studio/process#//decision">
+  <process:MainProcess xmi:id="_ZtCLgE7TEemBcOD5CMOafw" name="GoogleMLTestProcess" author="bonitasoft" bonitaVersion="7.12.4" bonitaModelVersion="7.12.0-004" configId="ACED0005740023476F6F676C654D4C5465737450726F63657373372E382E332D303031372E382E337370">
     <elements xmi:type="process:Pool" xmi:id="_ZtCLgU7TEemBcOD5CMOafw" name="GoogleMLInjector">
       <elements xmi:type="process:Lane" xmi:id="_ZtCLgk7TEemBcOD5CMOafw" name="Employee lane" actor="_ZtCLm07TEemBcOD5CMOafw">
         <elements xmi:type="process:StartEvent" xmi:id="_ZtCLg07TEemBcOD5CMOafw" name="Start1" outgoing="_ZtCLmE7TEemBcOD5CMOafw">
@@ -29,7 +29,7 @@
                 <expression xmi:type="expression:Expression" xmi:id="_okZBV07TEemBcOD5CMOafw" name="v1" content="v1" returnTypeFixed="true"/>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_okZBWE7TEemBcOD5CMOafw" key="jsonPayload">
-                <expression xmi:type="expression:Expression" xmi:id="_okZBWU7TEemBcOD5CMOafw" name="&lt;pattern-expression>" content="{&#xD;&#xA;  &quot;instances&quot;: [&#xD;&#xA;    {&#xD;&#xA;      &quot;age&quot;: 25,&#xD;&#xA;      &quot;workclass&quot;: &quot; Private&quot;,&#xD;&#xA;      &quot;education&quot;: &quot; 11th&quot;,&#xD;&#xA;      &quot;education_num&quot;: 7,&#xD;&#xA;      &quot;marital_status&quot;: &quot; Never-married&quot;,&#xD;&#xA;      &quot;occupation&quot;: &quot; Machine-op-inspct&quot;,&#xD;&#xA;      &quot;relationship&quot;: &quot; Own-child&quot;,&#xD;&#xA;      &quot;race&quot;: &quot; Black&quot;,&#xD;&#xA;      &quot;gender&quot;: &quot; Male&quot;,&#xD;&#xA;      &quot;capital_gain&quot;: 0,&#xD;&#xA;      &quot;capital_loss&quot;: 0,&#xD;&#xA;      &quot;hours_per_week&quot;: 40,&#xD;&#xA;      &quot;native_country&quot;: &quot; United-States&quot;&#xD;&#xA;    }&#xD;&#xA;  ]&#xD;&#xA;}" type="TYPE_PATTERN" returnTypeFixed="true"/>
+                <expression xmi:type="expression:Expression" xmi:id="_okZBWU7TEemBcOD5CMOafw" name="&lt;pattern-expression>" content="{&#xD;&#xA;  &quot;instances&quot;: [&#xD;&#xA;    {&#xD;&#xA;      &quot;age&quot;: 35,&#xD;&#xA;      &quot;workclass&quot;: &quot; Private&quot;,&#xD;&#xA;      &quot;education&quot;: &quot; 11th&quot;,&#xD;&#xA;      &quot;education_num&quot;: 7,&#xD;&#xA;      &quot;marital_status&quot;: &quot; Never-married&quot;,&#xD;&#xA;      &quot;occupation&quot;: &quot; Machine-op-inspct&quot;,&#xD;&#xA;      &quot;relationship&quot;: &quot; Own-child&quot;,&#xD;&#xA;      &quot;race&quot;: &quot; Black&quot;,&#xD;&#xA;      &quot;gender&quot;: &quot; Male&quot;,&#xD;&#xA;      &quot;capital_gain&quot;: 0,&#xD;&#xA;      &quot;capital_loss&quot;: 0,&#xD;&#xA;      &quot;hours_per_week&quot;: 40,&#xD;&#xA;      &quot;native_country&quot;: &quot; United-States&quot;&#xD;&#xA;    }&#xD;&#xA;  ]&#xD;&#xA;}" type="TYPE_PATTERN" returnTypeFixed="true"/>
               </parameters>
             </configuration>
             <outputs xmi:type="expression:Operation" xmi:id="_okZBWk7TEemBcOD5CMOafw">
@@ -65,7 +65,7 @@
         <condition xmi:type="expression:Expression" xmi:id="_ZtCLmk7TEemBcOD5CMOafw" name="" type="TYPE_CONDITION" returnType="java.lang.Boolean" returnTypeFixed="true"/>
       </connections>
       <actors xmi:type="process:Actor" xmi:id="_ZtCLm07TEemBcOD5CMOafw" documentation="This is an example of actor that is mapped to any ACME users" name="Employee actor" initiator="true"/>
-      <configurations xmi:type="configuration:Configuration" xmi:id="_q0TOcE7TEemBcOD5CMOafw" name="Demo" version="7.8.3-001" username="walter.bates" password="bpm">
+      <configurations xmi:type="configuration:Configuration" xmi:id="_q0TOcE7TEemBcOD5CMOafw" name="Demo" version="7.12.0-004" username="walter.bates" password="bpm">
         <actorMappings xmi:type="actormapping:ActorMappingsType" xmi:id="_q0T1gE7TEemBcOD5CMOafw">
           <actorMapping xmi:type="actormapping:ActorMapping" xmi:id="_q0T1gU7TEemBcOD5CMOafw" name="Employee actor">
             <groups xmi:type="actormapping:Groups" xmi:id="_q0T1gk7TEemBcOD5CMOafw">
@@ -125,17 +125,17 @@
   </process:MainProcess>
   <notation:Diagram xmi:id="_ZtCLtU7TEemBcOD5CMOafw" type="Process" element="_ZtCLgE7TEemBcOD5CMOafw" name="MyDiagram" measurementUnit="Pixel">
     <children xmi:type="notation:Node" xmi:id="_ZtCLtk7TEemBcOD5CMOafw" type="2007" element="_ZtCLgU7TEemBcOD5CMOafw">
-      <children xmi:type="notation:DecorationNode" xmi:id="_ZtCLt07TEemBcOD5CMOafw" type="5008"/>
-      <children xmi:type="notation:DecorationNode" xmi:id="_ZtCLuE7TEemBcOD5CMOafw" type="7001">
+      <children xmi:type="notation:DecorationNode" xmi:id="_ZtCLt07TEemBcOD5CMOafw" type="5008" element="_ZtCLgU7TEemBcOD5CMOafw"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_ZtCLuE7TEemBcOD5CMOafw" type="7001" element="_ZtCLgU7TEemBcOD5CMOafw">
         <children xmi:type="notation:Node" xmi:id="_ZtCLuU7TEemBcOD5CMOafw" type="3007" element="_ZtCLgk7TEemBcOD5CMOafw">
-          <children xmi:type="notation:DecorationNode" xmi:id="_ZtCLuk7TEemBcOD5CMOafw" type="5007"/>
-          <children xmi:type="notation:DecorationNode" xmi:id="_ZtCLu07TEemBcOD5CMOafw" type="7002">
+          <children xmi:type="notation:DecorationNode" xmi:id="_ZtCLuk7TEemBcOD5CMOafw" type="5007" element="_ZtCLgk7TEemBcOD5CMOafw"/>
+          <children xmi:type="notation:DecorationNode" xmi:id="_ZtCLu07TEemBcOD5CMOafw" type="7002" element="_ZtCLgk7TEemBcOD5CMOafw">
             <children xmi:type="notation:Shape" xmi:id="_ZtCLvE7TEemBcOD5CMOafw" type="3005" element="_ZtCLh07TEemBcOD5CMOafw" fontName="Segoe UI" fillColor="14334392" lineColor="10710316">
-              <children xmi:type="notation:DecorationNode" xmi:id="_ZtCLvU7TEemBcOD5CMOafw" type="5005"/>
+              <children xmi:type="notation:DecorationNode" xmi:id="_ZtCLvU7TEemBcOD5CMOafw" type="5005" element="_ZtCLh07TEemBcOD5CMOafw"/>
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ZtCLvk7TEemBcOD5CMOafw" x="160" y="60"/>
             </children>
             <children xmi:type="notation:Shape" xmi:id="_ZtCLv07TEemBcOD5CMOafw" type="3002" element="_ZtCLg07TEemBcOD5CMOafw" fontName="Segoe UI">
-              <children xmi:type="notation:DecorationNode" xmi:id="_ZtCLwE7TEemBcOD5CMOafw" type="5024">
+              <children xmi:type="notation:DecorationNode" xmi:id="_ZtCLwE7TEemBcOD5CMOafw" type="5024" element="_ZtCLg07TEemBcOD5CMOafw">
                 <layoutConstraint xmi:type="notation:Location" xmi:id="_ZtCLwU7TEemBcOD5CMOafw" y="5"/>
               </children>
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ZtCLwk7TEemBcOD5CMOafw" x="60" y="68"/>
@@ -156,7 +156,7 @@
     </children>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_ZtCLzU7TEemBcOD5CMOafw"/>
     <edges xmi:type="notation:Connector" xmi:id="_ZtCLzk7TEemBcOD5CMOafw" type="4001" element="_ZtCLmE7TEemBcOD5CMOafw" source="_ZtCLv07TEemBcOD5CMOafw" target="_ZtCLvE7TEemBcOD5CMOafw" roundedBendpointsRadius="10" routing="Rectilinear">
-      <children xmi:type="notation:DecorationNode" xmi:id="_ZtCLz07TEemBcOD5CMOafw" type="6001">
+      <children xmi:type="notation:DecorationNode" xmi:id="_ZtCLz07TEemBcOD5CMOafw" type="6001" element="_ZtCLmE7TEemBcOD5CMOafw">
         <layoutConstraint xmi:type="notation:Location" xmi:id="_ZtCL0E7TEemBcOD5CMOafw" y="-10"/>
       </children>
       <styles xmi:type="notation:FontStyle" xmi:id="_ZtCL0U7TEemBcOD5CMOafw" fontName="Segoe UI"/>

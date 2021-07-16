@@ -1,42 +1,15 @@
 {
-  "designerVersion" : "1.8.39",
+  "modelVersion" : "2.0",
+  "previousArtifactVersion" : "1.8.39",
   "id" : "CustomerEdition",
   "name" : "CustomerEdition",
-  "lastUpdate" : 1553598274681,
-  "rows" : [ [ {
-    "type" : "formContainer",
-    "dimension" : {
-      "xs" : 12
-    },
-    "propertyValues" : {
-      "cssClasses" : {
-        "type" : "constant",
-        "value" : ""
-      },
-      "hidden" : {
-        "type" : "constant",
-        "value" : false
-      }
-    },
-    "reference" : "6e5188d3-ccf9-4eff-957a-bee68180c85d",
-    "hasValidationError" : false,
-    "id" : "pbFormContainer",
-    "container" : {
-      "type" : "container",
-      "dimension" : {
-        "xs" : 12
-      },
-      "propertyValues" : { },
-      "reference" : "27357512-2b3b-4060-9864-3fe750993feb",
-      "hasValidationError" : false,
-      "id" : "pbContainer",
-      "rows" : [ [ {
-        "type" : "fragment",
+  "lastUpdate" : 1626353687039,
+  "rows" : [
+    [
+      {
+        "type" : "formContainer",
         "dimension" : {
-          "xs" : 12,
-          "sm" : 12,
-          "md" : 12,
-          "lg" : 12
+          "xs" : 12
         },
         "propertyValues" : {
           "cssClasses" : {
@@ -48,157 +21,234 @@
             "value" : false
           }
         },
-        "reference" : "111aa629-5fd3-4e52-a29c-2e1485e0bd3a",
+        "reference" : "6e5188d3-ccf9-4eff-957a-bee68180c85d",
         "hasValidationError" : false,
-        "id" : "CustomerInfo",
-        "binding" : {
-          "customer" : "customer",
-          "parameters" : "params"
+        "id" : "pbFormContainer",
+        "container" : {
+          "type" : "container",
+          "dimension" : {
+            "xs" : 12
+          },
+          "propertyValues" : { },
+          "reference" : "27357512-2b3b-4060-9864-3fe750993feb",
+          "hasValidationError" : false,
+          "id" : "pbContainer",
+          "rows" : [
+            [
+              {
+                "type" : "fragment",
+                "dimension" : {
+                  "xs" : 12,
+                  "sm" : 12,
+                  "md" : 12,
+                  "lg" : 12
+                },
+                "propertyValues" : {
+                  "cssClasses" : {
+                    "type" : "constant",
+                    "value" : ""
+                  },
+                  "hidden" : {
+                    "type" : "constant",
+                    "value" : false
+                  }
+                },
+                "reference" : "111aa629-5fd3-4e52-a29c-2e1485e0bd3a",
+                "hasValidationError" : false,
+                "id" : "CustomerInfo",
+                "binding" : {
+                  "customer" : "customer",
+                  "parameters" : "params"
+                }
+              }
+            ],
+            [
+              {
+                "type" : "component",
+                "dimension" : {
+                  "xs" : 12,
+                  "sm" : 12,
+                  "md" : 12,
+                  "lg" : 12
+                },
+                "propertyValues" : {
+                  "cssClasses" : {
+                    "type" : "constant",
+                    "value" : ""
+                  },
+                  "hidden" : {
+                    "type" : "constant",
+                    "value" : false
+                  },
+                  "allowHTML" : {
+                    "type" : "constant",
+                    "value" : true
+                  },
+                  "text" : {
+                    "type" : "interpolation",
+                    "value" : "<hr/>"
+                  },
+                  "alignment" : {
+                    "type" : "constant",
+                    "value" : "left"
+                  },
+                  "labelHidden" : {
+                    "type" : "constant",
+                    "value" : true
+                  },
+                  "label" : {
+                    "type" : "interpolation",
+                    "value" : ""
+                  },
+                  "labelPosition" : {
+                    "type" : "constant",
+                    "value" : "top"
+                  },
+                  "labelWidth" : {
+                    "type" : "constant",
+                    "value" : 4
+                  }
+                },
+                "reference" : "b591611a-6fed-48b4-b6f7-c12a0bac6486",
+                "hasValidationError" : false,
+                "id" : "pbText"
+              }
+            ],
+            [
+              {
+                "type" : "component",
+                "dimension" : {
+                  "xs" : 12,
+                  "sm" : 12,
+                  "md" : 12,
+                  "lg" : 12
+                },
+                "propertyValues" : {
+                  "cssClasses" : {
+                    "type" : "constant",
+                    "value" : ""
+                  },
+                  "hidden" : {
+                    "type" : "constant",
+                    "value" : false
+                  },
+                  "disabled" : {
+                    "type" : "expression",
+                    "value" : "$form.$invalid"
+                  },
+                  "label" : {
+                    "type" : "interpolation",
+                    "value" : "Submit"
+                  },
+                  "alignment" : {
+                    "type" : "constant",
+                    "value" : "right"
+                  },
+                  "buttonStyle" : {
+                    "type" : "constant",
+                    "value" : "primary"
+                  },
+                  "action" : {
+                    "type" : "constant",
+                    "value" : "Submit task"
+                  },
+                  "url" : {
+                    "type" : "interpolation"
+                  },
+                  "contract" : {
+                    "type" : "expression",
+                    "value" : "formOutput"
+                  },
+                  "dataFromError" : {
+                    "type" : "variable",
+                    "value" : ""
+                  },
+                  "assignedId" : {
+                    "type" : "expression",
+                    "value" : "user.user_id"
+                  },
+                  "targetUrlOnSuccess" : {
+                    "type" : "interpolation",
+                    "value" : "?id={{task.caseId}}"
+                  }
+                },
+                "reference" : "b36d3426-85dd-4830-a467-263c65a84fe6",
+                "hasValidationError" : false,
+                "id" : "customAssignWC"
+              }
+            ]
+          ]
         }
-      } ], [ {
-        "type" : "component",
-        "dimension" : {
-          "xs" : 12,
-          "sm" : 12,
-          "md" : 12,
-          "lg" : 12
-        },
-        "propertyValues" : {
-          "cssClasses" : {
-            "type" : "constant",
-            "value" : ""
-          },
-          "hidden" : {
-            "type" : "constant",
-            "value" : false
-          },
-          "allowHTML" : {
-            "type" : "constant",
-            "value" : true
-          },
-          "text" : {
-            "type" : "interpolation",
-            "value" : "<hr/>"
-          },
-          "alignment" : {
-            "type" : "constant",
-            "value" : "left"
-          }
-        },
-        "reference" : "b591611a-6fed-48b4-b6f7-c12a0bac6486",
-        "hasValidationError" : false,
-        "id" : "pbText"
-      } ], [ {
-        "type" : "component",
-        "dimension" : {
-          "xs" : 12,
-          "sm" : 12,
-          "md" : 12,
-          "lg" : 12
-        },
-        "propertyValues" : {
-          "cssClasses" : {
-            "type" : "constant",
-            "value" : ""
-          },
-          "hidden" : {
-            "type" : "constant",
-            "value" : false
-          },
-          "disabled" : {
-            "type" : "expression",
-            "value" : "$form.$invalid"
-          },
-          "label" : {
-            "type" : "interpolation",
-            "value" : "Submit"
-          },
-          "alignment" : {
-            "type" : "constant",
-            "value" : "right"
-          },
-          "buttonStyle" : {
-            "type" : "constant",
-            "value" : "primary"
-          },
-          "action" : {
-            "type" : "constant",
-            "value" : "Submit task"
-          },
-          "url" : {
-            "type" : "interpolation"
-          },
-          "contract" : {
-            "type" : "expression",
-            "value" : "formOutput"
-          },
-          "dataFromError" : {
-            "type" : "variable",
-            "value" : ""
-          },
-          "assignedId" : {
-            "type" : "expression",
-            "value" : "user.user_id"
-          },
-          "targetUrlOnSuccess" : {
-            "type" : "interpolation",
-            "value" : "?id={{task.caseId}}"
-          }
-        },
-        "reference" : "b36d3426-85dd-4830-a467-263c65a84fe6",
-        "hasValidationError" : false,
-        "id" : "customAssignWC"
-      } ] ]
+      }
+    ]
+  ],
+  "assets" : [
+    {
+      "id" : "6d8cf5c3-c48b-4e27-b16d-1109b160aca0",
+      "name" : "localization.json",
+      "type" : "json",
+      "order" : 0,
+      "external" : false
+    },
+    {
+      "id" : "da77e770-0978-42a5-a094-54dfbb2d22ca",
+      "name" : "style.css",
+      "type" : "css",
+      "order" : 0,
+      "external" : false
     }
-  } ] ],
-  "assets" : [ {
-    "id" : "6d8cf5c3-c48b-4e27-b16d-1109b160aca0",
-    "name" : "localization.json",
-    "type" : "json",
-    "order" : 0,
-    "external" : false
-  }, {
-    "id" : "da77e770-0978-42a5-a094-54dfbb2d22ca",
-    "name" : "style.css",
-    "type" : "css",
-    "order" : 0,
-    "external" : false
-  } ],
+  ],
   "inactiveAssets" : [ ],
-  "data" : {
+  "variables" : {
+    "task" : {
+      "type" : "url",
+      "value" : [
+        "../API/bpm/humanTask/{{taskId}}"
+      ],
+      "exposed" : false
+    },
     "formOutput" : {
       "type" : "expression",
-      "value" : "return {\n\t'customerInput': $data.customer\n};",
-      "exposed" : false
-    },
-    "customer" : {
-      "type" : "url",
-      "value" : "../{{context.customer_ref.link}}",
-      "exposed" : false
-    },
-    "params" : {
-      "type" : "json",
-      "value" : "{\"edition\":true}",
+      "value" : [
+        "return {",
+        "\t'customerInput': $data.customer",
+        "};"
+      ],
       "exposed" : false
     },
     "context" : {
       "type" : "url",
-      "value" : "../API/bpm/userTask/{{taskId}}/context",
+      "value" : [
+        "../API/bpm/userTask/{{taskId}}/context"
+      ],
       "exposed" : false
     },
-    "taskId" : {
-      "type" : "urlparameter",
-      "value" : "id",
-      "exposed" : false
-    },
-    "task" : {
-      "type" : "url",
-      "value" : "../API/bpm/humanTask/{{taskId}}",
+    "params" : {
+      "type" : "json",
+      "value" : [
+        "{\"edition\":true}"
+      ],
       "exposed" : false
     },
     "user" : {
       "type" : "url",
-      "value" : "../API/system/session/1",
+      "value" : [
+        "../API/system/session/1"
+      ],
+      "exposed" : false
+    },
+    "taskId" : {
+      "type" : "urlparameter",
+      "value" : [
+        "id"
+      ],
+      "exposed" : false
+    },
+    "customer" : {
+      "type" : "url",
+      "value" : [
+        "../{{context.customer_ref.link}}"
+      ],
       "exposed" : false
     }
   },

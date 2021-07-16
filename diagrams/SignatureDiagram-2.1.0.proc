@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actormapping="http://www.bonitasoft.org/ns/actormapping/6.0" xmlns:configuration="http://www.bonitasoft.org/ns/studio/configuration" xmlns:connectorconfiguration="http://wwww.bonitasoft.org/model/connector/configuration" xmlns:decision="http://www.bonitasoft.org/ns/studio/process/decision" xmlns:definition="http://www.bonitasoft.org/ns/connector/definition/6.1" xmlns:expression="http://www.bonitasoft.org/ns/studio/expression" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:parameter="http://www.bonitasoft.org/ns/studio/parameter" xmlns:process="http://www.bonitasoft.org/ns/studio/process" xsi:schemaLocation="http://www.bonitasoft.org/ns/studio/process/decision http://www.bonitasoft.org/ns/studio/process#//decision">
-  <process:MainProcess xmi:id="_A1ow0HSdEeiXy_sNN3EIww" name="SignatureDiagram" version="2.1.0" author="antoine" bonitaVersion="7.8.3" bonitaModelVersion="7.8.3-001" configId="ACED00057400205369676E61747572654469616772616D372E382E332D303031372E382E337370">
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:actormapping="http://www.bonitasoft.org/ns/actormapping/6.0" xmlns:configuration="http://www.bonitasoft.org/ns/studio/configuration" xmlns:connectorconfiguration="http://wwww.bonitasoft.org/model/connector/configuration" xmlns:decision="http://www.bonitasoft.org/ns/studio/process/decision" xmlns:definition="http://www.bonitasoft.org/ns/connector/definition/6.1" xmlns:expression="http://www.bonitasoft.org/ns/studio/expression" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:parameter="http://www.bonitasoft.org/ns/studio/parameter" xmlns:process="http://www.bonitasoft.org/ns/studio/process" xsi:schemaLocation="http://www.bonitasoft.org/ns/studio/process/decision http://www.bonitasoft.org/ns/studio/process#//decision">
+  <process:MainProcess xmi:id="_A1ow0HSdEeiXy_sNN3EIww" name="SignatureDiagram" version="2.1.0" author="antoine" bonitaVersion="7.12.4" bonitaModelVersion="7.12.0-004" configId="ACED00057400205369676E61747572654469616772616D372E382E332D303031372E382E337370">
     <elements xmi:type="process:Pool" xmi:id="_A1ow0XSdEeiXy_sNN3EIww" name="Signature" version="2.1.0" displayName="Signature sub process">
       <elements xmi:type="process:Lane" xmi:id="_A1ow0nSdEeiXy_sNN3EIww" name="Signature" actor="_A1pX5XSdEeiXy_sNN3EIww">
         <elements xmi:type="process:StartEvent" xmi:id="_A1ow03SdEeiXy_sNN3EIww" name="Start signature check" outgoing="_A1oxOXSdEeiXy_sNN3EIww">
@@ -134,7 +134,7 @@
         <condition xmi:type="expression:Expression" xmi:id="_A1pX5HSdEeiXy_sNN3EIww" name="" type="TYPE_CONDITION" returnType="java.lang.Boolean" returnTypeFixed="true"/>
       </connections>
       <actors xmi:type="process:Actor" xmi:id="_A1pX5XSdEeiXy_sNN3EIww" name="actor" initiator="true"/>
-      <configurations xmi:type="configuration:Configuration" xmi:id="_A1pX5nSdEeiXy_sNN3EIww" name="Production" version="7.8.3-001" username="walter.bates" password="bpm">
+      <configurations xmi:type="configuration:Configuration" xmi:id="_A1pX5nSdEeiXy_sNN3EIww" name="Production" version="7.12.0-004" username="walter.bates" password="bpm">
         <actorMappings xmi:type="actormapping:ActorMappingsType" xmi:id="_A1pX53SdEeiXy_sNN3EIww">
           <actorMapping xmi:type="actormapping:ActorMapping" xmi:id="_A1pX6HSdEeiXy_sNN3EIww" name="actor">
             <groups xmi:type="actormapping:Groups" xmi:id="_A1pX6XSdEeiXy_sNN3EIww"/>
@@ -164,7 +164,7 @@
         <parameters xmi:type="parameter:Parameter" xmi:id="_f7q80USzEeml4OmTM0FgHg" name="docusignUser" typeClassname="java.lang.String"/>
         <parameters xmi:type="parameter:Parameter" xmi:id="_f7rj4ESzEeml4OmTM0FgHg" name="docusignAuthIntegratorKey" typeClassname="java.lang.String"/>
       </configurations>
-      <configurations xmi:type="configuration:Configuration" xmi:id="_rBELcHnlEeimVcJ7KG-S2g" name="Test" version="7.6.0-002" username="walter.bates" password="bpm">
+      <configurations xmi:type="configuration:Configuration" xmi:id="_rBELcHnlEeimVcJ7KG-S2g" name="Test" version="7.12.0-004" username="walter.bates" password="bpm">
         <actorMappings xmi:type="actormapping:ActorMappingsType" xmi:id="_rBELcXnlEeimVcJ7KG-S2g">
           <actorMapping xmi:type="actormapping:ActorMapping" xmi:id="_rBELcnnlEeimVcJ7KG-S2g" name="actor">
             <groups xmi:type="actormapping:Groups" xmi:id="_rBELc3nlEeimVcJ7KG-S2g"/>
@@ -194,7 +194,7 @@
         <parameters xmi:type="parameter:Parameter" xmi:id="_rBELhXnlEeimVcJ7KG-S2g" name="docusignUser" value="antoine.mottier@bonitasoft.com" typeClassname="java.lang.String"/>
         <parameters xmi:type="parameter:Parameter" xmi:id="_rBELhnnlEeimVcJ7KG-S2g" name="docusignAuthIntegratorKey" value="a2e18cc2-65d9-42a5-94e9-5f2f3f5dd863" typeClassname="java.lang.String"/>
       </configurations>
-      <configurations xmi:type="configuration:Configuration" xmi:id="_iYUlcESzEeml4OmTM0FgHg" name="Qualification" version="7.8.3-001" username="walter.bates" password="bpm">
+      <configurations xmi:type="configuration:Configuration" xmi:id="_iYUlcESzEeml4OmTM0FgHg" name="Qualification" version="7.12.0-004" username="walter.bates" password="bpm">
         <actorMappings xmi:type="actormapping:ActorMappingsType" xmi:id="_iYXBsESzEeml4OmTM0FgHg">
           <actorMapping xmi:type="actormapping:ActorMapping" xmi:id="_iYXBsUSzEeml4OmTM0FgHg" name="actor">
             <groups xmi:type="actormapping:Groups" xmi:id="_iYXBskSzEeml4OmTM0FgHg">
@@ -223,7 +223,7 @@
         <parameters xmi:type="parameter:Parameter" xmi:id="_iYXowESzEeml4OmTM0FgHg" name="docusignUser" value="test" typeClassname="java.lang.String"/>
         <parameters xmi:type="parameter:Parameter" xmi:id="_iYXowUSzEeml4OmTM0FgHg" name="docusignAuthIntegratorKey" value="test" typeClassname="java.lang.String"/>
       </configurations>
-      <configurations xmi:type="configuration:Configuration" xmi:id="_1h7fEEpPEeml4OmTM0FgHg" name="Demo" version="7.8.3-001" username="walter.bates" password="bpm">
+      <configurations xmi:type="configuration:Configuration" xmi:id="_1h7fEEpPEeml4OmTM0FgHg" name="Demo" version="7.12.0-004" username="walter.bates" password="bpm">
         <actorMappings xmi:type="actormapping:ActorMappingsType" xmi:id="_1h8GIEpPEeml4OmTM0FgHg">
           <actorMapping xmi:type="actormapping:ActorMapping" xmi:id="_1h8GIUpPEeml4OmTM0FgHg" name="actor">
             <groups xmi:type="actormapping:Groups" xmi:id="_1h8GIkpPEeml4OmTM0FgHg">
